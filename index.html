@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mvtjdesigns | Digital Design Studio</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #111111;
+            --text-muted: #334155;
+            --accent: #1e293b;
+            --border: #e5e7eb;
+            --max-width: 1000px;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        header {
+            padding: 40px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.125rem;
+            letter-spacing: -0.03em;
+            text-transform: lowercase;
+        }
+
+        h1, h2, h3 {
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.25rem);
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 48px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        h2::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: var(--border);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 65ch;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            transition: background 0.15s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #000;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+        }
+
+        .positioning p {
+            font-size: 1.75rem;
+            font-weight: 700;
+            line-height: 1.3;
+            max-width: 30ch;
+            letter-spacing: -0.02em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 64px 40px;
+        }
+
+        .service-item h3 {
+            font-size: 1.125rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-item h3 span {
+            color: var(--text-muted);
+        }
+
+        .service-item p {
+            color: var(--text-muted);
+            max-width: 45ch;
+            font-size: 0.9375rem;
+        }
+
+        .work-grid {
+            display: grid;
+            gap: 100px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .project-link {
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+        }
+
+        .project-desc {
+            max-width: 60ch;
+            color: var(--text-muted);
+        }
+
+        .method-list {
+            list-style: none;
+        }
+
+        .method-item {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .method-item span {
+            color: var(--border);
+            font-weight: 400;
+        }
+
+        .opinion {
+            margin-top: 48px;
+            padding-left: 32px;
+            border-left: 2px solid var(--accent);
+            font-style: italic;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .about p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 60ch;
+        }
+
+        .cta-final {
+            text-align: center;
+            border-top: 1px solid var(--border);
+            padding-top: 140px;
+            padding-bottom: 140px;
+        }
+
+        .cta-final p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            max-width: 40ch;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 24px; }
+            section { padding: 80px 0; }
+            .hero { padding-top: 60px; }
+            .actions { flex-direction: column; }
+            .btn { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">mvtjdesigns</div>
+            <a href="#" class="btn btn-secondary">Book a Call</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Digital Design & AI-Assisted Web Experiences That Actually Ship</h1>
+                <p>Websites, branding, and smart automation for businesses that want results — not experiments.</p>
+                <div class="actions">
+                    <a href="#" class="btn btn-primary">Book a Call</a>
+                    <a href="#work" class="btn btn-secondary">View Work</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="positioning">
+            <div class="container">
+                <p>Independent studio. No agency layers. Decisions made by the person doing the work. Built to launch and scale with a focus on real-world execution.</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>→ Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3><span>→</span> Website Design & Deployment</h3>
+                        <p>Clean, fast, production-ready websites built to go live.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3><span>→</span> Brand & Visual Identity</h3>
+                        <p>Logos, typography, and visual systems that stay consistent.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3><span>→</span> AI-Assisted Content & Automation</h3>
+                        <p>AI is a tool, not a strategy. If it doesn’t improve clarity or speed, it’s not used.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3><span>→</span> Conversion & UX Optimization</h3>
+                        <p>Design decisions tied directly to user behavior and outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work">
+            <div class="container">
+                <h2>→ Selected Work</h2>
+                <div class="work-grid">
+                    <div class="project-card">
+                        <div class="project-meta">
+                            <span class="project-title">spox.live</span>
+                            <a href="https://spox.live" class="project-link" target="_blank">View Site ↗</a>
+                        </div>
+                        <p class="project-desc">A modern web presence designed for clarity, speed, and credibility. Built to communicate value quickly and guide users toward action.</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-meta">
+                            <span class="project-title">sigasiga.online</span>
+                            <a href="https://sigasiga.online" class="project-link" target="_blank">View Site ↗</a>
+                        </div>
+                        <p class="project-desc">Brand-driven website execution under real-world constraints. Focused on simplicity, usability, and fast deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-i-work">
+            <div class="container">
+                <h2>→ How I Work</h2>
+                <div class="method-list">
+                    <div class="method-item"><span>→</span> Clear scope</div>
+                    <div class="method-item"><span>→</span> Direct collaboration</div>
+                    <div class="method-item"><span>→</span> Practical tools</div>
+                    <div class="method-item"><span>→</span> Built to launch</div>
+                </div>
+                <p class="opinion">If something doesn’t serve the outcome, it doesn’t ship.</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h2>→ About</h2>
+                <p>mvtjdesigns is led by hands-on execution. Every project is designed, built, and delivered with accountability from start to finish.</p>
+            </div>
+        </section>
+
+        <section class="cta-final">
+            <div class="container">
+                <p>Have a project in mind? Let’s build something that launches cleanly and works as intended.</p>
+                <a href="#" class="btn btn-primary" style="padding: 16px 40px; font-size: 1rem;">Book a Call</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            &copy; 2024 mvtjdesigns &mdash; Built for outcomes.
+        </div>
+    </footer>
+
+</body>
+</html>
