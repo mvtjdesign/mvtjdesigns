@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Max Tijerino | Digital Execution Profile</title>
     <meta name="description" content="Digital Marketing & Content. Execution-first. Platform-aware. Outcome-driven.">
     <style>
@@ -65,7 +66,7 @@
         .section-content {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 4rem;
         }
 
         /* Typography */
@@ -107,6 +108,32 @@
             margin-bottom: 0.5rem;
         }
 
+        .project-meta {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 1rem;
+            display: block;
+        }
+
+        .watch-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2px;
+            transition: border-color 0.2s;
+        }
+
+        .watch-link:hover {
+            border-color: var(--ink);
+        }
+
         /* Lists */
         ul {
             list-style: none;
@@ -145,6 +172,27 @@
             font-size: 0.85rem;
             font-weight: 600;
             color: var(--muted);
+        }
+
+        /* Video Utility */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin-top: 1.5rem;
+            border-radius: 2px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* Methodology */
@@ -279,6 +327,32 @@
                     <h3>Trustona Media</h3>
                     <p>Content creation for social platforms with focus on engagement and pacing.</p>
                 </div>
+
+                <!-- Long-Form Content Block -->
+                <div class="project-block">
+                    <span class="label">Video Production</span>
+                    <h3>Long-Form Content — Technology & Reviews</h3>
+                    <p style="margin-bottom: 1.5rem;">Long-form video content designed to educate, compare, and guide purchasing decisions. Structured for clarity, pacing, and viewer retention, with on-camera presentation and editorial control.</p>
+                    
+                    <div style="border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                        <span class="label" style="opacity: 0.6;">Featured Example</span>
+                        <h3>Cloud Storage Comparison Video</h3>
+                        <p>In-depth comparison video covering multiple cloud storage platforms, structured around performance, features, security, and pricing. Produced and presented for a content-driven media platform, with emphasis on clarity, narrative flow, and audience trust.</p>
+                        <span class="project-meta">
+                            On-camera presentation &bull; Long-form structure & pacing &bull; Content marketing & reviews
+                        </span>
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube-nocookie.com/embed/1Tgt1mFjatA?rel=0&modestbranding=1" 
+                                title="Cloud Storage Comparison Video"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=1Tgt1mFjatA" target="_blank" class="watch-link">Watch video &rarr;</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -289,13 +363,49 @@
             </div>
             <div class="section-content">
                 <div>
-                    <p style="margin-bottom: 2rem; color: var(--muted); font-style: italic;">Not all work starts with a brief. These projects explore visual storytelling, content formats, and creative direction.</p>
+                    <p style="margin-bottom: 1rem; color: var(--muted); font-style: italic;">Not all work starts with a brief. These projects explore visual storytelling, content formats, and creative direction.</p>
                 </div>
+
+                <!-- Concept 1: Primary Craft -->
                 <div class="project-block">
-                    <span class="label">Concept / Spec Work</span>
-                    <h3>Coffee Brand Content (Sora AI)</h3>
-                    <p>Short-form video concepts exploring mood, pacing, and brand storytelling for local coffee brands. Created to demonstrate creative direction using AI-assisted workflows.</p>
+                    <span class="label">Concept Series (Spec)</span>
+                    <h3>Coffee Brand Content — Blender</h3>
+                    <p>Short-form intro concept exploring brand mood, place-based storytelling, and visual hooks for social content. Designed and animated in Blender, with selective AI-assisted refinement, to test attention and brand recall.</p>
+                    <span class="project-meta">
+                        Visual concept & direction &bull; 3D animation (Blender) &bull; AI-assisted refinement
+                    </span>
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube-nocookie.com/embed/r8IRBSBNsfY?rel=0&modestbranding=1" 
+                            title="Coffee Brand Content - Blender Animation"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
+
+                <!-- Concept 2: Narrative Exploration -->
+                <div class="project-block">
+                    <span class="label">Concept Commercial (Spec)</span>
+                    <h3>Coffee Brand Narrative — Sora AI</h3>
+                    <p>Short-form narrative concept exploring emotional contrast, urban noise, and calm as a brand signal. Developed using AI-assisted video generation to test pacing, mood, and story-driven attention for social platforms.</p>
+                    <span class="project-meta">
+                        Narrative concept & direction &bull; Mood and pacing exploration &bull; AI-assisted generation (Sora)
+                    </span>
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube-nocookie.com/embed/wlBoVkpyGiM?rel=0&modestbranding=1" 
+                            title="Coffee Brand Narrative - Sora AI Exploration"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=wlBoVkpyGiM" target="_blank" class="watch-link">Watch concept &rarr;</a>
+                </div>
+
+                <!-- Concept 3: Static / UX -->
                 <div class="project-block">
                     <span class="label">Concept / Performance</span>
                     <h3>YouTube Thumbnail Design</h3>
