@@ -3,26 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mvtjdesigns | Digital Design & AI-Assisted Web Experiences</title>
-    <meta name="description" content="Independent digital design studio specializing in production-ready web experiences, visual identity, and strategic AI automation for businesses that value outcomes.">
-    
-    <!-- Open Graph / SEO -->
-    <meta property="og:title" content="mvtjdesigns | Execution-First Digital Studio">
-    <meta property="og:description" content="Websites, branding, and smart automation for businesses that want results — not experiments.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mvtjdesigns.com">
-
+    <title>Max Tijerino | Digital Execution Profile</title>
+    <meta name="description" content="Digital Marketing & Content. Execution-first. Platform-aware. Outcome-driven.">
     <style>
         :root {
             --bg: #fafafa;
-            --ink: #1a1a1a;
-            --slate: #64748b;
-            --muted: #94a3b8;
-            --border: #e2e8f0;
-            --accent: #334155;
-            --max-width: 1100px;
+            --ink: #111111;
+            --slate: #525252;
+            --muted: #a3a3a3;
+            --border: #e5e5e5;
+            --accent: #737373;
+            --max-width: 1000px;
             --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --ease: cubic-bezier(0.19, 1, 0.22, 1);
+            --section-spacing: 8rem;
         }
 
         * {
@@ -33,432 +26,368 @@
 
         html {
             scroll-behavior: smooth;
-            background-color: var(--bg);
         }
 
         body {
             font-family: var(--font-main);
+            background-color: var(--bg);
             color: var(--ink);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
+            padding-bottom: 4rem;
         }
 
-        /* Focus styles for accessibility */
-        :focus-visible {
-            outline: 2px solid var(--ink);
-            outline-offset: 4px;
-        }
-
-        /* Layout Framework */
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 5vw;
+            padding: 0 2rem;
         }
 
+        /* Unified Layout System */
         section {
-            padding: 96px 0;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            padding: var(--section-spacing) 0;
             border-bottom: 1px solid var(--border);
         }
 
+        .section-header h2 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--muted);
+            font-weight: 700;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .section-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
         /* Typography */
-        h1, h2, h3 {
-            font-weight: 800;
-            letter-spacing: -0.04em;
-            line-height: 1.1;
-        }
-
         h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            margin-bottom: 32px;
-        }
-
-        h2 {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            margin-bottom: 40px;
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            line-height: 1;
+            margin-bottom: 1rem;
         }
 
         h3 {
             font-size: 1.25rem;
-            margin-bottom: 12px;
-            color: var(--ink);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
         }
 
-        .lead {
-            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        .subline {
+            font-size: 1.25rem;
             font-weight: 500;
             color: var(--slate);
-            max-width: 38ch;
-            margin-bottom: 40px;
-            line-height: 1.3;
-        }
-
-        .subhead {
-            font-size: 1.125rem;
-            font-weight: 500;
-            color: var(--slate);
-            margin-bottom: 48px;
-            display: block;
+            margin-bottom: 1.5rem;
         }
 
         p {
-            font-size: 1.125rem;
-            color: var(--accent);
-            max-width: 62ch;
-        }
-
-        .motif {
+            font-size: 1.05rem;
             color: var(--slate);
-            margin-right: 0.5rem;
-            font-weight: 400;
+            max-width: 55ch;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
+        .label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+        }
+
+        .capabilities-list li {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .capabilities-list li::before {
+            content: "•";
+            position: absolute;
             left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(250, 250, 250, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
+            color: var(--muted);
         }
 
-        nav .container {
-            height: 72px;
+        /* Experience Blocks */
+        .experience-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .experience-meta {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: baseline;
+            margin-bottom: 0.25rem;
         }
 
-        .logo {
-            font-weight: 900;
-            font-size: 1.25rem;
-            letter-spacing: -0.05em;
-            text-decoration: none;
-            color: var(--ink);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--ink);
+        .date-range {
+            font-size: 0.85rem;
             font-weight: 600;
-            font-size: 0.875rem;
-            transition: opacity 0.2s;
+            color: var(--muted);
         }
 
-        .nav-link:hover { opacity: 0.6; }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: 52px;
-            padding: 0 28px;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.9375rem;
-            cursor: pointer;
-            transition: transform 0.1s, background 0.2s, color 0.2s;
-            font-family: inherit;
-        }
-
-        .btn:active { transform: translateY(2px); }
-
-        .btn-primary {
-            background: var(--ink);
-            color: #fff;
-            border: 1px solid var(--ink);
-        }
-
-        .btn-primary:hover { background: #000; }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--ink);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover { background: #fff; border-color: var(--ink); }
-
-        /* Grid */
-        .grid {
+        /* Methodology */
+        .method-step {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .card {
-            padding: 32px;
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-        }
-
-        /* Work Cards */
-        .work-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 32px;
-        }
-
-        .work-card {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            padding: 40px;
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            transition: border-color 0.3s, transform 0.3s var(--ease);
-        }
-
-        .work-card:hover {
-            border-color: var(--ink);
-            transform: translateY(-4px);
-        }
-
-        .work-type {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--slate);
-            font-weight: 700;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .work-card p { margin-bottom: 24px; }
-
-        /* Project Steps */
-        .step {
-            display: grid;
-            grid-template-columns: 48px 1fr;
-            gap: 16px;
-            margin-bottom: 48px;
+            grid-template-columns: 2rem 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
         .step-num {
             font-weight: 800;
             color: var(--muted);
-            font-size: 1.125rem;
         }
 
-        /* Contact Section */
-        .contact-links {
+        /* CTAs */
+        .action-group {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 40px;
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
-        .contact-link-item {
-            font-size: 1.5rem;
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1.5rem;
+            height: 3rem;
+            font-size: 0.875rem;
             font-weight: 700;
-            color: var(--ink);
-            text-decoration: underline;
-            text-decoration-thickness: 2px;
-            text-underline-offset: 8px;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.2s ease;
         }
 
-        .contact-link-item:hover { color: var(--slate); }
+        .btn-primary {
+            background: var(--ink);
+            color: var(--bg);
+        }
+
+        .btn-primary:hover {
+            background: #333;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--ink);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--ink);
+        }
 
         footer {
-            padding: 48px 0;
-            color: var(--slate);
-            font-size: 0.8125rem;
-            font-weight: 500;
+            padding-top: 4rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--muted);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
         }
 
-        @media (max-width: 768px) {
-            section { padding: 80px 0; }
-            .grid { grid-template-columns: 1fr; }
-            .work-card { padding: 32px; }
-            h1 { font-size: 3rem; }
+        @media (max-width: 850px) {
+            section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 4rem 0;
+            }
+
+            .section-header h2 {
+                position: static;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
-<body id="top">
+<body>
 
-    <nav>
-        <div class="container">
-            <a href="#top" class="logo">mvtjdesigns</a>
-            <div class="nav-links">
-                <a href="#work" class="nav-link">Work</a>
-                <a href="mailto:hello@mvtjdesigns.com" class="nav-link">Contact</a>
+    <div class="container">
+        
+        <!-- SECTION 1: IDENTITY -->
+        <section id="identity" style="border-top: none;">
+            <div class="section-header">
+                <h2>Profile</h2>
             </div>
-        </div>
-    </nav>
-
-    <main>
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container">
-                <h1>Digital Design & AI-Assisted Web Experiences That Actually Ship</h1>
-                <div class="lead">Websites, branding, and smart automation for businesses that want results — not experiments.</div>
-                <div class="button-group">
-                    <a href="https://calendly.com/max-tijerino" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Call</a>
-                    <a href="#work" class="btn btn-secondary">View Work</a>
+            <div class="section-content">
+                <div>
+                    <h1>Max Tijerino</h1>
+                    <div class="subline">Execution-first. Platform-aware. Outcome-driven.</div>
+                    <p>I design, produce, and ship content and digital assets that perform in the real world. Based in Limassol, Cyprus.</p>
                 </div>
             </div>
         </section>
 
-        <!-- POSITIONING -->
-        <section id="positioning">
-            <div class="container">
-                <p style="font-size: 1.5rem; font-weight: 700; color: var(--ink); line-height: 1.3; margin-bottom: 16px;">Independent studio. No agency layers. Decisions made by the person doing the work.</p>
-                <p>Built to launch and scale with a focus on real-world execution.</p>
-            </div>
-        </section>
-
-        <!-- SERVICES -->
-        <section id="services">
-            <div class="container">
+        <!-- SECTION 2: WHAT I’M HIRED FOR -->
+        <section id="capabilities">
+            <div class="section-header">
                 <h2>Capabilities</h2>
-                <span class="subhead">A focused set of services designed to get you live, credible, and converting.</span>
-                <div class="grid">
-                    <div class="card">
-                        <h3><span class="motif">→</span> Website Design & Deployment</h3>
-                        <p>Clean, fast, production-ready websites built to go live.</p>
-                    </div>
-                    <div class="card">
-                        <h3><span class="motif">→</span> Brand & Visual Identity</h3>
-                        <p>Logos, typography, and visual systems that stay consistent.</p>
-                    </div>
-                    <div class="card">
-                        <h3><span class="motif">→</span> AI-Assisted Content & Automation</h3>
-                        <p>AI is a tool, not a strategy. If it doesn’t improve clarity or speed, it’s not used.</p>
-                    </div>
-                    <div class="card">
-                        <h3><span class="motif">→</span> Conversion & UX Optimization</h3>
-                        <p>Design decisions tied directly to user behavior and outcomes.</p>
-                    </div>
+            </div>
+            <div class="section-content">
+                <ul class="capabilities-list">
+                    <li>Short-form & long-form video for social platforms</li>
+                    <li>Content strategy built around attention and pacing</li>
+                    <li>Website design & deployment (not mockups)</li>
+                    <li>Brand visuals that translate across platforms</li>
+                    <li>AI-assisted workflows used selectively and responsibly</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CLIENT WORK -->
+        <section id="client-work">
+            <div class="section-header">
+                <h2>Client Work</h2>
+            </div>
+            <div class="section-content">
+                <div class="project-block">
+                    <span class="label">Production Release</span>
+                    <h3>spox.live</h3>
+                    <p>Website & brand execution focused on clarity, speed, and credibility.</p>
+                </div>
+                <div class="project-block">
+                    <span class="label">Production Release</span>
+                    <h3>sigasiga.online</h3>
+                    <p>Brand-led website launch under real-world constraints.</p>
+                </div>
+                <div class="project-block">
+                    <span class="label">Social Production</span>
+                    <h3>Trustona Media</h3>
+                    <p>Content creation for social platforms with focus on engagement and pacing.</p>
                 </div>
             </div>
         </section>
 
-        <!-- HOW PROJECTS WORK -->
+        <!-- SECTION 4: EXPLORATORY & CONCEPT -->
+        <section id="concepts">
+            <div class="section-header">
+                <h2>Exploratory</h2>
+            </div>
+            <div class="section-content">
+                <div>
+                    <p style="margin-bottom: 2rem; color: var(--muted); font-style: italic;">Not all work starts with a brief. These projects explore visual storytelling, content formats, and creative direction.</p>
+                </div>
+                <div class="project-block">
+                    <span class="label">Concept / Spec Work</span>
+                    <h3>Coffee Brand Content (Sora AI)</h3>
+                    <p>Short-form video concepts exploring mood, pacing, and brand storytelling for local coffee brands. Created to demonstrate creative direction using AI-assisted workflows.</p>
+                </div>
+                <div class="project-block">
+                    <span class="label">Concept / Performance</span>
+                    <h3>YouTube Thumbnail Design</h3>
+                    <p>Thumbnail design focused on attention capture and visual hierarchy. Developed through iterative testing of framing and typography.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: EXPERIENCE -->
+        <section id="experience">
+            <div class="section-header">
+                <h2>Experience</h2>
+            </div>
+            <div class="section-content">
+                <div class="experience-block">
+                    <div class="experience-meta">
+                        <h3>mvtjdesigns</h3>
+                        <span class="date-range">2025–Present</span>
+                    </div>
+                    <p>Independent digital studio delivering websites, content, and brand assets.</p>
+                </div>
+                <div class="experience-block">
+                    <div class="experience-meta">
+                        <h3>Trustona Media</h3>
+                        <span class="label">Content Lead</span>
+                    </div>
+                    <p>Social media content creation and platform-native video production.</p>
+                </div>
+                <div class="experience-block">
+                    <div class="experience-meta">
+                        <h3>Southern Stone Communications</h3>
+                        <span class="label">Director</span>
+                    </div>
+                    <p>Led digital content and marketing strategy for multi-channel campaigns.</p>
+                </div>
+                <div class="experience-block">
+                    <div class="experience-meta">
+                        <h3>United States Marine Corps</h3>
+                        <span class="date-range">2010–2020</span>
+                    </div>
+                    <p>Leadership, execution, and accountability under high-pressure environments.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: HOW I WORK -->
         <section id="method">
-            <div class="container">
-                <h2>How Projects Work</h2>
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-num">01</div>
-                        <div>
-                            <h3>Define the scope</h3>
-                            <p>We align quickly on what needs to be built, what matters, and what doesn’t.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-num">02</div>
-                        <div>
-                            <h3>Design with restraint</h3>
-                            <p>Every decision serves clarity, usability, and the end goal — not trends.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-num">03</div>
-                        <div>
-                            <h3>Build and launch</h3>
-                            <p>The site is deployed, tested, and live. No handoff chaos.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-num">04</div>
-                        <div>
-                            <h3>Done</h3>
-                            <p>You get a clean, working result you can actually use.</p>
-                        </div>
-                    </div>
+            <div class="section-header">
+                <h2>Methodology</h2>
+            </div>
+            <div class="section-content">
+                <div class="method-step">
+                    <span class="step-num">01</span>
+                    <h3>Define Scope</h3>
                 </div>
-                <p style="font-weight: 700; color: var(--ink); margin-top: 40px; border-left: 3px solid var(--ink); padding-left: 24px;">
-                    If something doesn’t serve the outcome, it doesn’t ship.
+                <div class="method-step">
+                    <span class="step-num">02</span>
+                    <h3>Design with Restraint</h3>
+                </div>
+                <div class="method-step">
+                    <span class="step-num">03</span>
+                    <h3>Build and Launch</h3>
+                </div>
+                <div class="method-step">
+                    <span class="step-num">04</span>
+                    <h3>Avoid Complexity</h3>
+                </div>
+                <p style="font-weight: 700; color: var(--ink); border-left: 2px solid var(--ink); padding-left: 1.5rem; margin-top: 1rem;">
+                    If it doesn’t serve the outcome, it doesn’t ship.
                 </p>
             </div>
         </section>
 
-        <!-- SELECTED WORK -->
-        <section id="work">
-            <div class="container">
-                <h2>Selected Work</h2>
-                <div class="work-grid">
-                    <a href="https://spox.live" target="_blank" rel="noopener noreferrer" class="work-card">
-                        <span class="work-type">Website + Deployment</span>
-                        <h3>spox.live</h3>
-                        <p>A modern web presence designed for clarity, speed, and credibility. Built to communicate value quickly and guide users toward action.</p>
-                        <span style="font-weight: 700;">Visit Website →</span>
-                    </a>
-
-                    <a href="https://sigasiga.online" target="_blank" rel="noopener noreferrer" class="work-card">
-                        <span class="work-type">Brand Execution + Web</span>
-                        <h3>sigasiga.online</h3>
-                        <p>Brand-driven website execution under real-world constraints. Focused on simplicity, usability, and fast deployment.</p>
-                        <span style="font-weight: 700;">Visit Website →</span>
-                    </a>
+        <!-- SECTION 7: CONTACT -->
+        <section id="contact" style="border-bottom: none;">
+            <div class="section-header">
+                <h2>Action</h2>
+            </div>
+            <div class="section-content">
+                <h3>Ready to execute?</h3>
+                <p>Let’s discuss the project and define a clear path to deployment.</p>
+                <div class="action-group">
+                    <a href="#" class="btn btn-primary">Book a Call</a>
+                    <a href="#" class="btn btn-secondary">Download Resume</a>
                 </div>
+                <footer>
+                    Based in Limassol, Cyprus. &copy; 2026 mvtjdesigns.
+                </footer>
             </div>
         </section>
 
-        <!-- HOW I WORK & ABOUT -->
-        <section id="about">
-            <div class="container grid">
-                <div>
-                    <h2 style="font-size: 1.75rem; margin-bottom: 24px;">How I Work</h2>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 12px; font-weight: 600;"><span class="motif">→</span> Clear scope</li>
-                        <li style="margin-bottom: 12px; font-weight: 600;"><span class="motif">→</span> Direct collaboration</li>
-                        <li style="margin-bottom: 12px; font-weight: 600;"><span class="motif">→</span> Practical tools</li>
-                        <li style="margin-bottom: 12px; font-weight: 600;"><span class="motif">→</span> Built to launch</li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 style="font-size: 1.75rem; margin-bottom: 24px;">About</h2>
-                    <p>mvtjdesigns is led by hands-on execution. Every project is designed, built, and delivered with accountability from start to finish.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT / FINAL CTA -->
-        <section id="book" style="border-bottom: none;">
-            <div class="container">
-                <h2>Have a project in mind?</h2>
-                <p>Let’s build something that launches cleanly and works as intended.</p>
-                
-                <div class="contact-links">
-                    <a href="https://calendly.com/max-tijerino" target="_blank" rel="noopener noreferrer" class="contact-link-item">Book a Intro Call →</a>
-                    <a href="mailto:hello@mvtjdesigns.com" class="contact-link-item">Send an Email →</a>
-                </div>
-                
-                <p style="font-size: 0.875rem; color: var(--slate); margin-top: 48px; font-weight: 500;">
-                    Typically reply within 1–2 business days. Projects are scoped simply and shipped fast.
-                </p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
-                <div>&copy; 2026 mvtjdesigns. Built to launch.</div>
-                <div style="display: flex; gap: 32px;">
-                    <a href="mailto:hello@mvtjdesigns.com" class="nav-link">Email</a>
-                    <a href="https://calendly.com/max-tijerino" target="_blank" rel="noopener noreferrer" class="nav-link">Calendly</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </div>
 
 </body>
 </html>
