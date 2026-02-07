@@ -1,503 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Max Tijerino | Digital Execution Profile</title>
-    <meta name="description" content="Digital Marketing & Content. Execution-first. Platform-aware. Outcome-driven.">
-    <style>
-        :root {
-            --bg: #fafafa;
-            --ink: #111111;
-            --slate: #525252;
-            --muted: #a3a3a3;
-            --border: #e5e5e5;
-            --accent: #737373;
-            --max-width: 1000px;
-            --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --section-spacing: 8rem;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>MVTJ Designs | 7-Day Website & Landing Page Sprints</title>
+  <meta name="description" content="Website Rescue, AI Landing Pages, and Design Retainers. Fast delivery. Clear scope. Based in Limassol, Cyprus." />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-        html {
-            scroll-behavior: smooth;
-        }
+  <style>
+    :root {
+      --bg: #fafafa;
+      --ink: #111111;
+      --slate: #525252;
+      --muted: #a3a3a3;
+      --border: #e5e5e5;
+      --card: #ffffff;
+      --shadow: 0 12px 28px rgba(0,0,0,.06);
+      --max-width: 1040px;
+      --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --section-spacing: 7rem;
+      --radius: 10px;
+    }
 
-        body {
-            font-family: var(--font-main);
-            background-color: var(--bg);
-            color: var(--ink);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            padding-bottom: 4rem;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-main);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 4rem;
+    }
+    a { color: inherit; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
 
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+    /* Sticky Nav */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(180%) blur(10px);
+      background: rgba(250,250,250,.85);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: .85rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      text-decoration: none;
+    }
+    .brand strong { font-size: .95rem; font-weight: 900; letter-spacing: -.02em; }
+    .brand span { font-size: .7rem; color: var(--muted); font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav a {
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 800;
+      color: var(--slate);
+      padding: .45rem .75rem;
+      border-radius: 999px;
+      transition: all .2s ease;
+    }
+    .nav a:hover { color: var(--ink); background: rgba(0,0,0,.03); }
 
-        /* Unified Layout System */
-        section {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 2rem;
-            padding: var(--section-spacing) 0;
-            border-bottom: 1px solid var(--border);
-        }
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1.25rem;
+      height: 2.85rem;
+      font-size: .85rem;
+      font-weight: 900;
+      text-decoration: none;
+      border-radius: 999px;
+      transition: all .2s ease;
+      letter-spacing: -.01em;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--ink); color: var(--bg); }
+    .btn-primary:hover { background: #333; transform: translateY(-1px); }
+    .btn-secondary { border: 1px solid var(--border); color: var(--ink); background: transparent; }
+    .btn-secondary:hover { border-color: var(--ink); }
 
-        .section-header h2 {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--muted);
-            font-weight: 700;
-            position: sticky;
-            top: 2rem;
-        }
+    /* Sections */
+    section {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+      padding: var(--section-spacing) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-header h2 {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      color: var(--muted);
+      font-weight: 900;
+      position: sticky;
+      top: 5.5rem;
+    }
+    .section-content { display: flex; flex-direction: column; gap: 3rem; }
 
-        .section-content {
-            display: flex;
-            flex-direction: column;
-            gap: 4rem;
-        }
+    /* Typography */
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: -.05em;
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      margin-bottom: .5rem;
+    }
+    p { font-size: 1.05rem; color: var(--slate); max-width: 60ch; }
+    .subline { font-size: 1.25rem; font-weight: 700; color: var(--slate); margin-bottom: 1.5rem; }
+    .label {
+      font-size: .65rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      color: var(--muted);
+      display: block;
+      margin-bottom: .5rem;
+    }
 
-        /* Typography */
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -0.05em;
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
+    /* Cards */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card .meta {
+      margin-top: 1rem;
+      font-size: .75rem;
+      font-weight: 900;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .price {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--ink);
+    }
 
-        h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-        }
+    /* Lists */
+    ul { list-style: none; }
+    .feature-list li {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: .75rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
 
-        .subline {
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: var(--slate);
-            margin-bottom: 1.5rem;
-        }
+    /* Steps */
+    .step {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num { font-weight: 900; color: var(--muted); font-size: 1.1rem; }
 
-        p {
-            font-size: 1.05rem;
-            color: var(--slate);
-            max-width: 55ch;
-        }
+    .divider-quote {
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--ink);
+      border-left: 4px solid var(--ink);
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+      max-width: 50ch;
+      letter-spacing: -.03em;
+    }
 
-        .label {
-            font-size: 0.65rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--muted);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
+    footer {
+      padding-top: 3rem;
+      font-size: .75rem;
+      font-weight: 900;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
 
-        .project-meta {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 1rem;
-            display: block;
-        }
-
-        .watch-link {
-            display: inline-block;
-            margin-top: 1rem;
-            font-size: 0.875rem;
-            font-weight: 700;
-            color: var(--ink);
-            text-decoration: none;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 2px;
-            transition: border-color 0.2s;
-        }
-
-        .watch-link:hover {
-            border-color: var(--ink);
-        }
-
-        /* Lists */
-        ul {
-            list-style: none;
-        }
-
-        .capabilities-list li {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--ink);
-            margin-bottom: 0.75rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .capabilities-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--muted);
-        }
-
-        /* Experience Blocks */
-        .experience-block {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .experience-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.25rem;
-        }
-
-        .date-range {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--muted);
-        }
-
-        /* Video Utility */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
-            margin-top: 1.5rem;
-            border-radius: 2px;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Methodology */
-        .method-step {
-            display: grid;
-            grid-template-columns: 2rem 1fr;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .step-num {
-            font-weight: 800;
-            color: var(--muted);
-        }
-
-        /* CTAs */
-        .action-group {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 1.5rem;
-            height: 3rem;
-            font-size: 0.875rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 2px;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background: var(--ink);
-            color: var(--bg);
-        }
-
-        .btn-primary:hover {
-            background: #333;
-        }
-
-        .btn-secondary {
-            border: 1px solid var(--border);
-            color: var(--ink);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--ink);
-        }
-
-        footer {
-            padding-top: 4rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        @media (max-width: 850px) {
-            section {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 4rem 0;
-            }
-
-            .section-header h2 {
-                position: static;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+    @media (max-width: 950px) {
+      section { grid-template-columns: 1fr; padding: 4rem 0; }
+      .section-header h2 { position: static; margin-bottom: 1rem; }
+      h1 { font-size: 2.75rem; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .topbar-inner { padding: .75rem 1.25rem; }
+    }
+  </style>
 </head>
+
 <body>
-
-    <div class="container">
-        
-        <!-- SECTION 1: IDENTITY -->
-        <section id="identity" style="border-top: none;">
-            <div class="section-header">
-                <h2>Profile</h2>
-            </div>
-            <div class="section-content">
-                <div>
-                    <h1>Max Tijerino</h1>
-                    <div class="subline">Execution-first. Platform-aware. Outcome-driven.</div>
-                    <p>I design, produce, and ship content and digital assets that perform in the real world. Based in Limassol, Cyprus.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 2: WHAT I’M HIRED FOR -->
-        <section id="capabilities">
-            <div class="section-header">
-                <h2>Capabilities</h2>
-            </div>
-            <div class="section-content">
-                <ul class="capabilities-list">
-                    <li>Short-form & long-form video for social platforms</li>
-                    <li>Content strategy built around attention and pacing</li>
-                    <li>Website design & deployment (not mockups)</li>
-                    <li>Brand visuals that translate across platforms</li>
-                    <li>AI-assisted workflows used selectively and responsibly</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- SECTION 3: CLIENT WORK -->
-        <section id="client-work">
-            <div class="section-header">
-                <h2>Client Work</h2>
-            </div>
-            <div class="section-content">
-                <div class="project-block">
-                    <span class="label">Production Release</span>
-                    <h3>spox.live</h3>
-                    <p>Website & brand execution focused on clarity, speed, and credibility.</p>
-                </div>
-                <div class="project-block">
-                    <span class="label">Production Release</span>
-                    <h3>sigasiga.online</h3>
-                    <p>Brand-led website launch under real-world constraints.</p>
-                </div>
-                <div class="project-block">
-                    <span class="label">Social Production</span>
-                    <h3>Trustona Media</h3>
-                    <p>Content creation for social platforms with focus on engagement and pacing.</p>
-                </div>
-
-                <!-- Long-Form Content Block -->
-                <div class="project-block">
-                    <span class="label">Video Production</span>
-                    <h3>Long-Form Content — Technology & Reviews</h3>
-                    <p style="margin-bottom: 1.5rem;">Long-form video content designed to educate, compare, and guide purchasing decisions. Structured for clarity, pacing, and viewer retention, with on-camera presentation and editorial control.</p>
-                    
-                    <div style="border-top: 1px solid var(--border); padding-top: 1.5rem;">
-                        <span class="label" style="opacity: 0.6;">Featured Example</span>
-                        <h3>Cloud Storage Comparison Video</h3>
-                        <p>In-depth comparison video covering multiple cloud storage platforms, structured around performance, features, security, and pricing. Produced and presented for a content-driven media platform, with emphasis on clarity, narrative flow, and audience trust.</p>
-                        <span class="project-meta">
-                            On-camera presentation &bull; Long-form structure & pacing &bull; Content marketing & reviews
-                        </span>
-                        <div class="video-container">
-                            <iframe 
-                                src="https://www.youtube-nocookie.com/embed/1Tgt1mFjatA?rel=0&modestbranding=1" 
-                                title="Cloud Storage Comparison Video"
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        <a href="https://www.youtube.com/watch?v=1Tgt1mFjatA" target="_blank" class="watch-link">Watch video &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: EXPLORATORY & CONCEPT -->
-        <section id="concepts">
-            <div class="section-header">
-                <h2>Exploratory</h2>
-            </div>
-            <div class="section-content">
-                <div>
-                    <p style="margin-bottom: 1rem; color: var(--muted); font-style: italic;">Not all work starts with a brief. These projects explore visual storytelling, content formats, and creative direction.</p>
-                </div>
-
-                <!-- Concept 1: Primary Craft -->
-                <div class="project-block">
-                    <span class="label">Concept Series (Spec)</span>
-                    <h3>Coffee Brand Content — Blender</h3>
-                    <p>Short-form intro concept exploring brand mood, place-based storytelling, and visual hooks for social content. Designed and animated in Blender, with selective AI-assisted refinement, to test attention and brand recall.</p>
-                    <span class="project-meta">
-                        Visual concept & direction &bull; 3D animation (Blender) &bull; AI-assisted refinement
-                    </span>
-                    <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube-nocookie.com/embed/r8IRBSBNsfY?rel=0&modestbranding=1" 
-                            title="Coffee Brand Content - Blender Animation"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-
-                <!-- Concept 2: Narrative Exploration -->
-                <div class="project-block">
-                    <span class="label">Concept Commercial (Spec)</span>
-                    <h3>Coffee Brand Narrative — Sora AI</h3>
-                    <p>Short-form narrative concept exploring emotional contrast, urban noise, and calm as a brand signal. Developed using AI-assisted video generation to test pacing, mood, and story-driven attention for social platforms.</p>
-                    <span class="project-meta">
-                        Narrative concept & direction &bull; Mood and pacing exploration &bull; AI-assisted generation (Sora)
-                    </span>
-                    <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube-nocookie.com/embed/wlBoVkpyGiM?rel=0&modestbranding=1" 
-                            title="Coffee Brand Narrative - Sora AI Exploration"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=wlBoVkpyGiM" target="_blank" class="watch-link">Watch concept &rarr;</a>
-                </div>
-
-                <!-- Concept 3: Static / UX -->
-                <div class="project-block">
-                    <span class="label">Concept / Performance</span>
-                    <h3>YouTube Thumbnail Design</h3>
-                    <p>Thumbnail design focused on attention capture and visual hierarchy. Developed through iterative testing of framing and typography.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 5: EXPERIENCE -->
-        <section id="experience">
-            <div class="section-header">
-                <h2>Experience</h2>
-            </div>
-            <div class="section-content">
-                <div class="experience-block">
-                    <div class="experience-meta">
-                        <h3>mvtjdesigns</h3>
-                        <span class="date-range">2025–Present</span>
-                    </div>
-                    <p>Independent digital studio delivering websites, content, and brand assets.</p>
-                </div>
-                <div class="experience-block">
-                    <div class="experience-meta">
-                        <h3>Trustona Media</h3>
-                        <span class="label">Content Lead</span>
-                    </div>
-                    <p>Social media content creation and platform-native video production.</p>
-                </div>
-                <div class="experience-block">
-                    <div class="experience-meta">
-                        <h3>Southern Stone Communications</h3>
-                        <span class="label">Director</span>
-                    </div>
-                    <p>Led digital content and marketing strategy for multi-channel campaigns.</p>
-                </div>
-                <div class="experience-block">
-                    <div class="experience-meta">
-                        <h3>United States Marine Corps</h3>
-                        <span class="date-range">2010–2020</span>
-                    </div>
-                    <p>Leadership, execution, and accountability under high-pressure environments.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 6: HOW I WORK -->
-        <section id="method">
-            <div class="section-header">
-                <h2>Methodology</h2>
-            </div>
-            <div class="section-content">
-                <div class="method-step">
-                    <span class="step-num">01</span>
-                    <h3>Define Scope</h3>
-                </div>
-                <div class="method-step">
-                    <span class="step-num">02</span>
-                    <h3>Design with Restraint</h3>
-                </div>
-                <div class="method-step">
-                    <span class="step-num">03</span>
-                    <h3>Build and Launch</h3>
-                </div>
-                <div class="method-step">
-                    <span class="step-num">04</span>
-                    <h3>Avoid Complexity</h3>
-                </div>
-                <p style="font-weight: 700; color: var(--ink); border-left: 2px solid var(--ink); padding-left: 1.5rem; margin-top: 1rem;">
-                    If it doesn’t serve the outcome, it doesn’t ship.
-                </p>
-            </div>
-        </section>
-
-        <!-- SECTION 7: CONTACT -->
-        <section id="contact" style="border-bottom: none;">
-            <div class="section-header">
-                <h2>Action</h2>
-            </div>
-            <div class="section-content">
-                <h3>Ready to execute?</h3>
-                <p>Let’s discuss the project and define a clear path to deployment.</p>
-                <div class="action-group">
-                    <a href="#" class="btn btn-primary">Book a Call</a>
-                    <a href="#" class="btn btn-secondary">Download Resume</a>
-                </div>
-                <footer>
-                    Based in Limassol, Cyprus. &copy; 2026 mvtjdesigns.
-                </footer>
-            </div>
-        </section>
-
+  <!-- Nav -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">
+        <strong>MVTJ DESIGNS</strong>
+        <span>7-Day Sprints</span>
+      </a>
+      <div class="nav">
+        <a href="#offers">Packages</a>
+        <a href="#proof">Proof</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank">Book a Call</a>
+      </div>
     </div>
+  </div>
 
+  <div class="container">
+    <!-- 1. HERO -->
+    <section id="top" style="border-top:none;">
+      <div class="section-header">
+        <h2>Now</h2>
+      </div>
+      <div class="section-content">
+        <div>
+          <span class="label">For Founders & Marketing Teams</span>
+          <h1>Websites that look credible and convert — built in 7 days.</h1>
+          <p class="subline">Clear scope. Fast delivery. No endless revisions.</p>
+          <p>
+            I build high-performance landing pages and fix existing websites for businesses that value speed and outcomes over flashy agency jargon.
+            Based in Limassol, Cyprus — working globally.
+          </p>
+          <p style="margin-top: 1rem; font-weight: 700; color: var(--ink);">
+            Currently working with local businesses in Limassol.
+          </p>
+          <div style="display:flex; gap:.75rem; margin-top:2rem; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank">Book a Call</a>
+            <a class="btn btn-secondary" href="#offers">View Packages</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PACKAGES -->
+    <section id="offers">
+      <div class="section-header">
+        <h2>Packages</h2>
+      </div>
+      <div class="section-content">
+        <div class="grid-2">
+          <div class="card">
+            <div>
+              <span class="label">Most Popular</span>
+              <h3>Website Rescue</h3>
+              <p>For slow, outdated, or low-trust sites that need credibility and conversion fixes now.</p>
+              <div class="price">€750 – €1,200</div>
+            </div>
+            <div class="meta">5–7 Days • Fixed Scope</div>
+          </div>
+
+          <div class="card">
+            <div>
+              <span class="label">Launch Ready</span>
+              <h3>Landing Page Sprint</h3>
+              <p>One high-conversion page built for a specific offer, ad campaign, or product launch.</p>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem; font-weight: 600; color: var(--slate);">Ideal for small local businesses and service providers.</p>
+              <div class="price">€500 – €900</div>
+            </div>
+            <div class="meta">72 Hours • Goal Focused</div>
+          </div>
+
+          <div class="card">
+            <div>
+              <span class="label">Ongoing Velocity</span>
+              <h3>Design Retainer</h3>
+              <p>On-call design + web execution for teams that need speed without hiring full-time.</p>
+              <div class="price">€600 – €1,500 /mo</div>
+            </div>
+            <div class="meta">Priority Queue • Async</div>
+          </div>
+
+          <div class="card">
+            <div>
+              <span class="label">Selective Upgrades</span>
+              <h3>Add-Ons</h3>
+              <p>Brand refresh, custom UI systems, or Web3 credibility passes for token/DEX pages.</p>
+              <div class="price">Custom Scope</div>
+            </div>
+            <div class="meta">Based on Complexity</div>
+          </div>
+        </div>
+        <p class="divider-quote">
+          If it doesn’t serve the outcome, it doesn’t ship.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. WHAT YOU GET -->
+    <section id="deliverables">
+      <div class="section-header">
+        <h2>Deliverables</h2>
+      </div>
+      <div class="section-content">
+        <div>
+          <h3>Every project includes:</h3>
+          <ul class="feature-list" style="margin-top: 1.5rem;">
+            <li>Conversion-focused copy included as part of the build</li>
+            <li>Credibility-first layout: trust signals, hierarchy, and clarity</li>
+            <li>Mobile-first fixes that stop “looks bad on phone” issues</li>
+            <li>Real deployment: live site shipped, not just a Figma link</li>
+            <li>Performance pass: speed and SEO basics handled</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PROOF -->
+    <section id="proof">
+      <div class="section-header">
+        <h2>Proof</h2>
+      </div>
+      <div class="section-content">
+        <div class="grid-2">
+          <div class="card">
+            <div>
+              <span class="label">Web Build</span>
+              <h3>spox.live</h3>
+              <p>Visual system and frontend execution for a dynamic crypto-native platform.</p>
+            </div>
+            <div style="margin-top:1.5rem;">
+              <a class="btn btn-secondary" href="https://spox.live" target="_blank">View Site &rarr;</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <span class="label">Landing Page</span>
+              <h3>sigasiga.online</h3>
+              <p>Brand-led launch focused on mobile trust and fast engagement.</p>
+            </div>
+            <div style="margin-top:1.5rem;">
+              <a class="btn btn-secondary" href="https://sigasiga.online" target="_blank">View Site &rarr;</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <span class="label">Upcoming Redesign</span>
+              <h3>Bee Hostel</h3>
+              <p>Conversion-first overhaul for a local Limassol hospitality business.</p>
+            </div>
+            <div class="meta">Redesign in Progress</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PROCESS -->
+    <section id="process">
+      <div class="section-header">
+        <h2>Process</h2>
+      </div>
+      <div class="section-content">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div>
+            <h3>Scope & Goal</h3>
+            <p>We define one target: leads, bookings, or sales. No fluff allowed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div>
+            <h3>Design for Trust</h3>
+            <p>I build the layout and write the copy that removes friction and builds credibility.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div>
+            <h3>Build & Ship</h3>
+            <p>I handle the technical deployment. Your site goes live on your domain.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">04</span>
+          <div>
+            <h3>Polish & Launch</h3>
+            <p>Mobile check, speed optimization, and final handoff.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. RESUME (Low Emphasis) -->
+    <section id="resume">
+      <div class="section-header">
+        <h2>Resume</h2>
+      </div>
+      <div class="section-content">
+        <div style="border-left: 2px solid var(--border); padding-left: 1.5rem;">
+          <h3>Max Tijerino</h3>
+          <p style="margin-bottom: 1rem;">Digital execution across web, brand, and content. Based in Limassol, Cyprus.</p>
+          <div style="font-size: .85rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em;">
+            Experience
+          </div>
+          <p style="margin-top:.5rem;">
+            <strong>MVTJ Designs</strong> — Independent Studio (Present)<br/>
+            <strong>Trustona Media</strong> — Content Lead<br/>
+            <strong>Southern Stone Communications</strong> — Director<br/>
+            <strong>United States Marine Corps</strong> — 2010–2020 (Leadership & Execution)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FINAL CTA -->
+    <section id="contact" style="border-bottom:none;">
+      <div class="section-header">
+        <h2>Action</h2>
+      </div>
+      <div class="section-content">
+        <div class="card" style="padding: 3rem 2rem; text-align: center; align-items: center;">
+          <span class="label">Next Step</span>
+          <h2 style="font-size: 2.5rem; letter-spacing: -.04em; margin-bottom: 1rem;">Book a call and we’ll scope it in 15 minutes.</h2>
+          <p style="margin: 0 auto 2rem;">If it’s a fit, you’ll get a clear plan, fixed price, and delivery window — same day.</p>
+          
+          <div style="display:flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
+              <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" style="height: 3.5rem; padding: 0 2rem; font-size: 1rem;">Book a Call</a>
+              <a class="btn btn-secondary" href="https://wa.me/35794338222" target="_blank" style="height: 3.5rem; padding: 0 2rem; font-size: 1rem;">WhatsApp Message</a>
+            </div>
+            <p class="fine" style="margin-top: 1rem;">Prefer WhatsApp? Message me directly at <strong>+357 94 338 222</strong></p>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <a class="btn btn-secondary" href="#top" style="height: 2.5rem; padding: 0 1.5rem; font-size: 0.8rem;">Back to Top</a>
+          </div>
+        </div>
+        <footer>
+          Limassol, Cyprus &bull; Available globally &bull; &copy; 2026 MVTJ DESIGNS
+        </footer>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
