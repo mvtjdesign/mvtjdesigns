@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <title>MVTJ Designs | 7-Day Website & Landing Page Sprints</title>
-  <meta name="description" content="Website Rescue, AI Landing Pages, and Design Retainers. Fast delivery. Clear scope. Based in Limassol, Cyprus." />
+  <title>Max Tijerino | Brand, Content & Systems</title>
+  <meta name="description" content="Brand, content, and systems built with discipline, storytelling, and execution. Former U.S. Marine and SAG-AFTRA eligible actor based in Limassol, Cyprus." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -223,6 +223,30 @@
       letter-spacing: .12em;
     }
 
+    /* Video */
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: #000;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     @media (max-width: 950px) {
       section { grid-template-columns: 1fr; padding: 4rem 0; }
       .section-header h2 { position: static; margin-bottom: 1rem; }
@@ -238,229 +262,224 @@
   <div class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="#top">
-        <strong>MVTJ DESIGNS</strong>
-        <span>7-Day Sprints</span>
+        <strong>MAX TIJERINO</strong>
+        <span>Brand • Content • Systems</span>
       </a>
       <div class="nav">
-        <a href="#offers">Packages</a>
-        <a href="#proof">Proof</a>
-        <a href="#process">Process</a>
+        <a href="#case-studies">Work</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-        <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank">Book a Call</a>
+        <a class="btn btn-primary" href="#contact">Get in Touch</a>
       </div>
     </div>
   </div>
 
   <div class="container">
-    <!-- 1. HERO -->
+    <!-- HERO -->
     <section id="top" style="border-top:none;">
       <div class="section-header">
         <h2>Now</h2>
       </div>
       <div class="section-content">
         <div>
-          <span class="label">For Founders & Marketing Teams</span>
-          <h1>Websites that look credible and convert — built in 7 days.</h1>
-          <p class="subline">Clear scope. Fast delivery. No endless revisions.</p>
-          <p>
-            I build high-performance landing pages and fix existing websites for businesses that value speed and outcomes over flashy agency jargon.
-            Based in Limassol, Cyprus — working globally.
+          <span class="label">Brand • Content • Systems</span>
+          <h1>I build brands, systems, and content that create clarity and momentum.</h1>
+          <p class="subline">
+            High-impact content creation, brand strategy, and UX architecture — executed with discipline and precision.
           </p>
-          <p style="margin-top: 1rem; font-weight: 700; color: var(--ink);">
-            Currently working with local businesses in Limassol.
+          <p>
+            Former U.S. Marine. SAG-AFTRA eligible actor. Full-stack content creator based in Limassol, Cyprus — working globally.
           </p>
           <div style="display:flex; gap:.75rem; margin-top:2rem; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank">Book a Call</a>
-            <a class="btn btn-secondary" href="#offers">View Packages</a>
+            <a class="btn btn-primary" href="#case-studies">View Work</a>
+            <a class="btn btn-secondary" href="#about">About Me</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. PACKAGES -->
-    <section id="offers">
+    <!-- CASE STUDIES -->
+    <section id="case-studies">
       <div class="section-header">
-        <h2>Packages</h2>
+        <h2>Work</h2>
       </div>
       <div class="section-content">
+        <div>
+          <h3 style="font-size: 2rem; letter-spacing: -.03em; margin-bottom: .5rem;">
+            Selected Case Studies
+          </h3>
+          <p class="subline" style="max-width: 60ch;">
+            Real projects. Real constraints. Real outcomes. Each one built with clarity, storytelling, and disciplined execution.
+          </p>
+        </div>
+
         <div class="grid-2">
-          <div class="card">
-            <div>
-              <span class="label">Most Popular</span>
-              <h3>Website Rescue</h3>
-              <p>For slow, outdated, or low-trust sites that need credibility and conversion fixes now.</p>
-              <div class="price">€750 – €1,200</div>
+          <!-- Cloudwards -->
+          <div class="card" id="cloudwards" style="padding: 2.25rem;">
+            <span class="label">Interview Series • Full-Stack Production</span>
+            <h3 style="font-size: 1.75rem; margin-bottom: .75rem;">Cloudwards</h3>
+            <p>
+              A complete interview system: hosting, directing, shooting, editing, pacing, and publishing.
+              Built to create trust, rhythm, and narrative flow across multiple episodes.
+            </p>
+            <div style="margin-top: 1.75rem;">
+              <div class="video-grid">
+                <div class="video-wrapper">
+                  <iframe src="https://www.youtube.com/embed/1Tgt1mFjatA" allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper">
+                  <iframe src="https://www.youtube.com/embed/8WcEclCmEoA" allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper">
+                  <iframe src="https://www.youtube.com/embed/WR7QMddGat0" allowfullscreen></iframe>
+                </div>
+              </div>
             </div>
-            <div class="meta">5–7 Days • Fixed Scope</div>
           </div>
 
-          <div class="card">
-            <div>
-              <span class="label">Launch Ready</span>
-              <h3>Landing Page Sprint</h3>
-              <p>One high-conversion page built for a specific offer, ad campaign, or product launch.</p>
-              <p style="font-size: 0.9rem; margin-top: 0.5rem; font-weight: 600; color: var(--slate);">Ideal for small local businesses and service providers.</p>
-              <div class="price">€500 – €900</div>
-            </div>
-            <div class="meta">72 Hours • Goal Focused</div>
+          <!-- BeeHostel -->
+          <div class="card" id="beehostel" style="padding: 2.25rem;">
+            <span class="label">Digital Experience • UX + Content</span>
+            <h3 style="font-size: 1.75rem; margin-bottom: .75rem;">BeeHostel</h3>
+            <p>
+              A credibility-first redesign for a Limassol hospitality brand.
+              Multilingual UX, Google Maps deep-linking, and a mobile-led content system.
+            </p>
+            <div class="meta" style="margin-top: 1.5rem;">Redesign in Progress</div>
           </div>
 
-          <div class="card">
-            <div>
-              <span class="label">Ongoing Velocity</span>
-              <h3>Design Retainer</h3>
-              <p>On-call design + web execution for teams that need speed without hiring full-time.</p>
-              <div class="price">€600 – €1,500 /mo</div>
-            </div>
-            <div class="meta">Priority Queue • Async</div>
+          <!-- Solidity-LB -->
+          <div class="card" id="solidity" style="padding: 2.25rem;">
+            <span class="label">Brand Identity • Web Execution</span>
+            <h3 style="font-size: 1.75rem; margin-bottom: .75rem;">Solidity-LB</h3>
+            <p>
+              A credibility-driven website for a Cyprus accounting firm.
+              Clear messaging, structured hierarchy, and a trust-first layout.
+            </p>
           </div>
 
-          <div class="card">
-            <div>
-              <span class="label">Selective Upgrades</span>
-              <h3>Add-Ons</h3>
-              <p>Brand refresh, custom UI systems, or Web3 credibility passes for token/DEX pages.</p>
-              <div class="price">Custom Scope</div>
-            </div>
-            <div class="meta">Based on Complexity</div>
+          <!-- The Mountain Path -->
+          <div class="card" id="mountainpath" style="padding: 2.25rem;">
+            <span class="label">Brand Story • Content System</span>
+            <h3 style="font-size: 1.75rem; margin-bottom: .75rem;">The Mountain Path</h3>
+            <p>
+              A men’s development brand built from identity: pillars, scripts, UX, and a full content pipeline.
+            </p>
           </div>
         </div>
+
         <p class="divider-quote">
-          If it doesn’t serve the outcome, it doesn’t ship.
+          Every project is a story — built with clarity, discipline, and presence.
         </p>
       </div>
     </section>
 
-    <!-- 3. WHAT YOU GET -->
-    <section id="deliverables">
+    <!-- ABOUT -->
+    <section id="about">
       <div class="section-header">
-        <h2>Deliverables</h2>
-      </div>
-      <div class="section-content">
-        <div>
-          <h3>Every project includes:</h3>
-          <ul class="feature-list" style="margin-top: 1.5rem;">
-            <li>Conversion-focused copy included as part of the build</li>
-            <li>Credibility-first layout: trust signals, hierarchy, and clarity</li>
-            <li>Mobile-first fixes that stop “looks bad on phone” issues</li>
-            <li>Real deployment: live site shipped, not just a Figma link</li>
-            <li>Performance pass: speed and SEO basics handled</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. PROOF -->
-    <section id="proof">
-      <div class="section-header">
-        <h2>Proof</h2>
-      </div>
-      <div class="section-content">
-        <div class="grid-2">
-          <div class="card">
-            <div>
-              <span class="label">Web Build</span>
-              <h3>spox.live</h3>
-              <p>Visual system and frontend execution for a dynamic crypto-native platform.</p>
-            </div>
-            <div style="margin-top:1.5rem;">
-              <a class="btn btn-secondary" href="https://spox.live" target="_blank">View Site &rarr;</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <div>
-              <span class="label">Landing Page</span>
-              <h3>sigasiga.online</h3>
-              <p>Brand-led launch focused on mobile trust and fast engagement.</p>
-            </div>
-            <div style="margin-top:1.5rem;">
-              <a class="btn btn-secondary" href="https://sigasiga.online" target="_blank">View Site &rarr;</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <div>
-              <span class="label">Upcoming Redesign</span>
-              <h3>Bee Hostel</h3>
-              <p>Conversion-first overhaul for a local Limassol hospitality business.</p>
-            </div>
-            <div class="meta">Redesign in Progress</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. PROCESS -->
-    <section id="process">
-      <div class="section-header">
-        <h2>Process</h2>
-      </div>
-      <div class="section-content">
-        <div class="step">
-          <span class="step-num">01</span>
-          <div>
-            <h3>Scope & Goal</h3>
-            <p>We define one target: leads, bookings, or sales. No fluff allowed.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">02</span>
-          <div>
-            <h3>Design for Trust</h3>
-            <p>I build the layout and write the copy that removes friction and builds credibility.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">03</span>
-          <div>
-            <h3>Build & Ship</h3>
-            <p>I handle the technical deployment. Your site goes live on your domain.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">04</span>
-          <div>
-            <h3>Polish & Launch</h3>
-            <p>Mobile check, speed optimization, and final handoff.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. RESUME (Low Emphasis) -->
-    <section id="resume">
-      <div class="section-header">
-        <h2>Resume</h2>
+        <h2>About</h2>
       </div>
       <div class="section-content">
         <div style="border-left: 2px solid var(--border); padding-left: 1.5rem;">
-          <h3>Max Tijerino</h3>
-          <p style="margin-bottom: 1rem;">Digital execution across web, brand, and content. Based in Limassol, Cyprus.</p>
-          <div style="font-size: .85rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em;">
-            Experience
+          <span class="label">Identity</span>
+          <h3 style="font-size: 2rem; letter-spacing: -.03em; margin-bottom: .75rem;">Max Tijerino</h3>
+          <p style="margin-bottom: 1rem;">
+            Digital execution across brand, content, and systems.  
+            Former U.S. Marine, SAG-AFTRA eligible actor, and full-stack content creator based in Limassol, Cyprus.
+          </p>
+
+          <div style="font-size: .85rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .5rem;">
+            Background
           </div>
-          <p style="margin-top:.5rem;">
-            <strong>MVTJ Designs</strong> — Independent Studio (Present)<br/>
-            <strong>Trustona Media</strong> — Content Lead<br/>
-            <strong>Southern Stone Communications</strong> — Director<br/>
-            <strong>United States Marine Corps</strong> — 2010–2020 (Leadership & Execution)
+          <p style="margin-bottom: 1rem;">
+            Ten years in the United States Marine Corps (2010–2020), leading teams and executing under pressure.  
+            Transitioned into media, brand, and content — combining discipline with storytelling and presence.
+          </p>
+
+          <div style="font-size: .85rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .5rem;">
+            Acting & Screen Presence
+          </div>
+          <p style="margin-bottom: 1rem;">
+            SAG-AFTRA eligible actor with on-camera experience and narrative awareness.  
+            You can view my acting reel below.
+          </p>
+
+          <div class="video-wrapper" style="margin-top: 1.5rem;">
+            <iframe src="https://www.youtube.com/embed/MfiaVbeS9Q0" allowfullscreen></iframe>
+          </div>
+
+          <p style="margin-top: 1rem; font-size: .9rem;">
+            IMDb: <a href="https://www.imdb.com/name/nm5947252/" target="_blank" style="text-decoration: underline;">nm5947252</a>
           </p>
         </div>
       </div>
     </section>
 
-    <!-- 7. FINAL CTA -->
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-header">
+        <h2>Services</h2>
+      </div>
+      <div class="section-content">
+        <div>
+          <h3 style="font-size: 2rem; letter-spacing: -.03em; margin-bottom: .75rem;">What I Do</h3>
+          <p class="subline">
+            Brand, content, and systems — built with clarity, discipline, and execution.
+          </p>
+
+          <div class="grid-2" style="margin-top: 1.5rem;">
+            <div class="card">
+              <span class="label">Content Systems</span>
+              <h3>Interview & Content Pipelines</h3>
+              <p>
+                End-to-end content systems: interview formats, shooting, editing, publishing, and rhythm.
+                Ideal for brands that need consistent, high-trust content.
+              </p>
+            </div>
+
+            <div class="card">
+              <span class="label">Brand & Web</span>
+              <h3>Credibility-First Web Experiences</h3>
+              <p>
+                UX, structure, and content for brands that need clarity and trust.
+                From hospitality and services to professional firms.
+              </p>
+            </div>
+
+            <div class="card">
+              <span class="label">Identity</span>
+              <h3>Brand Story & Positioning</h3>
+              <p>
+                Narrative, pillars, and messaging for identity-driven brands — especially men’s development and outdoor-focused projects.
+              </p>
+            </div>
+
+            <div class="card">
+              <span class="label">On-Camera</span>
+              <h3>Hosting & Presence</h3>
+              <p>
+                On-camera hosting, interview moderation, and presence for brands that need a disciplined, grounded voice.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" style="border-bottom:none;">
       <div class="section-header">
-        <h2>Action</h2>
+        <h2>Contact</h2>
       </div>
       <div class="section-content">
         <div class="card" style="padding: 3rem 2rem; text-align: center; align-items: center;">
           <span class="label">Next Step</span>
-          <h2 style="font-size: 2.5rem; letter-spacing: -.04em; margin-bottom: 1rem;">Book a call and we’ll scope it in 15 minutes.</h2>
-          <p style="margin: 0 auto 2rem;">If it’s a fit, you’ll get a clear plan, fixed price, and delivery window — same day.</p>
-          
+          <h2 style="font-size: 2.5rem; letter-spacing: -.04em; margin-bottom: 1rem;">Let’s scope it in 15 minutes.</h2>
+          <p style="margin: 0 auto 2rem;">
+            If it’s a fit, you’ll get a clear plan, fixed scope, and delivery window — same day.
+          </p>
+
           <div style="display:flex; flex-direction: column; align-items: center; gap: 1rem;">
             <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
               <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" style="height: 3.5rem; padding: 0 2rem; font-size: 1rem;">Book a Call</a>
@@ -473,8 +492,9 @@
             <a class="btn btn-secondary" href="#top" style="height: 2.5rem; padding: 0 1.5rem; font-size: 0.8rem;">Back to Top</a>
           </div>
         </div>
+
         <footer>
-          Limassol, Cyprus &bull; Available globally &bull; &copy; 2026 MVTJ DESIGNS
+          Limassol, Cyprus &bull; Available globally &bull; &copy; 2026 MAX TIJERINO
         </footer>
       </div>
     </section>
