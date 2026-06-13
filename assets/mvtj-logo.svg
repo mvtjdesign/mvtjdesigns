@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-labelledby="title desc">
+  <title id="title">MVTJ Designs Logo</title>
+  <desc id="desc">MVTJ Designs logo with white MVTJ letters, a gold V accent, gold lines, and gold Designs text.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#d99b2b"/>
+      <stop offset="100%" stop-color="#c8a46a"/>
+    </linearGradient>
+  </defs>
+
+  <g font-family="Arial, Helvetica, sans-serif" text-rendering="geometricPrecision">
+    <text x="34" y="120"
+          fill="#ffffff"
+          font-size="116"
+          font-weight="700"
+          letter-spacing="30">MVTJ</text>
+
+    <path d="M305 136 L336 191 L367 136 Z" fill="url(#gold)"/>
+
+    <rect x="36" y="197" width="269" height="7" fill="url(#gold)"/>
+    <rect x="368" y="197" width="252" height="7" fill="url(#gold)"/>
+
+    <text x="63" y="267"
+          fill="url(#gold)"
+          font-size="48"
+          font-weight="500"
+          letter-spacing="24">DESIGNS</text>
+  </g>
+</svg>
