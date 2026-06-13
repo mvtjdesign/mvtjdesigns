@@ -4,500 +4,1312 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <title>Max Tijerino | Brand, Content & Systems</title>
-  <meta name="description" content="Brand, content, and systems built with discipline, storytelling, and execution. Former U.S. Marine and SAG-AFTRA eligible actor based in Limassol, Cyprus." />
+
+  <title>MVTJ Designs | Brand Strategy, Marketing Systems & Content Creation</title>
+  <meta name="description" content="MVTJ Designs is a Cyprus-based brand strategy, marketing systems, content creation, and events activation studio founded by U.S. Marine veteran Max Tijerino." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #fafafa;
-      --ink: #111111;
-      --slate: #525252;
-      --muted: #a3a3a3;
-      --border: #e5e5e5;
-      --card: #ffffff;
-      --shadow: 0 12px 28px rgba(0,0,0,.06);
-      --max-width: 1040px;
-      --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --section-spacing: 7rem;
-      --radius: 10px;
+      --navy: #071421;
+      --navy-2: #0b1d2e;
+      --black: #050607;
+      --charcoal: #111111;
+      --charcoal-2: #171717;
+      --gold: #c8a46a;
+      --gold-2: #d99b2b;
+      --white: #ffffff;
+      --muted: #a8acb3;
+      --line: rgba(200, 164, 106, 0.22);
+      --line-soft: rgba(255, 255, 255, 0.085);
+      --glass: rgba(255, 255, 255, 0.055);
+      --max: 1180px;
+      --font-main: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Oswald", "Inter", sans-serif;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--black);
+    }
+
     body {
       font-family: var(--font-main);
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
+      background:
+        radial-gradient(circle at top right, rgba(200, 164, 106, .13), transparent 34rem),
+        linear-gradient(180deg, #050607 0%, #0a0f13 38%, #050607 100%);
+      color: var(--white);
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
-      padding-bottom: 4rem;
+      overflow-x: hidden;
     }
-    a { color: inherit; }
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
 
-    /* Sticky Nav */
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: saturate(180%) blur(10px);
-      background: rgba(250,250,250,.85);
-      border-bottom: 1px solid var(--border);
-    }
-    .topbar-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: .85rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .brand {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
+    a {
+      color: inherit;
       text-decoration: none;
     }
-    .brand strong { font-size: .95rem; font-weight: 900; letter-spacing: -.02em; }
-    .brand span { font-size: .7rem; color: var(--muted); font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+
+    img {
+      max-width: 100%;
+      display: block;
     }
-    .nav a {
-      text-decoration: none;
-      font-size: .82rem;
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .eyebrow,
+    .section-kicker {
+      color: var(--gold-2);
+      font-size: .72rem;
       font-weight: 800;
-      color: var(--slate);
-      padding: .45rem .75rem;
-      border-radius: 999px;
-      transition: all .2s ease;
+      letter-spacing: .22em;
+      text-transform: uppercase;
     }
-    .nav a:hover { color: var(--ink); background: rgba(0,0,0,.03); }
 
-    /* Buttons */
+    .gold {
+      color: var(--gold-2);
+    }
+
+    .section {
+      border-top: 1px solid var(--line-soft);
+      padding: 72px 0;
+      position: relative;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: .045em;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 7vw, 6.9rem);
+      max-width: 790px;
+    }
+
+    h2 {
+      font-size: clamp(2.05rem, 4vw, 3.7rem);
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      letter-spacing: .07em;
+    }
+
+    p {
+      color: #c8ccd2;
+      font-size: .98rem;
+      max-width: 62ch;
+    }
+
+    .lead {
+      color: #eef0f2;
+      font-size: clamp(1.05rem, 1.55vw, 1.25rem);
+      max-width: 54ch;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0 1.25rem;
-      height: 2.85rem;
-      font-size: .85rem;
+      min-height: 48px;
+      padding: 0 26px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--white);
+      font-size: .78rem;
       font-weight: 900;
-      text-decoration: none;
-      border-radius: 999px;
-      transition: all .2s ease;
-      letter-spacing: -.01em;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: .25s ease;
+      cursor: pointer;
       white-space: nowrap;
     }
-    .btn-primary { background: var(--ink); color: var(--bg); }
-    .btn-primary:hover { background: #333; transform: translateY(-1px); }
-    .btn-secondary { border: 1px solid var(--border); color: var(--ink); background: transparent; }
-    .btn-secondary:hover { border-color: var(--ink); }
 
-    /* Sections */
-    section {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 2rem;
-      padding: var(--section-spacing) 0;
-      border-bottom: 1px solid var(--border);
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      color: #090909;
+      border-color: transparent;
+      box-shadow: 0 18px 40px rgba(217, 155, 43, .15);
     }
-    .section-header h2 {
-      font-size: .75rem;
-      text-transform: uppercase;
-      letter-spacing: .15em;
-      color: var(--muted);
-      font-weight: 900;
-      position: sticky;
-      top: 5.5rem;
-    }
-    .section-content { display: flex; flex-direction: column; gap: 3rem; }
 
-    /* Typography */
-    h1 {
-      font-size: 3.5rem;
-      font-weight: 900;
-      letter-spacing: -.05em;
-      line-height: 1;
-      margin-bottom: 1.25rem;
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(200, 164, 106, .8);
     }
-    h3 {
-      font-size: 1.25rem;
-      font-weight: 900;
-      letter-spacing: -.02em;
-      margin-bottom: .5rem;
+
+    .btn-primary:hover {
+      box-shadow: 0 22px 50px rgba(217, 155, 43, .25);
     }
-    p { font-size: 1.05rem; color: var(--slate); max-width: 60ch; }
-    .subline { font-size: 1.25rem; font-weight: 700; color: var(--slate); margin-bottom: 1.5rem; }
-    .label {
-      font-size: .65rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .10em;
-      color: var(--muted);
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 76px;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(180deg, rgba(5, 6, 7, .9), rgba(5, 6, 7, .58));
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+    }
+
+    .logo {
+      width: 132px;
+      color: var(--white);
+    }
+
+    .logo-mark {
       display: block;
-      margin-bottom: .5rem;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: .25em;
+      line-height: .85;
+      color: var(--white);
     }
 
-    /* Cards */
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      box-shadow: var(--shadow);
+    .logo-lines {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-    }
-    .card .meta {
-      margin-top: 1rem;
-      font-size: .75rem;
-      font-weight: 900;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-    .price {
-      margin-top: 1rem;
-      font-size: 1.25rem;
-      font-weight: 900;
-      color: var(--ink);
+      gap: 4px;
+      margin: 8px 0 5px;
     }
 
-    /* Lists */
-    ul { list-style: none; }
-    .feature-list li {
-      font-size: 1.05rem;
+    .logo-lines span {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-2), var(--gold));
+      display: block;
+    }
+
+    .logo-sub {
+      display: block;
+      font-size: .52rem;
+      letter-spacing: .55em;
+      color: var(--gold-2);
       font-weight: 800;
-      color: var(--ink);
-      margin-bottom: .75rem;
-      padding-left: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #eff2f5;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      opacity: .88;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-2);
+    }
+
+    .mobile-menu-note {
+      display: none;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 760px;
+      padding-top: 76px;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      background:
+        linear-gradient(90deg, rgba(5, 8, 11, 1) 0%, rgba(5, 8, 11, .94) 32%, rgba(5, 8, 11, .56) 61%, rgba(5, 8, 11, .1) 100%),
+        linear-gradient(180deg, rgba(5, 8, 11, .1), rgba(5, 8, 11, .88)),
+        url("assets/limassol-hero.png");
+      background-size: cover;
+      background-position: center right;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 73% 36%, rgba(217, 155, 43, .36), transparent 17rem),
+        linear-gradient(135deg, #06121d 0%, #050607 38%, #1b130b 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .31;
+      background-image:
+        linear-gradient(rgba(200, 164, 106, .12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 164, 106, .08) 1px, transparent 1px);
+      background-size: 90px 90px;
+      mask-image: radial-gradient(circle at 82% 20%, black, transparent 58%);
+    }
+
+    .topo {
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 46%;
+      height: 48%;
+      opacity: .25;
+      z-index: -1;
+      background:
+        repeating-radial-gradient(ellipse at 18% 8%, transparent 0 18px, rgba(200, 164, 106, .38) 20px, transparent 22px);
+      mask-image: linear-gradient(135deg, black 0%, transparent 78%);
+    }
+
+    .hero-inner {
+      min-height: calc(760px - 76px);
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: end;
+      gap: 32px;
+      padding-bottom: 0;
       position: relative;
     }
-    .feature-list li::before {
+
+    .hero-copy {
+      padding: 96px 0 70px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-copy h1 {
+      margin: 18px 0 16px;
+    }
+
+    .hero-copy .lead {
+      margin-bottom: 24px;
+    }
+
+    .hero-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 28px;
+      margin: 28px 0 24px;
+    }
+
+    .hero-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hero-tab svg {
+      width: 25px;
+      height: 25px;
+      color: var(--gold-2);
+      flex: 0 0 auto;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--gold-2);
+      font-size: .76rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 850;
+      margin: 27px 0 0;
+    }
+
+    .hero-meta span:not(:last-child)::after {
       content: "•";
+      margin-left: 12px;
+      color: var(--gold-2);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .hero-portrait-wrap {
+      align-self: end;
+      min-height: 620px;
+      position: relative;
+      pointer-events: none;
+    }
+
+    .hero-portrait {
       position: absolute;
-      left: 0;
-      color: var(--muted);
+      right: -52px;
+      bottom: 0;
+      width: min(470px, 46vw);
+      filter: grayscale(1) contrast(1.06);
+      opacity: .96;
     }
 
-    /* Steps */
-    .step {
+    .hero-portrait-wrap::before {
+      content: "";
+      position: absolute;
+      right: -64px;
+      bottom: 0;
+      width: min(510px, 49vw);
+      height: 75%;
+      background: radial-gradient(ellipse at center, rgba(5, 6, 7, .02), rgba(5, 6, 7, .62) 72%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .cyprus-mark {
+      position: absolute;
+      right: 22px;
+      top: 118px;
+      width: 180px;
+      color: var(--gold-2);
+      opacity: .95;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .cyprus-mark svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 0 14px rgba(217, 155, 43, .16));
+    }
+
+    .cyprus-mark span {
+      display: block;
+      margin-top: 8px;
+      font-size: .78rem;
+      letter-spacing: .2em;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .brand-strip {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      background: rgba(5, 6, 7, .68);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand-strip-inner {
+      min-height: 94px;
       display: grid;
-      grid-template-columns: 2.5rem 1fr;
-      gap: 1rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .step:last-child { border-bottom: none; }
-    .step-num { font-weight: 900; color: var(--muted); font-size: 1.1rem; }
-
-    .divider-quote {
-      font-weight: 900;
-      font-size: 1.5rem;
-      color: var(--ink);
-      border-left: 4px solid var(--ink);
-      padding-left: 1.5rem;
-      margin: 1rem 0;
-      max-width: 50ch;
-      letter-spacing: -.03em;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      align-items: center;
     }
 
-    footer {
-      padding-top: 3rem;
+    .strip-item {
+      display: grid;
+      grid-template-columns: 35px 1fr;
+      gap: 14px;
+      align-items: center;
+      min-height: 56px;
+      border-right: 1px solid rgba(255, 255, 255, .12);
+      padding-right: 18px;
+    }
+
+    .strip-item:last-child {
+      border-right: none;
+    }
+
+    .strip-item svg {
+      width: 34px;
+      height: 34px;
+      color: var(--gold-2);
+    }
+
+    .strip-item strong {
+      display: block;
+      color: var(--white);
       font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      line-height: 1.55;
+    }
+
+    /* Services */
+    .services-layout {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 48px;
+      align-items: stretch;
+    }
+
+    .side-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .side-copy h2 {
+      margin: 12px 0 22px;
+    }
+
+    .gold-line {
+      width: 72px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-2), transparent);
+      margin: 0 0 25px;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .cards-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      position: relative;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, .085), rgba(255, 255, 255, .025)),
+        linear-gradient(180deg, rgba(200, 164, 106, .055), transparent);
+      border: 1px solid rgba(255, 255, 255, .105);
+      padding: 34px 28px;
+      min-height: 255px;
+      overflow: hidden;
+      transition: .25s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(200, 164, 106, .14), transparent 36%);
+      opacity: 0;
+      transition: .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(200, 164, 106, .55);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-icon {
+      width: 43px;
+      height: 43px;
+      color: var(--gold-2);
+      margin-bottom: 28px;
+    }
+
+    .card h3 {
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      color: #bfc4cb;
+      font-size: .91rem;
+    }
+
+    .learn {
+      display: inline-flex;
+      gap: 11px;
+      align-items: center;
+      margin-top: 28px;
+      color: var(--gold-2);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
       font-weight: 900;
-      color: var(--muted);
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.55fr .85fr;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      background: rgba(255, 255, 255, .02);
+    }
+
+    .about-photo {
+      min-height: 360px;
+      background:
+        linear-gradient(180deg, rgba(5, 6, 7, .05), rgba(5, 6, 7, .9)),
+        url("assets/max-portrait.jpg");
+      background-size: cover;
+      background-position: center 19%;
+      filter: grayscale(1);
+    }
+
+    .about-copy {
+      padding: 58px 44px;
+      border-left: 1px solid rgba(255, 255, 255, .08);
+      border-right: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .about-copy h2 {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      margin: 12px 0 22px;
+    }
+
+    .about-copy p + p {
+      margin-top: 18px;
+    }
+
+    .signature {
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      color: var(--gold-2);
+      font-size: 2.4rem;
+      line-height: 1;
+      margin: 28px 0 8px;
+      opacity: .92;
+    }
+
+    .cred-box {
+      padding: 44px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .cred-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .cred-item svg {
+      width: 42px;
+      height: 42px;
+      color: var(--gold-2);
+    }
+
+    .cred-item strong {
+      display: block;
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      line-height: 1.55;
+    }
+
+    /* Process */
+    .process-grid {
+      display: grid;
+      grid-template-columns: 185px repeat(4, 1fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .process-title h2 {
+      margin-top: 12px;
+    }
+
+    .process-step {
+      position: relative;
+      padding-top: 4px;
+    }
+
+    .process-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -24px;
+      top: 43px;
+      width: 34px;
+      border-top: 1px dashed rgba(200, 164, 106, .55);
+    }
+
+    .step-num {
+      color: rgba(255, 255, 255, .1);
+      font-family: var(--font-display);
+      font-size: 3rem;
+      letter-spacing: .04em;
+      line-height: 1;
+      margin-bottom: -5px;
+    }
+
+    .process-step svg {
+      width: 42px;
+      height: 42px;
+      color: var(--gold-2);
+      margin-bottom: 18px;
+    }
+
+    .process-step h3 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .process-step p {
+      font-size: .86rem;
+      color: #b9bec5;
+    }
+
+    /* Work */
+    .work-grid {
+      display: grid;
+      grid-template-columns: 220px repeat(4, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .work-side {
+      padding: 4px 0;
+    }
+
+    .work-side h2 {
+      margin: 12px 0 20px;
+    }
+
+    .work-card {
+      background: rgba(255, 255, 255, .045);
+      border: 1px solid rgba(255, 255, 255, .10);
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      overflow: hidden;
+      position: relative;
+      transition: .25s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(200, 164, 106, .6);
+    }
+
+    .work-art {
+      position: absolute;
+      inset: 0;
+      opacity: .72;
+      background:
+        linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
+        radial-gradient(circle at 70% 20%, rgba(200, 164, 106, .46), transparent 9rem),
+        linear-gradient(135deg, #17202a, #0b0f13);
+    }
+
+    .work-card:nth-child(3) .work-art {
+      background:
+        linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
+        radial-gradient(circle at 45% 28%, rgba(217, 155, 43, .38), transparent 10rem),
+        linear-gradient(135deg, #2a2116, #0c1115);
+    }
+
+    .work-card:nth-child(4) .work-art {
+      background:
+        linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
+        radial-gradient(circle at 48% 18%, rgba(255, 255, 255, .28), transparent 8rem),
+        linear-gradient(135deg, #252525, #080b0d);
+    }
+
+    .work-card:nth-child(5) .work-art {
+      background:
+        linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
+        radial-gradient(circle at 60% 24%, rgba(200, 164, 106, .34), transparent 9rem),
+        linear-gradient(135deg, #261c12, #0a0a0a);
+    }
+
+    .work-card-content {
+      position: relative;
+      z-index: 1;
+      padding: 22px;
+    }
+
+    .work-card h3 {
+      font-size: .88rem;
+      margin-bottom: 6px;
+    }
+
+    .work-card p {
+      font-size: .74rem;
+      color: #c1c5c9;
+    }
+
+    /* Experience */
+    .experience {
+      background:
+        linear-gradient(180deg, rgba(5, 6, 7, .72), rgba(5, 6, 7, .92)),
+        url("assets/limassol-hero.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .experience-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .experience-list {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .experience-logo {
+      border: 1px solid rgba(255, 255, 255, .11);
+      background: rgba(255, 255, 255, .04);
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px;
+      color: rgba(255, 255, 255, .86);
+      font-family: var(--font-display);
       text-transform: uppercase;
       letter-spacing: .12em;
+      font-size: .82rem;
+      transition: .25s ease;
     }
 
-    /* Video */
-    .video-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      background: #000;
-    }
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .experience-logo:hover {
+      border-color: rgba(200, 164, 106, .58);
+      color: var(--gold-2);
+      transform: translateY(-3px);
     }
 
-    @media (max-width: 950px) {
-      section { grid-template-columns: 1fr; padding: 4rem 0; }
-      .section-header h2 { position: static; margin-bottom: 1rem; }
-      h1 { font-size: 2.75rem; }
-      .grid-2 { grid-template-columns: 1fr; }
-      .topbar-inner { padding: .75rem 1.25rem; }
+    .experience-note {
+      margin-top: 18px;
+      color: #aeb3ba;
+      font-size: .82rem;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 50px 0;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      background: linear-gradient(90deg, #060a0d, #0e151b, #060a0d);
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.65rem, 3vw, 2.55rem);
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding: 26px 0;
+      color: #aeb3ba;
+      font-size: .72rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    /* Decorative SVG Cyprus outline is intentionally abstract, not a map replacement. */
+    .cyprus-svg path {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 5;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    @media (max-width: 1050px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-note {
+        display: block;
+        color: var(--muted);
+        font-size: .72rem;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        align-items: start;
+        min-height: 760px;
+      }
+
+      .hero-copy {
+        padding-top: 78px;
+        padding-bottom: 280px;
+      }
+
+      .hero-portrait-wrap {
+        position: absolute;
+        right: -5vw;
+        bottom: 0;
+        width: 45vw;
+        min-height: 420px;
+        opacity: .72;
+      }
+
+      .hero-portrait {
+        width: 100%;
+      }
+
+      .cards-3,
+      .cards-4,
+      .experience-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-layout,
+      .about-grid,
+      .process-grid,
+      .work-grid,
+      .experience-row {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid {
+        gap: 18px;
+      }
+
+      .process-step:not(:last-child)::after {
+        display: none;
+      }
+
+      .about-photo {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 34px, var(--max));
+      }
+
+      .site-header,
+      .nav-inner {
+        height: 68px;
+      }
+
+      .logo {
+        width: 112px;
+      }
+
+      .logo-mark {
+        font-size: 1.65rem;
+      }
+
+      .hero {
+        padding-top: 68px;
+        min-height: 760px;
+        background-position: 63% center;
+      }
+
+      .hero-copy {
+        padding-top: 58px;
+        padding-bottom: 330px;
+      }
+
+      .hero-portrait-wrap {
+        width: 72vw;
+        right: -20vw;
+        opacity: .52;
+      }
+
+      .cyprus-mark {
+        width: 125px;
+        right: 15px;
+        top: 92px;
+      }
+
+      .brand-strip-inner,
+      .cards-3,
+      .cards-4,
+      .experience-list {
+        grid-template-columns: 1fr;
+      }
+
+      .strip-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, .11);
+        padding: 14px 0;
+      }
+
+      .strip-item:last-child {
+        border-bottom: none;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .about-copy,
+      .cred-box {
+        padding: 34px 24px;
+      }
+
+      .cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- Nav -->
-  <div class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="#top">
-        <strong>MAX TIJERINO</strong>
-        <span>Brand • Content • Systems</span>
+  <header class="site-header" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#top" class="logo" aria-label="MVTJ Designs home">
+        <span class="logo-mark">MVTJ</span>
+        <span class="logo-lines"><span></span><span></span></span>
+        <span class="logo-sub">Designs</span>
       </a>
-      <div class="nav">
-        <a href="#case-studies">Work</a>
-        <a href="#about">About</a>
+
+      <nav class="nav-links" aria-label="Site links">
+        <a href="#top">Home</a>
         <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        <a class="btn btn-primary" href="#contact">Get in Touch</a>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a class="btn btn-primary" href="#contact">Let’s Work Together</a>
+      </nav>
+
+      <div class="mobile-menu-note">MVTJ Designs</div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="topo" aria-hidden="true"></div>
+
+      <div class="cyprus-mark" aria-hidden="true">
+        <svg class="cyprus-svg" viewBox="0 0 300 150" role="img" aria-label="Cyprus outline">
+          <path d="M38 86 C63 70 81 74 95 62 C114 46 139 57 163 40 C185 25 206 28 224 22 C229 32 216 39 221 48 C236 48 258 55 270 62 C246 69 229 78 207 76 C190 75 173 82 158 93 C139 105 112 95 92 105 C73 114 54 100 38 86 Z" />
+        </svg>
+        <span>Cyprus</span>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">Strategic. Disciplined. Creative.</div>
+          <h1>Brand, Content <span class="gold">&</span> Systems</h1>
+          <p class="lead">Built with strategy. Executed with discipline. Designed to grow your business.</p>
+
+          <div class="hero-tabs" aria-label="Core services">
+            <div class="hero-tab">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.4 2.4 4.8-5"/></svg>
+              Brand Strategy
+            </div>
+            <div class="hero-tab">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+              Marketing Systems
+            </div>
+            <div class="hero-tab">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4V8z"/></svg>
+              Content Creation
+            </div>
+          </div>
+
+          <div class="hero-meta">
+            <span>U.S. Marine Veteran</span>
+            <span>Based in Cyprus</span>
+            <span>Working Globally</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Let’s Work Together</a>
+            <a class="btn" href="#work">View Work</a>
+          </div>
+        </div>
+
+        <div class="hero-portrait-wrap" aria-hidden="true">
+          <img class="hero-portrait" src="assets/max-portrait.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <div class="brand-strip">
+      <div class="container brand-strip-inner">
+        <div class="strip-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+          <strong>Strategic.<br />Disciplined.<br />Creative.</strong>
+        </div>
+        <div class="strip-item">
+          <svg class="cyprus-svg" viewBox="0 0 300 150"><path d="M38 86 C63 70 81 74 95 62 C114 46 139 57 163 40 C185 25 206 28 224 22 C229 32 216 39 221 48 C236 48 258 55 270 62 C246 69 229 78 207 76 C190 75 173 82 158 93 C139 105 112 95 92 105 C73 114 54 100 38 86 Z" /></svg>
+          <strong>Cyprus Based<br />Global Reach</strong>
+        </div>
+        <div class="strip-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M5 9h14M7 6h10M8 22h8"/><path d="M4 13c2 2 4 3 8 3s6-1 8-3"/></svg>
+          <strong>U.S. Marine Veteran<br />Leadership. Honor.</strong>
+        </div>
+        <div class="strip-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V5M4 19h16"/><path d="M8 16v-5M12 16V8M16 16v-9M20 16v-3"/></svg>
+          <strong>Brand Strategy<br />Marketing Systems<br />Content Creation</strong>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="container">
-    <!-- HERO -->
-    <section id="top" style="border-top:none;">
-      <div class="section-header">
-        <h2>Now</h2>
-      </div>
-      <div class="section-content">
-        <div>
-          <span class="label">Brand • Content • Systems</span>
-          <h1>I build brands, systems, and content that create clarity and momentum.</h1>
-          <p class="subline">
-            High-impact content creation, brand strategy, and UX architecture — executed with discipline and precision.
-          </p>
-          <p>
-            Former U.S. Marine. SAG-AFTRA eligible actor. Full-stack content creator based in Limassol, Cyprus — working globally.
-          </p>
-          <div style="display:flex; gap:.75rem; margin-top:2rem; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="#case-studies">View Work</a>
-            <a class="btn btn-secondary" href="#about">About Me</a>
+    <section class="section" id="services">
+      <div class="container services-layout">
+        <div class="side-copy">
+          <div class="section-kicker">What We Do</div>
+          <h2>Strategy That Drives Results</h2>
+          <div class="gold-line"></div>
+          <p>We help founder-led businesses build strong brands, automate marketing systems, activate real-world events, and create content that connects and converts.</p>
+          <div style="margin-top: 30px;">
+            <a class="btn btn-primary" href="#contact">View Services</a>
           </div>
+        </div>
+
+        <div class="cards-4">
+          <article class="card">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+            <h3>Brand Strategy</h3>
+            <p>Positioning, messaging, identity, offer architecture, and market differentiation that gives your business a clear voice and reason to choose you.</p>
+            <a href="#contact" class="learn">Learn More →</a>
+          </article>
+
+          <article class="card">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+            <h3>Marketing Systems</h3>
+            <p>Campaigns, lead flow, landing pages, CRM logic, event funnels, content calendars, and repeatable systems that support growth.</p>
+            <a href="#contact" class="learn">Learn More →</a>
+          </article>
+
+          <article class="card">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4V8z"/></svg>
+            <h3>Content Creation</h3>
+            <p>Video, photography, copywriting, social content, interview formats, and creative assets built to create trust and engagement.</p>
+            <a href="#contact" class="learn">Learn More →</a>
+          </article>
+
+          <article class="card">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><path d="M4 19V5M4 19h16"/><path d="M8 16v-5M12 16V8M16 16v-9M20 16v-3"/></svg>
+            <h3>Events Activation</h3>
+            <p>Launches, meetups, brand activations, on-site content capture, guest communication, vendor coordination, and post-event reporting.</p>
+            <a href="#contact" class="learn">Learn More →</a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- CASE STUDIES -->
-    <section id="case-studies">
-      <div class="section-header">
-        <h2>Work</h2>
-      </div>
-      <div class="section-content">
-        <div>
-          <h3 style="font-size: 2rem; letter-spacing: -.03em; margin-bottom: .5rem;">
-            Selected Case Studies
-          </h3>
-          <p class="subline" style="max-width: 60ch;">
-            Real projects. Real constraints. Real outcomes. Each one built with clarity, storytelling, and disciplined execution.
-          </p>
-        </div>
+    <section class="about-grid" id="about">
+      <div class="about-photo" aria-label="Portrait of Max Tijerino"></div>
 
-        <div class="grid-2">
-          <!-- Cloudwards -->
-          <div class="card" id="cloudwards" style="padding: 2.25rem;">
-            <span class="label">Interview Series • Full-Stack Production</span>
-            <h3 style="font-size: 1.75rem; margin-bottom: .75rem;">Cloudwards</h3>
-            <p>
-              A complete interview system: hosting, directing, shooting, editing, pacing, and publishing.
-              Built to create trust, rhythm, and narrative flow across multiple episodes.
-            </p>
-            <div style="margin-top: 1.75rem;">
-              <div class="video-grid">
-                <div class="video-wrapper">
-                  <iframe src="https://www.youtube.com/embed/1Tgt1mFjatA" allowfullscreen></iframe>
-                </div>
-                <div class="video-wrapper">
-                  <iframe src="https://www.youtube.com/embed/8WcEclCmEoA" allowfullscreen></iframe>
-                </div>
-                <div class="video-wrapper">
-                  <iframe src="https://www.youtube.com/embed/WR7QMddGat0" allowfullscreen></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- BeeHostel -->
-          <div class="card" id="beehostel" style="padding: 2.25rem;">
-            <span class="label">Digital Experience • UX + Content</span>
-            <h3 style="font-size: 1.75rem; margin-bottom: .75rem;">BeeHostel</h3>
-            <p>
-              A credibility-first redesign for a Limassol hospitality brand.
-              Multilingual UX, Google Maps deep-linking, and a mobile-led content system.
-            </p>
-            <div class="meta" style="margin-top: 1.5rem;">Redesign in Progress</div>
-          </div>
-
-          <!-- Solidity-LB -->
-          <div class="card" id="solidity" style="padding: 2.25rem;">
-            <span class="label">Brand Identity • Web Execution</span>
-            <h3 style="font-size: 1.75rem; margin-bottom: .75rem;">Solidity-LB</h3>
-            <p>
-              A credibility-driven website for a Cyprus accounting firm.
-              Clear messaging, structured hierarchy, and a trust-first layout.
-            </p>
-          </div>
-
-          <!-- The Mountain Path -->
-          <div class="card" id="mountainpath" style="padding: 2.25rem;">
-            <span class="label">Brand Story • Content System</span>
-            <h3 style="font-size: 1.75rem; margin-bottom: .75rem;">The Mountain Path</h3>
-            <p>
-              A men’s development brand built from identity: pillars, scripts, UX, and a full content pipeline.
-            </p>
-          </div>
-        </div>
-
-        <p class="divider-quote">
-          Every project is a story — built with clarity, discipline, and presence.
+      <div class="about-copy">
+        <div class="eyebrow">About MVTJ Designs</div>
+        <h2>Strategy. Discipline. Execution.</h2>
+        <p>
+          I’m Max Tijerino, a brand strategist, marketing director, content creator, and founder of MVTJ Designs. With a background in the U.S. Marine Corps, media, events, and digital marketing, I help businesses grow with clear messaging, disciplined systems, and content that builds trust.
         </p>
+        <p>
+          Based in Cyprus and working globally, MVTJ Designs is built for businesses that need more than random posts. The work is strategic, structured, and designed to support revenue, reputation, and long-term authority.
+        </p>
+        <div class="signature">Max</div>
+        <div class="eyebrow">U.S. Marine Veteran</div>
       </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-header">
-        <h2>About</h2>
-      </div>
-      <div class="section-content">
-        <div style="border-left: 2px solid var(--border); padding-left: 1.5rem;">
-          <span class="label">Identity</span>
-          <h3 style="font-size: 2rem; letter-spacing: -.03em; margin-bottom: .75rem;">Max Tijerino</h3>
-          <p style="margin-bottom: 1rem;">
-            Digital execution across brand, content, and systems.  
-            Former U.S. Marine, SAG-AFTRA eligible actor, and full-stack content creator based in Limassol, Cyprus.
-          </p>
-
-          <div style="font-size: .85rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .5rem;">
-            Background
-          </div>
-          <p style="margin-bottom: 1rem;">
-            Ten years in the United States Marine Corps (2010–2020), leading teams and executing under pressure.  
-            Transitioned into media, brand, and content — combining discipline with storytelling and presence.
-          </p>
-
-          <div style="font-size: .85rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .5rem;">
-            Acting & Screen Presence
-          </div>
-          <p style="margin-bottom: 1rem;">
-            SAG-AFTRA eligible actor with on-camera experience and narrative awareness.  
-            You can view my acting reel below.
-          </p>
-
-          <div class="video-wrapper" style="margin-top: 1.5rem;">
-            <iframe src="https://www.youtube.com/embed/MfiaVbeS9Q0" allowfullscreen></iframe>
-          </div>
-
-          <p style="margin-top: 1rem; font-size: .9rem;">
-            IMDb: <a href="https://www.imdb.com/name/nm5947252/" target="_blank" style="text-decoration: underline;">nm5947252</a>
-          </p>
+      <aside class="cred-box" aria-label="Credentials">
+        <div class="cred-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M5 9h14M7 6h10M8 22h8"/><path d="M4 13c2 2 4 3 8 3s6-1 8-3"/></svg>
+          <strong>U.S. Marine Veteran<br />Leadership. Honor. Commitment.</strong>
         </div>
+        <div class="cred-item">
+          <svg class="cyprus-svg" viewBox="0 0 300 150"><path d="M38 86 C63 70 81 74 95 62 C114 46 139 57 163 40 C185 25 206 28 224 22 C229 32 216 39 221 48 C236 48 258 55 270 62 C246 69 229 78 207 76 C190 75 173 82 158 93 C139 105 112 95 92 105 C73 114 54 100 38 86 Z" /></svg>
+          <strong>Based in Cyprus<br />Working Globally</strong>
+        </div>
+        <div class="cred-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+          <strong>Strategic.<br />Disciplined.<br />Creative.</strong>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container process-grid">
+        <div class="process-title">
+          <div class="section-kicker">Our Process</div>
+          <h2>A Proven Approach</h2>
+          <div class="gold-line" style="margin-top: 24px;"></div>
+        </div>
+
+        <article class="process-step">
+          <div class="step-num">01</div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="7"/><path d="M15.5 15.5L21 21"/></svg>
+          <h3>Discover</h3>
+          <p>We learn your business, audience, offers, goals, constraints, and current marketing gaps.</p>
+        </article>
+
+        <article class="process-step">
+          <div class="step-num">02</div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M22 12h-3M12 22v-3M2 12h3"/></svg>
+          <h3>Strategize</h3>
+          <p>We create the roadmap: positioning, content direction, campaign logic, and delivery plan.</p>
+        </article>
+
+        <article class="process-step">
+          <div class="step-num">03</div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2 4 4 .5-3 3 .7 4.2L12 12l-3.7 1.7L9 9.5l-3-3 4-.5 2-4z"/><path d="M4 22h16"/></svg>
+          <h3>Execute</h3>
+          <p>We build, publish, coordinate, shoot, write, design, and bring the system to life.</p>
+        </article>
+
+        <article class="process-step">
+          <div class="step-num">04</div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19V5M4 19h16"/><path d="M8 16v-5M12 16V8M16 16v-9M20 16v-3"/></svg>
+          <h3>Optimize</h3>
+          <p>We analyze, refine, and improve the system so the brand keeps compounding over time.</p>
+        </article>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services">
-      <div class="section-header">
-        <h2>Services</h2>
+    <section class="section" id="work">
+      <div class="container work-grid">
+        <div class="work-side">
+          <div class="section-kicker">Featured Work</div>
+          <h2>Results That Speak</h2>
+          <div class="gold-line"></div>
+          <a class="btn" href="#contact">Discuss a Project</a>
+        </div>
+
+        <article class="work-card">
+          <div class="work-art"></div>
+          <div class="work-card-content">
+            <h3>Cloudwards</h3>
+            <p>Interview series, production, hosting, and content system.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-art"></div>
+          <div class="work-card-content">
+            <h3>BeeHostel</h3>
+            <p>Hospitality marketing, web UX, multilingual content, and local experience design.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-art"></div>
+          <div class="work-card-content">
+            <h3>Solidity-LB</h3>
+            <p>Professional services website, credibility structure, and brand messaging.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-art"></div>
+          <div class="work-card-content">
+            <h3>The Mountain Path</h3>
+            <p>Brand identity, product direction, content system, and app concept.</p>
+          </div>
+        </article>
       </div>
-      <div class="section-content">
+    </section>
+
+    <section class="section experience" id="experience">
+      <div class="container experience-row">
         <div>
-          <h3 style="font-size: 2rem; letter-spacing: -.03em; margin-bottom: .75rem;">What I Do</h3>
-          <p class="subline">
-            Brand, content, and systems — built with clarity, discipline, and execution.
-          </p>
+          <div class="section-kicker">Experience & Projects</div>
+          <h2>Built Across Real Environments</h2>
+          <div class="gold-line" style="margin-top: 24px;"></div>
+        </div>
 
-          <div class="grid-2" style="margin-top: 1.5rem;">
-            <div class="card">
-              <span class="label">Content Systems</span>
-              <h3>Interview & Content Pipelines</h3>
-              <p>
-                End-to-end content systems: interview formats, shooting, editing, publishing, and rhythm.
-                Ideal for brands that need consistent, high-trust content.
-              </p>
-            </div>
-
-            <div class="card">
-              <span class="label">Brand & Web</span>
-              <h3>Credibility-First Web Experiences</h3>
-              <p>
-                UX, structure, and content for brands that need clarity and trust.
-                From hospitality and services to professional firms.
-              </p>
-            </div>
-
-            <div class="card">
-              <span class="label">Identity</span>
-              <h3>Brand Story & Positioning</h3>
-              <p>
-                Narrative, pillars, and messaging for identity-driven brands — especially men’s development and outdoor-focused projects.
-              </p>
-            </div>
-
-            <div class="card">
-              <span class="label">On-Camera</span>
-              <h3>Hosting & Presence</h3>
-              <p>
-                On-camera hosting, interview moderation, and presence for brands that need a disciplined, grounded voice.
-              </p>
-            </div>
+        <div>
+          <div class="experience-list" aria-label="Selected experience and projects">
+            <div class="experience-logo">Cloudwards</div>
+            <div class="experience-logo">BeeHostel</div>
+            <div class="experience-logo">Solidity-LB</div>
+            <div class="experience-logo">Southern Stone<br />Communications</div>
+            <div class="experience-logo">NCompass</div>
+            <div class="experience-logo">U.S. Marine<br />Corps</div>
           </div>
+          <p class="experience-note">
+            Listed as selected experience and project history — not as client endorsements or paid partnerships unless explicitly agreed.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" style="border-bottom:none;">
-      <div class="section-header">
-        <h2>Contact</h2>
-      </div>
-      <div class="section-content">
-        <div class="card" style="padding: 3rem 2rem; text-align: center; align-items: center;">
-          <span class="label">Next Step</span>
-          <h2 style="font-size: 2.5rem; letter-spacing: -.04em; margin-bottom: 1rem;">Let’s scope it in 15 minutes.</h2>
-          <p style="margin: 0 auto 2rem;">
-            If it’s a fit, you’ll get a clear plan, fixed scope, and delivery window — same day.
-          </p>
-
-          <div style="display:flex; flex-direction: column; align-items: center; gap: 1rem;">
-            <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
-              <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" style="height: 3.5rem; padding: 0 2rem; font-size: 1rem;">Book a Call</a>
-              <a class="btn btn-secondary" href="https://wa.me/35794338222" target="_blank" style="height: 3.5rem; padding: 0 2rem; font-size: 1rem;">WhatsApp Message</a>
-            </div>
-            <p class="fine" style="margin-top: 1rem;">Prefer WhatsApp? Message me directly at <strong>+357 94 338 222</strong></p>
-          </div>
-
-          <div style="margin-top: 2rem;">
-            <a class="btn btn-secondary" href="#top" style="height: 2.5rem; padding: 0 1.5rem; font-size: 0.8rem;">Back to Top</a>
-          </div>
+    <section class="cta" id="contact">
+      <div class="container cta-inner">
+        <div>
+          <div class="section-kicker">Ready to Grow Your Brand?</div>
+          <h2>Let’s build something strategic, powerful, and built to last.</h2>
+          <p>Book a short call or send a WhatsApp message. If it’s a fit, we’ll define the scope, timeline, and next steps.</p>
         </div>
 
-        <footer>
-          Limassol, Cyprus &bull; Available globally &bull; &copy; 2026 MAX TIJERINO
-        </footer>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener">Book a Call</a>
+          <a class="btn" href="https://wa.me/35794338222" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
       </div>
     </section>
-  </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 MVTJ Designs. Limassol, Cyprus. Working Globally.</div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
