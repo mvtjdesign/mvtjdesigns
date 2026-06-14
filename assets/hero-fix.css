@@ -30,7 +30,7 @@
   isolation: isolate !important;
   background:
     linear-gradient(90deg, rgba(3, 7, 10, 0.92) 0%, rgba(3, 7, 10, 0.68) 24%, rgba(3, 7, 10, 0.18) 45%, rgba(3, 7, 10, 0.06) 100%),
-    url("./mvtj-hero-composite.png?v=3") center center / cover no-repeat !important;
+    url("/assets/mvtj-hero-composite.png?v=10") center center / cover no-repeat !important;
 }
 
 .hero::before {
