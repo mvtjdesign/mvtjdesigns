@@ -184,3 +184,93 @@
     width: 102px !important;
   }
 }
+/* =========================================================
+   EXPERIENCE & PROJECTS SECTION FIX
+   ========================================================= */
+
+#experience.experience {
+  padding: clamp(78px, 9vw, 120px) 0 !important;
+  background:
+    radial-gradient(circle at 18% 32%, rgba(217, 155, 43, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(5, 6, 7, 0.92), rgba(5, 6, 7, 0.98)) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+#experience .experience-row {
+  display: grid !important;
+  grid-template-columns: minmax(320px, 0.72fr) minmax(0, 1.5fr) !important;
+  gap: clamp(48px, 5vw, 86px) !important;
+  align-items: center !important;
+}
+
+#experience .section-kicker {
+  margin-bottom: 14px !important;
+}
+
+#experience h2 {
+  max-width: 410px !important;
+  font-size: clamp(3.5rem, 5.1vw, 5.8rem) !important;
+  line-height: 0.9 !important;
+  letter-spacing: 0.02em !important;
+}
+
+#experience .gold-line {
+  margin-top: 28px !important;
+  width: 90px !important;
+}
+
+#experience .experience-list {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+
+#experience .experience-logo {
+  min-height: 108px !important;
+  padding: 18px !important;
+  background: rgba(255, 255, 255, 0.035) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  font-size: 0.84rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+#experience .experience-note {
+  max-width: 760px !important;
+  margin-top: 22px !important;
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  color: rgba(220, 225, 230, 0.78) !important;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  #experience .experience-row {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+  }
+
+  #experience h2 {
+    max-width: 720px !important;
+    font-size: clamp(3.2rem, 8vw, 5.4rem) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  #experience.experience {
+    padding: 70px 0 !important;
+  }
+
+  #experience .experience-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  #experience .experience-logo {
+    min-height: 88px !important;
+  }
+
+  #experience h2 {
+    font-size: clamp(3rem, 14vw, 4.6rem) !important;
+  }
+}
