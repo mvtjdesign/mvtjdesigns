@@ -1,0 +1,227 @@
+/* MVTJ Designs — safe external hero override
+   Upload this file to: assets/hero-fix.css
+   Then link it in index.html with:
+   <link rel="stylesheet" href="assets/hero-fix.css?v=1" />
+*/
+
+.site-header {
+  min-height: 92px;
+  background: linear-gradient(180deg, rgba(2, 4, 6, 0.98), rgba(2, 4, 6, 0.90)) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+  position: relative;
+  z-index: 50;
+}
+
+.nav-inner {
+  min-height: 92px;
+}
+
+.logo {
+  width: 190px !important;
+}
+
+.logo img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+.hero {
+  position: relative !important;
+  min-height: calc(100vh - 92px) !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  background:
+    linear-gradient(90deg, rgba(2, 6, 9, 0.98) 0%, rgba(2, 6, 9, 0.90) 36%, rgba(2, 6, 9, 0.48) 62%, rgba(2, 6, 9, 0.12) 100%),
+    radial-gradient(circle at 72% 40%, rgba(217, 155, 43, 0.28) 0%, rgba(217, 155, 43, 0.10) 28%, transparent 55%),
+    url("limassol-hero.png") center right / cover no-repeat !important;
+}
+
+.hero::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  opacity: 0.22 !important;
+  background:
+    radial-gradient(circle at 76% 42%, rgba(224, 159, 42, 0.34), transparent 26rem),
+    linear-gradient(135deg, rgba(4, 15, 24, 0.36), rgba(0,0,0,0.22)) !important;
+}
+
+.hero::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  opacity: 0.10 !important;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px) !important;
+  background-size: 115px 115px !important;
+}
+
+.hero-inner,
+.hero .container {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.hero-inner {
+  min-height: calc(100vh - 92px) !important;
+  align-items: end !important;
+}
+
+.hero-copy {
+  position: relative !important;
+  z-index: 4 !important;
+  max-width: 760px !important;
+  padding-top: clamp(95px, 12vh, 145px) !important;
+  padding-bottom: clamp(60px, 8vh, 95px) !important;
+}
+
+.hero-copy h1 {
+  font-size: clamp(4.7rem, 8.2vw, 9rem) !important;
+  line-height: 0.88 !important;
+  letter-spacing: 0.015em !important;
+  text-shadow: 0 16px 42px rgba(0,0,0,0.58) !important;
+}
+
+.hero-copy .lead {
+  max-width: 620px !important;
+  font-size: clamp(1.08rem, 1.45vw, 1.45rem) !important;
+  line-height: 1.55 !important;
+  color: rgba(255,255,255,0.92) !important;
+}
+
+.hero-tabs {
+  gap: 16px 34px !important;
+}
+
+.hero-meta {
+  margin-top: 34px !important;
+  color: var(--gold-2) !important;
+  text-shadow: 0 8px 24px rgba(0,0,0,0.5) !important;
+}
+
+.hero-actions {
+  margin-top: 34px !important;
+}
+
+.hero-portrait-wrap {
+  position: relative !important;
+  min-height: 670px !important;
+  overflow: visible !important;
+  z-index: 3 !important;
+}
+
+.hero-portrait-wrap::before {
+  content: "" !important;
+  position: absolute !important;
+  right: 5% !important;
+  top: 16% !important;
+  width: 80% !important;
+  height: 58% !important;
+  z-index: 1 !important;
+  border-radius: 50% !important;
+  background: radial-gradient(ellipse at center, rgba(217,155,43,0.28) 0%, rgba(217,155,43,0.12) 38%, transparent 72%) !important;
+  filter: blur(30px) !important;
+  opacity: 0.95 !important;
+}
+
+.hero-portrait-wrap::after {
+  content: "" !important;
+  position: absolute !important;
+  right: -90px !important;
+  bottom: 0 !important;
+  width: min(620px, 54vw) !important;
+  height: 42% !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+  background: linear-gradient(180deg, transparent 0%, rgba(2,4,5,0.76) 72%, rgba(2,4,5,0.96) 100%) !important;
+}
+
+.hero-portrait {
+  position: absolute !important;
+  right: -20px !important;
+  bottom: 0 !important;
+  width: min(520px, 39vw) !important;
+  max-height: 690px !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  z-index: 3 !important;
+  filter:
+    grayscale(1)
+    contrast(1.08)
+    brightness(1.05)
+    drop-shadow(0 32px 48px rgba(0,0,0,0.68)) !important;
+}
+
+.cyprus-mark {
+  top: 150px !important;
+  right: 52px !important;
+  width: 155px !important;
+  opacity: 0.95 !important;
+  z-index: 6 !important;
+}
+
+.cyprus-mark span {
+  color: var(--gold-2) !important;
+  font-size: 0.76rem !important;
+  letter-spacing: 0.2em !important;
+}
+
+@media (max-width: 980px) {
+  .site-header,
+  .nav-inner {
+    min-height: 78px !important;
+  }
+
+  .logo {
+    width: 145px !important;
+  }
+
+  .hero {
+    min-height: auto !important;
+    background:
+      linear-gradient(180deg, rgba(2,6,9,0.94) 0%, rgba(2,6,9,0.82) 56%, rgba(2,6,9,0.98) 100%),
+      radial-gradient(circle at 70% 40%, rgba(217,155,43,0.30), transparent 44%),
+      url("limassol-hero.png") center top / cover no-repeat !important;
+  }
+
+  .hero-inner {
+    min-height: auto !important;
+    display: block !important;
+  }
+
+  .hero-copy {
+    padding-top: 95px !important;
+    padding-bottom: 430px !important;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.4rem, 15vw, 6.2rem) !important;
+  }
+
+  .hero-portrait-wrap {
+    position: absolute !important;
+    right: 50% !important;
+    bottom: 0 !important;
+    transform: translateX(50%) !important;
+    width: min(78vw, 420px) !important;
+    min-height: 410px !important;
+  }
+
+  .hero-portrait {
+    right: 50% !important;
+    transform: translateX(50%) !important;
+    width: min(78vw, 420px) !important;
+  }
+
+  .cyprus-mark {
+    top: 98px !important;
+    right: 22px !important;
+    width: 112px !important;
+  }
+}
