@@ -151,7 +151,7 @@
     min-height: auto !important;
     background:
       linear-gradient(180deg, rgba(2, 6, 9, 0.78) 0%, rgba(2, 6, 9, 0.60) 45%, rgba(2, 6, 9, 0.88) 100%),
-      url("mvtj-hero-composite.png") 62% center / cover no-repeat !important;
+      url("./mvtj-hero-composite.png?v=3") 62% center / cover no-repeat !important;
   }
 
   .hero-inner {
