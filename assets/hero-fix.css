@@ -1,21 +1,15 @@
-/* =========================================================
-   MVTJ DESIGNS — HERO FIX FINAL
-   File: assets/hero-fix.css
-   Uses:
-   - assets/limassol-hero.png
-   - assets/max-portrait-cutout.png
-   ========================================================= */
+/* MVTJ Designs — Hero fix using one finished composite image */
 
 .site-header {
-  min-height: 92px !important;
+  min-height: 92px;
   background: linear-gradient(180deg, rgba(2, 4, 6, 0.98), rgba(2, 4, 6, 0.92)) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  position: relative !important;
-  z-index: 50 !important;
+  position: relative;
+  z-index: 50;
 }
 
 .nav-inner {
-  min-height: 92px !important;
+  min-height: 92px;
 }
 
 .logo {
@@ -28,32 +22,17 @@
   display: block !important;
 }
 
-/* HERO BACKGROUND */
+/* HERO SECTION */
 .hero {
   position: relative !important;
   min-height: calc(100vh - 92px) !important;
   overflow: hidden !important;
   isolation: isolate !important;
-
   background:
-    linear-gradient(
-      90deg,
-      rgba(2, 6, 9, 0.98) 0%,
-      rgba(2, 6, 9, 0.94) 30%,
-      rgba(2, 6, 9, 0.70) 50%,
-      rgba(2, 6, 9, 0.32) 72%,
-      rgba(2, 6, 9, 0.16) 100%
-    ),
-    radial-gradient(
-      circle at 74% 38%,
-      rgba(217, 155, 43, 0.26) 0%,
-      rgba(217, 155, 43, 0.10) 28%,
-      transparent 56%
-    ),
-    url("limassol-hero.png?v=8") 73% center / cover no-repeat !important;
+    linear-gradient(90deg, rgba(3, 7, 10, 0.92) 0%, rgba(3, 7, 10, 0.68) 24%, rgba(3, 7, 10, 0.18) 45%, rgba(3, 7, 10, 0.06) 100%),
+    url("mvtj-hero-composite.png") center center / cover no-repeat !important;
 }
 
-/* CINEMATIC GLOW */
 .hero::before {
   content: "" !important;
   position: absolute !important;
@@ -61,11 +40,10 @@
   z-index: 0 !important;
   pointer-events: none !important;
   background:
-    radial-gradient(circle at 76% 34%, rgba(224, 159, 42, 0.24), transparent 27rem),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.34)) !important;
+    linear-gradient(180deg, rgba(4, 8, 12, 0.08) 0%, rgba(4, 8, 12, 0.18) 100%),
+    radial-gradient(circle at 68% 34%, rgba(217, 155, 43, 0.16), transparent 32%) !important;
 }
 
-/* SUBTLE GRID */
 .hero::after {
   content: "" !important;
   position: absolute !important;
@@ -74,8 +52,8 @@
   pointer-events: none !important;
   opacity: 0.10 !important;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px) !important;
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px) !important;
   background-size: 115px 115px !important;
 }
 
@@ -87,20 +65,22 @@
 
 .hero-inner {
   min-height: calc(100vh - 92px) !important;
+  display: grid !important;
+  grid-template-columns: 1.05fr 0.95fr !important;
   align-items: end !important;
 }
 
-/* HERO TEXT */
+/* LEFT TEXT AREA */
 .hero-copy {
   position: relative !important;
-  z-index: 4 !important;
+  z-index: 5 !important;
   max-width: 760px !important;
-  padding-top: clamp(90px, 11vh, 135px) !important;
-  padding-bottom: clamp(55px, 8vh, 90px) !important;
+  padding-top: clamp(95px, 12vh, 145px) !important;
+  padding-bottom: clamp(60px, 8vh, 95px) !important;
 }
 
 .hero-copy h1 {
-  font-size: clamp(4.6rem, 8vw, 8.7rem) !important;
+  font-size: clamp(4.7rem, 8.2vw, 9rem) !important;
   line-height: 0.88 !important;
   letter-spacing: 0.015em !important;
   text-shadow: 0 16px 42px rgba(0, 0, 0, 0.58) !important;
@@ -108,7 +88,7 @@
 
 .hero-copy .lead {
   max-width: 620px !important;
-  font-size: clamp(1.08rem, 1.45vw, 1.42rem) !important;
+  font-size: clamp(1.08rem, 1.45vw, 1.45rem) !important;
   line-height: 1.55 !important;
   color: rgba(255, 255, 255, 0.92) !important;
 }
@@ -120,89 +100,34 @@
 .hero-meta {
   margin-top: 34px !important;
   color: var(--gold-2) !important;
-  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
 }
 
 .hero-actions {
   margin-top: 34px !important;
 }
 
-/* PORTRAIT AREA */
-.hero-portrait-wrap {
-  position: relative !important;
-  min-height: 690px !important;
-  overflow: visible !important;
-  z-index: 3 !important;
-}
-
-/* WARM GLOW BEHIND PORTRAIT */
-.hero-portrait-wrap::before {
-  content: "" !important;
-  position: absolute !important;
-  right: 9% !important;
-  top: 13% !important;
-  width: 76% !important;
-  height: 58% !important;
-  z-index: 1 !important;
-  border-radius: 50% !important;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(217, 155, 43, 0.24) 0%,
-    rgba(217, 155, 43, 0.10) 40%,
-    transparent 74%
-  ) !important;
-  filter: blur(30px) !important;
-  opacity: 0.90 !important;
-}
-
-/* BOTTOM FADE */
-.hero-portrait-wrap::after {
-  content: "" !important;
-  position: absolute !important;
-  right: -60px !important;
-  bottom: 0 !important;
-  width: min(650px, 55vw) !important;
-  height: 34% !important;
-  z-index: 4 !important;
-  pointer-events: none !important;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(2, 6, 9, 0.30) 50%,
-    rgba(2, 6, 9, 0.92) 100%
-  ) !important;
-}
-
-/* PORTRAIT IMAGE
-   Works with the white-background file:
-   assets/max-portrait-cutout.png
-*/
+/* HIDE OLD SEPARATE PORTRAIT AREA
+   because the new composite image already includes you */
+.hero-portrait-wrap,
 .hero-portrait {
-  position: absolute !important;
-  right: -20px !important;
-  bottom: 0 !important;
-  width: min(585px, 42vw) !important;
-  max-height: 735px !important;
-  object-fit: contain !important;
-  z-index: 3 !important;
-
-  mix-blend-mode: multiply !important;
-  background: transparent !important;
-  opacity: 1 !important;
-
-  filter:
-    grayscale(1)
-    contrast(1.18)
-    brightness(1.08) !important;
+  display: none !important;
 }
 
-/* CYPRUS MARK */
+/* Cyprus mark on the upper-right */
 .cyprus-mark {
-  top: 132px !important;
-  right: 52px !important;
-  width: 145px !important;
-  opacity: 0.92 !important;
+  top: 145px !important;
+  right: 48px !important;
+  width: 150px !important;
+  opacity: 0.98 !important;
   z-index: 6 !important;
+}
+
+.cyprus-mark svg,
+.cyprus-mark img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
 }
 
 .cyprus-mark span {
@@ -225,14 +150,8 @@
   .hero {
     min-height: auto !important;
     background:
-      linear-gradient(
-        180deg,
-        rgba(2, 6, 9, 0.94) 0%,
-        rgba(2, 6, 9, 0.82) 56%,
-        rgba(2, 6, 9, 0.98) 100%
-      ),
-      radial-gradient(circle at 70% 40%, rgba(217, 155, 43, 0.30), transparent 44%),
-      url("limassol-hero.png?v=8") center top / cover no-repeat !important;
+      linear-gradient(180deg, rgba(2, 6, 9, 0.78) 0%, rgba(2, 6, 9, 0.60) 45%, rgba(2, 6, 9, 0.88) 100%),
+      url("mvtj-hero-composite.png") 62% center / cover no-repeat !important;
   }
 
   .hero-inner {
@@ -241,32 +160,27 @@
   }
 
   .hero-copy {
-    padding-top: 95px !important;
-    padding-bottom: 430px !important;
+    max-width: 100% !important;
+    padding-top: 88px !important;
+    padding-bottom: 64px !important;
   }
 
   .hero-copy h1 {
-    font-size: clamp(3.4rem, 15vw, 6.2rem) !important;
+    font-size: clamp(3.3rem, 14vw, 6rem) !important;
+    line-height: 0.9 !important;
   }
 
-  .hero-portrait-wrap {
-    position: absolute !important;
-    right: 50% !important;
-    bottom: 0 !important;
-    transform: translateX(50%) !important;
-    width: min(78vw, 420px) !important;
-    min-height: 410px !important;
+  .hero-copy .lead {
+    font-size: 1.05rem !important;
   }
 
-  .hero-portrait {
-    right: 50% !important;
-    transform: translateX(50%) !important;
-    width: min(78vw, 420px) !important;
+  .hero-tabs {
+    gap: 14px 20px !important;
   }
 
   .cyprus-mark {
-    top: 98px !important;
+    top: 96px !important;
     right: 22px !important;
-    width: 112px !important;
+    width: 108px !important;
   }
 }
