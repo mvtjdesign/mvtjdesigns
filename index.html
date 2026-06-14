@@ -13,987 +13,209 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --navy: #071421;
-      --navy-2: #0b1d2e;
-      --black: #050607;
-      --charcoal: #111111;
-      --charcoal-2: #171717;
-      --gold: #c8a46a;
-      --gold-2: #d99b2b;
-      --white: #ffffff;
-      --muted: #a8acb3;
-      --line: rgba(200, 164, 106, 0.22);
-      --line-soft: rgba(255, 255, 255, 0.085);
-      --glass: rgba(255, 255, 255, 0.055);
-      --max: 1180px;
-      --font-main: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-display: "Oswald", "Inter", sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background: var(--black);
-    }
-
-    body {
-      font-family: var(--font-main);
-      background:
-        radial-gradient(circle at top right, rgba(200, 164, 106, .13), transparent 34rem),
-        linear-gradient(180deg, #050607 0%, #0a0f13 38%, #050607 100%);
-      color: var(--white);
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 48px));
-      margin-inline: auto;
-    }
-
-    .eyebrow,
-    .section-kicker {
-      color: var(--gold-2);
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-    }
-
-    .gold {
-      color: var(--gold-2);
-    }
-
-    .section {
-      border-top: 1px solid var(--line-soft);
-      padding: 72px 0;
-      position: relative;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: var(--font-display);
-      text-transform: uppercase;
-      letter-spacing: .045em;
-      line-height: 1;
-    }
-
-    h1 {
-      font-size: clamp(3.2rem, 7vw, 6.9rem);
-      max-width: 790px;
-    }
-
-    h2 {
-      font-size: clamp(2.05rem, 4vw, 3.7rem);
-    }
-
-    h3 {
-      font-size: 1.35rem;
-      letter-spacing: .07em;
-    }
-
-    p {
-      color: #c8ccd2;
-      font-size: .98rem;
-      max-width: 62ch;
-    }
-
-    .lead {
-      color: #eef0f2;
-      font-size: clamp(1.05rem, 1.55vw, 1.25rem);
-      max-width: 54ch;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 26px;
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--white);
-      font-size: .78rem;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      transition: .25s ease;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold-2), var(--gold));
-      color: #090909;
-      border-color: transparent;
-      box-shadow: 0 18px 40px rgba(217, 155, 43, .15);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      border-color: rgba(200, 164, 106, .8);
-    }
-
-    .btn-primary:hover {
-      box-shadow: 0 22px 50px rgba(217, 155, 43, .25);
-    }
-
-    /* Header */
-    .site-header {
-      position: fixed;
-      inset: 0 0 auto 0;
-      height: 76px;
-      z-index: 100;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(180deg, rgba(5, 6, 7, .9), rgba(5, 6, 7, .58));
-      border-bottom: 1px solid rgba(255, 255, 255, .08);
-    }
-
-    .nav-inner {
-      height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 26px;
-    }
-
-    .logo {
-      width: 168px;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .logo img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .nav-links a {
-      color: #eff2f5;
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      opacity: .88;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-2);
-    }
-
-    .mobile-menu-note {
-      display: none;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 760px;
-      padding-top: 76px;
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(255, 255, 255, .08);
-      background:
-        linear-gradient(90deg, rgba(5, 8, 11, 1) 0%, rgba(5, 8, 11, .94) 32%, rgba(5, 8, 11, .56) 61%, rgba(5, 8, 11, .1) 100%),
-        linear-gradient(180deg, rgba(5, 8, 11, .1), rgba(5, 8, 11, .88)),
-        url("assets/limassol-hero.png");
-      background-size: cover;
-      background-position: center right;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -3;
-      background:
-        radial-gradient(circle at 73% 36%, rgba(217, 155, 43, .36), transparent 17rem),
-        linear-gradient(135deg, #06121d 0%, #050607 38%, #1b130b 100%);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      opacity: .31;
-      background-image:
-        linear-gradient(rgba(200, 164, 106, .12) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200, 164, 106, .08) 1px, transparent 1px);
-      background-size: 90px 90px;
-      mask-image: radial-gradient(circle at 82% 20%, black, transparent 58%);
-    }
-
-    .topo {
-      position: absolute;
-      inset: 0 auto auto 0;
-      width: 46%;
-      height: 48%;
-      opacity: .25;
-      z-index: -1;
-      background:
-        repeating-radial-gradient(ellipse at 18% 8%, transparent 0 18px, rgba(200, 164, 106, .38) 20px, transparent 22px);
-      mask-image: linear-gradient(135deg, black 0%, transparent 78%);
-    }
-
-    .hero-inner {
-      min-height: calc(760px - 76px);
-      display: grid;
-      grid-template-columns: 1.02fr .98fr;
-      align-items: end;
-      gap: 32px;
-      padding-bottom: 0;
-      position: relative;
-    }
-
-    .hero-copy {
-      padding: 96px 0 70px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-copy h1 {
-      margin: 18px 0 16px;
-    }
-
-    .hero-copy .lead {
-      margin-bottom: 24px;
-    }
-
-    .hero-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px 28px;
-      margin: 28px 0 24px;
-    }
-
-    .hero-tab {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--white);
-      font-size: .78rem;
-      font-weight: 850;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .hero-tab svg {
-      width: 25px;
-      height: 25px;
-      color: var(--gold-2);
-      flex: 0 0 auto;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      color: var(--gold-2);
-      font-size: .76rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      font-weight: 850;
-      margin: 27px 0 0;
-    }
-
-    .hero-meta span:not(:last-child)::after {
-      content: "•";
-      margin-left: 12px;
-      color: var(--gold-2);
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 34px;
-    }
-
-    .hero-portrait-wrap {
-      align-self: end;
-      min-height: 620px;
-      position: relative;
-      pointer-events: none;
-    }
-
-    .hero-portrait-wrap::after {
-      content: "";
-      position: absolute;
-      right: -84px;
-      bottom: 0;
-      width: min(540px, 52vw);
-      height: 82%;
-      z-index: 1;
-      background: radial-gradient(ellipse at center, rgba(0, 0, 0, .12), rgba(0, 0, 0, .62) 72%);
-      filter: blur(18px);
-      pointer-events: none;
-    }
-
-    .hero-portrait {
-      position: absolute;
-      right: -34px;
-      bottom: 0;
-      width: min(445px, 42vw);
-      filter: grayscale(1) contrast(1.08) brightness(.92);
-      opacity: .985;
-      z-index: 3;
-      mix-blend-mode: normal;
-      pointer-events: none;
-    }
-
-    .cyprus-mark {
-      position: absolute;
-      right: 32px;
-      top: 132px;
-      width: 165px;
-      color: var(--gold-2);
-      opacity: .95;
-      z-index: 2;
-      text-align: center;
-    }
-
-    .cyprus-mark svg {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: drop-shadow(0 0 14px rgba(217, 155, 43, .16));
-    }
-
-    .cyprus-mark span {
-      display: block;
-      margin-top: 8px;
-      font-size: .78rem;
-      letter-spacing: .2em;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .brand-strip {
-      border-top: 1px solid rgba(255, 255, 255, .08);
-      background: rgba(5, 6, 7, .68);
-      backdrop-filter: blur(10px);
-    }
-
-    .brand-strip-inner {
-      min-height: 94px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-      align-items: center;
-    }
-
-    .strip-item {
-      display: grid;
-      grid-template-columns: 35px 1fr;
-      gap: 14px;
-      align-items: center;
-      min-height: 56px;
-      border-right: 1px solid rgba(255, 255, 255, .12);
-      padding-right: 18px;
-    }
-
-    .strip-item:last-child {
-      border-right: none;
-    }
-
-    .strip-item svg {
-      width: 34px;
-      height: 34px;
-      color: var(--gold-2);
-    }
-
-    .strip-item strong {
-      display: block;
-      color: var(--white);
-      font-size: .75rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      line-height: 1.55;
-    }
-
-    /* Services */
-    .services-layout {
-      display: grid;
-      grid-template-columns: 250px 1fr;
-      gap: 48px;
-      align-items: stretch;
-    }
-
-    .side-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .side-copy h2 {
-      margin: 12px 0 22px;
-    }
-
-    .gold-line {
-      width: 72px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold-2), transparent);
-      margin: 0 0 25px;
-    }
-
-    .cards-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .cards-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      position: relative;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, .085), rgba(255, 255, 255, .025)),
-        linear-gradient(180deg, rgba(200, 164, 106, .055), transparent);
-      border: 1px solid rgba(255, 255, 255, .105);
-      padding: 34px 28px;
-      min-height: 255px;
-      overflow: hidden;
-      transition: .25s ease;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(200, 164, 106, .14), transparent 36%);
-      opacity: 0;
-      transition: .25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(200, 164, 106, .55);
-    }
-
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    .card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card-icon {
-      width: 43px;
-      height: 43px;
-      color: var(--gold-2);
-      margin-bottom: 28px;
-    }
-
-    .card h3 {
-      margin-bottom: 18px;
-    }
-
-    .card p {
-      color: #bfc4cb;
-      font-size: .91rem;
-    }
-
-    .learn {
-      display: inline-flex;
-      gap: 11px;
-      align-items: center;
-      margin-top: 28px;
-      color: var(--gold-2);
-      font-size: .72rem;
-      text-transform: uppercase;
-      letter-spacing: .13em;
-      font-weight: 900;
-    }
-
-    /* About */
-    .about-grid {
-      display: grid;
-      grid-template-columns: .95fr 1.55fr .85fr;
-      border-top: 1px solid rgba(255, 255, 255, .08);
-      border-bottom: 1px solid rgba(255, 255, 255, .08);
-      background: rgba(255, 255, 255, .02);
-    }
-
-    .about-photo {
-      min-height: 360px;
-      background:
-        radial-gradient(circle at center, rgba(255,255,255,.18), transparent 48%),
-        linear-gradient(145deg, #2a2a2a, #050607 76%);
-      position: relative;
-      overflow: hidden;
-      filter: grayscale(1);
-    }
-
-    .about-photo::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(5, 6, 7, .02), rgba(5, 6, 7, .88)),
-        url("assets/max-portrait-cutout.png");
-      background-size: 88%;
-      background-repeat: no-repeat;
-      background-position: center bottom;
-    }
-
-    .about-copy {
-      padding: 58px 44px;
-      border-left: 1px solid rgba(255, 255, 255, .08);
-      border-right: 1px solid rgba(255, 255, 255, .08);
-    }
-
-    .about-copy h2 {
-      font-size: clamp(1.9rem, 3vw, 3rem);
-      margin: 12px 0 22px;
-    }
-
-    .about-copy p + p {
-      margin-top: 18px;
-    }
-
-    .signature {
-      font-family: "Brush Script MT", "Segoe Script", cursive;
-      color: var(--gold-2);
-      font-size: 2.4rem;
-      line-height: 1;
-      margin: 28px 0 8px;
-      opacity: .92;
-    }
-
-    .cred-box {
-      padding: 44px 34px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 24px;
-    }
-
-    .cred-item {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .cred-item svg {
-      width: 42px;
-      height: 42px;
-      color: var(--gold-2);
-    }
-
-    .cred-item strong {
-      display: block;
-      font-size: .76rem;
-      text-transform: uppercase;
-      letter-spacing: .11em;
-      line-height: 1.55;
-    }
-
-    /* Process */
-    .process-grid {
-      display: grid;
-      grid-template-columns: 185px repeat(4, 1fr);
-      gap: 34px;
-      align-items: start;
-    }
-
-    .process-title h2 {
-      margin-top: 12px;
-    }
-
-    .process-step {
-      position: relative;
-      padding-top: 4px;
-    }
-
-    .process-step:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      right: -24px;
-      top: 43px;
-      width: 34px;
-      border-top: 1px dashed rgba(200, 164, 106, .55);
-    }
-
-    .step-num {
-      color: rgba(255, 255, 255, .1);
-      font-family: var(--font-display);
-      font-size: 3rem;
-      letter-spacing: .04em;
-      line-height: 1;
-      margin-bottom: -5px;
-    }
-
-    .process-step svg {
-      width: 42px;
-      height: 42px;
-      color: var(--gold-2);
-      margin-bottom: 18px;
-    }
-
-    .process-step h3 {
-      font-size: 1rem;
-      margin-bottom: 12px;
-    }
-
-    .process-step p {
-      font-size: .86rem;
-      color: #b9bec5;
-    }
-
-    /* Work */
-    .work-grid {
-      display: grid;
-      grid-template-columns: 220px repeat(4, 1fr);
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .work-side {
-      padding: 4px 0;
-    }
-
-    .work-side h2 {
-      margin: 12px 0 20px;
-    }
-
-    .work-card {
-      background: rgba(255, 255, 255, .045);
-      border: 1px solid rgba(255, 255, 255, .10);
-      min-height: 270px;
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
-      overflow: hidden;
-      position: relative;
-      transition: .25s ease;
-    }
-
-    .work-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(200, 164, 106, .6);
-    }
-
-    .work-art {
-      position: absolute;
-      inset: 0;
-      opacity: .72;
-      background:
-        linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
-        radial-gradient(circle at 70% 20%, rgba(200, 164, 106, .46), transparent 9rem),
-        linear-gradient(135deg, #17202a, #0b0f13);
-    }
-
-    .work-card:nth-child(3) .work-art {
-      background:
-        linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
-        radial-gradient(circle at 45% 28%, rgba(217, 155, 43, .38), transparent 10rem),
-        linear-gradient(135deg, #2a2116, #0c1115);
-    }
-
-    .work-card:nth-child(4) .work-art {
-      background:
-        linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
-        radial-gradient(circle at 48% 18%, rgba(255, 255, 255, .28), transparent 8rem),
-        linear-gradient(135deg, #252525, #080b0d);
-    }
-
-    .work-card:nth-child(5) .work-art {
-      background:
-        linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
-        radial-gradient(circle at 60% 24%, rgba(200, 164, 106, .34), transparent 9rem),
-        linear-gradient(135deg, #261c12, #0a0a0a);
-    }
-
-    .work-card-content {
-      position: relative;
-      z-index: 1;
-      padding: 22px;
-    }
-
-    .work-card h3 {
-      font-size: .88rem;
-      margin-bottom: 6px;
-    }
-
-    .work-card p {
-      font-size: .74rem;
-      color: #c1c5c9;
-    }
-
-    /* Experience */
-    .experience {
-      background:
-        linear-gradient(180deg, rgba(5, 6, 7, .72), rgba(5, 6, 7, .92)),
-        url("assets/limassol-hero.png");
-      background-size: cover;
-      background-position: center;
-    }
-
-    .experience-row {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .experience-list {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 14px;
-    }
-
-    .experience-logo {
-      border: 1px solid rgba(255, 255, 255, .11);
-      background: rgba(255, 255, 255, .04);
-      min-height: 96px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 16px;
-      color: rgba(255, 255, 255, .86);
-      font-family: var(--font-display);
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-size: .82rem;
-      transition: .25s ease;
-    }
-
-    .experience-logo:hover {
-      border-color: rgba(200, 164, 106, .58);
-      color: var(--gold-2);
-      transform: translateY(-3px);
-    }
-
-    .experience-note {
-      margin-top: 18px;
-      color: #aeb3ba;
-      font-size: .82rem;
-    }
-
-    /* CTA */
-    .cta {
-      padding: 50px 0;
-      border-top: 1px solid rgba(255, 255, 255, .08);
-      background: linear-gradient(90deg, #060a0d, #0e151b, #060a0d);
-    }
-
-    .cta-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .cta h2 {
-      font-size: clamp(1.65rem, 3vw, 2.55rem);
-      margin-bottom: 10px;
-    }
-
-    .footer {
-      border-top: 1px solid rgba(255, 255, 255, .08);
-      padding: 26px 0;
-      color: #aeb3ba;
-      font-size: .72rem;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-
-    /* Decorative SVG Cyprus outline is intentionally abstract, not a map replacement. */
-    .cyprus-svg path {
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 5;
-      stroke-linejoin: round;
-      stroke-linecap: round;
-    }
-
-    @media (max-width: 1050px) {
-      .nav-links {
-        display: none;
-      }
-
-      .mobile-menu-note {
-        display: block;
-        color: var(--muted);
-        font-size: .72rem;
-        letter-spacing: .13em;
-        text-transform: uppercase;
-        font-weight: 900;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        align-items: start;
-        min-height: 760px;
-      }
-
-      .hero-copy {
-        padding-top: 78px;
-        padding-bottom: 280px;
-      }
-
-      .hero-portrait-wrap {
-        position: absolute;
-        right: -5vw;
-        bottom: 0;
-        width: 45vw;
-        min-height: 420px;
-        opacity: .72;
-      }
-
-      .hero-portrait {
-        width: 100%;
-      }
-
-      .cards-3,
-      .cards-4,
-      .experience-list {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .services-layout,
-      .about-grid,
-      .process-grid,
-      .work-grid,
-      .experience-row {
-        grid-template-columns: 1fr;
-      }
-
-      .work-grid {
-        gap: 18px;
-      }
-
-      .process-step:not(:last-child)::after {
-        display: none;
-      }
-
-      .about-photo {
-        min-height: 420px;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .container {
-        width: min(100% - 34px, var(--max));
-      }
-
-      .site-header,
-      .nav-inner {
-        height: 68px;
-      }
-
-      .logo {
-        width: 136px;
-      }
-
-      .hero {
-        padding-top: 68px;
-        min-height: 760px;
-        background-position: 63% center;
-      }
-
-      .hero-copy {
-        padding-top: 58px;
-        padding-bottom: 330px;
-      }
-
-      .hero-portrait-wrap {
-        width: 72vw;
-        right: -20vw;
-        opacity: .52;
-      }
-
-      .cyprus-mark {
-        width: 125px;
-        right: 15px;
-        top: 92px;
-      }
-
-      .brand-strip-inner,
-      .cards-3,
-      .cards-4,
-      .experience-list {
-        grid-template-columns: 1fr;
-      }
-
-      .strip-item {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, .11);
-        padding: 14px 0;
-      }
-
-      .strip-item:last-child {
-        border-bottom: none;
-      }
-
-      .section {
-        padding: 52px 0;
-      }
-
-      .about-copy,
-      .cred-box {
-        padding: 34px 24px;
-      }
-
-      .cta-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
+/* =========================================================
+   MVTJ HERO REDESIGN — LIMASSOL BACKGROUND VERSION
+   Paste directly above </style>
+   ========================================================= */
+
+.site-header {
+  height: 92px;
+  background: linear-gradient(180deg, rgba(2, 4, 6, 0.98), rgba(2, 4, 6, 0.88));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-inner {
+  height: 92px;
+}
+
+.logo {
+  width: 190px;
+}
+
+/* Main hero with Limassol skyline background */
+.hero {
+  min-height: 810px;
+  padding-top: 92px;
+  background:
+    radial-gradient(circle at 72% 38%, rgba(217, 155, 43, 0.42) 0%, rgba(217, 155, 43, 0.18) 22%, transparent 48%),
+    linear-gradient(90deg, rgba(2, 6, 9, 0.98) 0%, rgba(2, 6, 9, 0.94) 34%, rgba(2, 6, 9, 0.66) 56%, rgba(2, 6, 9, 0.24) 100%),
+    url("assets/limassol-hero.png") center right / cover no-repeat !important;
+}
+
+/* dark cinematic overlay */
+.hero::before {
+  background:
+    radial-gradient(circle at 76% 38%, rgba(224, 159, 42, 0.34), transparent 24rem),
+    linear-gradient(135deg, rgba(4, 15, 24, 0.52), rgba(0, 0, 0, 0.36));
+}
+
+/* subtle grid texture */
+.hero::after {
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 115px 115px;
+  mask-image: linear-gradient(90deg, transparent 0%, black 16%, black 88%, transparent 100%);
+}
+
+.hero-inner {
+  min-height: calc(810px - 92px);
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: end;
+}
+
+.hero-copy {
+  padding: 110px 0 76px;
+  max-width: 760px;
+}
+
+.hero-copy h1 {
+  font-size: clamp(4.7rem, 8.2vw, 9rem);
+  line-height: 0.88;
+  letter-spacing: 0.015em;
+  text-shadow: 0 16px 42px rgba(0, 0, 0, 0.58);
+}
+
+.hero-copy .lead {
+  max-width: 620px;
+  font-size: clamp(1.08rem, 1.45vw, 1.45rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-tabs {
+  gap: 16px 34px;
+}
+
+.hero-meta {
+  margin-top: 34px;
+  color: var(--gold-2);
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.hero-actions {
+  margin-top: 34px;
+}
+
+/* Right-side portrait area */
+.hero-portrait-wrap {
+  min-height: 670px;
+  position: relative;
+}
+
+/* soft premium glow behind portrait */
+.hero-portrait-wrap::before {
+  content: "";
+  position: absolute;
+  right: 6%;
+  top: 15%;
+  width: 78%;
+  height: 58%;
+  z-index: 1;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(217, 155, 43, 0.28) 0%, rgba(217, 155, 43, 0.12) 38%, transparent 72%);
+  filter: blur(28px);
+  opacity: 0.95;
+}
+
+/* fade bottom of portrait into page */
+.hero-portrait-wrap::after {
+  right: -90px;
+  bottom: 0;
+  width: min(620px, 54vw);
+  height: 42%;
+  z-index: 4;
+  background: linear-gradient(180deg, transparent 0%, rgba(2, 4, 5, 0.76) 72%, rgba(2, 4, 5, 0.96) 100%);
+  filter: none;
+}
+
+.hero-portrait {
+  right: -20px;
+  bottom: 0;
+  width: min(520px, 39vw);
+  max-height: 690px;
+  object-fit: contain;
+  filter:
+    grayscale(1)
+    contrast(1.08)
+    brightness(1.05)
+    drop-shadow(0 32px 48px rgba(0, 0, 0, 0.68));
+  z-index: 3;
+}
+
+/* Cyprus mark positioning */
+.cyprus-mark {
+  top: 150px;
+  right: 52px;
+  width: 155px;
+  opacity: 0.95;
+  z-index: 6;
+}
+
+.cyprus-mark span {
+  color: var(--gold-2);
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+}
+
+/* Mobile version */
+@media (max-width: 980px) {
+  .site-header {
+    height: 78px;
+  }
+
+  .nav-inner {
+    height: 78px;
+  }
+
+  .logo {
+    width: 145px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 78px;
+    background:
+      radial-gradient(circle at 70% 40%, rgba(217, 155, 43, 0.30), transparent 44%),
+      linear-gradient(180deg, rgba(2, 6, 9, 0.94) 0%, rgba(2, 6, 9, 0.82) 56%, rgba(2, 6, 9, 0.98) 100%),
+      url("assets/limassol-hero.png") center top / cover no-repeat !important;
+  }
+
+  .hero-inner {
+    min-height: auto;
+    display: block;
+  }
+
+  .hero-copy {
+    padding: 95px 0 430px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.4rem, 15vw, 6.2rem);
+  }
+
+  .hero-portrait-wrap {
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    transform: translateX(50%);
+    width: min(78vw, 420px);
+    min-height: 410px;
+  }
+
+  .hero-portrait {
+    right: 50%;
+    transform: translateX(50%);
+    width: min(78vw, 420px);
+  }
+
+  .cyprus-mark {
+    top: 98px;
+    right: 22px;
+    width: 112px;
+  }
+}
   </style>
 </head>
 
