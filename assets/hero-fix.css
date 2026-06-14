@@ -1,11 +1,13 @@
 /* =========================================================
    MVTJ DESIGNS — HERO FIX FINAL
-   Uses Limassol background + blended portrait
-   File location: assets/hero-fix.css
+   File: assets/hero-fix.css
+   Uses:
+   - assets/limassol-hero.png
+   - assets/max-portrait-cutout.png
    ========================================================= */
 
 .site-header {
-  min-height: 92px;
+  min-height: 92px !important;
   background: linear-gradient(180deg, rgba(2, 4, 6, 0.98), rgba(2, 4, 6, 0.92)) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   position: relative !important;
@@ -26,7 +28,7 @@
   display: block !important;
 }
 
-/* Main hero */
+/* HERO BACKGROUND */
 .hero {
   position: relative !important;
   min-height: calc(100vh - 92px) !important;
@@ -37,21 +39,21 @@
     linear-gradient(
       90deg,
       rgba(2, 6, 9, 0.98) 0%,
-      rgba(2, 6, 9, 0.94) 31%,
-      rgba(2, 6, 9, 0.70) 51%,
-      rgba(2, 6, 9, 0.28) 73%,
+      rgba(2, 6, 9, 0.94) 30%,
+      rgba(2, 6, 9, 0.70) 50%,
+      rgba(2, 6, 9, 0.32) 72%,
       rgba(2, 6, 9, 0.16) 100%
     ),
     radial-gradient(
-      circle at 72% 38%,
-      rgba(217, 155, 43, 0.28) 0%,
-      rgba(217, 155, 43, 0.10) 27%,
-      transparent 55%
+      circle at 74% 38%,
+      rgba(217, 155, 43, 0.26) 0%,
+      rgba(217, 155, 43, 0.10) 28%,
+      transparent 56%
     ),
-    url("limassol-hero.png?v=4") 70% center / cover no-repeat !important;
+    url("limassol-hero.png?v=8") 73% center / cover no-repeat !important;
 }
 
-/* subtle cinematic layer */
+/* CINEMATIC GLOW */
 .hero::before {
   content: "" !important;
   position: absolute !important;
@@ -59,11 +61,11 @@
   z-index: 0 !important;
   pointer-events: none !important;
   background:
-    radial-gradient(circle at 73% 34%, rgba(224, 159, 42, 0.24), transparent 27rem),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.34)) !important;
+    radial-gradient(circle at 76% 34%, rgba(224, 159, 42, 0.24), transparent 27rem),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.34)) !important;
 }
 
-/* subtle grid texture */
+/* SUBTLE GRID */
 .hero::after {
   content: "" !important;
   position: absolute !important;
@@ -88,6 +90,7 @@
   align-items: end !important;
 }
 
+/* HERO TEXT */
 .hero-copy {
   position: relative !important;
   z-index: 4 !important;
@@ -124,7 +127,7 @@
   margin-top: 34px !important;
 }
 
-/* Portrait area */
+/* PORTRAIT AREA */
 .hero-portrait-wrap {
   position: relative !important;
   min-height: 690px !important;
@@ -132,11 +135,11 @@
   z-index: 3 !important;
 }
 
-/* warm glow behind portrait */
+/* WARM GLOW BEHIND PORTRAIT */
 .hero-portrait-wrap::before {
   content: "" !important;
   position: absolute !important;
-  right: 7% !important;
+  right: 9% !important;
   top: 13% !important;
   width: 76% !important;
   height: 58% !important;
@@ -152,7 +155,7 @@
   opacity: 0.90 !important;
 }
 
-/* bottom fade so the portrait sinks into the hero */
+/* BOTTOM FADE */
 .hero-portrait-wrap::after {
   content: "" !important;
   position: absolute !important;
@@ -170,17 +173,16 @@
   ) !important;
 }
 
-/* 
-   KEY FIX:
-   This assumes the portrait still has a white/gray background.
-   Multiply makes the white background visually disappear.
+/* PORTRAIT IMAGE
+   Works with the white-background file:
+   assets/max-portrait-cutout.png
 */
 .hero-portrait {
   position: absolute !important;
-  right: -10px !important;
+  right: -20px !important;
   bottom: 0 !important;
-  width: min(560px, 41vw) !important;
-  max-height: 720px !important;
+  width: min(585px, 42vw) !important;
+  max-height: 735px !important;
   object-fit: contain !important;
   z-index: 3 !important;
 
@@ -191,11 +193,10 @@
   filter:
     grayscale(1)
     contrast(1.18)
-    brightness(1.08)
-    drop-shadow(0 28px 48px rgba(0, 0, 0, 0.62)) !important;
+    brightness(1.08) !important;
 }
 
-/* Cyprus mark */
+/* CYPRUS MARK */
 .cyprus-mark {
   top: 132px !important;
   right: 52px !important;
@@ -210,7 +211,7 @@
   letter-spacing: 0.2em !important;
 }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 980px) {
   .site-header,
   .nav-inner {
@@ -231,7 +232,7 @@
         rgba(2, 6, 9, 0.98) 100%
       ),
       radial-gradient(circle at 70% 40%, rgba(217, 155, 43, 0.30), transparent 44%),
-      url("limassol-hero.png?v=4") center top / cover no-repeat !important;
+      url("limassol-hero.png?v=8") center top / cover no-repeat !important;
   }
 
   .hero-inner {
