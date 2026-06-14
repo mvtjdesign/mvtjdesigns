@@ -1,15 +1,23 @@
-/* MVTJ Designs — Hero fix using one finished composite image */
+/* =========================================================
+   MVTJ DESIGNS — HERO COMPOSITE FIX
+   File: assets/hero-fix.css
 
+   Uses:
+   assets/mvtj-hero-composite.png
+   assets/mvtj-logo-primary.svg
+   ========================================================= */
+
+/* HEADER */
 .site-header {
-  min-height: 92px;
+  min-height: 92px !important;
   background: linear-gradient(180deg, rgba(2, 4, 6, 0.98), rgba(2, 4, 6, 0.92)) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  position: relative;
-  z-index: 50;
+  position: relative !important;
+  z-index: 50 !important;
 }
 
 .nav-inner {
-  min-height: 92px;
+  min-height: 92px !important;
 }
 
 .logo {
@@ -22,17 +30,42 @@
   display: block !important;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
   position: relative !important;
-  min-height: calc(100vh - 92px) !important;
+  min-height: 820px !important;
   overflow: hidden !important;
   isolation: isolate !important;
-  background:
-    linear-gradient(90deg, rgba(3, 7, 10, 0.92) 0%, rgba(3, 7, 10, 0.68) 24%, rgba(3, 7, 10, 0.18) 45%, rgba(3, 7, 10, 0.06) 100%),
-    url("/assets/mvtj-hero-composite.png?v=10") center center / cover no-repeat !important;
+  background-color: #03070a !important;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(3, 7, 10, 0.92) 0%,
+      rgba(3, 7, 10, 0.70) 22%,
+      rgba(3, 7, 10, 0.26) 43%,
+      rgba(3, 7, 10, 0.06) 100%
+    ),
+    url("/assets/mvtj-hero-composite.png?v=21"),
+    url("./mvtj-hero-composite.png?v=21") !important;
+
+  background-position:
+    center center,
+    center center,
+    center center !important;
+
+  background-size:
+    cover,
+    cover,
+    cover !important;
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat !important;
 }
 
+/* SOFT CINEMATIC OVERLAY */
 .hero::before {
   content: "" !important;
   position: absolute !important;
@@ -40,23 +73,25 @@
   z-index: 0 !important;
   pointer-events: none !important;
   background:
-    linear-gradient(180deg, rgba(4, 8, 12, 0.08) 0%, rgba(4, 8, 12, 0.18) 100%),
-    radial-gradient(circle at 68% 34%, rgba(217, 155, 43, 0.16), transparent 32%) !important;
+    radial-gradient(circle at 66% 36%, rgba(217, 155, 43, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.18)) !important;
 }
 
+/* SUBTLE GRID TEXTURE */
 .hero::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
   z-index: 0 !important;
   pointer-events: none !important;
-  opacity: 0.10 !important;
+  opacity: 0.08 !important;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px) !important;
   background-size: 115px 115px !important;
 }
 
+/* HERO STRUCTURE */
 .hero-inner,
 .hero .container {
   position: relative !important;
@@ -64,7 +99,7 @@
 }
 
 .hero-inner {
-  min-height: calc(100vh - 92px) !important;
+  min-height: 820px !important;
   display: grid !important;
   grid-template-columns: 1.05fr 0.95fr !important;
   align-items: end !important;
@@ -75,8 +110,8 @@
   position: relative !important;
   z-index: 5 !important;
   max-width: 760px !important;
-  padding-top: clamp(95px, 12vh, 145px) !important;
-  padding-bottom: clamp(60px, 8vh, 95px) !important;
+  padding-top: 115px !important;
+  padding-bottom: 95px !important;
 }
 
 .hero-copy h1 {
@@ -107,14 +142,13 @@
   margin-top: 34px !important;
 }
 
-/* HIDE OLD SEPARATE PORTRAIT AREA
-   because the new composite image already includes you */
+/* HIDE OLD SEPARATE PORTRAIT */
 .hero-portrait-wrap,
 .hero-portrait {
   display: none !important;
 }
 
-/* Cyprus mark on the upper-right */
+/* CYPRUS MARK */
 .cyprus-mark {
   top: 145px !important;
   right: 48px !important;
@@ -149,9 +183,32 @@
 
   .hero {
     min-height: auto !important;
-    background:
-      linear-gradient(180deg, rgba(2, 6, 9, 0.78) 0%, rgba(2, 6, 9, 0.60) 45%, rgba(2, 6, 9, 0.88) 100%),
-      url("/assets/mvtj-hero-composite.png?v=10") 62% center / cover no-repeat !important;
+    background-color: #03070a !important;
+
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(2, 6, 9, 0.78) 0%,
+        rgba(2, 6, 9, 0.58) 44%,
+        rgba(2, 6, 9, 0.90) 100%
+      ),
+      url("/assets/mvtj-hero-composite.png?v=21"),
+      url("./mvtj-hero-composite.png?v=21") !important;
+
+    background-position:
+      center center,
+      62% center,
+      62% center !important;
+
+    background-size:
+      cover,
+      cover,
+      cover !important;
+
+    background-repeat:
+      no-repeat,
+      no-repeat,
+      no-repeat !important;
   }
 
   .hero-inner {
