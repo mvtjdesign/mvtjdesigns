@@ -1,146 +1,629 @@
 <!DOCTYPE html>
-<!-- rebuild -->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cloudwards Media Experience | MVTJ Designs</title>
+
+  <title>Cloudwards Media Production Case Study | MVTJ Designs</title>
+  <meta name="description" content="Cloudwards media production case study by MVTJ Designs. End-to-end content production, on-camera hosting, editing, asset management, and content delivery." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    body {
-      margin: 0;
-      background: #050607;
-      color: #fff;
-      font-family: Inter, sans-serif;
-      line-height: 1.6;
+    :root {
+      --black: #050607;
+      --navy: #071421;
+      --navy2: #0b1d2e;
+      --gold: #d99b2b;
+      --gold2: #c8a46a;
+      --white: #ffffff;
+      --muted: #a8acb3;
+      --soft: rgba(255,255,255,.09);
+      --line: rgba(200,164,106,.25);
+      --max: 1180px;
+      --font-main: "Inter", sans-serif;
+      --font-display: "Oswald", sans-serif;
     }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { max-width: 100%; display: block; }
+
     .container {
-      width: min(1100px, calc(100% - 48px));
-      margin: auto;
-      padding: 70px 0;
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+      padding: 24px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      letter-spacing: .42em;
+      color: var(--gold2);
+    }
+
+    .brand span {
+      display: block;
+      font-size: .7rem;
+      color: var(--white);
+      letter-spacing: .5em;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,.82);
+    }
+
+    .nav-links .active {
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 8px;
+    }
+
+    .nav-links .talk {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 10px 16px;
+    }
+
+    .hero {
+      min-height: 760px;
+      background:
+        radial-gradient(circle at top right, rgba(217,155,43,.18), transparent 40rem),
+        linear-gradient(180deg, #06101b 0%, #020406 100%);
+      padding-top: 110px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .back {
+      display: inline-block;
+      color: var(--muted);
+      font-size: .75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.4fr;
+      gap: 42px;
+      align-items: center;
     }
 
     .kicker {
-      color: #d99b2b;
+      color: var(--gold);
       font-size: .75rem;
-      font-weight: 800;
-      letter-spacing: .22em;
+      font-weight: 900;
       text-transform: uppercase;
+      letter-spacing: .22em;
+      margin-bottom: 18px;
     }
 
     h1, h2, h3 {
-      font-family: Oswald, sans-serif;
+      font-family: var(--font-display);
       text-transform: uppercase;
       letter-spacing: .045em;
       line-height: 1;
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 6rem);
-      margin: 18px 0;
+      font-size: clamp(4rem, 8vw, 7.5rem);
+      margin-bottom: 26px;
     }
 
-    h2 {
-      font-size: 2rem;
-      margin-top: 50px;
-    }
-
-    p, li {
-      color: #d8dce2;
-      font-size: 1rem;
-      max-width: 850px;
+    .hero p {
+      max-width: 420px;
+      color: #e5e7eb;
+      font-size: 1.05rem;
     }
 
     .gold-line {
-      width: 90px;
+      width: 92px;
       height: 3px;
-      background: #d99b2b;
-      margin: 24px 0 32px;
+      background: var(--gold);
+      margin: 26px 0 30px;
     }
 
-    .back {
-      display: inline-block;
-      margin-bottom: 40px;
-      color: #d99b2b;
-      font-weight: 800;
+    .mini-process {
+      display: flex;
+      gap: 18px;
+      margin-top: 34px;
+      flex-wrap: wrap;
+    }
+
+    .mini-process div {
+      border: 1px solid var(--line);
+      padding: 12px 14px;
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: .12em;
+      letter-spacing: .08em;
+    }
+
+    .hero-image {
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 80px rgba(0,0,0,.55);
+      background: rgba(255,255,255,.04);
+    }
+
+    .dark-band {
+      background: #06101b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 32px 0;
+    }
+
+    .process-row {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+
+    .process-row div {
+      border: 1px solid rgba(255,255,255,.09);
+      padding: 18px 12px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .process-row strong {
+      display: block;
+      color: var(--gold);
       font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 5px;
+    }
+
+    .process-row span {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .light {
+      background: #f5f2eb;
+      color: #071421;
+      padding: 72px 0;
+    }
+
+    .snapshot {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(5, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .snapshot h2 {
+      font-size: 1.85rem;
+    }
+
+    .snap-item {
+      border-left: 1px solid rgba(7,20,33,.16);
+      padding-left: 20px;
+    }
+
+    .snap-item strong {
+      display: block;
+      color: #071421;
+      text-transform: uppercase;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      margin-bottom: 10px;
+    }
+
+    .snap-item span {
+      color: #263443;
+      font-size: .92rem;
+    }
+
+    .p-p-o {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px;
+      margin-top: 72px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(7,20,33,.14);
+    }
+
+    .p-p-o h3 {
+      font-size: 1.55rem;
+      margin-bottom: 22px;
+    }
+
+    .p-p-o p,
+    .p-p-o li {
+      color: #263443;
+      font-size: .96rem;
+    }
+
+    .p-p-o ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .p-p-o li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .selected {
+      background:
+        radial-gradient(circle at top right, rgba(217,155,43,.12), transparent 40rem),
+        #06101b;
+      padding: 72px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      font-size: 2.3rem;
+    }
+
+    .section-head a {
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .1em;
     }
 
     .video-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 28px;
-      margin-top: 28px;
     }
 
     .video-card {
-      border: 1px solid rgba(255,255,255,.1);
-      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(200,164,106,.08));
-      padding: 18px;
+      border: 1px solid var(--soft);
+      background: rgba(255,255,255,.04);
+      overflow: hidden;
     }
 
     iframe {
       width: 100%;
       aspect-ratio: 16 / 9;
       border: 0;
+      display: block;
     }
 
-    ul {
-      padding-left: 20px;
+    .video-copy {
+      padding: 18px;
+    }
+
+    .video-copy h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .video-copy p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .capabilities {
+      background: #f5f2eb;
+      color: #071421;
+      padding: 48px 0;
+    }
+
+    .cap-grid {
+      display: grid;
+      grid-template-columns: 1.3fr repeat(6, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .cap-grid h2 {
+      font-size: 1.55rem;
+    }
+
+    .cap {
+      text-align: center;
+      color: #263443;
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    .cta {
+      background:
+        radial-gradient(circle at bottom left, rgba(217,155,43,.16), transparent 32rem),
+        #050607;
+      padding: 70px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1.5fr .7fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      color: #d8dce2;
+      max-width: 650px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #06101b;
+      padding: 15px 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+
+      .hero-grid,
+      .snapshot,
+      .p-p-o,
+      .video-grid,
+      .cap-grid,
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 90px;
+      }
+
+      .process-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
-    <a class="back" href="index.html">← Back to MVTJ Designs</a>
-
-    <div class="kicker">Media Experience</div>
-    <h1>Cloudwards</h1>
-    <div class="gold-line"></div>
-
-    <p>
-      Max Tijerino handled end-to-end content production for educational technology content created for a global audience.
-    </p>
-
-    <p>
-      The work included on-camera presentation, video editing, sound syncing, camera operation, asset collection, file organization, media inventory, and content delivery.
-    </p>
-
-    <h2>Capabilities Demonstrated</h2>
-    <ul>
-      <li>End-to-end content production</li>
-      <li>On-camera hosting and presentation</li>
-      <li>Video editing and post-production</li>
-      <li>Camera operation and production setup</li>
-      <li>Audio syncing and media organization</li>
-      <li>Asset collection, inventory, and file management</li>
-      <li>Educational content delivery for a global publication</li>
-      <li>Brand representation through presenter-led media</li>
-    </ul>
-
-    <h2>Selected Videos</h2>
-
-    <div class="video-grid">
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/WR7QMddGat0" title="Cloudwards video by Max Tijerino" allowfullscreen></iframe>
-      </div>
-
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/8WcEclCmEoA" title="Cloudwards video by Max Tijerino" allowfullscreen></iframe>
-      </div>
-
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/1Tgt1mFjatA" title="Cloudwards video by Max Tijerino" allowfullscreen></iframe>
-      </div>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/index.html" class="brand">MVTJ<span>DESIGNS</span></a>
+      <nav class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/index.html#about">About</a>
+        <a href="/index.html#services">Services</a>
+        <a class="active" href="/index.html#work">Portfolio</a>
+        <a href="/index.html#contact" class="talk">Let's Talk</a>
+      </nav>
     </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <a class="back" href="/index.html#work">← Back to Portfolio</a>
+
+        <div class="hero-grid">
+          <div>
+            <div class="kicker">Media Production Case Study</div>
+            <h1>Cloudwards</h1>
+            <div class="gold-line"></div>
+            <p>
+              Building a repeatable content production system for a global educational technology publication.
+            </p>
+
+            <div class="mini-process">
+              <div>Research</div>
+              <div>Produce</div>
+              <div>Edit</div>
+              <div>Publish</div>
+              <div>Distribute</div>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img src="/assets/cloudwards-hero-banner-v1.png" alt="Cloudwards media production case study by MVTJ Designs" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-band">
+      <div class="container process-row">
+        <div><strong>Research</strong><span>Topic & keyword research</span></div>
+        <div><strong>Script</strong><span>Writing & outlining</span></div>
+        <div><strong>Production</strong><span>On-camera presentation</span></div>
+        <div><strong>Editing</strong><span>Video editing & post</span></div>
+        <div><strong>Publishing</strong><span>Publishing support</span></div>
+        <div><strong>Distribution</strong><span>Audience reach</span></div>
+      </div>
+    </section>
+
+    <section class="light">
+      <div class="container">
+        <div class="snapshot">
+          <h2>Project Snapshot</h2>
+
+          <div class="snap-item">
+            <strong>Role</strong>
+            <span>End-to-End Content Producer</span>
+          </div>
+
+          <div class="snap-item">
+            <strong>Client Type</strong>
+            <span>Global Technology Publication</span>
+          </div>
+
+          <div class="snap-item">
+            <strong>Focus</strong>
+            <span>Educational Video Content</span>
+          </div>
+
+          <div class="snap-item">
+            <strong>Services</strong>
+            <span>Production, Hosting, Editing, Asset Management</span>
+          </div>
+
+          <div class="snap-item">
+            <strong>Audience</strong>
+            <span>Global Technology Audience</span>
+          </div>
+        </div>
+
+        <div class="p-p-o">
+          <div>
+            <h3>The Challenge</h3>
+            <p>
+              Educational technology content requires more than simply recording videos.
+              Content must be researched, scripted, presented, edited, organized, published,
+              and delivered consistently while maintaining clarity, quality, and accuracy.
+            </p>
+          </div>
+
+          <div>
+            <h3>The Process</h3>
+            <p>
+              A repeatable production system was used to move content from topic development
+              through presentation, recording, editing, asset organization, and final delivery.
+            </p>
+            <br />
+            <ul>
+              <li>Research & topic ideation</li>
+              <li>Script writing & outlining</li>
+              <li>Production & on-camera hosting</li>
+              <li>Editing & post-production</li>
+              <li>Publishing support</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>The Outcome</h3>
+            <ul>
+              <li>Produced educational technology content for an international audience</li>
+              <li>Managed content workflows from concept through delivery</li>
+              <li>Delivered presenter-led content for a global publication</li>
+              <li>Demonstrated full production pipeline ownership</li>
+              <li>Built proof of content systems, production discipline, and media operations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="selected">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Selected Work</div>
+            <h2>Published Videos</h2>
+          </div>
+          <a href="https://www.youtube.com/@cloudwards" target="_blank" rel="noopener">View Cloudwards Content →</a>
+        </div>
+
+        <div class="video-grid">
+          <article class="video-card">
+            <iframe src="https://www.youtube.com/embed/WR7QMddGat0" title="How to Unblock Netflix with a VPN" allowfullscreen></iframe>
+            <div class="video-copy">
+              <h3>How to Unblock Netflix with a VPN</h3>
+              <p>Presenter-led educational content explaining VPN access, streaming, and privacy concepts.</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <iframe src="https://www.youtube.com/embed/8WcEclCmEoA" title="Best Free Cloud Storage Apps and Services" allowfullscreen></iframe>
+            <div class="video-copy">
+              <h3>Best Free Cloud Storage Apps & Services</h3>
+              <p>Educational technology content designed to simplify product choices for a broad audience.</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <iframe src="https://www.youtube.com/embed/1Tgt1mFjatA" title="Best Cloud Storage Service" allowfullscreen></iframe>
+            <div class="video-copy">
+              <h3>Best Cloud Storage Service</h3>
+              <p>Long-form presenter-led video content comparing technology options and user benefits.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities">
+      <div class="container cap-grid">
+        <h2>Capabilities Demonstrated</h2>
+        <div class="cap">Content Strategy</div>
+        <div class="cap">On-Camera Hosting</div>
+        <div class="cap">Video Production</div>
+        <div class="cap">Video Editing</div>
+        <div class="cap">Asset Management</div>
+        <div class="cap">Workflow Development</div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>Need a Content Production System?</h2>
+          <p>
+            From research and scripting to filming, editing, publishing, and distribution,
+            MVTJ Designs builds repeatable content systems that support long-term brand authority.
+          </p>
+        </div>
+
+        <a class="btn" href="/index.html#contact">Let's Discuss Your Project →</a>
+      </div>
+    </section>
   </main>
 </body>
 </html>
