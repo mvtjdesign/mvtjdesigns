@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
- <title>MVTJ Designs | Content Systems Architecture for Founder-Led Brands</title>
- <meta name="description" content="MVTJ Designs builds AI-assisted content systems for founder-led brands, turning founder expertise, client questions, voice notes, office moments, and daily business activity into approved brand assets." />
+ <title>MVTJ Designs | Web Design &amp; Digital Experiences</title>
+ <meta name="description" content="Web design, development and digital experiences by MVTJ Designs, based in Cyprus and working globally." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -683,12 +683,44 @@
       align-items: stretch;
     }
 
+    #services .services-layout {
+      grid-template-columns: minmax(260px, .8fr) minmax(0, 1.6fr);
+      gap: clamp(28px, 4vw, 56px);
+      align-items: center;
+    }
+
+    #services .cards-4 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #work .work-grid {
+      display: block;
+    }
+
     .work-side {
       padding: 4px 0;
     }
 
+    #work .work-side {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 28px;
+    }
+
     .work-side h2 {
       margin: 12px 0 20px;
+    }
+
+    #work .work-side .gold-line {
+      margin-bottom: 0;
+    }
+
+    .work-projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .work-card {
@@ -701,6 +733,18 @@
       overflow: hidden;
       position: relative;
       transition: .25s ease;
+    }
+
+    .work-card-featured {
+      grid-column: 1 / -1;
+    }
+
+    .work-card-featured {
+      min-height: 330px;
+    }
+
+    .work-card-pendeli {
+      min-height: 330px;
     }
 
     .work-card:hover {
@@ -718,25 +762,49 @@
         linear-gradient(135deg, #17202a, #0b0f13);
     }
 
-    .work-card:nth-child(3) .work-art {
+    .work-art::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5, 6, 7, .2) 0%, rgba(5, 6, 7, .3) 42%, rgba(5, 6, 7, .94) 100%);
+    }
+
+    .work-screenshot {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: .88;
+    }
+
+    .work-card-featured .work-screenshot {
+      object-position: center 62%;
+      transform: scale(2);
+      transform-origin: right center;
+    }
+
+    .work-card-chronodike .work-screenshot {
+      object-position: center 42%;
+    }
+
+    .work-card-solidity .work-art {
       background:
         linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
         radial-gradient(circle at 45% 28%, rgba(217, 155, 43, .38), transparent 10rem),
         linear-gradient(135deg, #2a2116, #0c1115);
     }
 
-    .work-card:nth-child(4) .work-art {
+    .work-card-chronodike .work-art {
       background:
         linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
         radial-gradient(circle at 48% 18%, rgba(255, 255, 255, .28), transparent 8rem),
         linear-gradient(135deg, #252525, #080b0d);
     }
 
-    .work-card:nth-child(5) .work-art {
-      background:
-        linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
-        radial-gradient(circle at 60% 24%, rgba(200, 164, 106, .34), transparent 9rem),
-        linear-gradient(135deg, #261c12, #0a0a0a);
+    .work-card-pendeli .work-art::after {
+      background: linear-gradient(180deg, rgba(5, 6, 7, .18) 0%, rgba(5, 6, 7, .88) 28%, rgba(5, 6, 7, .98) 100%);
     }
 
     .work-card-content {
@@ -753,6 +821,41 @@
     .work-card p {
       font-size: .74rem;
       color: #c1c5c9;
+    }
+
+    .work-card .work-card-credibility {
+      margin-top: 8px;
+      color: #e2d8c7;
+      font-size: .68rem;
+      font-weight: 700;
+    }
+
+    .work-category {
+      margin-bottom: 8px;
+      color: var(--gold-2);
+      font-size: .62rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .work-card-featured .work-card-content {
+      max-width: 850px;
+      padding: 30px;
+    }
+
+    .work-card-featured h3 {
+      font-size: 1.2rem;
+    }
+
+    .work-link {
+      display: inline-flex;
+      margin-top: 14px;
+      color: var(--gold-2);
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
     /* Experience */
@@ -913,6 +1016,15 @@
         gap: 18px;
       }
 
+      #services .services-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      #work .work-side {
+        align-items: flex-start;
+      }
+
       .process-step:not(:last-child)::after {
         display: none;
       }
@@ -964,6 +1076,25 @@
       .cards-4,
       .experience-list {
         grid-template-columns: 1fr;
+      }
+
+      #services .cards-4,
+      .work-projects {
+        grid-template-columns: 1fr;
+      }
+
+      #work .work-side {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 22px;
+      }
+
+      .work-card-featured {
+        grid-column: auto;
+      }
+
+      .work-card-featured {
+        min-height: 270px;
       }
 
       .strip-item {
@@ -1250,74 +1381,47 @@
   width: fit-content;
 }
   </style>
-  <link rel="stylesheet" href="assets/hero-fix.css?v=27" />
+  <link rel="stylesheet" href="assets/hero-fix.css?v=31" />
 </head>
 
 <body>
   <header class="site-header" aria-label="Main navigation">
     <div class="container nav-inner">
-      <a href="#top" class="logo" aria-label="MVTJ Designs home">
+      <a href="#top" class="brand-lockup" aria-label="MVTJ Designs home">
         <img src="assets/mvtj-logo-primary.svg" alt="MVTJ Designs logo" />
+        <span class="brand-descriptor">Web Design &amp;<br />Digital Experiences</span>
       </a>
 
-      <nav class="nav-links" aria-label="Site links">
-        <a href="#top">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-<a href="#studio">Studio</a>
-<a href="#process">Process</a>
+      <nav class="nav-links" id="site-navigation" aria-label="Site links">
         <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a class="btn btn-primary" href="#contact">Let’s Work Together</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn header-cta" href="#contact">Start a Project</a>
       </nav>
 
-      <div class="mobile-menu-note">MVTJ Designs</div>
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="topo" aria-hidden="true"></div>
-
-   <div class="cyprus-mark" aria-hidden="true">
-  <img src="assets/cyprus-outline.png?v=1" alt="" />
-  <span>CYPRUS</span>
-</div>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-backdrop" src="assets/hero/mvtj-cinematic-hero.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async" />
       <div class="container hero-inner">
         <div class="hero-copy">
-          <div class="eyebrow">Strategic. Disciplined. Creative.</div>
-         <h1>Founder Content <span class="gold">&</span> Systems</h1>
-<p class="lead">MVTJ Designs builds AI-assisted content systems that turn founder expertise, client questions, voice notes, office moments, and daily business activity into approved brand assets.</p>
-
-          <div class="hero-tabs" aria-label="Core services">
-            <div class="hero-tab">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.4 2.4 4.8-5"/></svg>
-              Content Systems
-            </div>
-            <div class="hero-tab">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
-              Brand Strategy
-            </div>
-            <div class="hero-tab">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4V8z"/></svg>
-              Production Operations
-            </div>
-          </div>
-
-          <div class="hero-meta">
-            <span>U.S. Marine Veteran</span>
-            <span>Based in Cyprus</span>
-            <span>Working Globally</span>
-          </div>
+          <h1 id="hero-title">Web Design &amp;<br />Digital Experiences</h1>
+          <p class="lead">Distinctive websites and digital experiences for businesses that care how they’re seen.</p>
+          <p class="hero-meta">Based in Cyprus · Working globally</p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Let’s Work Together</a>
+            <a class="btn btn-primary" href="#contact">Start a Project</a>
             <a class="btn" href="#work">View Work</a>
           </div>
-        </div>
-
-        <div class="hero-portrait-wrap" aria-hidden="true">
-          <img class="hero-portrait" src="assets/max-portrait-cutout.png" alt="" />
         </div>
       </div>
     </section>
@@ -1338,7 +1442,7 @@
         </div>
         <div class="strip-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V5M4 19h16"/><path d="M8 16v-5M12 16V8M16 16v-9M20 16v-3"/></svg>
-         <strong>Capture<br />Approve<br />Ship & Report</strong>
+         <strong>Design<br />Build<br />Care</strong>
         </div>
       </div>
     </div>
@@ -1347,38 +1451,37 @@
       <div class="container services-layout">
         <div class="side-copy">
        <div class="section-kicker">What We Build</div>
-<h2>Content Systems That Turn Activity Into Assets</h2>
+<h2>Websites &amp; Digital Experiences</h2>
 <div class="gold-line"></div>
-<p>We help founder-led brands turn daily business activity, client questions, founder expertise, and team-captured moments into strategic content, approved brand assets, and measurable marketing output.</p>
+<p>We create websites that bring the quality of your business into the digital world—combining clear direction, strong visual design and thoughtful development.</p>
           </div>
-        </div>
 
         <div class="cards-4">
           <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8 12l2.5 2.5L16 9"/></svg>
-            <h3>Founder Content Systems</h3>
-<p>Daily briefs, opportunity capture, content options, approval workflows, and publishing rhythms built around the founder’s real expertise and business activity.</p>
+            <h3>Website Design</h3>
+<p>Clear, considered design shaped around your brand, audience and business goals.</p>
             <a href="#contact" class="learn">Learn More →</a>
           </article>
 
           <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
-         <h3>Brand Positioning</h3>
-<p>Messaging, authority themes, offers, audience clarity, and content pillars that make the brand easier to understand, trust, and choose.</p>
+         <h3>Website Development</h3>
+<p>Responsive, carefully built websites designed to perform across devices.</p>
 <a href="#contact" class="learn">Learn More →</a>
 </article>
 
           <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4V8z"/></svg>
-            <h3>Content Production Operations</h3>
-<p>Briefs, scripts, shoots, edits, approvals, publishing, and after-action reporting managed through a repeatable production process.</p>
+            <h3>Digital Experiences</h3>
+<p>Interactive and content-rich experiences for businesses where presentation matters.</p>
             <a href="#contact" class="learn">Learn More →</a>
           </article>
 
           <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><path d="M4 19V5M4 19h16"/><path d="M8 16v-5M12 16V8M16 16v-9M20 16v-3"/></svg>
-            <h3>AI-Assisted Marketing Workflows</h3>
-<p>Systems that help turn voice notes, client questions, photos, articles, office moments, and business activity into strategic content opportunities.</p>
+            <h3>Ongoing Care</h3>
+<p>Continued support, updates and improvements after launch.</p>
             <a href="#contact" class="learn">Learn More →</a>
           </article>
         </div>
@@ -1386,17 +1489,19 @@
     </section>
 
     <section class="about-grid" id="about">
-      <div class="about-photo" aria-label="Portrait of Max Tijerino"></div>
+      <div class="about-photo">
+        <img src="assets/about/max-tijerino-founder.jpg" alt="Max Tijerino, founder of MVTJ Designs" />
+      </div>
 
       <div class="about-copy">
         <div class="eyebrow">About MVTJ Designs</div>
-        <h2>Strategy. Discipline. Execution.</h2>
+        <h2>Thoughtful Design. Clear Direction. Built to Work.</h2>
         <p>
-  I’m Max Tijerino, founder of MVTJ Designs. I build content systems for founder-led brands, combining brand strategy, media production, AI-assisted workflows, and disciplined execution into a repeatable operating model.
+  I’m Max Tijerino, founder of MVTJ Designs. I work directly with businesses to shape and build websites that reflect the quality of what they do.
 </p>
  </p>
 <p>
-  Based in Cyprus and working globally, MVTJ Designs is built for businesses that need more than random posts. The work turns real business activity into approved brand assets that support visibility, trust, authority, and long-term growth.
+  Based in Cyprus and working globally, I take projects from early direction through design, development and launch—without the layers of a traditional agency.
 </p>
         <div class="signature">Max</div>
         <div class="eyebrow">U.S. Marine Veteran</div>
@@ -1417,36 +1522,36 @@
         </div>
       </aside>
     </section>
-<section class="section studio-section" id="studio">
+<section class="section studio-section" id="care">
   <div class="container services-layout">
     <div class="side-copy">
-      <div class="section-kicker">MVTJ Studio</div>
-      <h2>The System Behind The Work</h2>
+      <div class="section-kicker">Ongoing Care</div>
+      <h2>Support Beyond Launch</h2>
       <div class="gold-line"></div>
-     <p>MVTJ Studio is the internal content operating system behind MVTJ Designs. It helps manage opportunity capture, production queues, approvals, publishing, and after-action reporting for founder-led brands.</p>
-<p style="margin-top: 18px;">Your team captures the moment. The system turns it into strategic content. You approve. We ship.</p>
+     <p>Launching the website isn’t the end of the relationship. MVTJ Designs can continue supporting your site as your business changes and grows.</p>
+<p style="margin-top: 18px;">Launch it well. Keep it current. Improve it when it matters.</p>
 <div style="margin-top: 30px;">
-  <a class="btn btn-primary" href="#contact">Discuss The System</a>
+  <a class="btn btn-primary" href="#contact">Discuss Ongoing Care</a>
 </div>
     </div>
 
     <div class="cards-3">
       <article class="card">
-        <h3>Opportunity Feed</h3>
-        <p>Timely articles, client questions, business moments, and trends that can become brand-building content.</p>
-        <span class="learn">Build The System →</span>
+        <h3>Website Updates</h3>
+        <p>Keep content, imagery and information current.</p>
+        <span class="learn">Keep It Current →</span>
       </article>
 
       <article class="card">
-        <h3>Daily Founder Brief</h3>
-        <p>The founder tells the system what they are doing today. The system turns the day’s plans into a simple content capture plan.</p>
-        <span class="learn">Plan The Day →</span>
+        <h3>Maintenance</h3>
+        <p>Ongoing support for the website after launch.</p>
+        <span class="learn">Ongoing Support →</span>
       </article>
 
       <article class="card">
-        <h3>Content Options</h3>
-        <p>One raw idea becomes strategic options: a LinkedIn post, FAQ draft, short video script, branded graphic, or campaign asset.</p>
-        <span class="learn">Approve & Ship →</span>
+        <h3>Continued Improvements</h3>
+        <p>Refine and improve the experience as new needs emerge.</p>
+        <span class="learn">Improve Over Time →</span>
       </article>
     </div>
   </div>
@@ -1455,36 +1560,36 @@
       <div class="container process-grid">
         <div class="process-title">
           <div class="section-kicker">Our Process</div>
-          <h2>From Opportunity To Approved Asset</h2>
+          <h2>From First Conversation to Launch</h2>
           <div class="gold-line" style="margin-top: 24px;"></div>
         </div>
 
         <article class="process-step">
           <div class="step-num">01</div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="7"/><path d="M15.5 15.5L21 21"/></svg>
-        <h3>Opportunity</h3>
-<p>We identify the client questions, founder insights, daily activity, and business moments worth turning into content.</p>
+        <h3>Discover</h3>
+<p>We learn about your business, audience, goals and what the website needs to accomplish.</p>
         </article>
 
         <article class="process-step">
           <div class="step-num">02</div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M22 12h-3M12 22v-3M2 12h3"/></svg>
-         <h3>Capture</h3>
-<p>Your team captures voice notes, photos, office moments, event clips, founder thoughts, and raw context.</p>
+         <h3>Define</h3>
+<p>We establish the structure, priorities and creative direction.</p>
         </article>
 
         <article class="process-step">
           <div class="step-num">03</div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2 4 4 .5-3 3 .7 4.2L12 12l-3.7 1.7L9 9.5l-3-3 4-.5 2-4z"/><path d="M4 22h16"/></svg>
-      <h3>Options</h3>
-<p>The system turns raw material into strategic content options: posts, scripts, graphics, FAQs, carousels, and brand assets.</p>
+      <h3>Design &amp; Build</h3>
+<p>We turn that direction into the finished digital experience.</p>
         </article>
 
         <article class="process-step">
           <div class="step-num">04</div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19V5M4 19h16"/><path d="M8 16v-5M12 16V8M16 16v-9M20 16v-3"/></svg>
-         <h3>Approve & Ship</h3>
-<p>You approve or request changes. MVTJ prepares, publishes, tracks performance, and uses the results to guide the next move.</p>
+         <h3>Launch &amp; Care</h3>
+<p>We prepare the site for launch and can continue supporting it afterward.</p>
         </article>
       </div>
     </section>
@@ -1493,45 +1598,61 @@
       <div class="container work-grid">
         <div class="work-side">
           <div class="section-kicker">Selected Work</div>
-          <h2>Experience & Projects</h2>
+          <h2>Websites &amp; Digital Experiences</h2>
           <div class="gold-line"></div>
           <a class="btn" href="#contact">Discuss a Project</a>
         </div>
 
-        <article class="work-card">
-          <div class="work-art"></div>
-          <div class="work-card-content">
-            <h3>Cloudwards</h3>
-            <p>End-to-end content production, on-camera presentation, media operations, editing, asset management, and educational content delivery for a global technology publication.</p>
-          <a href="/cloudwards/" class="work-link">
-  View Case Study →
-</a>
-          </div>
-        </article>
+        <div class="work-projects">
+          <article class="work-card work-card-featured">
+            <div class="work-art">
+              <img class="work-screenshot" src="assets/portfolio/create-elevate-home.png" alt="" loading="lazy" />
+            </div>
+            <div class="work-card-content">
+              <div class="work-category">Web Design · Property Visualisation · Architecture</div>
+              <h3>Create + Elevate</h3>
+              <p>A visual-first website for a property visualisation and marketing studio, showcasing architectural imagery and development marketing services through a focused digital experience.</p>
+              <a href="https://create-elevate.co.uk/" class="work-link" target="_blank" rel="noopener noreferrer">View Website →</a>
+            </div>
+          </article>
 
-        <article class="work-card">
-          <div class="work-art"></div>
-          <div class="work-card-content">
-            <h3>BeeHostel</h3>
-            <p>Hospitality marketing, web UX, multilingual content, and local experience design.</p>
-          </div>
-        </article>
+          <article class="work-card work-card-solidity">
+            <div class="work-art">
+              <img class="work-screenshot" src="assets/portfolio/solidity-lb-home.png" alt="" loading="lazy" />
+            </div>
+            <div class="work-card-content">
+              <div class="work-category">Web Design · Professional Services</div>
+              <h3>Solidity Consulting &amp; Brokering</h3>
+              <p>A professional digital presence for a Lebanon-based insurance and fiscal advisory firm, structured around clear services, credibility and consultation.</p>
+              <a href="https://solidity-lb.com/" class="work-link" target="_blank" rel="noopener noreferrer">View Website →</a>
+            </div>
+          </article>
 
-        <article class="work-card">
-          <div class="work-art"></div>
-          <div class="work-card-content">
-            <h3>Solidity-LB</h3>
-            <p>Professional services website, credibility structure, and brand messaging.</p>
-          </div>
-        </article>
+          <article class="work-card work-card-chronodike">
+            <div class="work-art">
+              <img class="work-screenshot" src="assets/portfolio/chronodike-public-home.png" alt="" loading="lazy" />
+            </div>
+            <div class="work-card-content">
+              <div class="work-category">Product Design · Web Application · In Development</div>
+              <h3>Chronodike</h3>
+              <p>An evidence-intelligence platform designed to turn complex legal case material into structured, source-linked and human-verifiable information.</p>
+            </div>
+          </article>
 
-        <article class="work-card">
-          <div class="work-art"></div>
-          <div class="work-card-content">
-            <h3>The Mountain Path</h3>
-            <p>Brand identity, product direction, content system, and app concept.</p>
-          </div>
-        </article>
+          <article class="work-card work-card-pendeli">
+            <div class="work-art">
+              <img class="work-screenshot" src="assets/portfolio/pendeli-allergen-guide.png" alt="Pendeli Resort guest-facing breakfast allergen guide showing menu items and allergen indicators" loading="lazy" />
+            </div>
+            <div class="work-card-content">
+              <div class="work-category">Hospitality Technology · Web Application</div>
+              <h3>Pendeli Allergen Guide</h3>
+              <p>A guest-facing digital allergen guide for Pendeli Resort, designed to help visitors explore menu items and dietary information through a clear, accessible web experience.</p>
+              <p class="work-card-credibility">In active use at Pendeli Resort in Pano Platres, Cyprus.</p>
+              <a href="https://pendeli-allergen-guide.vercel.app/" class="work-link" target="_blank" rel="noopener noreferrer">View App →</a>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 
@@ -1539,14 +1660,13 @@
       <div class="container experience-row">
         <div>
           <div class="section-kicker">Experience & Projects</div>
-          <h2>Built Across Real Environments</h2>
+          <h2>Work Across Different Fields</h2>
           <div class="gold-line" style="margin-top: 24px;"></div>
         </div>
 
         <div>
           <div class="experience-list" aria-label="Selected experience and projects">
             <div class="experience-logo">Cloudwards</div>
-            <div class="experience-logo">BeeHostel</div>
             <div class="experience-logo">Solidity-LB</div>
             <div class="experience-logo">Southern Stone<br />Communications</div>
             <div class="experience-logo">NCompass</div>
@@ -1562,9 +1682,9 @@
     <section class="cta" id="contact">
       <div class="container cta-inner">
         <div>
-         <div class="section-kicker">Ready to Stop Random Posting?</div>
-<h2>Let’s build a content system that turns your work into brand assets.</h2>
-<p>Book a short call or send a WhatsApp message. If it’s a fit, we’ll define the system, capture workflow, production rhythm, and next steps.</p>
+         <div class="section-kicker">Have a Project in Mind?</div>
+<h2>Let’s build something worth noticing.</h2>
+<p>Tell me about your business, what you’re building and what the website needs to do. We’ll figure out the right next step.</p>
         </div>
 
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
@@ -1587,5 +1707,32 @@
       </div>
     </div>
   </footer>
+  <script>
+    const navigationToggle = document.querySelector(".nav-toggle");
+    const siteNavigation = document.querySelector("#site-navigation");
+
+    function setNavigationOpen(isOpen) {
+      siteNavigation.classList.toggle("is-open", isOpen);
+      navigationToggle.setAttribute("aria-expanded", String(isOpen));
+      navigationToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    }
+
+    navigationToggle.addEventListener("click", () => {
+      setNavigationOpen(navigationToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    siteNavigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        setNavigationOpen(false);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && navigationToggle.getAttribute("aria-expanded") === "true") {
+        setNavigationOpen(false);
+        navigationToggle.focus();
+      }
+    });
+  </script>
 </body>
 </html>
