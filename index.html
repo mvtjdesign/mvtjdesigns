@@ -539,6 +539,56 @@
       font-weight: 900;
     }
 
+    .case-study-proof {
+      border-top: 1px solid rgba(200, 164, 106, .25);
+      margin-top: 18px;
+      padding-top: 14px;
+    }
+
+    .case-study-kicker {
+      color: var(--gold-2);
+      font-size: .58rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .case-study-proof h4 {
+      margin-top: 5px;
+      font-size: 1rem;
+    }
+
+    .case-study-type {
+      margin-top: 3px;
+      color: var(--gold);
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .card .case-study-description {
+      margin-top: 7px;
+      font-size: .76rem;
+      line-height: 1.5;
+    }
+
+    .case-study-link {
+      display: inline-flex;
+      margin-top: 11px;
+      color: var(--gold-2);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .case-study-link:focus-visible,
+    .experience-logo:focus-visible {
+      outline: 2px solid var(--gold-2) !important;
+      outline-offset: 4px !important;
+    }
+
     /* About */
     .about-grid {
       display: grid;
@@ -897,10 +947,32 @@
       transition: .25s ease;
     }
 
-    .experience-logo:hover {
+    a.experience-logo {
+      cursor: pointer;
+    }
+
+    a.experience-logo:hover {
       border-color: rgba(200, 164, 106, .58);
       color: var(--gold-2);
       transform: translateY(-3px);
+    }
+
+    #experience a.experience-logo:hover {
+      border-color: rgba(200, 164, 106, .58) !important;
+    }
+
+    .experience-logo-label {
+      display: block;
+    }
+
+    .experience-logo-detail {
+      display: block;
+      margin-top: 4px;
+      color: var(--gold-2);
+      font-family: var(--font-main);
+      font-size: .56rem;
+      font-weight: 800;
+      letter-spacing: .12em;
     }
 
     .experience-note {
@@ -1471,10 +1543,17 @@
 <a href="#contact" class="learn">Learn More →</a>
 </article>
 
-          <article class="card">
+          <article class="card digital-experiences-card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4V8z"/></svg>
             <h3>Digital Experiences</h3>
-<p>Interactive and content-rich experiences for businesses where presentation matters.</p>
+<p>Interactive, media-rich and content-driven experiences for businesses where presentation matters.</p>
+            <div class="case-study-proof">
+              <div class="case-study-kicker">Featured Case Study</div>
+              <h4>Cloudwards</h4>
+              <div class="case-study-type">Media Production</div>
+              <p class="case-study-description">Research, presenting, production and delivery of educational technology content.</p>
+              <a href="/cloudwards/" class="case-study-link">View Case Study →</a>
+            </div>
             <a href="#contact" class="learn">Learn More →</a>
           </article>
 
@@ -1666,7 +1745,12 @@
 
         <div>
           <div class="experience-list" aria-label="Selected experience and projects">
-            <div class="experience-logo">Cloudwards</div>
+            <a class="experience-logo" href="/cloudwards/" aria-label="Cloudwards — Media Production. View case study">
+              <span>
+                <span class="experience-logo-label">Cloudwards</span>
+                <span class="experience-logo-detail">Media Production</span>
+              </span>
+            </a>
             <div class="experience-logo">Solidity-LB</div>
             <div class="experience-logo">Southern Stone<br />Communications</div>
             <div class="experience-logo">NCompass</div>
