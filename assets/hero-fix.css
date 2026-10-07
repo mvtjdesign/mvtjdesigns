@@ -224,33 +224,38 @@
 
 #experience .experience-list {
   display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
   gap: 18px !important;
 }
 
-#experience .experience-logo {
-  min-height: 106px !important;
-  padding: 18px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  background: rgba(255, 255, 255, 0.035) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  font-size: 0.78rem !important;
-  line-height: 1.35 !important;
-  letter-spacing: 0.14em !important;
+#experience .experience-card {
+  grid-column: span 2;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: linear-gradient(155deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .018));
+}
+
+#experience .experience-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+#experience .experience-card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+#experience .experience-card-content {
+  min-height: 250px;
 }
 
 #experience .experience-note {
-  max-width: 760px !important;
-  margin-top: 22px !important;
-  font-size: 0.88rem !important;
-  line-height: 1.6 !important;
-  color: rgba(220, 225, 230, 0.76) !important;
+  max-width: 760px;
+  margin-top: 22px;
+  font-size: .88rem;
+  line-height: 1.6;
+  color: rgba(220, 225, 230, .76);
 }
 
-/* Tablet */
 @media (max-width: 1100px) {
   #experience .experience-row {
     grid-template-columns: 1fr !important;
@@ -265,9 +270,18 @@
   #experience .experience-list {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
+
+  #experience .experience-card {
+    grid-column: auto !important;
+  }
+
+  #experience .experience-card:nth-child(5) {
+    grid-column: 1 / -1 !important;
+    width: calc((100% - 18px) / 2) !important;
+    justify-self: center !important;
+  }
 }
 
-/* Mobile */
 @media (max-width: 720px) {
   #experience.experience {
     padding: 70px 0 !important;
@@ -277,12 +291,24 @@
     grid-template-columns: 1fr !important;
   }
 
+  #experience .experience-card {
+    grid-column: auto !important;
+    width: auto !important;
+  }
+
+  #experience .experience-card:nth-child(5) {
+    width: auto !important;
+  }
+
   #experience h2 {
     font-size: clamp(2.7rem, 12vw, 4rem) !important;
   }
 
-  #experience .experience-logo {
-    min-height: 86px !important;
+  #experience .experience-card-media,
+  #experience .experience-card-art {
+    height: 170px;
+    min-height: 170px;
+    flex-basis: 170px;
   }
 }
 /* =========================================================
