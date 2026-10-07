@@ -1,0 +1,93 @@
+/* BEGIN PROJECT INQUIRY: scoped styles; no changes to existing sections. */
+.inquiry-jump { white-space: normal; text-align: center; }
+.inquiry-jump:focus-visible,
+.inquiry-section a:focus-visible,
+.inquiry-section button:focus-visible,
+.inquiry-section input:focus-visible,
+.inquiry-section select:focus-visible,
+.inquiry-section textarea:focus-visible,
+.inquiry-summary:focus {
+  outline: 2px solid var(--gold-2);
+  outline-offset: 4px;
+}
+.inquiry-wrap { max-width: 900px; }
+.inquiry-wrap h2 { margin: 12px 0 22px; }
+.inquiry-wrap > p { margin-bottom: 24px; }
+.inquiry-setup, .inquiry-summary {
+  padding: 20px;
+  border: 1px solid var(--gold);
+  background: var(--navy);
+}
+.inquiry-section [hidden] { display: none; }
+.inquiry-section fieldset { min-width: 0; border: 0; }
+.inquiry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.inquiry-field { min-width: 0; }
+.inquiry-wide { grid-column: 1 / -1; }
+.inquiry-field label { display: block; margin-bottom: 10px; font-weight: 600; }
+.inquiry-field label span { font-weight: 400; }
+.inquiry-field input:not([type=checkbox]),
+.inquiry-field select,
+.inquiry-field textarea {
+  width: 100%; min-width: 0; max-width: 100%; min-height: 48px;
+  padding: 12px; border: 1px solid var(--muted);
+  border-radius: 0; background: var(--navy); color: var(--white);
+  font: inherit; color-scheme: dark;
+}
+.inquiry-field textarea { resize: vertical; }
+.inquiry-field .inquiry-help { font-size: .85rem; margin: 8px 0 12px; }
+.inquiry-error { display: block; color: #f0ce91; margin-top: 8px; font-size: .85rem; }
+.inquiry-error:empty { display: none; }
+.inquiry-field [aria-invalid=true] { border: 2px solid var(--gold-2); }
+.inquiry-field .inquiry-consent {
+  display: flex; gap: 14px; align-items: flex-start; min-height: 48px;
+  padding: 12px 0; cursor: pointer;
+}
+.inquiry-consent input { width: 24px; height: 24px; flex: 0 0 24px; accent-color: var(--gold-2); }
+.inquiry-summary { margin-bottom: 24px; }
+.inquiry-summary h3 { margin-bottom: 14px; }
+.inquiry-summary ul { padding-left: 22px; }
+.inquiry-summary li + li { margin-top: 10px; }
+.inquiry-section a:not(.btn) { text-decoration: underline; text-underline-offset: 3px; }
+.inquiry-section .btn { max-width: 100%; white-space: normal; text-align: center; }
+.inquiry-section button:disabled { opacity: .65; cursor: not-allowed; transform: none; }
+.inquiry-status { margin-top: 20px; min-height: 24px; }
+.inquiry-sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+@media (max-width: 720px) {
+  .inquiry-grid { grid-template-columns: 1fr; gap: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .inquiry-section .btn { transition: none; }
+  .inquiry-section .btn:hover { transform: none; }
+}
+/* END PROJECT INQUIRY */
+
+/* Standalone thank-you page: same MVTJ tokens and typography. */
+.thank-you-page {
+  --navy: #071421; --gold: #c8a46a; --gold-2: #d99b2b; --white: #fff;
+  --font-main: "Inter", system-ui, sans-serif; --font-display: "Oswald", sans-serif;
+  box-sizing: border-box; margin: 0; padding: 32px;
+  background: #050607; color: var(--white); font-family: var(--font-main); line-height: 1.55;
+}
+.thank-you-page * { box-sizing: border-box; }
+.thank-you-main { max-width: 900px; margin: 8vh auto; padding: clamp(24px, 5vw, 60px); background: var(--navy); border: 1px solid var(--gold); }
+.thank-you-brand img { width: 148px; max-width: 100%; height: auto; }
+.thank-you-kicker { margin-top: 40px; color: var(--gold-2); font-size: .8rem; font-weight: 700; letter-spacing: .15em; }
+.thank-you-main h1 { font-family: var(--font-display); font-size: clamp(2.25rem, 6vw, 4rem); line-height: 1.1; text-transform: uppercase; }
+.thank-you-main p { max-width: 62ch; }
+.thank-you-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
+.thank-you-page a { color: inherit; }
+.thank-you-actions a { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 20px; text-align: center; text-decoration: none; border: 1px solid var(--gold); font-weight: 600; }
+.thank-you-actions a:first-child { background: var(--gold-2); color: #050607; }
+.thank-you-page a:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 4px; }
+@media (max-width: 720px) {
+  .thank-you-page { padding: 17px; }
+  .thank-you-actions { flex-direction: column; }
+}
