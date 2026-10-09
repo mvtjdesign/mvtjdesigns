@@ -9,6 +9,7 @@
   const mobile = matchMedia('(max-width: 768px)');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const fadeBeforeEnd = 0.42;
+  const copyRevealTime = 3.5;
   const sources = {
     desktop: {
       video: 'assets/hero/mvtj-pool-walk-web.mp4',
@@ -142,7 +143,9 @@
     if (canPlay()) hero.classList.add('hero-video-active');
   });
   video.addEventListener('timeupdate', () => {
-    if (!enabled || completed || transitioning || !Number.isFinite(video.duration)) return;
+    if (!enabled || completed) return;
+    if (video.currentTime >= copyRevealTime) setCopyVisible(true);
+    if (transitioning || !Number.isFinite(video.duration)) return;
     if (video.duration - video.currentTime <= fadeBeforeEnd) {
       transitioning = true;
       hero.classList.remove('hero-video-active');

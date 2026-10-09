@@ -141,6 +141,17 @@ async function flushPromises() {
     assert.equal(f.video.currentTime, 3, 'returning to the hero resumes from the paused frame');
     assert.equal(f.video.playCalls, 2);
 
+    f.video.currentTime = 3.49;
+    f.video.dispatch('timeupdate');
+    assert.equal(f.copy.hasAttribute('inert'), true, 'copy stays pending before 3.5 seconds');
+    f.video.currentTime = 3.5;
+    f.video.dispatch('timeupdate');
+    assert.equal(f.copy.hasAttribute('inert'), false, 'copy is accessible at 3.5 seconds');
+    assert.equal(f.copy.hasAttribute('aria-hidden'), false);
+    assert.equal(f.hero.classList.contains('hero-copy-pending'), false);
+    assert.equal(f.hero.classList.contains('hero-video-active'), true, 'video stays visible after copy appears');
+    assert.equal(f.video.paused, false, 'video keeps playing behind the revealed copy');
+
     f.video.currentTime = 9.6;
     f.video.dispatch('timeupdate');
     assert.equal(f.hero.classList.contains('hero-video-active'), false, 'the still crossfades during the final 420ms');
@@ -166,9 +177,20 @@ async function flushPromises() {
     f.observers[0].intersect(true);
     assert.equal(f.video.src, 'assets/hero/mvtj-pool-walk-web.mp4');
     assert.equal(f.video.poster, 'assets/hero/mvtj-cinematic-hero.jpg');
-    assert.equal(f.copy.hasAttribute('inert'), true, 'desktop copy stays hidden and unfocusable during playback');
+    assert.equal(f.copy.hasAttribute('inert'), true, 'desktop copy starts hidden and unfocusable');
     assert.equal(f.video.loop, false);
     assert.equal(f.video.playCalls, 1);
+
+    f.video.currentTime = 3.49;
+    f.video.dispatch('timeupdate');
+    assert.equal(f.copy.hasAttribute('inert'), true, 'copy stays pending before 3.5 seconds');
+    f.video.currentTime = 3.5;
+    f.video.dispatch('timeupdate');
+    assert.equal(f.copy.hasAttribute('inert'), false, 'copy is accessible at 3.5 seconds');
+    assert.equal(f.copy.hasAttribute('aria-hidden'), false);
+    assert.equal(f.hero.classList.contains('hero-copy-pending'), false);
+    assert.equal(f.hero.classList.contains('hero-video-active'), true, 'video stays visible after copy appears');
+    assert.equal(f.video.paused, false, 'video keeps playing behind the revealed copy');
 
     f.video.currentTime = 9.6;
     f.video.dispatch('timeupdate');
