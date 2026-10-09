@@ -1202,13 +1202,13 @@
       flex-wrap: wrap;
     }
 
-    /* Decorative SVG Cyprus outline is intentionally abstract, not a map replacement. */
+    /* Keep the island outline recognizable at the small credential-icon size. */
     .cyprus-svg path {
       fill: none;
       stroke: currentColor;
-      stroke-width: 5;
-      stroke-linejoin: round;
       stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 10;
     }
 
     @media (max-width: 1050px) {
@@ -1633,8 +1633,9 @@
 }
   </style>
   <link rel="stylesheet" href="assets/hero-fix.css?v=31" />
-  <link rel="stylesheet" href="assets/inquiry.css" />
-  <script src="assets/inquiry.js" defer></script>
+  <!-- Local spatial prototype: progressively enhanced; content stays in HTML. -->
+  <link rel="stylesheet" href="assets/spatial-experience.css" />
+  <script src="assets/spatial-experience.js" defer></script>
 </head>
 
 <body>
@@ -1755,61 +1756,56 @@
       <div class="container">
         <div class="ways-to-work-intro">
           <div class="section-kicker">Ways to Work Together</div>
-          <h2 id="ways-to-work-title">A Clear Starting Point for Your Project</h2>
+          <h2 id="ways-to-work-title">A Clear Starting Point for Every Project</h2>
           <div class="gold-line"></div>
           <p>Choose a focused starting point based on what your business needs now. Every engagement has a clearly defined scope, practical process, and agreed next step.</p>
           <p class="ways-to-work-pricing">Starting prices provide an initial guide. Final proposals reflect the required scope, content, functionality, and timeline.</p>
         </div>
 
         <div class="ways-to-work-offers">
-          <article class="card ways-to-work-offer ways-to-work-audit" aria-labelledby="website-audit-title">
+          <article class="card ways-to-work-offer" aria-labelledby="website-audit-title">
             <p class="section-kicker ways-to-work-start">Start with Clarity</p>
             <h3 id="website-audit-title">Website Clarity Audit</h3>
-            <p class="ways-to-work-price">€195</p>
-            <p>A focused professional review for businesses that want to understand what is helping or hurting their website before investing in larger changes.</p>
+            <p class="ways-to-work-price">€200</p>
+            <p>A focused review of an existing website for businesses that want clear direction before committing to a larger project.</p>
             <h4 class="ways-to-work-scope">What’s Included</h4>
             <ul>
-              <li>Homepage positioning and first-impression review</li>
-              <li>Mobile usability review</li>
-              <li>Trust and credibility assessment</li>
-              <li>Call-to-action and inquiry-path review</li>
-              <li>Prioritized written recommendations</li>
+              <li>Visual and brand review</li>
+              <li>Usability and mobile review</li>
+              <li>Messaging and call-to-action review</li>
+              <li>Priority improvement recommendations</li>
+              <li>Concise written action plan</li>
               <li>One 15-minute review call</li>
             </ul>
-            <p class="ways-to-work-credit">The audit fee can be credited toward a qualifying website project booked within 30 days.</p>
+            <p class="ways-to-work-credit">Your €200 audit fee can be credited toward a larger MVTJ website project if you move forward within 30 days.</p>
             <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Request a Website Audit: opens an external Calendly page to book a free 15-minute introductory call (opens in a new tab)">Request a Website Audit</a>
           </article>
 
-          <!-- BEGIN LANDING PAGE SPRINT: starting-price scope; native progressive disclosure. -->
+          <!-- BEGIN LANDING PAGE: starting-price scope; native progressive disclosure. -->
           <article class="card ways-to-work-offer ways-to-work-sprint" aria-labelledby="landing-page-sprint-title">
-            <p class="section-kicker ways-to-work-start">A Focused Starting Point</p>
-            <h3 id="landing-page-sprint-title">Landing Page Sprint</h3>
-            <p class="ways-to-work-price">From €750</p>
-            <p>A focused, professionally delivered one-page website for a single service, campaign, or business objective.</p>
-            <h4 class="ways-to-work-scope">What’s Included at the Starting Price</h4>
+            <p class="section-kicker ways-to-work-start">One Focused Page</p>
+            <h3 id="landing-page-sprint-title">Landing Page</h3>
+            <p class="ways-to-work-price">From €650</p>
+            <p>A focused, professionally designed single-page website or campaign page for businesses that need a strong online presence without a full multi-page build.</p>
+            <h4 class="ways-to-work-scope">What’s Included</h4>
             <ul>
-              <li>One discovery questionnaire</li>
-              <li>One 15-minute project call</li>
-              <li>One responsive landing page</li>
-              <li>Up to five structured content sections</li>
-              <li>Clear page structure and content hierarchy</li>
-              <li>Styling aligned with the client’s existing brand assets</li>
+              <li>Custom visual direction aligned with your brand</li>
+              <li>One responsive page with up to five sections</li>
+              <li>Clear calls to action and one inquiry form</li>
               <li>Refinement of client-supplied content</li>
-              <li>One standard contact or lead-generation form</li>
-              <li>Basic search and social-sharing metadata</li>
-              <li>Desktop, tablet, and mobile optimization</li>
-              <li>One consolidated revision round</li>
-              <li>Launch on the client’s existing domain and hosting</li>
-              <li>Seven days of post-launch defect support</li>
+              <li>Basic SEO setup</li>
+              <li>Launch support</li>
             </ul>
-            <p class="ways-to-work-sprint-note">The €750 starting price applies when the client supplies approved branding, written content, images, hosting, and required access. Projects requiring additional sections, original copywriting, brand development, advanced tracking, complex integrations, custom functionality, or additional revisions are quoted according to scope.</p>
-            <h4 class="ways-to-work-scope">Typical Delivery</h4>
-            <p>7–10 business days after the initial payment and all required content, assets, approvals, and access have been received.</p>
-            <h4 class="ways-to-work-scope">Payment</h4>
-            <p>50% to begin and 50% before launch.</p>
+            <p class="ways-to-work-sprint-note">The starting price assumes client-supplied branding, content, images, hosting and access. Additional content, functionality or revisions are quoted separately.</p>
             <details class="ways-to-work-details">
               <summary>View scope details</summary>
               <div class="ways-to-work-details-content">
+                <h4>Starting Scope</h4>
+                <p>The package includes one discovery questionnaire, one 15-minute project call, and one responsive page with up to five structured content sections, optimized for desktop, tablet and mobile. Launch is on the client’s existing domain and compatible hosting.</p>
+                <h4>Typical Delivery</h4>
+                <p>7–10 business days after the initial payment and all required content, assets, approvals, and access have been received.</p>
+                <h4>Payment</h4>
+                <p>50% to begin and 50% before launch.</p>
                 <h4>Copy</h4>
                 <p>The client supplies the initial written content and business information. MVTJ Designs refines and organizes the supplied content for clarity and presentation. Full copywriting from a blank page is quoted separately.</p>
                 <h4>Design</h4>
@@ -1838,41 +1834,67 @@
             </details>
             <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Discuss a Landing Page: opens an external Calendly page to book a free 15-minute introductory call (opens in a new tab)">Discuss a Landing Page</a>
           </article>
-          <!-- END LANDING PAGE SPRINT -->
+          <!-- END LANDING PAGE -->
 
-          <article class="card ways-to-work-offer" aria-labelledby="business-website-title">
+          <article class="card ways-to-work-offer ways-to-work-business" aria-labelledby="business-website-title">
+            <p class="section-kicker ways-to-work-start">A Strong Starting Point</p>
             <h3 id="business-website-title">Business Website</h3>
-            <p class="ways-to-work-price">From €2,500</p>
-            <p>A professional multi-page website for an established business that needs a clear, credible, and responsive digital presence.</p>
-            <h4 class="ways-to-work-scope">Typical Scope</h4>
+            <p class="ways-to-work-price">From €1,250</p>
+            <p>A professionally designed website for small businesses that need a credible, polished digital presence.</p>
+            <h4 class="ways-to-work-scope">What’s Included</h4>
             <ul>
-              <li>Discovery and website planning</li>
-              <li>Page and navigation structure</li>
-              <li>Responsive visual design</li>
-              <li>Front-end development</li>
-              <li>Core inquiry journey</li>
-              <li>Basic search and social-sharing metadata</li>
-              <li>Launch preparation and handover</li>
+              <li>Discovery and core page planning</li>
+              <li>Custom design direction and responsive development</li>
+              <li>Contact and inquiry functionality</li>
+              <li>Mobile optimization</li>
+              <li>Basic SEO foundations</li>
+              <li>Launch setup and handover</li>
             </ul>
             <p class="ways-to-work-credit">The final proposal depends on the number of pages, content requirements, functionality, integrations, and project timeline.</p>
             <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Discuss a Business Website: opens an external Calendly page to book a free 15-minute introductory call (opens in a new tab)">Discuss a Business Website</a>
           </article>
+
+          <article class="card ways-to-work-offer" aria-labelledby="premium-website-title">
+            <p class="section-kicker ways-to-work-start">For Established Businesses</p>
+            <h3 id="premium-website-title">Premium Website / Redesign</h3>
+            <p class="ways-to-work-price">From €1,750</p>
+            <p>For established businesses whose current website no longer reflects the quality of the company.</p>
+            <h4 class="ways-to-work-scope">What’s Included</h4>
+            <ul>
+              <li>Website review and redesign planning</li>
+              <li>Stronger visual direction and richer page layouts</li>
+              <li>Clearer content hierarchy and storytelling</li>
+              <li>Refined inquiry and conversion journey</li>
+              <li>Custom front-end detail where appropriate</li>
+              <li>Launch preparation</li>
+            </ul>
+            <p class="ways-to-work-credit">Scope is agreed around the existing website and business needs. Advanced interaction is included only when it improves the project and is agreed in the proposal.</p>
+            <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Discuss a Website Redesign: opens an external Calendly page to book a free 15-minute introductory call (opens in a new tab)">Discuss a Website Redesign</a>
+          </article>
         </div>
 
         <div class="ways-to-work-secondary" aria-labelledby="other-services-title">
-          <h3 id="other-services-title">Other Ways We Can Help</h3>
+          <h3 id="other-services-title">Custom Work &amp; Ongoing Support</h3>
           <div class="ways-to-work-secondary-grid">
-            <article class="card ways-to-work-secondary-offer" aria-labelledby="website-refresh-title">
-              <h4 id="website-refresh-title">Website Refresh</h4>
-              <p class="ways-to-work-price">From €1,500</p>
-              <p>Focused improvements for an existing website that needs clearer messaging, stronger presentation, better usability, or a more professional customer experience.</p>
-              <p class="ways-to-work-qualification">The final scope depends on the condition, platform, size, and requirements of the existing website.</p>
-              <a class="btn" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Discuss a Website Refresh: opens an external Calendly page to book a free 15-minute introductory call (opens in a new tab)">Discuss a Website Refresh</a>
+            <article class="card ways-to-work-secondary-offer" aria-labelledby="custom-experience-title">
+              <h4 id="custom-experience-title">Custom Digital Experience</h4>
+              <p class="ways-to-work-price">Custom Quote</p>
+              <p>For launches, properties, portfolios and brands that need more than a conventional website.</p>
+              <h5 class="ways-to-work-scope">Possible Experiences</h5>
+              <ul>
+                <li>Immersive property presentations</li>
+                <li>Cinematic brand and launch experiences</li>
+                <li>Interactive portfolios</li>
+                <li>Motion-led storytelling and scroll experiences</li>
+                <li>3D elements where they improve the experience</li>
+              </ul>
+              <p class="ways-to-work-qualification">Each project is shaped around the experience your audience needs and quoted individually.</p>
+              <a class="btn" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Discuss Your Project: opens an external Calendly page to book a free 15-minute introductory call (opens in a new tab)">Discuss Your Project</a>
             </article>
             <article class="card ways-to-work-secondary-offer" aria-labelledby="website-care-title">
-              <h4 id="website-care-title">Website Care</h4>
-              <p class="ways-to-work-price">From €149/month</p>
-              <p>Ongoing support for businesses that want their website kept current, reliable, and aligned with changing needs after launch.</p>
+              <h4 id="website-care-title">Ongoing Website Care</h4>
+              <p class="ways-to-work-price">From €100/month</p>
+              <p>Support after launch for businesses that want their website kept current and professionally maintained.</p>
               <h5 class="ways-to-work-scope">Possible Services</h5>
               <ul>
                 <li>Content and image updates</li>
@@ -1915,11 +1937,19 @@
 
       <aside class="cred-box" aria-label="Credentials">
         <div class="cred-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M5 9h14M7 6h10M8 22h8"/><path d="M4 13c2 2 4 3 8 3s6-1 8-3"/></svg>
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M37 13 31 22m6-9 4 2-7 4M18 38l-7 7m8-9-6 7c-2 2-5 2-7 0l-2-2 7-1m10-3 5 4 5-4" />
+            <circle cx="37" cy="9" r="3.5" />
+            <path d="M34.5 12 32 15" />
+            <circle cx="24" cy="31" r="10.5" />
+            <path d="M14.5 28h19M15 34h18M24 20.5c-3 3-4.5 6.5-4.5 10.5S21 38.5 24 41.5M24 20.5c3 3 4.5 6.5 4.5 10.5S27 38.5 24 41.5" />
+            <path d="M22 12c-4-3-9-4-15-2l5 2-7 2 8 1-5 2 8-1 6-3m4-1c4-3 9-4 15-2l-5 2 7 2-8 1 5 2-8-1-6-3" />
+            <path d="M22 13c-2-3-1-6 2-7 3-1 6 0 6 3l4 2-5 1-2 4-3 4-2-5-2-2m0 0-3 4m7-2 3 3" />
+          </svg>
           <strong>U.S. Marine Veteran<br />Leadership. Honor. Commitment.</strong>
         </div>
         <div class="cred-item">
-          <svg class="cyprus-svg" viewBox="0 0 300 150"><path d="M38 86 C63 70 81 74 95 62 C114 46 139 57 163 40 C185 25 206 28 224 22 C229 32 216 39 221 48 C236 48 258 55 270 62 C246 69 229 78 207 76 C190 75 173 82 158 93 C139 105 112 95 92 105 C73 114 54 100 38 86 Z" /></svg>
+          <svg class="cyprus-svg" viewBox="0 0 768 768" aria-hidden="true" focusable="false"><path d="M42 389 C36 382 39 376 48 375 C53 379 54 386 61 390 C67 392 70 399 77 403 C85 408 94 404 98 398 C101 390 109 388 115 382 C120 376 117 366 121 361 C126 356 132 355 133 348 C141 345 148 348 155 345 C163 341 170 345 178 342 C188 339 194 344 202 349 C211 354 216 363 226 364 C235 362 243 352 248 340 C251 333 257 328 255 318 C254 307 250 296 252 287 C254 280 249 273 252 270 C262 271 269 282 280 286 C290 291 295 284 303 287 C312 290 316 298 326 297 C334 293 338 298 346 301 C355 298 362 304 371 302 C381 298 389 304 399 302 C410 301 416 301 426 298 C437 294 444 291 455 292 C468 291 476 284 485 278 C494 272 501 274 510 276 C522 277 532 272 543 269 C556 264 565 262 578 256 C592 250 604 243 615 234 C623 228 626 220 635 221 C644 219 648 211 657 208 C664 202 668 193 679 191 C687 187 692 180 701 181 C711 179 714 171 724 170 C731 165 736 167 736 172 C735 179 727 184 720 189 C711 195 704 199 697 205 C687 210 681 219 675 225 C668 234 659 237 650 243 C641 248 634 254 625 260 C615 267 606 275 600 284 C592 290 592 301 586 307 C581 313 574 310 567 307 C558 305 552 305 546 312 C540 319 538 327 534 335 C529 343 531 352 531 360 C533 368 538 375 541 384 C544 391 551 394 552 402 C557 409 563 413 569 421 C576 429 583 436 586 445 C590 452 585 455 580 450 C574 445 567 442 560 443 C551 443 546 440 538 441 C531 443 525 446 523 453 C519 459 525 464 521 469 C516 473 509 466 503 463 C495 459 487 459 479 460 C470 460 464 463 460 470 C457 478 460 486 456 493 C451 498 444 500 440 507 C435 515 426 516 419 519 C409 522 404 529 394 533 C384 538 376 539 367 535 C359 533 355 540 350 545 C344 549 337 543 331 549 C324 555 316 550 309 554 C301 558 294 552 287 556 C278 558 272 565 269 573 C265 579 258 581 260 588 C261 594 270 598 272 602 C270 607 261 603 255 603 C248 604 243 603 242 597 C245 589 239 583 237 577 C234 568 229 561 221 557 C213 552 203 553 195 557 C185 561 181 569 171 570 C160 571 151 566 144 559 C137 552 130 550 122 546 C116 541 110 539 103 540 C96 535 91 531 84 530 C78 527 78 519 78 512 C77 504 76 499 69 495 C62 490 61 480 58 474 C54 466 56 458 52 450 C49 442 54 435 51 427 C49 419 48 411 43 405 C41 399 44 394 42 389 Z" /></svg>
           <strong>Based in Cyprus<br />Working Globally</strong>
         </div>
         <div class="cred-item">
@@ -2143,7 +2173,7 @@
         <div>
          <div class="section-kicker">Have a Project in Mind?</div>
 <h2>LET’S BUILD SOMETHING WORTH NOTICING.</h2>
-<p>Ready to discuss your website? Book a free 15-minute introductory call, or send a few project details below and receive a personal response.</p>
+<p>Ready to discuss your website? Book a free 15-minute introductory call, or message MVTJ Designs directly through WhatsApp.</p>
           <div class="cta-guidance">
             <div class="cta-guidance-title">What to Send</div>
             <ul>
@@ -2156,119 +2186,11 @@
 
         <div class="contact-actions" style="display:flex; gap:12px; flex-wrap:wrap;">
           <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a free 15-minute call with MVTJ Designs on Calendly (opens in a new tab)">Book a Free 15-Minute Call</a>
-          <a class="btn inquiry-jump" href="#project-inquiry">Tell Me About Your Project</a>
           <a class="btn" href="https://wa.me/35794338222" rel="noopener noreferrer" aria-label="Contact MVTJ Designs on WhatsApp at +357 94 338222" aria-describedby="whatsapp-note">WhatsApp</a>
           <p class="booking-note" id="whatsapp-note">Prefer messaging? Contact MVTJ Designs directly through WhatsApp.</p>
         </div>
       </div>
     </section>
-    <!-- BEGIN PROJECT INQUIRY: delivery setup is documented in FORM-SETUP.md. -->
-    <section class="section inquiry-section" id="project-inquiry" aria-labelledby="inquiry-title">
-      <div class="container inquiry-wrap">
-        <div class="section-kicker">Project Inquiry</div>
-        <h2 id="inquiry-title">Or Tell Me About Your Project</h2>
-        <p id="inquiry-guidance">Fields marked required must be completed. Please do not include passwords, payment details, or other sensitive information.</p>
-        <p class="inquiry-setup" id="inquiry-setup">Development mode: form delivery must be configured before deployment. Your details cannot be sent yet. You can still book a call or contact MVTJ Designs through WhatsApp.</p>
-        <noscript><p>JavaScript is unavailable. Until form delivery is configured, please use the Calendly or WhatsApp options above. Once configured, the form can submit directly to the form service.</p></noscript>
-
-        <!-- ENDPOINT CONFIGURATION: add the real Formspree endpoint as action on this form.
-             Keep action absent and the fieldset/button disabled until configured.
-             See FORM-SETUP.md for native submission, privacy and spam protection setup. -->
-        <form id="project-inquiry-form" method="post" aria-describedby="inquiry-guidance inquiry-setup">
-          <div class="inquiry-summary" id="inquiry-summary" tabindex="-1" hidden>
-            <h3>Please Check Your Project Details</h3>
-            <ul id="inquiry-error-list"></ul>
-          </div>
-          <fieldset id="inquiry-fields" disabled>
-            <legend class="inquiry-sr-only">Your business and project details</legend>
-            <div class="inquiry-grid">
-              <div class="inquiry-field">
-                <label for="inquiry-name">Full name <span>(required)</span></label>
-                <input id="inquiry-name" name="name" type="text" autocomplete="name" required maxlength="150" aria-describedby="inquiry-name-error" />
-                <span class="inquiry-error" id="inquiry-name-error"></span>
-              </div>
-              <div class="inquiry-field">
-                <label for="inquiry-business">Business name <span>(required)</span></label>
-                <input id="inquiry-business" name="business" type="text" autocomplete="organization" required maxlength="200" aria-describedby="inquiry-business-error" />
-                <span class="inquiry-error" id="inquiry-business-error"></span>
-              </div>
-              <div class="inquiry-field">
-                <label for="inquiry-email">Email address <span>(required)</span></label>
-                <input id="inquiry-email" name="email" type="email" autocomplete="email" required maxlength="254" aria-describedby="inquiry-email-error" />
-                <span class="inquiry-error" id="inquiry-email-error"></span>
-              </div>
-              <div class="inquiry-field">
-                <label for="inquiry-website">Current website <span>(optional)</span></label>
-                <input id="inquiry-website" name="website" type="url" autocomplete="url" maxlength="1000" aria-describedby="inquiry-website-help inquiry-website-error" />
-                <p class="inquiry-help" id="inquiry-website-help">Leave blank if you do not have a website. Otherwise include https:// or http://.</p>
-                <span class="inquiry-error" id="inquiry-website-error"></span>
-              </div>
-              <div class="inquiry-field inquiry-wide">
-                <label for="inquiry-interest">What are you interested in? <span>(required)</span></label>
-                <select id="inquiry-interest" name="interest" required aria-describedby="inquiry-interest-error">
-                  <option value="">Choose an option</option>
-                  <option>Website Clarity Audit — €195</option>
-                  <option>Landing Page Sprint — from €750</option>
-                  <option>Website Refresh — from €1,500</option>
-                  <option>Business Website — from €2,500</option>
-                  <option>Website Care — from €149/month</option>
-                  <option>Not sure yet</option>
-                </select>
-                <span class="inquiry-error" id="inquiry-interest-error"></span>
-              </div>
-              <div class="inquiry-field">
-                <label for="inquiry-budget">Approximate project budget <span>(required)</span></label>
-                <select id="inquiry-budget" name="budget" required aria-describedby="inquiry-budget-error">
-                  <option value="">Choose a budget</option>
-                  <option>Up to €950</option><option>€1,000–€2,500</option><option>€2,500–€5,000</option><option>€5,000–€10,000</option><option>€10,000+</option><option>Not sure yet</option>
-                </select>
-                <span class="inquiry-error" id="inquiry-budget-error"></span>
-              </div>
-              <div class="inquiry-field">
-                <label for="inquiry-timeframe">Preferred timeframe <span>(required)</span></label>
-                <select id="inquiry-timeframe" name="timeframe" required aria-describedby="inquiry-timeframe-error">
-                  <option value="">Choose a timeframe</option>
-                  <option>As soon as possible</option><option>Within one month</option><option>Within one to three months</option><option>More than three months</option><option>Flexible or not sure</option>
-                </select>
-                <span class="inquiry-error" id="inquiry-timeframe-error"></span>
-              </div>
-              <div class="inquiry-field inquiry-wide">
-                <label for="inquiry-message">What would you like the website to accomplish? <span>(required)</span></label>
-                <p class="inquiry-help" id="inquiry-message-help">Tell me briefly about your business, the problem you want to solve, and what a successful result would look like.</p>
-                <textarea id="inquiry-message" name="message" rows="6" required maxlength="5000" aria-describedby="inquiry-message-help inquiry-message-error"></textarea>
-                <span class="inquiry-error" id="inquiry-message-error"></span>
-              </div>
-              <div class="inquiry-field inquiry-wide">
-                <label for="inquiry-source">How did you hear about MVTJ Designs? <span>(optional)</span></label>
-                <select id="inquiry-source" name="discovery_source">
-                  <option value="">Choose an option, or leave unanswered</option>
-                  <option>Google</option><option>Instagram</option><option>LinkedIn</option><option>Referral</option><option>Existing client</option><option>Advertisement</option><option>Other</option>
-                </select>
-              </div>
-              <div class="inquiry-field inquiry-wide">
-                <label class="inquiry-consent" for="inquiry-consent">
-                  <input id="inquiry-consent" name="privacy_consent" type="checkbox" value="agreed" required aria-describedby="inquiry-consent-error" />
-                  <span>I agree that MVTJ Designs may use the information provided to respond to this inquiry. (required)</span>
-                </label>
-                <span class="inquiry-error" id="inquiry-consent-error"></span>
-              </div>
-            </div>
-            <!-- Provider-compatible honeypot: excluded from keyboard and accessibility trees. -->
-            <div hidden aria-hidden="true">
-              <label for="inquiry-gotcha">Leave this field empty</label>
-              <input id="inquiry-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
-            </div>
-            <input type="hidden" name="utm_source" /><input type="hidden" name="utm_medium" />
-            <input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_content" /><input type="hidden" name="utm_term" />
-            <input type="hidden" name="page_url" /><input type="hidden" name="original_referrer" />
-            <button class="btn btn-primary" id="inquiry-submit" type="submit" disabled>Send My Project Details</button>
-          </fieldset>
-          <p class="booking-note">Prefer to speak directly? <a href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a free 15-minute introductory call with MVTJ Designs on Calendly (opens in a new tab)">Book a free 15-minute introductory call.</a></p>
-          <p id="inquiry-status" class="inquiry-status" role="status" aria-live="polite" aria-atomic="true"></p>
-        </form>
-      </div>
-    </section>
-    <!-- END PROJECT INQUIRY -->
   </main>
 
   <footer class="footer">

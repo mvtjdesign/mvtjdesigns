@@ -1,0 +1,78 @@
+/* Restrained MVTJ motion: original layout, always-visible content, native scroll. */
+:root { --spatial-experience-ready: 1; }
+
+.spatial-enabled .spatial-plane {
+  translate: 0 var(--plane-y, 0px);
+}
+
+.spatial-enabled .spatial-plane:focus-within {
+  translate: none;
+}
+
+/* Prices remain flat; preserve the existing border response with a smaller hover. */
+.spatial-enabled .ways-to-work-offer:hover {
+  transform: translateY(-2px);
+}
+
+@media (min-width: 1200px) and (min-height: 700px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .spatial-desktop .hero-backdrop {
+    transform: translateY(var(--hero-background-y, 0px)) scale(var(--hero-image-scale, 1));
+    transform-origin: 54% center;
+  }
+
+  .spatial-desktop .hero-copy {
+    translate: 0 var(--hero-copy-y, 0px);
+  }
+
+  .spatial-desktop .about-photo img {
+    transform: translateY(var(--portrait-y, 0px)) scale(var(--portrait-scale, 1));
+  }
+
+  /* Signature moment: image depth inside the original normal-flow portfolio.
+     All four projects retain their original sizing, text, cropping and links. */
+  .spatial-desktop .spatial-project .work-art {
+    transform: translateY(var(--project-image-y, 0px)) scale(var(--project-image-scale, 1));
+    transform-origin: center;
+  }
+
+  .spatial-desktop .spatial-project:hover {
+    transform: translateY(-2px);
+  }
+
+  .spatial-desktop .spatial-project:focus-within {
+    transform: none;
+  }
+
+  .spatial-desktop .spatial-project:focus-within .work-art,
+  .spatial-desktop .hero-copy:focus-within {
+    transform: none;
+    translate: none;
+  }
+
+  .spatial-desktop .spatial-project .work-link:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+  }
+
+  .spatial-desktop .spatial-project.is-near .work-art,
+  .spatial-desktop .hero.is-near .hero-backdrop {
+    will-change: transform;
+  }
+}
+
+@media print, (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .spatial-enabled .spatial-plane,
+  .spatial-enabled .hero-copy { translate: none; }
+  .spatial-enabled .hero-backdrop,
+  .spatial-enabled .about-photo img,
+  .spatial-enabled .spatial-project .work-art { transform: none; }
+  .spatial-enabled .card,
+  .spatial-enabled .btn,
+  .spatial-enabled .work-card,
+  .spatial-enabled .experience-card { transition: none; }
+  .spatial-enabled .card:hover,
+  .spatial-enabled .btn:hover,
+  .spatial-enabled .work-card:hover,
+  .spatial-enabled .experience-card:hover { transform: none; }
+}
