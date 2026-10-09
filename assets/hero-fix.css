@@ -26,6 +26,12 @@
   gap: 20px;
 }
 
+.ways-to-work-offers > .ways-to-work-offer:last-child {
+  grid-column: 1 / -1;
+  width: calc((100% - 20px) / 2);
+  justify-self: center;
+}
+
 .ways-to-work-offer {
   display: flex;
   flex-direction: column;
@@ -44,6 +50,8 @@
 .ways-to-work .ways-to-work-scope {
   margin: 24px 0 12px;
   font-size: 1rem;
+  font-family: var(--font-display);
+  text-transform: uppercase;
 }
 
 .ways-to-work ul {
@@ -78,36 +86,50 @@
   font-size: .72rem;
 }
 
-.ways-to-work-care {
+.ways-to-work-secondary {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.ways-to-work-secondary > h3 {
+  margin-bottom: 24px;
+}
+
+.ways-to-work-secondary-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 36px;
-  margin-top: 28px;
-  overflow: visible;
-  background: linear-gradient(145deg, var(--navy-2), var(--navy));
+  gap: 20px;
 }
 
-.ways-to-work-care > div {
+.ways-to-work-secondary-offer {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
+  overflow: visible;
+  background: var(--navy);
 }
 
-.ways-to-work-care .ways-to-work-scope {
-  margin-top: 0;
+.ways-to-work-secondary-offer > h4 {
+  margin-bottom: 18px;
+  font-size: 1.25rem;
 }
 
-.ways-to-work-care .ways-to-work-qualification {
-  margin-bottom: 24px;
-  font-size: .85rem;
+.ways-to-work-secondary-offer .ways-to-work-qualification {
+  margin: 20px 0 24px;
+  font-size: .9rem;
 }
 
-.ways-to-work-care .btn {
+.ways-to-work-secondary-offer .btn {
+  margin-top: auto;
+  align-self: flex-start;
   max-width: 100%;
 }
 
 /* Landing Page Sprint: native scope disclosure, with no JavaScript dependency. */
 .ways-to-work-sprint .ways-to-work-sprint-note {
   margin-top: 24px;
-  font-size: .85rem;
+  font-size: .91rem;
 }
 
 .ways-to-work-details {
@@ -145,18 +167,18 @@
 }
 
 @media (max-width: 720px) {
-  .ways-to-work-offers {
+  .ways-to-work-offers,
+  .ways-to-work-secondary-grid {
     grid-template-columns: 1fr;
+  }
+
+  .ways-to-work-offers > .ways-to-work-offer:last-child {
+    width: 100%;
   }
 
   .ways-to-work-offer,
-  .ways-to-work-care {
+  .ways-to-work-secondary-offer {
     padding: 28px 22px;
-  }
-
-  .ways-to-work-care {
-    grid-template-columns: 1fr;
-    gap: 24px;
   }
 }
 
@@ -164,16 +186,16 @@
   .ways-to-work-offer,
   .ways-to-work-offer::before,
   .ways-to-work-offer .btn,
-  .ways-to-work-care,
-  .ways-to-work-care::before,
-  .ways-to-work-care .btn {
+  .ways-to-work-secondary-offer,
+  .ways-to-work-secondary-offer::before,
+  .ways-to-work-secondary-offer .btn {
     transition: none;
   }
 
   .ways-to-work-offer:hover,
   .ways-to-work-offer .btn:hover,
-  .ways-to-work-care:hover,
-  .ways-to-work-care .btn:hover {
+  .ways-to-work-secondary-offer:hover,
+  .ways-to-work-secondary-offer .btn:hover {
     transform: none;
   }
 }

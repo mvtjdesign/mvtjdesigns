@@ -60,8 +60,8 @@ Then add its real link near the consent checkbox. Do not invent a route or claim
 legal compliance. Review provider data handling and the notice with an appropriate
 adviser where needed.
 
-The inquiry dropdown includes the specifically requested Landing Page Sprint at
-€950. No new package card was added and all existing Phase 2 prices are unchanged.
-Confirm the Sprint's delivery scope before advertising it beyond this selector.
+The existing inquiry dropdown reflects the homepage service names and starting
+prices. Landing Page Sprint starts from €750, with its scope defined in the
+homepage's native scope disclosure. No form-delivery configuration has been added.
 All call links retain the confirmed Calendly URL ending in `/30min`; the event is
 15 minutes. No payment or checkout is configured.
