@@ -47,6 +47,15 @@
   opacity: 0;
 }
 
+/* Keep the cinematic intro unobscured; restore the existing overlay on the still. */
+.hero::before {
+  transition: opacity 420ms ease-in-out;
+}
+
+.hero.hero-copy-pending::before {
+  opacity: 0 !important;
+}
+
 .hero-copy {
   transition: opacity 350ms ease, transform 350ms ease, filter 350ms ease;
 }
@@ -107,6 +116,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero::before,
   .hero-video,
   .hero-backdrop,
   .hero-copy {

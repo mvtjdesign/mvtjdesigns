@@ -1129,6 +1129,19 @@
       text-transform: uppercase;
     }
 
+    /* Founder film-profile links reuse the experience-card action styling. */
+    .experience-card--film .experience-card-action {
+      min-height: 44px;
+      align-items: center;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .experience-card--film .experience-card-action:focus-visible {
+      outline: 2px solid var(--gold-2);
+      outline-offset: 4px;
+    }
+
     .experience-note {
       max-width: 760px;
       margin-top: 22px;
@@ -1688,7 +1701,6 @@
         </div>
       </div>
     </section>
-
     <section class="section" id="work">
       <div class="container work-grid">
         <div class="work-side">
@@ -1923,7 +1935,6 @@
                   <li>One consolidated list of revisions</li>
                   <li>Confirmation that supplied materials can legally be used</li>
                 </ul>
-                <p>The delivery period begins after the initial payment and all required content, assets, approvals, and access have been received.</p>
               </div>
             </details>
             <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Discuss a Landing Page: opens an external Calendly page to book a free 15-minute introductory call (opens in a new tab)">Discuss a Landing Page</a>
@@ -1944,7 +1955,6 @@
               <li>Basic SEO foundations</li>
               <li>Launch setup and handover</li>
             </ul>
-            <p class="ways-to-work-credit">The final proposal depends on the number of pages, content requirements, functionality, integrations, and project timeline.</p>
             <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Discuss a Business Website: opens an external Calendly page to book a free 15-minute introductory call (opens in a new tab)">Discuss a Business Website</a>
           </article>
 
@@ -2072,7 +2082,6 @@
       <h2>Support Beyond Launch</h2>
       <div class="gold-line"></div>
      <p>Launching the website isn’t the end of the relationship. MVTJ Designs can continue supporting your site as your business changes and grows.</p>
-<p style="margin-top: 18px;">Launch it well. Keep it current. Improve it when it matters.</p>
 <div style="margin-top: 30px;">
   <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a free 15-minute call with MVTJ Designs on Calendly (opens in a new tab)">Book a Free 15-Minute Call</a>
 </div>
@@ -2138,7 +2147,6 @@
     </section>
 
 
-
     <section class="section experience" id="experience">
       <div class="container experience-row">
         <div>
@@ -2185,18 +2193,20 @@
               </div>
             </article>
 
-            <a class="experience-card experience-card-link experience-card--film" href="https://www.imdb.com/name/nm5947252/" target="_blank" rel="noopener noreferrer">
-              <span class="experience-card-media experience-card-media--film">
+            <article class="experience-card experience-card-static experience-card--film">
+              <div class="experience-card-media experience-card-media--film">
                 <img src="assets/experience/max-film-performance.jpg" alt="Max Tijerino acting headshot" loading="lazy" />
-              </span>
-              <span class="experience-card-content">
-                <span class="experience-card-category">Acting · Film · Storytelling</span>
-                <span class="experience-card-title">Film &amp; Performance</span>
-                <span class="experience-card-description">Screen performance and film experience that informs visual storytelling, presentation and audience awareness.</span>
-                <span class="experience-card-disciplines">Acting · Film · Performance · Visual Storytelling</span>
-                <span class="experience-card-action">Watch Acting Reel →</span>
-              </span>
-            </a>
+              </div>
+              <div class="experience-card-content">
+                <div class="experience-card-category">Acting &middot; Film &middot; Storytelling</div>
+                <h3 class="experience-card-title">Film, Performance &amp; On-Camera Work</h3>
+                <p class="experience-card-description">Max’s wider creative background includes acting training, showreel work and on-camera presentation, supported by studies at New York Film Academy and The Los Angeles Film School. That experience informs MVTJ Designs’ approach to visual storytelling, scripting, presentation, pacing and cinematic digital experiences.</p>
+                <a class="experience-card-action" href="https://www.imdb.com/name/nm5947252/" target="_blank" rel="noopener noreferrer" aria-label="View IMDb Profile (opens in a new tab)">View IMDb Profile</a>
+                <a class="experience-card-action" href="https://etalenta.me/max-tijerino" target="_blank" rel="noopener noreferrer" aria-label="View e-TALENTA Profile (opens in a new tab)">View e-TALENTA Profile</a>
+                <a class="experience-card-action" href="https://www.encast.pro/profile/53925/max-tijerino" target="_blank" rel="noopener noreferrer" aria-label="View enCAST Profile (opens in a new tab)">View enCAST Profile</a>
+                <a class="experience-card-action" href="https://showreel.etalenta.eu/max-tijerino/startplaylist/340733" target="_blank" rel="noopener noreferrer" aria-label="Watch Max Tijerino’s acting reel (opens in a new tab)">Watch Acting Reel</a>
+              </div>
+            </article>
 
             <article class="experience-card experience-card-static experience-card-static--marine experience-card--marine">
               <div class="experience-card-art experience-card-art--marine" aria-hidden="true"><span>Leadership<br />Engineering</span></div>
@@ -2233,8 +2243,7 @@
 
         <div class="contact-actions" style="display:flex; gap:12px; flex-wrap:wrap;">
           <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a free 15-minute call with MVTJ Designs on Calendly (opens in a new tab)">Book a Free 15-Minute Call</a>
-          <a class="btn" href="https://wa.me/35794338222" rel="noopener noreferrer" aria-label="Contact MVTJ Designs on WhatsApp at +357 94 338222" aria-describedby="whatsapp-note">WhatsApp</a>
-          <p class="booking-note" id="whatsapp-note">Prefer messaging? Contact MVTJ Designs directly through WhatsApp.</p>
+          <a class="btn" href="https://wa.me/35794338222" rel="noopener noreferrer" aria-label="Contact MVTJ Designs on WhatsApp at +357 94 338222">WhatsApp</a>
         </div>
       </div>
     </section>
