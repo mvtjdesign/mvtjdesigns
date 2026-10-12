@@ -1,0 +1,13 @@
+/* Founder page: extends the shared MVTJ editorial components without changing them. */
+.founder-intro { background: var(--navy); padding-block: 80px; }
+.founder-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 64px; align-items: center; }
+.founder-grid > *, .story-row > * { min-width: 0; }
+.founder-intro h1 { margin-top: 20px; font-size: clamp(2.8rem, 5.2vw, 5rem); }
+.founder-portrait { max-width: 400px; justify-self: end; }
+.founder-portrait img { width: 100%; height: auto; border: 1px solid var(--line); }
+.story-row { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; align-items: start; }
+.story-row h2 { font-size: clamp(2rem, 3vw, 3rem); }
+.founder-profiles { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 24px; }
+.founder-profiles a { overflow-wrap: anywhere; max-width: 100%; }
+@media (max-width: 1050px) { .founder-intro { padding-block: 64px; } .founder-grid, .story-row { gap: 32px; } }
+@media (max-width: 720px) { .founder-intro { padding-block: 40px; } .founder-grid, .story-row { grid-template-columns: 1fr; } .founder-portrait { justify-self: start; width: min(100%, 340px); } }

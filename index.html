@@ -1012,7 +1012,8 @@
     }
 
     .experience-card-media--film img {
-      object-position: center top;
+      object-fit: contain;
+      object-position: center;
       transition: transform .35s ease;
     }
 
@@ -1137,7 +1138,8 @@
       overflow-wrap: anywhere;
     }
 
-    .experience-card--film .experience-card-action:focus-visible {
+    .experience-card--film .experience-card-action:focus-visible,
+    .experience-card--marine .experience-card-action:focus-visible {
       outline: 2px solid var(--gold-2);
       outline-offset: 4px;
     }
@@ -1837,14 +1839,7 @@
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4V8z"/></svg>
             <h3>Digital Experiences</h3>
 <p>Interactive, media-rich and content-driven experiences for businesses where presentation matters.</p>
-            <div class="case-study-proof">
-              <div class="case-study-kicker">Featured Case Study</div>
-              <h4>Cloudwards</h4>
-              <div class="case-study-type">Media Production</div>
-              <p class="case-study-description">Research, presenting, production and delivery of educational technology content.</p>
-              <a href="/cloudwards/" class="case-study-link">View Case Study →</a>
-            </div>
-            <a href="#contact" class="learn">Learn More →</a>
+            <a href="#experience" class="learn">Explore My Creative Experience <span aria-hidden="true">&rarr;</span></a>
           </article>
 
           <article class="card">
@@ -2020,7 +2015,7 @@
 
     <section class="about-grid" id="about">
       <div class="about-photo">
-        <img src="assets/about/max-tijerino-founder.jpg" alt="Max Tijerino, founder of MVTJ Designs" />
+        <img src="assets/about/max-camera-set.png" alt="Max Tijerino, founder of MVTJ Designs, seated among cameras and studio lighting" width="1122" height="1402" loading="lazy" />
       </div>
 
       <div class="about-copy">
@@ -2035,6 +2030,7 @@
         <p>
           Based in Cyprus and working globally, I take projects from early direction through design, development and launch—without the layers of a traditional agency.
         </p>
+        <a class="btn" href="/founder/">More About Max</a>
         <div class="signature">Max</div>
         <div class="eyebrow">U.S. Marine Veteran</div>
       </div>
@@ -2159,7 +2155,7 @@
           <div class="experience-list" aria-label="Experience beyond web design">
             <a class="experience-card experience-card-link experience-card--cloudwards" href="/cloudwards/">
               <span class="experience-card-media experience-card-media--cloudwards">
-                <img src="assets/cloudwards-hero-banner-v1.png" alt="Cloudwards media production case study featuring on-camera presentation" loading="lazy" />
+                <img src="assets/experience/max-office-presentation.png" alt="Max Tijerino seated beside a computer monitor" width="1672" height="941" loading="lazy" />
               </span>
               <span class="experience-card-content">
                 <span class="experience-card-category">Media Production</span>
@@ -2195,7 +2191,7 @@
 
             <article class="experience-card experience-card-static experience-card--film">
               <div class="experience-card-media experience-card-media--film">
-                <img src="assets/experience/max-film-performance.jpg" alt="Max Tijerino acting headshot" loading="lazy" />
+                <img src="assets/experience/max-acting-headshot.jpeg" alt="Black-and-white acting headshot of Max Tijerino" width="1290" height="1054" loading="lazy" />
               </div>
               <div class="experience-card-content">
                 <div class="experience-card-category">Acting &middot; Film &middot; Storytelling</div>
@@ -2213,7 +2209,8 @@
               <div class="experience-card-content">
                 <div class="experience-card-category">Leadership &amp; Engineering</div>
                 <h3 class="experience-card-title">U.S. Marine Corps</h3>
-                <p class="experience-card-description">Military leadership, engineering and operational experience.</p>
+                <p class="experience-card-description">U.S. Marine Corps Combat Engineer (MOS 1371), 7th Engineer Support Battalion. Afghanistan veteran with platoon-sergeant leadership experience and an honorable discharge.</p>
+                <a class="experience-card-action" href="/founder/" style="min-height:44px;align-items:center;" aria-label="More about Max Tijerino’s background">More About Max</a>
                 <div class="experience-card-disciplines">Leadership · Operations · Engineering</div>
               </div>
             </article>
