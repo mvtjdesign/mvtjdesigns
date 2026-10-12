@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/mvtj-logo-primary.svg" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
  <title>MVTJ Designs | Web Design &amp; Digital Experiences</title>
@@ -1646,6 +1647,44 @@
 .studio-section .btn {
   width: fit-content;
 }
+    /* Editorial professional experience grid and subordinate founder bridge. */
+    #experience.experience-editorial h2 { max-width: 26ch !important; font-size: clamp(2.2rem, 4vw, 3.5rem) !important; line-height: 1.08 !important; }
+    #experience.experience-editorial .experience-card { grid-column: auto !important; width: auto !important; }
+    #experience.experience-editorial .experience-row { display: block !important; }
+    #experience.experience-editorial .experience-intro { max-width: 60ch; margin-bottom: 32px; color: var(--muted); }
+    #experience.experience-editorial .experience-list { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 24px !important; }
+    #experience.experience-editorial .experience-card-content { min-height: 0; padding: 24px; }
+    #experience.experience-editorial .experience-card-title { font-size: 1.2rem; }
+    #experience.experience-editorial .experience-card-description { font-size: .85rem; }
+    #experience.experience-editorial .experience-card-link:hover { transform: translateY(-2px); }
+    @media (max-width: 1050px) { #experience.experience-editorial .experience-list { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+    @media (max-width: 720px) { #experience.experience-editorial .experience-list { grid-template-columns: 1fr !important; } }
+    @media (prefers-reduced-motion: reduce) { #experience.experience-editorial .experience-card-link:hover { transform: none; } }
+    #services .learn { display: inline-flex; align-items: center; min-height: 44px; }
+    #services .learn:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 4px; }
+    /* Compact editorial process: override only the existing process layout. */
+    #process.section.process-compact { padding: 40px 0 !important; }
+    #process.process-compact .process-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 24px !important; }
+    #process.process-compact .process-title { grid-column: 1 / -1 !important; max-width: none !important; }
+    #process.process-compact .process-title h2 { max-width: none !important; font-size: clamp(1.8rem, 3vw, 2.6rem) !important; line-height: 1.15 !important; }
+    #process.process-compact .section-kicker { margin-bottom: 10px !important; }
+    #process.process-compact .gold-line { display: none; }
+    #process.process-compact .process-intro { margin-top: 14px; color: var(--muted); }
+    #process.process-compact .step-num { display: inline-block; font-size: 1.4rem !important; margin: 0 12px 12px 0 !important; color: var(--muted) !important; }
+    #process.process-compact .process-step svg { display: inline-block; vertical-align: middle; width: 26px !important; height: 26px !important; margin-bottom: 12px !important; }
+    #process.process-compact .process-step h3 { margin-bottom: 8px !important; }
+    #process.process-compact .process-step p { max-width: 34ch !important; font-size: .88rem !important; }
+    #process.process-compact .process-step::after { display: none !important; }
+    @media (max-width: 1050px) { #process.process-compact .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 24px !important; } }
+    @media (max-width: 720px) {
+      #process.section.process-compact { padding: 36px 0 !important; }
+      #process.process-compact .process-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+      #process.process-compact .process-step { display: grid; grid-template-columns: 40px 1fr; gap: 6px 12px; }
+      #process.process-compact .step-num { grid-column: 1; grid-row: 1; margin: 0 !important; }
+      #process.process-compact .process-step svg { grid-column: 1; grid-row: 2; margin: 0 !important; }
+      #process.process-compact .process-step h3 { grid-column: 2; grid-row: 1; align-self: center; margin: 0 !important; }
+      #process.process-compact .process-step p { grid-column: 2; grid-row: 2; max-width: none !important; }
+    }
   </style>
   <link rel="stylesheet" href="assets/hero-fix.css?v=31" />
   <!-- Local spatial prototype: progressively enhanced; content stays in HTML. -->
@@ -1825,14 +1864,14 @@
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8 12l2.5 2.5L16 9"/></svg>
             <h3>Website Design</h3>
 <p>Clear, considered design shaped around your brand, audience and business goals.</p>
-            <a href="#contact" class="learn">Learn More →</a>
+            <a href="#contact" class="learn">Discuss Website Design →</a>
           </article>
 
           <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
          <h3>Website Development</h3>
 <p>Responsive, carefully built websites designed to perform across devices.</p>
-<a href="#contact" class="learn">Learn More →</a>
+<a href="#contact" class="learn">Discuss Website Development →</a>
 </article>
 
           <article class="card digital-experiences-card">
@@ -1846,7 +1885,7 @@
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55"><path d="M4 19V5M4 19h16"/><path d="M8 16v-5M12 16V8M16 16v-9M20 16v-3"/></svg>
             <h3>Ongoing Care</h3>
 <p>Continued support, updates and improvements after launch.</p>
-            <a href="#contact" class="learn">Learn More →</a>
+            <a href="#contact" class="learn">Discuss Website Care →</a>
           </article>
         </div>
       </div>
@@ -1868,7 +1907,7 @@
             <p class="section-kicker ways-to-work-start">Start with Clarity</p>
             <h3 id="website-audit-title">Website Clarity Audit</h3>
             <p class="ways-to-work-price">€200</p>
-            <p>A focused review of an existing website for businesses that want clear direction before committing to a larger project.</p>
+            <p>A focused review of an existing website, with clear direction before a larger project.</p>
             <h4 class="ways-to-work-scope">What’s Included</h4>
             <ul>
               <li>Visual and brand review</li>
@@ -1887,7 +1926,7 @@
             <p class="section-kicker ways-to-work-start">One Focused Page</p>
             <h3 id="landing-page-sprint-title">Landing Page</h3>
             <p class="ways-to-work-price">From €650</p>
-            <p>A focused, professionally designed single-page website or campaign page for businesses that need a strong online presence without a full multi-page build.</p>
+            <p>A professionally designed single-page website or campaign page for a strong online presence without a multi-page build.</p>
             <h4 class="ways-to-work-scope">What’s Included</h4>
             <ul>
               <li>Custom visual direction aligned with your brand</li>
@@ -1990,7 +2029,7 @@
               <p class="ways-to-work-qualification">Each project is shaped around the experience your audience needs and quoted individually.</p>
               <a class="btn" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Discuss Your Project: opens an external Calendly page to book a free 15-minute introductory call (opens in a new tab)">Discuss Your Project</a>
             </article>
-            <article class="card ways-to-work-secondary-offer" aria-labelledby="website-care-title">
+            <article class="card ways-to-work-secondary-offer" id="care" aria-labelledby="website-care-title">
               <h4 id="website-care-title">Ongoing Website Care</h4>
               <p class="ways-to-work-price">From €100/month</p>
               <p>Support after launch for businesses that want their website kept current and professionally maintained.</p>
@@ -2071,59 +2110,28 @@
         </div>
       </aside>
     </section>
-<section class="section studio-section" id="care">
-  <div class="container services-layout">
-    <div class="side-copy">
-      <div class="section-kicker">Ongoing Care</div>
-      <h2>Support Beyond Launch</h2>
-      <div class="gold-line"></div>
-     <p>Launching the website isn’t the end of the relationship. MVTJ Designs can continue supporting your site as your business changes and grows.</p>
-<div style="margin-top: 30px;">
-  <a class="btn btn-primary" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a free 15-minute call with MVTJ Designs on Calendly (opens in a new tab)">Book a Free 15-Minute Call</a>
-</div>
-    </div>
 
-    <div class="cards-3">
-      <article class="card">
-        <h3>Website Updates</h3>
-        <p>Keep content, imagery and information current.</p>
-        <span class="learn">Keep It Current →</span>
-      </article>
-
-      <article class="card">
-        <h3>Maintenance</h3>
-        <p>Ongoing support for the website after launch.</p>
-        <span class="learn">Ongoing Support →</span>
-      </article>
-
-      <article class="card">
-        <h3>Continued Improvements</h3>
-        <p>Refine and improve the experience as new needs emerge.</p>
-        <span class="learn">Improve Over Time →</span>
-      </article>
-    </div>
-  </div>
-</section>
-    <section class="section" id="process">
+    <section class="section process-compact" id="process">
       <div class="container process-grid">
         <div class="process-title">
           <div class="section-kicker">Our Process</div>
           <h2>From First Conversation to Launch</h2>
           <div class="gold-line" style="margin-top: 24px;"></div>
+          <p class="process-intro">Four clear steps, with direction agreed before we build.</p>
         </div>
 
         <article class="process-step">
           <div class="step-num">01</div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="7"/><path d="M15.5 15.5L21 21"/></svg>
         <h3>Discover</h3>
-<p>We learn about your business, audience, goals and what the website needs to accomplish.</p>
+<p>We clarify your business, audience and website goals.</p>
         </article>
 
         <article class="process-step">
           <div class="step-num">02</div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M22 12h-3M12 22v-3M2 12h3"/></svg>
          <h3>Define</h3>
-<p>We establish the structure, priorities and creative direction.</p>
+<p>We agree the structure, priorities and creative direction.</p>
         </article>
 
         <article class="process-step">
@@ -2137,18 +2145,19 @@
           <div class="step-num">04</div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19V5M4 19h16"/><path d="M8 16v-5M12 16V8M16 16v-9M20 16v-3"/></svg>
          <h3>Launch &amp; Care</h3>
-<p>We prepare the site for launch and can continue supporting it afterward.</p>
+<p>We prepare for launch, with ongoing care available separately.</p>
         </article>
       </div>
     </section>
 
 
-    <section class="section experience" id="experience">
+    <section class="section experience experience-editorial" id="experience">
       <div class="container experience-row">
         <div>
-          <div class="section-kicker">Experience & Projects</div>
+          <div class="section-kicker">Selected Experience</div>
           <h2>Experience Beyond Web Design</h2>
           <div class="gold-line" style="margin-top: 24px;"></div>
+          <p class="experience-intro">Selected experience across media production, brand marketing and live events.</p>
         </div>
 
         <div>
@@ -2157,26 +2166,26 @@
               <span class="experience-card-media experience-card-media--cloudwards">
                 <img src="assets/experience/max-office-presentation.png" alt="Max Tijerino seated beside a computer monitor" width="1672" height="941" loading="lazy" />
               </span>
-              <span class="experience-card-content">
+              <div class="experience-card-content">
                 <span class="experience-card-category">Media Production</span>
-                <span class="experience-card-title">Cloudwards</span>
+                <h3 class="experience-card-title">Cloudwards</h3>
                 <span class="experience-card-description">Research, on-camera presenting, video production, editing and educational technology content.</span>
                 <span class="experience-card-disciplines">Research · Presenting · Video · Technology Content</span>
                 <span class="experience-card-action">View Case Study →</span>
-              </span>
+              </div>
             </a>
 
             <a class="experience-card experience-card-link experience-card--southern" href="https://www.daytonaradio.com/" target="_blank" rel="noopener noreferrer">
               <span class="experience-card-media experience-card-media--southern">
                 <img src="assets/experience/southern-stone.jpg" alt="Southern Stone Communications official logo" loading="lazy" />
               </span>
-              <span class="experience-card-content">
+              <div class="experience-card-content">
                 <span class="experience-card-category">Director of Digital Marketing</span>
-                <span class="experience-card-title">Southern Stone Communications</span>
+                <h3 class="experience-card-title">Southern Stone Communications</h3>
                 <span class="experience-card-description">Led digital marketing across Southern Stone's radio brands, including station websites, social media and digital campaigns.</span>
                 <span class="experience-card-disciplines">Radio · Digital Marketing · Social Media · Web</span>
                 <span class="experience-card-action">Visit Southern Stone ↗</span>
-              </span>
+              </div>
             </a>
 
             <article class="experience-card experience-card-static experience-card-static--ncompass experience-card--ncompass">
@@ -2189,35 +2198,7 @@
               </div>
             </article>
 
-            <article class="experience-card experience-card-static experience-card--film">
-              <div class="experience-card-media experience-card-media--film">
-                <img src="assets/experience/max-acting-headshot.jpeg" alt="Black-and-white acting headshot of Max Tijerino" width="1290" height="1054" loading="lazy" />
-              </div>
-              <div class="experience-card-content">
-                <div class="experience-card-category">Acting &middot; Film &middot; Storytelling</div>
-                <h3 class="experience-card-title">Film, Performance &amp; On-Camera Work</h3>
-                <p class="experience-card-description">Max’s wider creative background includes acting training, showreel work and on-camera presentation, supported by studies at New York Film Academy and The Los Angeles Film School. That experience informs MVTJ Designs’ approach to visual storytelling, scripting, presentation, pacing and cinematic digital experiences.</p>
-                <a class="experience-card-action" href="https://www.imdb.com/name/nm5947252/" target="_blank" rel="noopener noreferrer" aria-label="View IMDb Profile (opens in a new tab)">View IMDb Profile</a>
-                <a class="experience-card-action" href="https://etalenta.me/max-tijerino" target="_blank" rel="noopener noreferrer" aria-label="View e-TALENTA Profile (opens in a new tab)">View e-TALENTA Profile</a>
-                <a class="experience-card-action" href="https://www.encast.pro/profile/53925/max-tijerino" target="_blank" rel="noopener noreferrer" aria-label="View enCAST Profile (opens in a new tab)">View enCAST Profile</a>
-                <a class="experience-card-action" href="https://showreel.etalenta.eu/max-tijerino/startplaylist/340733" target="_blank" rel="noopener noreferrer" aria-label="Watch Max Tijerino’s acting reel (opens in a new tab)">Watch Acting Reel</a>
-              </div>
-            </article>
-
-            <article class="experience-card experience-card-static experience-card-static--marine experience-card--marine">
-              <div class="experience-card-art experience-card-art--marine" aria-hidden="true"><span>Leadership<br />Engineering</span></div>
-              <div class="experience-card-content">
-                <div class="experience-card-category">Leadership &amp; Engineering</div>
-                <h3 class="experience-card-title">U.S. Marine Corps</h3>
-                <p class="experience-card-description">U.S. Marine Corps Combat Engineer (MOS 1371), 7th Engineer Support Battalion. Afghanistan veteran with platoon-sergeant leadership experience and an honorable discharge.</p>
-                <a class="experience-card-action" href="/founder/" style="min-height:44px;align-items:center;" aria-label="More about Max Tijerino’s background">More About Max</a>
-                <div class="experience-card-disciplines">Leadership · Operations · Engineering</div>
-              </div>
-            </article>
           </div>
-          <p class="experience-note">
-            Selected professional experience across media, marketing, live events, performance and military leadership — disciplines that continue to shape how MVTJ approaches digital work.
-          </p>
         </div>
       </div>
     </section>
@@ -2255,6 +2236,7 @@
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
+        <a href="/privacy/">Privacy Policy</a>
       </div>
     </div>
   </footer>

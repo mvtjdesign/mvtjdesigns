@@ -87,6 +87,8 @@
 .thank-you-actions a { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 20px; text-align: center; text-decoration: none; border: 1px solid var(--gold); font-weight: 600; }
 .thank-you-actions a:first-child { background: var(--gold-2); color: #050607; }
 .thank-you-page a:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 4px; }
+.thank-you-footer { max-width: 900px; margin: 0 auto 32px; padding: 0 clamp(24px, 5vw, 60px); color: #c8ccd2; font-size: .85rem; }
+.thank-you-footer a { display: inline-flex; align-items: center; min-height: 44px; color: #f0ce91; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 720px) {
   .thank-you-page { padding: 17px; }
   .thank-you-actions { flex-direction: column; }
