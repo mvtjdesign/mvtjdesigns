@@ -731,6 +731,28 @@
     }
 
     /* Work */
+    .client-testimonial {
+      display: grid;
+      grid-template-columns: minmax(180px, .65fr) minmax(0, 2fr);
+      gap: clamp(24px, 4vw, 56px);
+      padding: clamp(24px, 4vw, 44px) 0;
+      margin-bottom: clamp(36px, 5vw, 64px);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .client-testimonial figcaption { grid-column: 1; grid-row: 1; }
+    .client-testimonial blockquote { grid-column: 2; max-width: 70ch; }
+    .client-testimonial blockquote p { font-size: clamp(1rem, 1.2vw, 1.1rem); line-height: 1.7; }
+    .client-testimonial blockquote p + p { margin-top: 16px; }
+    .client-testimonial-name { display: block; margin-top: 16px; font-weight: 700; }
+    .client-testimonial-role { display: block; color: var(--muted); font-size: .9rem; }
+
+    @media (max-width: 768px) {
+      .client-testimonial { grid-template-columns: minmax(0, 1fr); }
+      .client-testimonial blockquote { grid-column: 1; grid-row: 2; }
+    }
+
     .work-grid {
       display: grid;
       grid-template-columns: 220px repeat(4, 1fr);
@@ -1806,6 +1828,21 @@
         </div>
       </div>
     </section>
+
+    <div class="container">
+      <figure class="client-testimonial" aria-label="Solidity client testimonial">
+        <blockquote>
+          <p>&ldquo;I asked Max to create a website for Solidity that would clearly explain our insurance services and help potential clients find the information they need.</p>
+          <p>Max was responsive and brought my ideas to life. The website is well designed, with detailed information presented clearly so visitors can understand our services and find answers to their questions.</p>
+          <p>I recommend Max to anyone looking for a well-designed website to showcase their business. He is creative, knowledgeable and attentive.&rdquo;</p>
+        </blockquote>
+        <figcaption>
+          <div class="section-kicker">Client Perspective &middot; Solidity</div>
+          <span class="client-testimonial-name">Ziad Akiki</span>
+          <span class="client-testimonial-role">CEO, Solidity</span>
+        </figcaption>
+      </figure>
+    </div>
 
     <div class="brand-strip">
       <div class="container brand-strip-inner">
