@@ -115,6 +115,23 @@
   }
 }
 
+.hero-copy .hero-eyebrow {
+  max-width: 44em;
+  margin: 0 0 18px;
+  color: #e4c58e;
+  font-size: .72rem;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: .12em;
+}
+.hero-copy .hero-story-accent { color: #e4c58e; }
+@media (min-width: 1051px) {
+  .hero .hero-copy #hero-title {
+    width: max-content;
+    max-width: 75vw !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero::before,
   .hero-video,

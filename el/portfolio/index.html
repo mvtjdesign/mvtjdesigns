@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/mvtj-logo-primary.svg" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+ <title>Χαρτοφυλάκιο | MVTJ Designs</title>
+ <meta name="description" content="Μια επιχείρηση μάρκετινγκ ακινήτων. Συμβουλευτική εταιρεία. Ένας οδηγός επισκεπτών θερέτρου. Τρία διαφορετικά σλιπ, το καθένα με μια ψηφιακή παρουσία που διαμορφώνεται γύρω από το κοινό του." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #071421;
+      --navy-2: #0b1d2e;
+      --black: #050607;
+      --charcoal: #111111;
+      --charcoal-2: #171717;
+      --gold: #c8a46a;
+      --gold-2: #d99b2b;
+      --white: #ffffff;
+      --muted: #a8acb3;
+      --line: rgba(200, 164, 106, 0.22);
+      --line-soft: rgba(255, 255, 255, 0.085);
+      --glass: rgba(255, 255, 255, 0.055);
+      --max: 1180px;
+      --font-main: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Oswald", "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--black);
+    }
+
+    body {
+      font-family: var(--font-main);
+      background:
+        radial-gradient(circle at top right, rgba(200, 164, 106, .13), transparent 34rem),
+        linear-gradient(180deg, #050607 0%, #0a0f13 38%, #050607 100%);
+      color: var(--white);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .eyebrow,
+    .section-kicker {
+      color: var(--gold-2);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .gold {
+      color: var(--gold-2);
+    }
+
+    .section {
+      border-top: 1px solid var(--line-soft);
+      padding: 72px 0;
+      position: relative;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: .045em;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 7vw, 6.9rem);
+      max-width: 790px;
+    }
+
+    h2 {
+      font-size: clamp(2.05rem, 4vw, 3.7rem);
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      letter-spacing: .07em;
+    }
+
+    p {
+      color: #c8ccd2;
+      font-size: .98rem;
+      max-width: 62ch;
+    }
+
+    .lead {
+      color: #eef0f2;
+      font-size: clamp(1.05rem, 1.55vw, 1.25rem);
+      max-width: 54ch;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 26px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--white);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: .25s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      color: #090909;
+      border-color: transparent;
+      box-shadow: 0 18px 40px rgba(217, 155, 43, .15);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(200, 164, 106, .8);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 22px 50px rgba(217, 155, 43, .25);
+    }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 76px;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(180deg, rgba(5, 6, 7, .9), rgba(5, 6, 7, .58));
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+    }
+
+    .logo {
+      width: 168px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #eff2f5;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      opacity: .88;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-2);
+    }
+
+    .mobile-menu-note {
+      display: none;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 760px;
+      padding-top: 76px;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      background:
+        linear-gradient(90deg, rgba(5, 8, 11, 1) 0%, rgba(5, 8, 11, .94) 32%, rgba(5, 8, 11, .56) 61%, rgba(5, 8, 11, .1) 100%),
+        linear-gradient(180deg, rgba(5, 8, 11, .1), rgba(5, 8, 11, .88)),
+        url("/assets/hero/mvtj-cinematic-hero.jpg");
+      background-size: cover;
+      background-position: center right;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 73% 36%, rgba(217, 155, 43, .36), transparent 17rem),
+        linear-gradient(135deg, #06121d 0%, #050607 38%, #1b130b 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .31;
+      background-image:
+        linear-gradient(rgba(200, 164, 106, .12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 164, 106, .08) 1px, transparent 1px);
+      background-size: 90px 90px;
+      mask-image: radial-gradient(circle at 82% 20%, black, transparent 58%);
+    }
+
+    .topo {
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 46%;
+      height: 48%;
+      opacity: .25;
+      z-index: -1;
+      background:
+        repeating-radial-gradient(ellipse at 18% 8%, transparent 0 18px, rgba(200, 164, 106, .38) 20px, transparent 22px);
+      mask-image: linear-gradient(135deg, black 0%, transparent 78%);
+    }
+
+    .hero-inner {
+      min-height: calc(760px - 76px);
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: end;
+      gap: 32px;
+      padding-bottom: 0;
+      position: relative;
+    }
+
+    .hero-copy {
+      padding: 96px 0 70px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-copy h1 {
+      margin: 18px 0 16px;
+    }
+
+    .hero-copy .lead {
+      margin-bottom: 24px;
+    }
+
+    .hero-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 28px;
+      margin: 28px 0 24px;
+    }
+
+    .hero-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hero-tab svg {
+      width: 25px;
+      height: 25px;
+      color: var(--gold-2);
+      flex: 0 0 auto;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--gold-2);
+      font-size: .76rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 850;
+      margin: 27px 0 0;
+    }
+
+    .hero-meta span:not(:last-child)::after {
+      content: "•";
+      margin-left: 12px;
+      color: var(--gold-2);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .hero-portrait-wrap {
+      align-self: end;
+      min-height: 620px;
+      position: relative;
+      pointer-events: none;
+    }
+
+    .hero-portrait-wrap::after {
+      content: "";
+      position: absolute;
+      right: -84px;
+      bottom: 0;
+      width: min(540px, 52vw);
+      height: 82%;
+      z-index: 1;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, .12), rgba(0, 0, 0, .62) 72%);
+      filter: blur(18px);
+      pointer-events: none;
+    }
+
+    .hero-portrait {
+      position: absolute;
+      right: -34px;
+      bottom: 0;
+      width: min(445px, 42vw);
+      filter: grayscale(1) contrast(1.08) brightness(.92);
+      opacity: .985;
+      z-index: 3;
+      mix-blend-mode: normal;
+      pointer-events: none;
+    }
+
+    .cyprus-mark {
+      position: absolute;
+      right: 32px;
+      top: 132px;
+      width: 165px;
+      color: var(--gold-2);
+      opacity: .95;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .cyprus-mark svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 0 14px rgba(217, 155, 43, .16));
+    }
+
+    .cyprus-mark span {
+      display: block;
+      margin-top: 8px;
+      font-size: .78rem;
+      letter-spacing: .2em;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .brand-strip {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      background: rgba(5, 6, 7, .68);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand-strip-inner {
+      min-height: 94px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      align-items: center;
+    }
+
+    .strip-item {
+      display: grid;
+      grid-template-columns: 35px 1fr;
+      gap: 14px;
+      align-items: center;
+      min-height: 56px;
+      border-right: 1px solid rgba(255, 255, 255, .12);
+      padding-right: 18px;
+    }
+
+    .strip-item:last-child {
+      border-right: none;
+    }
+
+    .strip-item svg {
+      width: 34px;
+      height: 34px;
+      color: var(--gold-2);
+    }
+
+    .strip-item strong {
+      display: block;
+      color: var(--white);
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      line-height: 1.55;
+    }
+
+    /* Services */
+    .services-layout {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 48px;
+      align-items: stretch;
+    }
+
+    .side-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .side-copy h2 {
+      margin: 12px 0 22px;
+    }
+
+    .gold-line {
+      width: 72px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-2), transparent);
+      margin: 0 0 25px;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .cards-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      position: relative;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, .085), rgba(255, 255, 255, .025)),
+        linear-gradient(180deg, rgba(200, 164, 106, .055), transparent);
+      border: 1px solid rgba(255, 255, 255, .105);
+      padding: 34px 28px;
+      min-height: 255px;
+      overflow: hidden;
+      transition: .25s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(200, 164, 106, .14), transparent 36%);
+      opacity: 0;
+      transition: .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(200, 164, 106, .55);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-icon {
+      width: 43px;
+      height: 43px;
+      color: var(--gold-2);
+      margin-bottom: 28px;
+    }
+
+    .card h3 {
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      color: #bfc4cb;
+      font-size: .91rem;
+    }
+
+    .learn {
+      display: inline-flex;
+      gap: 11px;
+      align-items: center;
+      margin-top: 28px;
+      color: var(--gold-2);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-weight: 900;
+    }
+
+    .case-study-proof {
+      border-top: 1px solid rgba(200, 164, 106, .25);
+      margin-top: 18px;
+      padding-top: 14px;
+    }
+
+    .case-study-kicker {
+      color: var(--gold-2);
+      font-size: .58rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .case-study-proof h4 {
+      margin-top: 5px;
+      font-size: 1rem;
+    }
+
+    .case-study-type {
+      margin-top: 3px;
+      color: var(--gold);
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .card .case-study-description {
+      margin-top: 7px;
+      font-size: .76rem;
+      line-height: 1.5;
+    }
+
+    .case-study-link {
+      display: inline-flex;
+      margin-top: 11px;
+      color: var(--gold-2);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .case-study-link:focus-visible {
+      outline: 2px solid var(--gold-2) !important;
+      outline-offset: 4px !important;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.55fr .85fr;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      background: rgba(255, 255, 255, .02);
+    }
+
+    .about-photo {
+      min-height: 360px;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,.18), transparent 48%),
+        linear-gradient(145deg, #2a2a2a, #050607 76%);
+      position: relative;
+      overflow: hidden;
+      filter: grayscale(1);
+    }
+
+    .about-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(5, 6, 7, .02), rgba(5, 6, 7, .88)),
+        url("/assets/max-portrait.jpg?v=2");
+      background-size: 88%;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+    }
+
+    .about-copy {
+      padding: 58px 44px;
+      border-left: 1px solid rgba(255, 255, 255, .08);
+      border-right: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .about-copy h2 {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      margin: 12px 0 22px;
+    }
+
+    .about-copy p + p {
+      margin-top: 18px;
+    }
+
+    .about-copy .founder-background {
+      color: rgba(200, 204, 210, .82);
+      font-size: .9rem;
+    }
+
+    .signature {
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      color: var(--gold-2);
+      font-size: 2.4rem;
+      line-height: 1;
+      margin: 28px 0 8px;
+      opacity: .92;
+    }
+
+    .cred-box {
+      padding: 44px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .cred-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .cred-item svg {
+      width: 42px;
+      height: 42px;
+      color: var(--gold-2);
+    }
+
+    .cred-item strong {
+      display: block;
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      line-height: 1.55;
+    }
+
+    /* Process */
+    .process-grid {
+      display: grid;
+      grid-template-columns: 185px repeat(4, 1fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .process-title h2 {
+      margin-top: 12px;
+    }
+
+    .process-step {
+      position: relative;
+      padding-top: 4px;
+    }
+
+    .process-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -24px;
+      top: 43px;
+      width: 34px;
+      border-top: 1px dashed rgba(200, 164, 106, .55);
+    }
+
+    .step-num {
+      color: rgba(255, 255, 255, .1);
+      font-family: var(--font-display);
+      font-size: 3rem;
+      letter-spacing: .04em;
+      line-height: 1;
+      margin-bottom: -5px;
+    }
+
+    .process-step svg {
+      width: 42px;
+      height: 42px;
+      color: var(--gold-2);
+      margin-bottom: 18px;
+    }
+
+    .process-step h3 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .process-step p {
+      font-size: .86rem;
+      color: #b9bec5;
+    }
+
+    /* Work */
+    .client-testimonial {
+      display: grid;
+      grid-template-columns: minmax(180px, .65fr) minmax(0, 2fr);
+      gap: clamp(24px, 4vw, 56px);
+      padding: clamp(24px, 4vw, 44px) 0;
+      margin-bottom: clamp(36px, 5vw, 64px);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .client-testimonial figcaption { grid-column: 1; grid-row: 1; }
+    .client-testimonial blockquote { grid-column: 2; max-width: 70ch; }
+    .client-testimonial blockquote p { font-size: clamp(1rem, 1.2vw, 1.1rem); line-height: 1.7; }
+    .client-testimonial blockquote p + p { margin-top: 16px; }
+    .client-testimonial-name { display: block; margin-top: 16px; font-weight: 700; }
+    .client-testimonial-role { display: block; color: var(--muted); font-size: .9rem; }
+
+    @media (max-width: 768px) {
+      .client-testimonial { grid-template-columns: minmax(0, 1fr); }
+      .client-testimonial blockquote { grid-column: 1; grid-row: 2; }
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: 220px repeat(4, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    #services .services-layout {
+      grid-template-columns: minmax(260px, .8fr) minmax(0, 1.6fr);
+      gap: clamp(28px, 4vw, 56px);
+      align-items: center;
+    }
+
+    #services .cards-4 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #work .work-grid {
+      display: block;
+    }
+
+    .work-side {
+      padding: 4px 0;
+    }
+
+    #work .work-side {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 28px;
+    }
+
+    .work-side h2 {
+      margin: 12px 0 20px;
+    }
+
+    #work .work-side .gold-line {
+      margin-bottom: 0;
+    }
+
+    .work-projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .work-card {
+      background: rgba(255, 255, 255, .045);
+      border: 1px solid rgba(255, 255, 255, .10);
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      overflow: hidden;
+      position: relative;
+      transition: .25s ease;
+    }
+
+    .work-card-featured {
+      grid-column: 1 / -1;
+    }
+
+    .work-card-featured {
+      min-height: 330px;
+    }
+
+    .work-card-pendeli {
+      min-height: 330px;
+    }
+
+    .work-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(200, 164, 106, .6);
+    }
+
+    .work-art {
+      position: absolute;
+      inset: 0;
+      opacity: .72;
+      background:
+        linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
+        radial-gradient(circle at 70% 20%, rgba(200, 164, 106, .46), transparent 9rem),
+        linear-gradient(135deg, #17202a, #0b0f13);
+    }
+
+    .work-art::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5, 6, 7, .2) 0%, rgba(5, 6, 7, .3) 42%, rgba(5, 6, 7, .94) 100%);
+    }
+
+    .work-screenshot {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: .88;
+    }
+
+    .work-card-featured .work-screenshot {
+      object-position: center 62%;
+      transform: scale(2);
+      transform-origin: right center;
+    }
+
+    .work-card-chronodike .work-screenshot {
+      object-position: center 42%;
+    }
+
+    .work-card-solidity .work-art {
+      background:
+        linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
+        radial-gradient(circle at 45% 28%, rgba(217, 155, 43, .38), transparent 10rem),
+        linear-gradient(135deg, #2a2116, #0c1115);
+    }
+
+    .work-card-chronodike .work-art {
+      background:
+        linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, .92) 76%),
+        radial-gradient(circle at 48% 18%, rgba(255, 255, 255, .28), transparent 8rem),
+        linear-gradient(135deg, #252525, #080b0d);
+    }
+
+    .work-card-pendeli .work-art::after {
+      background: linear-gradient(180deg, rgba(5, 6, 7, .18) 0%, rgba(5, 6, 7, .88) 28%, rgba(5, 6, 7, .98) 100%);
+    }
+
+    .work-card-content {
+      position: relative;
+      z-index: 1;
+      padding: 22px;
+    }
+
+    .work-card h3 {
+      font-size: .88rem;
+      margin-bottom: 6px;
+    }
+
+    .work-card p {
+      font-size: .74rem;
+      color: #c1c5c9;
+    }
+
+    .work-card .work-card-credibility {
+      margin-top: 8px;
+      color: #e2d8c7;
+      font-size: .68rem;
+      font-weight: 700;
+    }
+
+    .work-category {
+      margin-bottom: 8px;
+      color: var(--gold-2);
+      font-size: .62rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .work-card-featured .work-card-content {
+      max-width: 850px;
+      padding: 30px;
+    }
+
+    .work-card-featured h3 {
+      font-size: 1.2rem;
+    }
+
+    .work-link {
+      display: inline-flex;
+      margin-top: 14px;
+      color: var(--gold-2);
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    /* Experience */
+    .experience {
+      background:
+        linear-gradient(180deg, rgba(5, 6, 7, .72), rgba(5, 6, 7, .92)),
+        url("/assets/hero/mvtj-cinematic-hero.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .experience-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience-card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .12);
+      background: linear-gradient(155deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .018));
+      color: rgba(255, 255, 255, .9);
+    }
+
+    .experience-card-link {
+      cursor: pointer;
+      isolation: isolate;
+      text-decoration: none;
+      -webkit-tap-highlight-color: rgba(217, 155, 43, .18);
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .experience-card-link:hover {
+      transform: translateY(-4px);
+      border-color: rgba(200, 164, 106, .64);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .experience-card-link:focus-visible {
+      outline: 2px solid #f0ce91;
+      outline-offset: 4px;
+      box-shadow: 0 0 0 2px #050607, 0 0 0 4px #f0ce91;
+    }
+
+    .experience-card-link:focus:not(:focus-visible) {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .experience-card-content {
+      box-sizing: border-box;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+      min-height: 250px;
+      padding: 19px;
+    }
+
+    .experience-card-media,
+    .experience-card-art {
+      height: 154px;
+      min-height: 154px;
+      flex: 0 0 154px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .experience-card-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .experience-card-media--cloudwards {
+      position: relative;
+      background: #0b1420;
+    }
+
+    .experience-card-media--cloudwards img {
+      object-position: center 24%;
+      transition: transform .35s ease;
+    }
+
+    .experience-card-media--film {
+      position: relative;
+      background: #11171d;
+    }
+
+    .experience-card-media--film img {
+      object-fit: contain;
+      object-position: center;
+      transition: transform .35s ease;
+    }
+
+    .experience-card-media--cloudwards::after,
+    .experience-card-media--film::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent 55%, rgba(5, 6, 7, .24));
+    }
+
+    .experience-card-media--southern {
+      box-sizing: border-box;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      border-bottom-color: rgba(0, 0, 0, .1);
+      background: #f6f5f2;
+    }
+
+    .experience-card-media--southern img {
+      width: 92%;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .experience-card-art {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 18px 20px;
+      color: rgba(245, 238, 224, .86);
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: .12em;
+      line-height: 1.08;
+      text-transform: uppercase;
+      background:
+        radial-gradient(ellipse at 75% 25%, rgba(200, 164, 106, .19), transparent 43%),
+        linear-gradient(135deg, #17212a, #080c10);
+    }
+
+    .experience-card-art--marine {
+      color: #e3d5bc;
+      background:
+        linear-gradient(135deg, rgba(200, 164, 106, .12), transparent 56%),
+        linear-gradient(135deg, #151b20, #080c10);
+    }
+
+    .experience-card-art span {
+      position: relative;
+      z-index: 1;
+      display: block;
+      max-width: 15ch;
+    }
+
+    .experience-card-art--events::after,
+    .experience-card-art--marine::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(135deg, transparent 45%, rgba(200, 164, 106, .08));
+    }
+
+    .experience-card-category {
+      color: var(--gold-2);
+      font-size: .59rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .experience-card-title {
+      margin: 7px 0 10px;
+      color: #f4f1eb;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      line-height: 1.18;
+      overflow-wrap: anywhere;
+      text-transform: uppercase;
+    }
+
+    .experience-card-description {
+      margin: 0;
+      color: #c1c5c9;
+      font-size: .75rem;
+      line-height: 1.55;
+    }
+
+    .experience-card-disciplines {
+      max-width: 34ch;
+      margin-top: auto;
+      padding-top: 17px;
+      color: #e1d6c5;
+      font-size: .63rem;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .experience-card-action {
+      display: inline-flex;
+      align-self: flex-start;
+      margin-top: 13px;
+      color: var(--gold-2);
+      font-size: .65rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    /* Founder film-profile links reuse the experience-card action styling. */
+    .experience-card--film .experience-card-action {
+      min-height: 44px;
+      align-items: center;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .experience-card--film .experience-card-action:focus-visible,
+    .experience-card--marine .experience-card-action:focus-visible {
+      outline: 2px solid var(--gold-2);
+      outline-offset: 4px;
+    }
+
+    .experience-note {
+      max-width: 760px;
+      margin-top: 22px;
+      color: rgba(220, 225, 230, .76);
+      font-size: .88rem;
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 50px 0;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      background: linear-gradient(90deg, #060a0d, #0e151b, #060a0d);
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.65rem, 3vw, 2.55rem);
+      margin-bottom: 10px;
+    }
+
+    .cta-guidance {
+      margin-top: 18px;
+    }
+
+    .cta-guidance-title {
+      color: var(--gold-2);
+      font-size: .65rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .cta-guidance ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 22px;
+      margin-top: 8px;
+      padding: 0;
+      list-style: none;
+      color: #c8ccd2;
+      font-size: .8rem;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding: 26px 0;
+      color: #aeb3ba;
+      font-size: .72rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    /* Keep the island outline recognizable at the small credential-icon size. */
+    .cyprus-svg path {
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 10;
+    }
+
+    @media (max-width: 1050px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-note {
+        display: block;
+        color: var(--muted);
+        font-size: .72rem;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        align-items: start;
+        min-height: 760px;
+      }
+
+      .hero-copy {
+        padding-top: 78px;
+        padding-bottom: 280px;
+      }
+
+      .hero-portrait-wrap {
+        position: absolute;
+        right: -5vw;
+        bottom: 0;
+        width: 45vw;
+        min-height: 420px;
+        opacity: .72;
+      }
+
+      .hero-portrait {
+        width: 100%;
+      }
+
+      .cards-3,
+      .cards-4,
+      .experience-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-layout,
+      .about-grid,
+      .process-grid,
+      .work-grid,
+      .experience-row {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid {
+        gap: 18px;
+      }
+
+      #services .services-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      #work .work-side {
+        align-items: flex-start;
+      }
+
+      .process-step:not(:last-child)::after {
+        display: none;
+      }
+
+      .about-photo {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 34px, var(--max));
+      }
+
+      .site-header,
+      .nav-inner {
+        height: 68px;
+      }
+
+      .logo {
+        width: 136px;
+      }
+
+      .hero {
+        padding-top: 68px;
+        min-height: 760px;
+        background-position: 63% center;
+      }
+
+      .hero-copy {
+        padding-top: 58px;
+        padding-bottom: 330px;
+      }
+
+      .hero-portrait-wrap {
+        width: 72vw;
+        right: -20vw;
+        opacity: .52;
+      }
+
+      .cyprus-mark {
+        width: 125px;
+        right: 15px;
+        top: 92px;
+      }
+
+      .brand-strip-inner,
+      .cards-3,
+      .cards-4,
+      .experience-list {
+        grid-template-columns: 1fr;
+      }
+
+      #services .cards-4,
+      .work-projects {
+        grid-template-columns: 1fr;
+      }
+
+      #work .work-side {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 22px;
+      }
+
+      .work-card-featured {
+        grid-column: auto;
+      }
+
+      .work-card-featured {
+        min-height: 270px;
+      }
+
+      .strip-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, .11);
+        padding: 14px 0;
+      }
+
+      .strip-item:last-child {
+        border-bottom: none;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .about-copy,
+      .cred-box {
+        padding: 34px 24px;
+      }
+
+      .cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    /* =========================================================
+       FINAL SAFE HERO OVERRIDE — MVTJ DESIGNS
+       This block is inside the original <style> tag.
+       Do not paste it outside <style>.
+       ========================================================= */
+
+    .site-header {
+      height: 92px;
+      background: linear-gradient(180deg, rgba(2, 4, 6, .98), rgba(2, 4, 6, .90));
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .nav-inner {
+      height: 92px;
+    }
+
+    .logo {
+      width: 190px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero {
+      min-height: 820px;
+      padding-top: 92px;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        linear-gradient(90deg, rgba(2, 6, 9, .98) 0%, rgba(2, 6, 9, .90) 34%, rgba(2, 6, 9, .50) 58%, rgba(2, 6, 9, .12) 100%),
+        radial-gradient(circle at 72% 38%, rgba(217, 155, 43, .32) 0%, rgba(217, 155, 43, .14) 25%, transparent 54%),
+        url("/assets/hero/mvtj-cinematic-hero.jpg") center right / cover no-repeat;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .18;
+      background:
+        radial-gradient(circle at 78% 42%, rgba(224, 159, 42, .32), transparent 28rem),
+        linear-gradient(135deg, rgba(4, 15, 24, .40), rgba(0, 0, 0, .25));
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .10;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px);
+      background-size: 115px 115px;
+      mask-image: linear-gradient(90deg, transparent 0%, black 16%, black 88%, transparent 100%);
+    }
+
+    .topo {
+      z-index: 1;
+      opacity: .22;
+    }
+
+    .hero-inner {
+      min-height: calc(820px - 92px);
+      grid-template-columns: 1.05fr .95fr;
+      align-items: end;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-copy {
+      padding: 106px 0 76px;
+      max-width: 760px;
+      position: relative;
+      z-index: 4;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(4.7rem, 8.2vw, 9rem);
+      line-height: .88;
+      letter-spacing: .015em;
+      text-shadow: 0 16px 42px rgba(0, 0, 0, .58);
+    }
+
+    .hero-copy .lead {
+      max-width: 620px;
+      font-size: clamp(1.08rem, 1.45vw, 1.45rem);
+      line-height: 1.55;
+      color: rgba(255, 255, 255, .92);
+    }
+
+    .hero-tabs {
+      gap: 16px 34px;
+    }
+
+    .hero-meta {
+      margin-top: 34px;
+      color: var(--gold-2);
+      text-shadow: 0 8px 24px rgba(0, 0, 0, .5);
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+    }
+
+    .hero-portrait-wrap {
+      min-height: 680px;
+      position: relative;
+      overflow: visible;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .hero-portrait-wrap::before {
+      content: "";
+      position: absolute;
+      right: 4%;
+      top: 16%;
+      width: 82%;
+      height: 58%;
+      z-index: 1;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(217, 155, 43, .28) 0%, rgba(217, 155, 43, .12) 38%, transparent 72%);
+      filter: blur(30px);
+      opacity: .95;
+    }
+
+    .hero-portrait-wrap::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: 0;
+      width: min(620px, 54vw);
+      height: 42%;
+      z-index: 4;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent 0%, rgba(2, 4, 5, .74) 72%, rgba(2, 4, 5, .96) 100%);
+      filter: none;
+    }
+
+    .hero-portrait {
+      position: absolute;
+      right: -20px;
+      bottom: 0;
+      width: min(520px, 39vw);
+      max-height: 690px;
+      object-fit: contain;
+      background: transparent;
+      z-index: 3;
+      opacity: .99;
+      mix-blend-mode: normal;
+      filter:
+        grayscale(1)
+        contrast(1.08)
+        brightness(1.05)
+        drop-shadow(0 32px 48px rgba(0, 0, 0, .68));
+    }
+
+    .cyprus-mark {
+      top: 150px;
+      right: 52px;
+      width: 155px;
+      opacity: .95;
+      z-index: 5;
+    }
+
+    .cyprus-mark span {
+      color: var(--gold-2);
+      font-size: .76rem;
+      letter-spacing: .2em;
+    }
+
+    @media (max-width: 980px) {
+      .site-header,
+      .nav-inner {
+        height: 78px;
+      }
+
+      .logo {
+        width: 145px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 78px;
+        background:
+          linear-gradient(180deg, rgba(2, 6, 9, .94) 0%, rgba(2, 6, 9, .82) 56%, rgba(2, 6, 9, .98) 100%),
+          radial-gradient(circle at 70% 40%, rgba(217, 155, 43, .30), transparent 44%),
+          url("/assets/hero/mvtj-cinematic-hero.jpg") center top / cover no-repeat;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        display: block;
+      }
+
+      .hero-copy {
+        padding-top: 95px;
+        padding-bottom: 430px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(3.4rem, 15vw, 6.2rem);
+      }
+
+      .hero-portrait-wrap {
+        position: absolute;
+        right: 50%;
+        bottom: 0;
+        transform: translateX(50%);
+        width: min(78vw, 420px);
+        min-height: 410px;
+      }
+
+      .hero-portrait {
+        right: 50%;
+        transform: translateX(50%);
+        width: min(78vw, 420px);
+      }
+
+      .cyprus-mark {
+        top: 98px;
+        right: 22px;
+        width: 112px;
+      }
+    }
+/* Studio section refinement */
+.studio-section .services-layout {
+  align-items: start;
+}
+
+.studio-section .side-copy {
+  justify-content: flex-start;
+}
+
+.studio-section .cards-3 {
+  align-items: start;
+}
+
+.studio-section .card {
+  min-height: 300px;
+}
+
+.studio-section .btn {
+  width: fit-content;
+}
+    /* Editorial professional experience grid and subordinate founder bridge. */
+    #experience.experience-editorial h2 { max-width: 26ch !important; font-size: clamp(2.2rem, 4vw, 3.5rem) !important; line-height: 1.08 !important; }
+    #experience.experience-editorial .experience-card { grid-column: auto !important; width: auto !important; }
+    #experience.experience-editorial .experience-row { display: block !important; }
+    #experience.experience-editorial .experience-intro { max-width: 60ch; margin-bottom: 32px; color: var(--muted); }
+    #experience.experience-editorial .experience-list { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 24px !important; }
+    #experience.experience-editorial .experience-card-content { min-height: 0; padding: 24px; }
+    #experience.experience-editorial .experience-card-title { font-size: 1.2rem; }
+    #experience.experience-editorial .experience-card-description { font-size: .85rem; }
+    #experience.experience-editorial .experience-card-link:hover { transform: translateY(-2px); }
+    @media (max-width: 1050px) { #experience.experience-editorial .experience-list { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+    @media (max-width: 720px) { #experience.experience-editorial .experience-list { grid-template-columns: 1fr !important; } }
+    @media (prefers-reduced-motion: reduce) { #experience.experience-editorial .experience-card-link:hover { transform: none; } }
+    #services .learn { display: inline-flex; align-items: center; min-height: 44px; }
+    #services .learn:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 4px; }
+    /* Compact editorial process: override only the existing process layout. */
+    #process.section.process-compact { padding: 40px 0 !important; }
+    #process.process-compact .process-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 24px !important; }
+    #process.process-compact .process-title { grid-column: 1 / -1 !important; max-width: none !important; }
+    #process.process-compact .process-title h2 { max-width: none !important; font-size: clamp(1.8rem, 3vw, 2.6rem) !important; line-height: 1.15 !important; }
+    #process.process-compact .section-kicker { margin-bottom: 10px !important; }
+    #process.process-compact .gold-line { display: none; }
+    #process.process-compact .process-intro { margin-top: 14px; color: var(--muted); }
+    #process.process-compact .step-num { display: inline-block; font-size: 1.4rem !important; margin: 0 12px 12px 0 !important; color: var(--muted) !important; }
+    #process.process-compact .process-step svg { display: inline-block; vertical-align: middle; width: 26px !important; height: 26px !important; margin-bottom: 12px !important; }
+    #process.process-compact .process-step h3 { margin-bottom: 8px !important; }
+    #process.process-compact .process-step p { max-width: 34ch !important; font-size: .88rem !important; }
+    #process.process-compact .process-step::after { display: none !important; }
+    @media (max-width: 1050px) { #process.process-compact .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 24px !important; } }
+    @media (max-width: 720px) {
+      #process.section.process-compact { padding: 36px 0 !important; }
+      #process.process-compact .process-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+      #process.process-compact .process-step { display: grid; grid-template-columns: 40px 1fr; gap: 6px 12px; }
+      #process.process-compact .step-num { grid-column: 1; grid-row: 1; margin: 0 !important; }
+      #process.process-compact .process-step svg { grid-column: 1; grid-row: 2; margin: 0 !important; }
+      #process.process-compact .process-step h3 { grid-column: 2; grid-row: 1; align-self: center; margin: 0 !important; }
+      #process.process-compact .process-step p { grid-column: 2; grid-row: 2; max-width: none !important; }
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/hero-fix.css?v=31" />
+  <!-- Local spatial prototype: progressively enhanced; content stays in HTML. -->
+  <link rel="stylesheet" href="/assets/spatial-experience.css" />
+  <link rel="stylesheet" href="/assets/hero-media.css" />
+  
+  
+  <link rel="stylesheet" href="/assets/commercial-refinement.css" />
+  <script src="/assets/project-preview.js" defer></script>
+<link rel="stylesheet" href="/assets/cinematic-services.css"><link rel="stylesheet" href="/assets/create-elevate-build.css"><link rel="stylesheet" href="/assets/create-static-demo.css"><link rel="stylesheet" href="/assets/home-restructure.css">
+<link rel="canonical" href="https://www.mvtjdesigns.com/el/portfolio/">
+<link rel="alternate" hreflang="en" href="https://www.mvtjdesigns.com/en/portfolio/">
+<link rel="alternate" hreflang="es" href="https://www.mvtjdesigns.com/es/portfolio/">
+<link rel="alternate" hreflang="ru" href="https://www.mvtjdesigns.com/ru/portfolio/">
+<link rel="alternate" hreflang="el" href="https://www.mvtjdesigns.com/el/portfolio/">
+<link rel="alternate" hreflang="x-default" href="https://www.mvtjdesigns.com/en/portfolio/">
+<meta property="og:locale" content="el_GR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:title" content="Χαρτοφυλάκιο | MVTJ Designs">
+<meta property="og:description" content="Μια επιχείρηση μάρκετινγκ ακινήτων. Συμβουλευτική εταιρεία. Ένας οδηγός επισκεπτών θερέτρου. Τρία διαφορετικά σλιπ, το καθένα με μια ψηφιακή παρουσία που διαμορφώνεται γύρω από το κοινό του.">
+<meta property="og:url" content="https://www.mvtjdesigns.com/el/portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MVTJ Designs">
+<meta name="twitter:title" content="Χαρτοφυλάκιο | MVTJ Designs">
+<meta name="twitter:description" content="Μια επιχείρηση μάρκετινγκ ακινήτων. Συμβουλευτική εταιρεία. Ένας οδηγός επισκεπτών θερέτρου. Τρία διαφορετικά σλιπ, το καθένα με μια ψηφιακή παρουσία που διαμορφώνεται γύρω από το κοινό του.">
+<meta name="twitter:card" content="summary_large_image">
+<script>window.MVTJI18N={"lang": "el", "prefix": "/el", "route": "portfolio", "messages": {"Language": "Γλώσσα", "Choose language": "Επιλογή γλώσσας", "Original statement (English)": "Πρωτότυπη μαρτυρία στα αγγλικά", "Project screenshot": "Στιγμιότυπο έργου", "Close ×": "Κλείσιμο ×", "Close navigation menu": "Κλείσιμο μενού πλοήγησης", "Open navigation menu": "Ανοίξτε το μενού πλοήγησης", "Replay on hold": "Η κίνηση έχει ανασταλεί", "Replay ↗": "Επανάληψη ↗", "Stop": "Διακοπή", "Show full capture": "Πλήρης προβολή", "Show focused view": "Προβολή λεπτομερειών", "Please agree to the use of your details to respond to this inquiry.": "Συμφωνήστε με τη χρήση των στοιχείων σας για να απαντήσετε σε αυτό το ερώτημα.", "Please choose an option.": "Επιλέξτε μια επιλογή.", "Please complete this required field.": "Συμπληρώστε αυτό το υποχρεωτικό πεδίο.", "Please enter a valid email address.": "Εισαγάγετε μια έγκυρη διεύθυνση email.", "Please enter a website address starting with https:// or http://.": "Εισαγάγετε μια διεύθυνση ιστότοπου που ξεκινά με https:// ή http://.", "Please check this field and its permitted length.": "Ελέγξτε αυτό το πεδίο και το επιτρεπόμενο μήκος του.", "The request could not be sent. Please use the call-booking or WhatsApp option.": "Δεν ήταν δυνατή η αποστολή του αιτήματος. Χρησιμοποιήστε την επιλογή κράτησης κλήσης ή WhatsApp.", "Sending Your Project Details…": "Αποστολή των λεπτομερειών του έργου σας…", "Sending your project details…": "Αποστολή των λεπτομερειών του έργου σας…", "Your project details have been sent. Opening the thank-you page…": "Τα στοιχεία του έργου σας έχουν σταλεί. Άνοιγμα της σελίδας ευχαριστιών…", "We could not confirm delivery. Your details are still here. Please try again, or use Calendly or WhatsApp. If the request timed out, it may still have reached MVTJ Designs.": "Δεν μπορέσαμε να επιβεβαιώσουμε την παράδοση. Τα στοιχεία σας είναι ακόμα εδώ. Δοκιμάστε ξανά ή χρησιμοποιήστε Calendly ή WhatsApp. Εάν το αίτημα έληξε, ενδέχεται να έχει φτάσει στο MVTJ Designs.", "Project Details Sent": "Στοιχεία έργου έχουν σταλεί", "Send My Project Details": "Αποστολή των λεπτομερειών του έργου μου"}};window.MVTJI18N.t=function(key){return this.messages[key]||key;};</script>
+<script src="/assets/i18n.js" defer></script>
+<link rel="stylesheet" href="/assets/i18n.css">
+</head>
+
+<body class="portfolio-page"><a class="skip-link" href="/el/portfolio/#top">Μετάβαση στο περιεχόμενο</a><header class="site-header" aria-label="Κύρια πλοήγηση">
+    <div class="container nav-inner">
+      <a href="/el/" class="brand-lockup" aria-label="MVTJ Designs σπίτι">
+        <img src="/assets/mvtj-logo-primary.svg" alt="Λογότυπο MVTJ Designs" />
+        <span class="brand-descriptor">Σχεδιασμός ιστοσελίδων και<br />ψηφιακές εμπειρίες</span>
+      </a>
+
+      <nav class="nav-links" id="site-navigation" aria-label="Σύνδεσμοι ιστότοπου">
+        <a href="/el/#work">Έργα</a>
+        <a href="/el/services/">Υπηρεσίες</a>
+        <a href="/el/services/#process">Διαδικασία</a>
+        <a href="/el/founder/">Το στούντιο</a>
+        <a href="/el/#contact">Επικοινωνία</a>
+        <a class="btn header-cta" href="https://calendly.com/max-tijerino/30min" target="_blank" rel="noopener noreferrer" aria-label="Κλείστε μια κλήση έργου διάρκειας 15 λεπτών με το MVTJ Designs στο Calendly (ανοίγει σε νέα καρτέλα)">Ας μιλήσουμε για το έργο σας</a>
+      </nav>
+
+      <nav class="language-strip" aria-label="Γλώσσα"><a data-language="en" href="/en/portfolio/" lang="en" hreflang="en" aria-label="English">EN</a><a data-language="es" href="/es/portfolio/" lang="es" hreflang="es" aria-label="Español">ES</a><a data-language="ru" href="/ru/portfolio/" lang="ru" hreflang="ru" aria-label="Русский">RU</a><a data-language="el" href="/el/portfolio/" lang="el" hreflang="el" aria-label="Ελληνικά" aria-current="page">EL</a></nav><button class="nav-toggle" type="button" aria-label="Ανοίξτε το μενού πλοήγησης" aria-controls="site-navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header><main id="top" tabindex="-1"><section class="section featured-work" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="featured-heading">
+          <div><div class="section-kicker">01 / Επιλεγμένα έργα</div><h2 id="work-title">Διακεκριμένες επιχειρήσεις.<br /><span>Εξεταζόμενες εμπειρίες.</span></h2></div>
+          <p>Μια επιχείρηση μάρκετινγκ ακινήτων. Συμβουλευτική εταιρεία. Ένας οδηγός επισκεπτών θερέτρου. Τρία διαφορετικά σλιπ, το καθένα με μια ψηφιακή παρουσία που διαμορφώνεται γύρω από το κοινό του.</p>
+        </div>
+        <article class="portfolio-project portfolio-lead" aria-labelledby="create-title">
+          <a class="project-image" href="/assets/portfolio/create-elevate-home.png" data-preview aria-label="Μεγέθυνση στιγμιότυπου ιστότοπου Create + Elevate">
+            <img src="/assets/portfolio/create-elevate-home.png" width="1600" height="1200" alt="Αρχική σελίδα Create + Elevate με μια σύγχρονη βίλα και υπηρεσίες οπτικοποίησης και μάρκετινγκ" loading="lazy" decoding="async" />
+            <span class="image-caption">Create + Elevate / Αρχική σελίδα <span aria-hidden="true">Προβολή πλήρους εικόνας ↗</span></span>
+          </a>
+          <div class="project-copy">
+            <div><p class="section-kicker">01 / Σχεδιασμός &amp; Ανάπτυξη Ιστοσελίδων</p><h3 id="create-title">Create + Elevate</h3><p class="project-line">Μια κινηματογραφική εισαγωγή στο μάρκετινγκ ακινήτων.</p></div>
+            <div><p>Το Create + Elevate συντονίζει τις υπηρεσίες αρχιτεκτονικής οπτικοποίησης και μάρκετινγκ ακινήτων που ανατίθενται σε εξωτερικούς συνεργάτες. Ο πρώτος οπτικός ιστότοπός του συγκεντρώνει την προσφορά μέσα από αρχιτεκτονικές εικόνες, σαφείς πληροφορίες υπηρεσιών και ένα εστιασμένο ταξίδι διερεύνησης.</p><div class="project-links"><a href="/el/create-elevate/">Εξερευνήστε τη μελέτη περίπτωσης <span aria-hidden="true">→</span></a><a href="https://create-elevate.co.uk/" target="_blank" rel="noopener noreferrer">Επισκεφτείτε τον ιστότοπο <span aria-hidden="true">↗</span></a></div></div>
+          </div><figure class="project-feedback"><p class="original-statement-label">Πρωτότυπη μαρτυρία στα αγγλικά</p><blockquote lang="en"><p>“Max completely understood our vision from the outset and translated it into a website that genuinely reflects who we are, what we stand for and the experience we want to create for our clients.”</p></blockquote><figcaption>Eugene Steneberg <span>/ Create Elevate</span></figcaption><a href="/el/portfolio/#perspective-create">Διαβάστε τα σχόλια των πελατών <span aria-hidden="true">↗</span></a></figure>
+        </article>
+        <article class="portfolio-project portfolio-split" aria-labelledby="solidity-title">
+          <a class="project-image" href="/assets/portfolio/solidity-lb-home.png" data-preview aria-label="Μεγέθυνση στιγμιότυπου ιστότοπου Solidity">
+            <img src="/assets/portfolio/solidity-lb-home.png" width="1600" height="1200" alt="Αρχική σελίδα Solidity που παρουσιάζει την ασφαλιστική κάλυψη και τις δημοσιονομικές συμβουλευτικές υπηρεσίες για τον Λίβανο" loading="lazy" decoding="async" />
+            <span class="image-caption">Solidity / Αρχική σελίδα <span aria-hidden="true">Προβολή πλήρους εικόνας ↗</span></span>
+          </a>
+          <div class="project-copy"><p class="section-kicker">02 / Σχεδιασμός &amp; Ανάπτυξη Ιστοσελίδων</p><h3 id="solidity-title">Solidity Consulting<br />&amp; Μεσιτεία</h3><p class="project-line">Σαφήνεια για σύνθετες υπηρεσίες.</p><p>Ένας ιστότοπος για μια ασφαλιστική και δημοσιονομική συμβουλευτική εταιρεία με έδρα τον Λίβανο. Η συγκρατημένη οπτική κατεύθυνση και η σαφής δομή υπηρεσιών βοηθούν τους επισκέπτες να κατανοήσουν την προσφορά και να βρουν το δρόμο τους για μια διαβούλευση.</p><div class="project-links"><a href="https://solidity-lb.com/" target="_blank" rel="noopener noreferrer">Επισκεφτείτε τον ιστότοπο <span aria-hidden="true">↗</span></a></div></div><figure class="project-feedback"><p class="original-statement-label">Πρωτότυπη μαρτυρία στα αγγλικά</p><blockquote lang="en"><p>“Mr Max was responsive, turned my ideas into what I asked.”</p></blockquote><figcaption>Ziad Akiki <span>/ Διευθύνων Σύμβουλος, Solidity</span></figcaption><a href="/el/portfolio/#perspective-solidity">Διαβάστε τα σχόλια των πελατών <span aria-hidden="true">↗</span></a></figure>
+        </article>
+        <article class="portfolio-project portfolio-split portfolio-reverse" aria-labelledby="pendeli-title">
+          <a class="project-image" href="/assets/portfolio/pendeli-allergen-guide.png" data-preview aria-label="Μεγέθυνση στιγμιότυπο οθόνης του οδηγού αλλεργιογόνων Pendeli">
+            <img src="/assets/portfolio/pendeli-allergen-guide.png" width="1600" height="1200" alt="Pendeli Resort οδηγός αλλεργιογόνων πρωινού με κατηγορίες τροφίμων και διατροφικές πληροφορίες" loading="lazy" decoding="async" />
+            <span class="image-caption">Pendeli / Οδηγός επισκεπτών <span aria-hidden="true">Προβολή πλήρους εικόνας ↗</span></span>
+          </a>
+          <div class="project-copy"><p class="section-kicker">03 / Ψηφιακή Εμπειρία · Web Application</p><h3 id="pendeli-title">Pendeli<br />Οδηγός αλλεργιογόνων</h3><p class="project-line">Χρήσιμο σχέδιο, στο τραπέζι του πρωινού.</p><p>Ένας οδηγός για τον επισκέπτη που διευκολύνει την εξερεύνηση των στοιχείων του μενού και των πληροφοριών για τα αλλεργιογόνα. Σχεδιασμένο για μια ξεκάθαρη, φιλική προς την αφή εμπειρία στο Pendeli Resort στις Πάνω Πλάτρες της Κύπρου.</p><p class="project-status"><span aria-hidden="true"></span> Σε ενεργή χρήση στο Pendeli Resort</p><div class="project-links"><a href="https://pendeli-allergen-guide.vercel.app/" target="_blank" rel="noopener noreferrer">Εξερευνήστε τον ζωντανό οδηγό <span aria-hidden="true">↗</span></a></div></div>
+        </article>
+        <div class="work-enquiry"><p>Έχετε ένα έργο που χρειάζεται τη δική του κατεύθυνση;</p><a class="btn" href="/el/#contact">Ας μιλήσουμε για τον ιστότοπό σας <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section><section class="section client-perspectives" id="client-perspectives" aria-labelledby="perspectives-title"><div class="container"><div class="perspectives-heading"><p class="section-kicker">Η εμπειρία των πελατών</p><h2 id="perspectives-title">Η συνεργασία.<br /><span>Με τα δικά τους λόγια.</span></h2></div><article class="perspective-entry" id="perspective-create" aria-labelledby="perspective-create-name">
+  <div class="perspective-person"><p class="section-kicker">01 / Create + Elevate</p><h3 id="perspective-create-name">Eugene Steneberg</h3><p>Create Elevate</p><a href="/el/create-elevate/">Εξερευνήστε τη μελέτη περίπτωσης <span aria-hidden="true">↗</span></a></div>
+  <div class="perspective-words"><p class="original-statement-label">Πρωτότυπη μαρτυρία στα αγγλικά</p><blockquote lang="en"><p>“I love how professional, clean and cohesive everything feels. The design is visually impressive while still being functional, intuitive and easy to navigate. Every element feels considered and purposeful, and the overall result gives the business the strong, credible online presence we wanted.”</p></blockquote><details class="feedback-full"><summary>Διαβάστε τα πλήρη σχόλια του Eugene</summary><div class="feedback-transcript" lang="en"><div class="feedback-answer"><h4>What was your first impression of the finished website?</h4><p>Honestly, we were blown away. Max absolutely nailed it. The website looked incredibly professional, polished and aligned with what we had envisioned for Create Elevate. It exceeded our expectations, and you could immediately see the thought, creativity and attention to detail that had gone into it.</p></div><div class="feedback-answer"><h4>How well do you feel the website represents Create Elevate and your vision?</h4><p>100%. Max completely understood our vision from the outset and translated it into a website that genuinely reflects who we are, what we stand for and the experience we want to create for our clients. It captures the essence of our brand perfectly, and I couldn't have asked for a better representation of Create Elevate.</p></div><div class="feedback-answer"><h4>What do you like most about the design and functionality?</h4><p>I love how professional, clean and cohesive everything feels. The design is visually impressive while still being functional, intuitive and easy to navigate. Every element feels considered and purposeful, and the overall result gives the business the strong, credible online presence we wanted. It's clear that Max cares about the finer details and the end result, not just ticking boxes.</p></div><div class="feedback-answer"><h4>How would you describe your overall experience working with me?</h4><p>Exceptional from start to finish. Max was professional, proactive, approachable and genuinely invested in bringing our vision to life. He went above and beyond throughout the entire process, delivered on time and within budget, and made the whole experience feel seamless. Finding someone who takes that much pride in their work and is so committed to getting things right is rare.</p></div><div class="feedback-answer"><h4>How well did I communicate, respond to feedback, and handle revisions?</h4><p>Brilliantly. Communication was clear, consistent and professional throughout. Max was incredibly receptive to feedback and never made us feel that any amendment was too much trouble. He listened, understood what we were trying to achieve and made changes without hesitation. His willingness to refine the details until everything was right made a huge difference to the final result.</p></div><div class="feedback-answer"><h4>Is there anything I could have done better?</h4><p>Honestly, I genuinely can't think of anything. The entire process was smooth, well managed and delivered to an exceptionally high standard. Max was proactive, anticipated what was needed and went above and beyond without us having to ask. I couldn't fault the experience.</p></div><div class="feedback-answer"><h4>Would you recommend MVTJ Designs to another business? Why or why not?</h4><p>Absolutely, without hesitation. We would highly recommend Max and MVTJ Designs to any business looking for a professional, high-quality website and a developer who genuinely cares about the outcome. From understanding the brief and capturing the vision to communication, attention to detail and delivery, he exceeded expectations at every stage. He delivered exactly what we wanted, on time and within budget, and then went the extra mile. I wouldn't hesitate to work with him again.</p></div></div></details></div>
+ </article>
+<article class="perspective-entry" id="perspective-solidity" aria-labelledby="perspective-solidity-name">
+  <div class="perspective-person"><p class="section-kicker">02 / Solidity</p><h3 id="perspective-solidity-name">Ziad Akiki</h3><p>Διευθύνων Σύμβουλος, Solidity</p><a href="/el/portfolio/#solidity-title">Εξερευνήστε το έργο <span aria-hidden="true">↗</span></a></div>
+  <div class="perspective-words"><p class="original-statement-label">Πρωτότυπη μαρτυρία στα αγγλικά</p><blockquote lang="en"><p>“Mr Max was responsive, turned my ideas into what I asked, I recommend him to everyone needing a well designed website to spread his work, he is very creative and well educated.”</p></blockquote><details class="feedback-full"><summary>Διαβάστε τα πλήρη σχόλια του Ziad</summary><div class="feedback-transcript" lang="en"><p>I Contacted Mr Max to build a strong web to my company to meet everyone needs by getting more information about my services, thanks to him I have now the best designed website including all the detailed and accurately explained information in a way that help people understand and not waste their time by searching answers to their questions.</p><p>Mr Max was responsive, turned my ideas into what I asked, I recommend him to everyone needing a well designed website to spread his work, he is very creative and well educated.</p></div></details></div>
+ </article></div></section><section class="section experience experience-editorial" id="experience">
+      <div class="container experience-row">
+        <div>
+          <div class="section-kicker">Επιλεγμένη εμπειρία</div>
+          <h2>Εμπειρία πέρα από το σχεδιασμό Ιστού</h2>
+          <div class="gold-line" style="margin-top: 24px;"></div>
+          <p class="experience-intro">Επιλεγμένη εμπειρία σε παραγωγή μέσων, μάρκετινγκ επωνυμίας και ζωντανές εκδηλώσεις.</p>
+        </div>
+
+        <div>
+          <div class="experience-list" aria-label="Εμπειρία πέρα από το σχεδιασμό ιστοσελίδων">
+            <a class="experience-card experience-card-link experience-card--cloudwards" href="/el/cloudwards/">
+              <span class="experience-card-media experience-card-media--cloudwards">
+                <img src="/assets/experience/max-office-presentation.png" alt="Max Tijerino κάθεται δίπλα σε μια οθόνη υπολογιστή" width="1672" height="941" loading="lazy" />
+              </span>
+              <div class="experience-card-content">
+                <span class="experience-card-category">Παραγωγή ΜΜΕ</span>
+                <h3 class="experience-card-title">Cloudwards</h3>
+                <span class="experience-card-description">Έρευνα, παρουσίαση στην κάμερα, παραγωγή βίντεο, μοντάζ και εκπαιδευτικό τεχνολογικό περιεχόμενο.</span>
+                <span class="experience-card-disciplines">Έρευνα · Παρουσίαση · Βίντεο · Περιεχόμενο τεχνολογίας</span>
+                <span class="experience-card-action">Προβολή Μελέτης Περίπτωσης →</span>
+              </div>
+            </a>
+
+            <a class="experience-card experience-card-link experience-card--southern" href="https://www.daytonaradio.com/" target="_blank" rel="noopener noreferrer">
+              <span class="experience-card-media experience-card-media--southern">
+                <img src="/assets/experience/southern-stone.jpg" alt="Επίσημο λογότυπο Southern Stone Communications" loading="lazy" />
+              </span>
+              <div class="experience-card-content">
+                <span class="experience-card-category">Διευθυντής Ψηφιακού Μάρκετινγκ</span>
+                <h3 class="experience-card-title">Southern Stone Communications</h3>
+                <span class="experience-card-description">Υπεύθυνη για το ψηφιακό μάρκετινγκ σε όλες τις επωνυμίες ραδιοφώνου της Southern Stone, συμπεριλαμβανομένων των ιστότοπων σταθμών, των μέσων κοινωνικής δικτύωσης και των ψηφιακών καμπανιών.</span>
+                <span class="experience-card-disciplines">Ραδιόφωνο · Ψηφιακό Μάρκετινγκ · Social Media · Web</span>
+                <span class="experience-card-action">Επισκεφθείτε το Southern Stone ↗</span>
+              </div>
+            </a>
+
+            <article class="experience-card experience-card-static experience-card-static--ncompass experience-card--ncompass">
+              <div class="experience-card-art experience-card-art--events" aria-hidden="true"><span>Ζωντανές εκδηλώσεις<br />Ενεργοποιήσεις επωνυμίας</span></div>
+              <div class="experience-card-content">
+                <div class="experience-card-category">Μάρκετινγκ εκδηλώσεων</div>
+                <h3 class="experience-card-title">NCompass</h3>
+                <p class="experience-card-description">Βιωματικές καμπάνιες, ζωντανές εκδηλώσεις, προσφορές και ενεργοποιήσεις επωνυμίας.</p>
+                <div class="experience-card-disciplines">Εκδηλώσεις · Βιωματικά · Προώθηση · Εμπειρία επωνυμίας</div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section></main><footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 MVTJ Designs. Λεμεσός, Κύπρος. Εργασία σε παγκόσμιο επίπεδο.</div>
+      <div class="footer-links">
+        <a href="/el/services/">Υπηρεσίες</a>
+        <a href="/el/services/#process">Διαδικασία</a>
+        <a href="/el/#work">Έργα</a>
+        <a href="/el/portfolio/#experience">Εμπειρία</a>
+        <a href="/el/#contact">Επικοινωνία</a>
+        <a href="/el/privacy/">Πολιτική Απορρήτου</a>
+      </div>
+    </div>
+  </footer>  <script>
+    const navigationToggle = document.querySelector(".nav-toggle");
+    const siteNavigation = document.querySelector("#site-navigation");
+
+    function setNavigationOpen(isOpen) {
+      siteNavigation.classList.toggle("is-open", isOpen);
+      navigationToggle.setAttribute("aria-expanded", String(isOpen));
+      navigationToggle.setAttribute("aria-label", window.MVTJI18N.t(isOpen ? "Close navigation menu" : "Open navigation menu"));
+    }
+
+    navigationToggle.addEventListener("click", () => {
+      setNavigationOpen(navigationToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    siteNavigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        setNavigationOpen(false);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && navigationToggle.getAttribute("aria-expanded") === "true") {
+        setNavigationOpen(false);
+        navigationToggle.focus();
+      }
+    });
+  </script>
+</body>
+</html>

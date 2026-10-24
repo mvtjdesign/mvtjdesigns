@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/mvtj-logo-primary.svg" />
+
+  <title>Cloudwards Media Production Case Study | MVTJ Designs</title>
+  <meta name="description" content="Cloudwards media production case study by MVTJ Designs. End-to-end content production, on-camera hosting, editing, asset management, and content delivery." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/privacy.css" />
+
+  <style>
+    :root {
+      --black: #050607;
+      --navy: #071421;
+      --navy2: #0b1d2e;
+      --gold: #d99b2b;
+      --gold2: #c8a46a;
+      --white: #ffffff;
+      --muted: #a8acb3;
+      --soft: rgba(255,255,255,.09);
+      --line: rgba(200,164,106,.25);
+      --max: 1180px;
+      --font-main: "Inter", sans-serif;
+      --font-display: "Oswald", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+      padding: 24px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      letter-spacing: .42em;
+      color: var(--gold2);
+    }
+
+    .brand span {
+      display: block;
+      font-size: .7rem;
+      color: var(--white);
+      letter-spacing: .5em;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,.82);
+    }
+
+    .nav-links .active {
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 8px;
+    }
+
+    .nav-links .talk {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 10px 16px;
+    }
+
+    .hero {
+      min-height: 760px;
+      background:
+        radial-gradient(circle at top right, rgba(217,155,43,.18), transparent 40rem),
+        linear-gradient(180deg, #06101b 0%, #020406 100%);
+      padding-top: 110px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .back {
+      display: inline-block;
+      color: var(--muted);
+      font-size: .75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.4fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: .75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: .045em;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 8vw, 7.5rem);
+      margin-bottom: 26px;
+    }
+
+    .hero p {
+      max-width: 420px;
+      color: #e5e7eb;
+      font-size: 1.05rem;
+    }
+
+    .gold-line {
+      width: 92px;
+      height: 3px;
+      background: var(--gold);
+      margin: 26px 0 30px;
+    }
+
+    .featured-video {
+      padding: 42px 0;
+      background: linear-gradient(180deg, #050607 0%, #08111a 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .featured-video-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #020406;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .38);
+    }
+
+    .video-facade,
+    .featured-video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-facade {
+      display: grid;
+      place-items: center;
+      padding: 0;
+      background: #020406;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .video-facade img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease, opacity .35s ease;
+    }
+
+    .video-facade::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(2, 4, 6, .2);
+      transition: background .25s ease;
+    }
+
+    .video-facade:hover img {
+      transform: scale(1.02);
+    }
+
+    .video-facade:hover::after {
+      background: rgba(2, 4, 6, .08);
+    }
+
+    .video-play {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 76px;
+      height: 76px;
+      padding-left: 4px;
+      border: 1px solid rgba(255, 255, 255, .72);
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #06101b;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .4);
+      transition: transform .25s ease;
+    }
+
+    .video-facade:hover .video-play {
+      transform: scale(1.08);
+    }
+
+    .video-play svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    .video-facade:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: -4px;
+    }
+
+    .youtube-link {
+      display: block;
+      width: fit-content;
+      margin: 14px 0 0 auto;
+      color: var(--muted);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+
+    .youtube-link:hover,
+    .youtube-link:focus-visible {
+      color: var(--gold);
+    }
+
+
+
+    .hero-image {
+      min-width: 0;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 80px rgba(0,0,0,.55);
+      background: rgba(255,255,255,.04);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .dark-band {
+      background: #06101b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 32px 0;
+    }
+
+    .process-row {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+
+    .process-row div {
+      border: 1px solid rgba(255,255,255,.09);
+      padding: 18px 12px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .process-row strong {
+      display: block;
+      color: var(--gold);
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 5px;
+    }
+
+    .process-row span {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .light {
+      background: #f5f2eb;
+      color: #071421;
+      padding: 72px 0;
+    }
+
+    .snapshot {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(5, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .snapshot h2 {
+      font-size: 1.85rem;
+    }
+
+    .snap-item {
+      border-left: 1px solid rgba(7,20,33,.16);
+      padding-left: 20px;
+    }
+
+    .snap-item strong {
+      display: block;
+      color: #071421;
+      text-transform: uppercase;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      margin-bottom: 10px;
+    }
+
+    .snap-item span {
+      color: #263443;
+      font-size: .92rem;
+    }
+
+    .p-p-o {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px;
+      margin-top: 72px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(7,20,33,.14);
+    }
+
+    .p-p-o h3 {
+      font-size: 1.55rem;
+      margin-bottom: 22px;
+    }
+
+    .p-p-o p,
+    .p-p-o li {
+      color: #263443;
+      font-size: .96rem;
+    }
+
+    .p-p-o ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .p-p-o li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .selected {
+      background:
+        radial-gradient(circle at top right, rgba(217,155,43,.12), transparent 40rem),
+        #06101b;
+      padding: 72px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      font-size: 2.3rem;
+    }
+
+    .section-head a {
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .video-card {
+      border: 1px solid var(--soft);
+      background: rgba(255,255,255,.04);
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+    }
+
+    .video-copy {
+      padding: 18px;
+    }
+
+    .video-copy h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .video-copy p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .capabilities {
+      background: #f5f2eb;
+      color: #071421;
+      padding: 48px 0;
+    }
+
+    .cap-grid {
+      display: grid;
+      grid-template-columns: 1.3fr repeat(6, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .cap-grid h2 {
+      font-size: 1.55rem;
+    }
+
+    .cap {
+      text-align: center;
+      color: #263443;
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    .cta {
+      background:
+        radial-gradient(circle at bottom left, rgba(217,155,43,.16), transparent 32rem),
+        #050607;
+      padding: 70px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1.5fr .7fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      color: #d8dce2;
+      max-width: 650px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #06101b;
+      padding: 15px 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+
+      .hero-grid,
+      .snapshot,
+      .p-p-o,
+      .video-grid,
+      .cap-grid,
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 90px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.75rem, 12vw, 4rem);
+      }
+
+      .process-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+
+<link rel="canonical" href="https://www.mvtjdesigns.com/en/cloudwards/">
+<link rel="alternate" hreflang="en" href="https://www.mvtjdesigns.com/en/cloudwards/">
+<link rel="alternate" hreflang="es" href="https://www.mvtjdesigns.com/es/cloudwards/">
+<link rel="alternate" hreflang="ru" href="https://www.mvtjdesigns.com/ru/cloudwards/">
+<link rel="alternate" hreflang="el" href="https://www.mvtjdesigns.com/el/cloudwards/">
+<link rel="alternate" hreflang="x-default" href="https://www.mvtjdesigns.com/en/cloudwards/">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="el_GR">
+<meta property="og:title" content="Cloudwards Media Production Case Study | MVTJ Designs">
+<meta property="og:description" content="Cloudwards media production case study by MVTJ Designs. End-to-end content production, on-camera hosting, editing, asset management, and content delivery.">
+<meta property="og:url" content="https://www.mvtjdesigns.com/en/cloudwards/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MVTJ Designs">
+<meta name="twitter:title" content="Cloudwards Media Production Case Study | MVTJ Designs">
+<meta name="twitter:description" content="Cloudwards media production case study by MVTJ Designs. End-to-end content production, on-camera hosting, editing, asset management, and content delivery.">
+<meta name="twitter:card" content="summary_large_image">
+<script>window.MVTJI18N={"lang": "en", "prefix": "/en", "route": "cloudwards", "messages": {"Language": "Language", "Choose language": "Choose language", "Original statement (English)": "Original statement (English)", "Project screenshot": "Project screenshot", "Close ×": "Close ×", "Close navigation menu": "Close navigation menu", "Open navigation menu": "Open navigation menu", "Replay on hold": "Replay on hold", "Replay ↗": "Replay ↗", "Stop": "Stop", "Show full capture": "Show full capture", "Show focused view": "Show focused view", "Please agree to the use of your details to respond to this inquiry.": "Please agree to the use of your details to respond to this inquiry.", "Please choose an option.": "Please choose an option.", "Please complete this required field.": "Please complete this required field.", "Please enter a valid email address.": "Please enter a valid email address.", "Please enter a website address starting with https:// or http://.": "Please enter a website address starting with https:// or http://.", "Please check this field and its permitted length.": "Please check this field and its permitted length.", "The request could not be sent. Please use the call-booking or WhatsApp option.": "The request could not be sent. Please use the call-booking or WhatsApp option.", "Sending Your Project Details…": "Sending Your Project Details…", "Sending your project details…": "Sending your project details…", "Your project details have been sent. Opening the thank-you page…": "Your project details have been sent. Opening the thank-you page…", "We could not confirm delivery. Your details are still here. Please try again, or use Calendly or WhatsApp. If the request timed out, it may still have reached MVTJ Designs.": "We could not confirm delivery. Your details are still here. Please try again, or use Calendly or WhatsApp. If the request timed out, it may still have reached MVTJ Designs.", "Project Details Sent": "Project Details Sent", "Send My Project Details": "Send My Project Details"}};window.MVTJI18N.t=function(key){return this.messages[key]||key;};</script>
+<script src="/assets/i18n.js" defer></script>
+<link rel="stylesheet" href="/assets/i18n.css">
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/en/" class="brand">MVTJ<span>DESIGNS</span></a>
+      <nav class="nav-links">
+        <a href="/en/">Home</a>
+        <a href="/en/founder/">About</a>
+        <a href="/en/services/">Services</a>
+        <a class="active" href="/en/#work">Portfolio</a>
+        <a href="/en/#contact" class="talk">Let&#x27;s Talk</a>
+      </nav><nav class="language-strip" aria-label="Language"><a data-language="en" href="/en/cloudwards/" lang="en" hreflang="en" aria-label="English" aria-current="page">EN</a><a data-language="es" href="/es/cloudwards/" lang="es" hreflang="es" aria-label="Español">ES</a><a data-language="ru" href="/ru/cloudwards/" lang="ru" hreflang="ru" aria-label="Русский">RU</a><a data-language="el" href="/el/cloudwards/" lang="el" hreflang="el" aria-label="Ελληνικά">EL</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <a class="back" href="/en/#work">← Back to Portfolio</a>
+
+        <div class="hero-grid">
+          <div>
+            <div class="kicker">Media Production Case Study</div>
+            <h1>Cloudwards</h1>
+            <div class="gold-line"></div>
+              <p>
+  Researching, presenting, producing, and delivering educational technology content through a scalable end-to-end production workflow.
+            </p>
+
+          </div>
+
+          <div class="hero-image">
+            <img src="/assets/cloudwards-media-production.png" alt="Cloudwards media production case study featuring Max Tijerino beside a monitor, with research, scripting, production, editing, publishing and distribution stages" width="1672" height="941" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-video" aria-label="Featured Cloudwards video">
+      <div class="container">
+        <div class="featured-video-frame">
+          <button class="video-facade" type="button" data-video-id="1Tgt1mFjatA" aria-label="Play Cloudwards: What&#x27;s the Best Cloud Storage Service in 2024? Features, Pricing and Privacy">
+            <img src="https://i.ytimg.com/vi/1Tgt1mFjatA/maxresdefault.jpg" alt="" loading="lazy" decoding="async" />
+            <span class="video-play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.8c0-.8.9-1.3 1.6-.9l9.1 6.1a1.2 1.2 0 0 1 0 2l-9.1 6.1c-.7.4-1.6-.1-1.6-.9V5.8z"/></svg>
+            </span>
+          </button>
+        </div>
+        <a class="youtube-link" href="https://www.youtube.com/watch?v=1Tgt1mFjatA" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+      </div>
+    </section>
+
+    <section class="dark-band">
+      <div class="container process-row">
+        <div><strong>Research</strong><span>Topic &amp; keyword research</span></div>
+        <div><strong>Script</strong><span>Writing &amp; outlining</span></div>
+        <div><strong>Production</strong><span>On-camera presentation</span></div>
+        <div><strong>Editing</strong><span>Video editing &amp; post</span></div>
+        <div><strong>Publishing</strong><span>Publishing support</span></div>
+        <div><strong>Distribution</strong><span>Audience reach</span></div>
+      </div>
+    </section>
+
+    <section class="light">
+      <div class="container">
+        <div class="snapshot">
+          <h2>Engagement Snapshot</h2>
+
+          <div class="snap-item">
+            <strong>Role &amp; Services</strong>
+            <span>Research • Production • Content Operations • Distribution</span>
+          </div>
+
+          <div class="snap-item">
+            <strong>Client Type</strong>
+            <span>Global Technology Publication</span>
+          </div>
+
+          <div class="snap-item">
+            <strong>Focus</strong>
+            <span>Scalable Educational Media Systems</span>
+          </div>
+
+
+          <div class="snap-item">
+            <strong>Audience</strong>
+            <span>Global Multi-Platform Audience</span>
+          </div>
+        </div>
+
+        <div class="p-p-o">
+          <div>
+            <h3>The Challenge</h3>
+            <p>Cloudwards needed a repeatable production system that made complex technology topics accessible while preserving accuracy, clarity and audience trust at scale.</p>
+          </div>
+
+          <div>
+            <h3>The Process</h3>
+            <p>I designed and managed the workflow shown above, combining content strategy, production management and asset organization with research, scripting, on-camera presentation, editing, publishing and distribution. Standardizing each stage supported consistent delivery and editorial quality.</p>
+          </div>
+
+          <div>
+            <h3>The Outcome</h3>
+           <ul>
+              <li>Supported scalable, presenter-led educational media through research, hosting, post-production, asset management, publishing and delivery.</li>
+              <li>Maintained consistency across production, file organization and delivery.</li>
+              <li>Helped explain cloud storage, VPNs, cybersecurity, streaming access, password management and digital privacy to a global audience.</li>
+              <li>Demonstrated production discipline, media operations and on-camera brand presentation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities">
+      <div class="container cap-grid">
+        <h2>Capabilities Demonstrated</h2>
+        <div class="cap">Content Strategy</div>
+        <div class="cap">On-Camera Hosting</div>
+        <div class="cap">Video Production</div>
+        <div class="cap">Video Editing</div>
+        <div class="cap">Asset Management</div>
+        <div class="cap">Workflow Development</div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>Have a Website Project in Mind?</h2>
+          <p>
+            Distinctive websites and digital experiences for businesses that care how they’re seen.
+          </p>
+        </div>
+
+        <a class="btn" href="/en/#contact">Let&#x27;s Discuss Your Project →</a>
+      </div>
+    </section>
+  </main>
+  <footer class="privacy-footer">
+    <div class="container">
+      © 2026 MVTJ Designs · Limassol, Cyprus · Working Globally
+      <a href="/en/privacy/">Privacy Policy</a>
+    </div>
+  </footer>
+  <script>
+    const videoFacade = document.querySelector(".video-facade");
+
+    videoFacade.addEventListener("click", () => {
+      const videoId = videoFacade.dataset.videoId;
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+      iframe.title = "Cloudwards: What's the Best Cloud Storage Service in 2024? Features, Pricing and Privacy";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      videoFacade.replaceWith(iframe);
+    });
+  </script>
+</body>
+</html>

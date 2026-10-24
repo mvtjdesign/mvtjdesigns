@@ -1,0 +1,33 @@
+/* BUILD: genuine website work, supported by founder-supplied concept imagery. */
+.chapter-build .ce-build { color:#eee8da; border-top:1px solid #bda47666; }
+.ce-build-heading { display:flex; justify-content:space-between; gap:40px; align-items:start; padding:26px 0; }
+.ce-build-heading>p:first-child { flex:1; font-size:12px; font-weight:600; line-height:1.8; letter-spacing:.1em; color:#d8bd8a; }
+.ce-build-heading>p:last-child { flex:1; max-width:53ch; margin:0; font-size:14px; line-height:1.8; color:#c4c9cd; }
+.ce-build figure { margin:0; min-width:0; }
+.ce-build img { display:block; width:100%; height:auto; max-width:100%; }
+.ce-build .ce-website { background:#101719; border:1px solid #bda47666; }
+.ce-website>a { display:block; }
+.ce-website figcaption { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; padding:16px 20px; color:#e8dcc5; font-size:12px; line-height:1.7; border-top:1px solid #bda47644; }
+.ce-website figcaption a { min-height:44px; display:inline-flex; align-items:center; text-decoration:underline; text-underline-offset:5px; color:#e4c58e; }
+.ce-website figcaption>span { align-self:center; }
+.ce-support { display:grid; grid-template-columns:minmax(0,2fr) minmax(0,1fr); align-items:start; gap:24px; margin-top:24px; }
+.ce-support figcaption { padding-top:12px; color:#c4c9cd; font-size:12px; line-height:1.8; }
+.ce-support figcaption span { display:block; color:#d8bd8a; margin-bottom:4px; }
+.ce-build .ce-rights-note { border-block:1px solid #bda47644; margin:28px 0 0; padding:20px 0; font-size:12px; line-height:1.9; color:#c4c9cd; }
+.ce-rights-note strong { color:#e4c58e; font-weight:600; }
+.ce-build .ce-case-link { display:inline-flex; align-items:center; min-height:44px; margin-top:16px; color:#e4c58e; font-size:12px; text-decoration:underline; text-underline-offset:5px; }
+.chapter-build .build-secondary { margin-top:30px; border-block:1px solid #bda47644; }
+.chapter-build .build-secondary>summary { padding:20px 3px; cursor:pointer; min-height:44px; font-size:13px; line-height:1.8; color:#e4c58e; }
+.chapter-build .build-secondary[open]>summary { margin-bottom:12px; }
+.ce-build a:focus-visible,.build-secondary>summary:focus-visible { outline:2px solid #e4c58e; outline-offset:5px; }
+@media(max-width:760px) {
+ .ce-build-heading { display:block; padding:22px 0; }
+ .ce-build-heading>p:first-child { font-size:11px; margin-bottom:12px; }
+ .ce-build-heading>p:last-child { font-size:13px; }
+ .ce-website figcaption { display:block; padding:14px; }
+ .ce-website figcaption>span { display:block; }
+ .ce-website figcaption a { margin-top:4px; }
+ .ce-support { grid-template-columns:minmax(0,1fr); gap:24px; }
+ .ce-support figure:last-child { width:82%; }
+ .ce-build .ce-rights-note { margin-top:24px; font-size:12px; }
+}

@@ -10,12 +10,12 @@
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const sources = {
     desktop: {
-      video: 'assets/hero/mvtj-pool-walk-web.mp4',
-      poster: 'assets/hero/mvtj-cinematic-hero.jpg'
+      video: '/assets/hero/mvtj-pool-walk-web.mp4',
+      poster: '/assets/hero/mvtj-cinematic-hero.jpg'
     },
     mobile: {
-      video: 'assets/hero/mvtj-pool-walk-mobile.mp4',
-      poster: 'assets/hero/mvtj-mobile-hero-final.jpg'
+      video: '/assets/hero/mvtj-pool-walk-mobile.mp4',
+      poster: '/assets/hero/mvtj-mobile-hero-final.jpg'
     }
   };
 

@@ -1,0 +1,30 @@
+.chapter-create .chapter-art{height:auto!important;min-height:0!important}
+.create-static-demo{color:#eee8da;border-top:1px solid #bda47666;padding-top:24px}
+.csd-heading{display:flex;justify-content:space-between;gap:25px;align-items:start;margin-bottom:24px}
+.csd-heading p{margin:0;font-size:12px;line-height:1.8;max-width:52ch;color:#c5cacf}
+.csd-heading strong{font-weight:500;color:#e4c58e;letter-spacing:.06em}
+.create-static-demo figure{margin:0;min-width:0}
+.create-static-demo img{display:block;width:100%;height:100%;object-fit:cover}
+.csd-canvas{position:relative;overflow:hidden;background:#e9e2d2}
+.csd-website .csd-canvas{aspect-ratio:16/9}
+.csd-website img{object-position:50% 60%}
+.csd-copy{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(22px,4vw,52px);background:linear-gradient(0deg,#0a1115c9,transparent 80%);color:#fff7e7}
+.csd-copy p{margin:0;max-width:12ch;font:400 clamp(36px,5vw,66px)/1.05 Georgia,serif;letter-spacing:-.03em;text-wrap:balance}
+.csd-copy span{font-size:10px;letter-spacing:.14em;margin-bottom:16px;line-height:1.8}
+.create-static-demo figcaption{font-size:12px;line-height:1.8;color:#e0c38f;padding:12px 0 0}
+.csd-formats{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.18fr) minmax(0,1fr);gap:28px;margin-top:30px;align-items:start}
+.csd-social .csd-canvas{aspect-ratio:9/16}
+.csd-social img{object-position:70% 50%}
+.csd-social .csd-copy,.csd-ad .csd-copy{padding:24px}
+.csd-social .csd-copy p,.csd-ad .csd-copy p{font-size:clamp(28px,3vw,42px)}
+.csd-ad .csd-canvas{aspect-ratio:4/5}
+.csd-ad img{object-position:65% 50%}
+.csd-email .csd-canvas{padding:24px;background:#f0eadc;color:#26312c}
+.csd-email .csd-email-brand{font-size:10px;letter-spacing:.12em;line-height:1.8;margin:0 0 22px}
+.csd-email img{height:auto;aspect-ratio:3/2;object-fit:contain;margin-bottom:24px}
+.csd-email .csd-email-title{font:400 clamp(28px,3vw,40px)/1.1 Georgia,serif;letter-spacing:-.025em;margin:0 0 20px}
+.csd-email .csd-email-note{font-size:12px;line-height:1.8;margin:0;padding-top:18px;border-top:1px solid #786d5038}
+.chapter-create .csd-email p{color:#26312c}
+.chapter-create .csd-copy p{color:#fff7e7}
+.chapter-create .chapter-controls{display:none}
+@media(max-width:760px){.csd-heading{display:block}.csd-heading p+p{margin-top:12px}.csd-formats{grid-template-columns:1fr;gap:28px}.csd-social{max-width:82%}.csd-ad{max-width:90%}.csd-social .csd-copy p,.csd-ad .csd-copy p{font-size:38px}.csd-website .csd-copy p{font-size:34px}.csd-copy{padding:22px}.csd-email .csd-email-title{font-size:36px}}

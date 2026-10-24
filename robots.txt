@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /review/
+Disallow: /i18n/
+Disallow: /tests/
+Sitemap: https://www.mvtjdesigns.com/sitemap.xml
