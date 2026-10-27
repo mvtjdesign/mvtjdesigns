@@ -1,0 +1,11 @@
+agent-api/node_modules/
+agent-api/.vercel/
+.env*
+
+# Local working files copied into this folder (private: leads, client work, renders). Not part of the site.
+galaxia/
+nanourik/
+skincare/
+limassol-leads.csv
+outreach-messages.md
+mvtj-logo-reveal-0001-0120.mp4
