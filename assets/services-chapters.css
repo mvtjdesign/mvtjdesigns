@@ -33,18 +33,28 @@
 .svc-formats-side{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .svc-formats-side figure:first-child{grid-column:1/-1}
 
-/* Systems: the live assistant docks here */
-.svc-systems{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:16px;align-items:start}
-.svc-systems [data-mvtj-assist-dock] img{border-radius:10px}
-.svc-note{border:1px solid #c1a17444;border-radius:10px;padding:22px}
-.svc-note img{margin-bottom:14px}
-.svc-note p{font-size:13px;line-height:1.7;color:#c0c8cf;margin:0 0 6px}
+/* Systems: the live assistant docks here, and the real Pendeli app runs on demand */
+.svc-assistant{max-width:420px}
+.svc-assistant [data-mvtj-assist-dock] img{border-radius:10px}
+.svc-try{margin-top:28px}
+.svc-device{aspect-ratio:16/10;border:10px solid #1c2733;border-radius:22px;background:#f5efe4;overflow:hidden;box-shadow:0 24px 60px #0008}
+.svc-try-start{position:relative;display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:pointer}
+.svc-try-start img{width:100%;height:100%;object-fit:cover;border-radius:0}
+.svc-try-cta{position:absolute;left:16px;top:16px;white-space:nowrap;background:#0a1017e6;color:#f0e8d9;border:1px solid #c1a174;border-radius:999px;padding:12px 20px;font:12px/1 monospace;letter-spacing:.06em;text-transform:uppercase}
+.svc-try-start:hover .svc-try-cta,.svc-try-start:focus-visible .svc-try-cta{background:#c1a174;color:#0a1017}
+.svc-device{position:relative}
+.svc-try-frame{position:absolute;top:0;left:0;border:0;background:#f5efe4;transform-origin:0 0}
+.svc-try-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 20px;margin-top:12px}
+.svc-try-foot p{font-size:13px;line-height:1.7;color:#c0c8cf;margin:0;max-width:52ch}
+.svc-try-foot strong{color:#f0e8d9;font-weight:500}
+.svc-try-foot a{color:#e1c69d;font-size:13px;text-decoration:underline;text-underline-offset:5px;min-height:44px;display:inline-flex;align-items:center}
 
 @media (max-width:900px){
   .svc-chapter{padding:52px 0 60px}
   .svc-chapter .container{grid-template-columns:1fr;gap:32px}
   .svc-copy{position:static}
-  .svc-formats,.svc-systems{grid-template-columns:1fr}
+  .svc-formats{grid-template-columns:1fr}
+  .svc-device{aspect-ratio:3/4;border-width:7px;border-radius:16px}
 }
 @media (max-width:520px){
   .svc.cinematic-services .cinematic-intro h2{font-size:clamp(2rem,10vw,3rem)}
