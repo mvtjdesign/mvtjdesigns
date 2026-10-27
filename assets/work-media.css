@@ -1,0 +1,18 @@
+/* Homepage media blocks: films in the Work section, Nanourik stills (Cinematic Ads) and the live assistant capture (Systems). */
+.project-panel-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0b1117;object-fit:contain}
+.project-panel-video.is-vertical video{aspect-ratio:auto;height:440px;object-fit:contain}
+.ads-stills,.systems-capture{margin:0}
+.ads-stills>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ads-stills img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border:1px solid #bfa77766;background:#101920}
+.ads-stills>div>img:nth-child(2){transform:translateY(-14px);box-shadow:0 18px 40px #0007}
+.ads-stills figcaption,.systems-capture figcaption{font-size:10px;line-height:1.7;letter-spacing:.06em;color:#e3c68f;margin-top:12px}
+.ads-stills figcaption span,.systems-capture figcaption span{color:#aebac5}
+.systems-capture{display:flex;flex-direction:column;align-items:center}
+.systems-capture img{display:block;width:auto;max-width:100%;height:360px;border:1px solid #c1a17466;box-shadow:0 18px 40px #0007}
+@media(max-width:760px){
+  .project-panel-video.is-vertical video{height:420px}
+  .ads-stills>div{gap:8px}
+  .ads-stills>div>img:nth-child(2){transform:translateY(-8px)}
+  .systems-capture img{height:auto;width:100%;max-width:340px}
+}
+@media(prefers-reduced-motion:reduce){.ads-stills>div>img:nth-child(2){transform:none}}
