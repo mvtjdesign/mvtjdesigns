@@ -3,15 +3,18 @@
 // Needs GEMINI_API_KEY (Google AI Studio) in the Vercel project's environment.
 // Visitor messages are never logged or stored by MVTJ (on Gemini's free tier, Google may use them to improve its products).
 import { GoogleGenAI, ApiError, ThinkingLevel } from "@google/genai";
-import { SYSTEM_PROMPT } from "../lib/knowledge.js";
+import { SYSTEM_PROMPT } from "./_knowledge.js";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 const MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";   // free-tier model
 
-const ALLOWED_ORIGINS = new Set(
-  (process.env.ALLOWED_ORIGINS || "https://www.mvtjdesigns.com,https://mvtjdesigns.com")
-    .split(",").map(o => o.trim()).filter(Boolean),
-);
+// The site and this function share one Vercel project, so the widget calls /api/chat on its own address.
+// Allow the live domain plus this deployment's own Vercel addresses (previews), which Vercel provides as hostnames.
+const ALLOWED_ORIGINS = new Set([
+  ...(process.env.ALLOWED_ORIGINS || "https://www.mvtjdesigns.com,https://mvtjdesigns.com").split(","),
+  ...["VERCEL_URL", "VERCEL_BRANCH_URL", "VERCEL_PROJECT_PRODUCTION_URL"]
+    .map(name => process.env[name]).filter(Boolean).map(host => `https://${host}`),
+].map(o => o.trim()).filter(Boolean));
 const MAX_MESSAGES = 20;        // conversation turns kept per request
 const MAX_CHARS = 1500;         // per message
 const RATE_LIMIT = 20;          // requests per visitor per window

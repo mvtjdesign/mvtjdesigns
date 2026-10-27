@@ -1,5 +1,5 @@
-agent-api/node_modules/
-agent-api/.vercel/
+node_modules/
+.vercel/
 .env*
 
 # Local working files copied into this folder (private: leads, client work, renders). Not part of the site.

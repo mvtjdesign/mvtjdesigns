@@ -1,7 +1,6 @@
 // Local preview: serves the site and the assistant together on http://localhost:8787
-//   node agent-api/dev-server.mjs            (needs GEMINI_API_KEY for real replies)
-//   MOCK=1 node agent-api/dev-server.mjs     (canned replies, no API calls)
-// Pages are rewritten on the fly to call this server's /api/chat instead of Vercel.
+//   node tools/dev-server.mjs            (needs GEMINI_API_KEY for real replies)
+//   MOCK=1 node tools/dev-server.mjs     (canned replies, no API calls)
 import http from "node:http";
 import fs from "node:fs";
 import path from "node:path";
@@ -11,7 +10,7 @@ const PORT = 8787;
 const ORIGIN = `http://localhost:${PORT}`;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 process.env.ALLOWED_ORIGINS = ORIGIN;
-const { default: handler } = process.env.MOCK ? { default: null } : await import("./api/chat.js");
+const { default: handler } = process.env.MOCK ? { default: null } : await import("../api/chat.js");
 
 const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".svg": "image/svg+xml",
   ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp", ".mp4": "video/mp4", ".json": "application/json" };
@@ -41,8 +40,5 @@ http.createServer(async (req, res) => {
   if (!fs.existsSync(file)) { res.statusCode = 404; return res.end("not found"); }
   const type = TYPES[path.extname(file)] || "application/octet-stream";
   res.setHeader("Content-Type", type);
-  if (type.startsWith("text/html")) {
-    return res.end(fs.readFileSync(file, "utf8").replace(/data-endpoint="[^"]*"/g, `data-endpoint="${ORIGIN}/api/chat"`));
-  }
   fs.createReadStream(file).pipe(res);
 }).listen(PORT, () => console.log(`MVTJ site + assistant on ${ORIGIN}/en/${process.env.MOCK ? " (mock replies)" : ""}`));

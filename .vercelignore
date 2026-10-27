@@ -1,0 +1,16 @@
+# Never upload these to Vercel (deploys from this computer would otherwise include them).
+# Private local working files: leads, outreach, client work, renders.
+galaxia/
+nanourik/
+skincare/
+limassol-leads.csv
+outreach-messages.md
+/mvtj-logo-reveal-0001-0120.mp4
+# Repo tooling and notes, not part of the public site.
+tests/
+tools/
+*.md
+.env*
+node_modules/
+CNAME
+.nojekyll
