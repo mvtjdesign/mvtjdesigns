@@ -9,22 +9,22 @@
   const CALENDLY = "https://calendly.com/max-tijerino/30min";
   const WHATSAPP = "https://wa.me/35794338222";
   const STRINGS = {
-    en: { launch: "Ask MVTJ", title: "MVTJ assistant", sub: "Automated assistant · replies in seconds",
+    en: { launch: "Ask MVTJ", title: "MVTJ assistant", sub: "Automated assistant · replies in seconds", again: "Oh, hello again. Want to pick up where we left off?",
       hello: "Hi, I'm MVTJ's automated assistant. We handle your web, social and ads, and build the systems that turn them into customers. What are you working on?",
       placeholder: "Type your message…", send: "Send", close: "Close chat", call: "Book a free call", wa: "WhatsApp",
       typing: "Typing…", error: "Sorry, I couldn't reply just now. You can book a free call or message us on WhatsApp.",
       note: "Replies come from Google Gemini, which may use messages to improve its products. MVTJ doesn't store them. Please don't share personal details." },
-    es: { launch: "Pregunta a MVTJ", title: "Asistente MVTJ", sub: "Asistente automático · responde en segundos",
+    es: { launch: "Pregunta a MVTJ", title: "Asistente MVTJ", sub: "Asistente automático · responde en segundos", again: "Ah, hola de nuevo. ¿Seguimos donde lo dejamos?",
       hello: "Hola, soy el asistente automático de MVTJ. Nos encargamos de tu web, redes y anuncios, y creamos los sistemas que los convierten en clientes. ¿En qué estás trabajando?",
       placeholder: "Escribe tu mensaje…", send: "Enviar", close: "Cerrar chat", call: "Reservar llamada gratis", wa: "WhatsApp",
       typing: "Escribiendo…", error: "Lo siento, no pude responder ahora. Puedes reservar una llamada gratuita o escribirnos por WhatsApp.",
       note: "Las respuestas las genera Google Gemini, que puede usar los mensajes para mejorar sus productos. MVTJ no los guarda. No compartas datos personales." },
-    ru: { launch: "Спросить MVTJ", title: "Ассистент MVTJ", sub: "Автоматический ассистент · отвечает за секунды",
+    ru: { launch: "Спросить MVTJ", title: "Ассистент MVTJ", sub: "Автоматический ассистент · отвечает за секунды", again: "О, снова здравствуйте! Продолжим с того места, где остановились?",
       hello: "Здравствуйте, я автоматический ассистент MVTJ. Мы ведём ваш сайт, соцсети и рекламу и строим системы, которые превращают их в клиентов. Над чем вы работаете?",
       placeholder: "Введите сообщение…", send: "Отправить", close: "Закрыть чат", call: "Бесплатный звонок", wa: "WhatsApp",
       typing: "Печатает…", error: "Извините, не получилось ответить. Запишитесь на бесплатный звонок или напишите нам в WhatsApp.",
       note: "Ответы генерирует Google Gemini, который может использовать сообщения для улучшения своих продуктов. MVTJ их не хранит. Не указывайте личные данные." },
-    el: { launch: "Ρωτήστε το MVTJ", title: "Βοηθός MVTJ", sub: "Αυτόματος βοηθός · απαντά σε δευτερόλεπτα",
+    el: { launch: "Ρωτήστε το MVTJ", title: "Βοηθός MVTJ", sub: "Αυτόματος βοηθός · απαντά σε δευτερόλεπτα", again: "Α, γεια σας ξανά! Συνεχίζουμε από εκεί που μείναμε;",
       hello: "Γεια σας, είμαι ο αυτόματος βοηθός της MVTJ. Αναλαμβάνουμε το website, τα social και τις διαφημίσεις σας και φτιάχνουμε τα συστήματα που τα μετατρέπουν σε πελάτες. Σε τι δουλεύετε;",
       placeholder: "Γράψτε το μήνυμά σας…", send: "Αποστολή", close: "Κλείσιμο", call: "Δωρεάν κλήση", wa: "WhatsApp",
       typing: "Γράφει…", error: "Λυπούμαστε, δεν μπόρεσα να απαντήσω. Κλείστε μια δωρεάν κλήση ή στείλτε μας μήνυμα στο WhatsApp.",
@@ -99,7 +99,10 @@
   bubble("assistant", t.hello);
   for (const m of history) bubble(m.role, m.content);
 
+  let floatingOpen = false;
   function toggle(open) {
+    if (panel.classList.contains("is-docked")) return;
+    floatingOpen = open;
     panel.hidden = !open;
     launch.hidden = open;
     launch.setAttribute("aria-expanded", String(open));
@@ -109,6 +112,28 @@
   close.addEventListener("click", () => toggle(false));
   panel.addEventListener("keydown", e => { if (e.key === "Escape") toggle(false); });
   input.addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); } });
+
+  // A page can host the same assistant inline: [data-mvtj-assist-dock]. While the dock is on screen the panel
+  // (and its conversation) moves into it; scrolling away returns it to the corner.
+  const dock = document.querySelector("[data-mvtj-assist-dock]");
+  if (dock && "IntersectionObserver" in window) {
+    let greeted = false;
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && panel.parentNode !== dock) {
+        dock.append(panel);
+        dock.classList.add("is-live");
+        panel.classList.add("is-docked");
+        panel.hidden = false; launch.hidden = true;
+        if (history.length && !greeted) { greeted = true; bubble("assistant", t.again); }
+        log.scrollTop = log.scrollHeight;
+      } else if (!e.isIntersecting && panel.parentNode === dock) {
+        root.append(panel);
+        dock.classList.remove("is-live");
+        panel.classList.remove("is-docked");
+        panel.hidden = !floatingOpen; launch.hidden = floatingOpen;
+      }
+    }, { threshold: 0.35 }).observe(dock);
+  }
 
   let busy = false;
   form.addEventListener("submit", async e => {
