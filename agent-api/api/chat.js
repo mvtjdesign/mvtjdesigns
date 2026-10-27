@@ -1,10 +1,12 @@
 // POST /api/chat - the mvtjdesigns.com website assistant.
 // Body: { messages: [{ role: "user" | "assistant", content: string }, ...] }  ->  { reply: string }
-// Needs ANTHROPIC_API_KEY in the Vercel project's environment. Visitor messages are never logged or stored.
-import Anthropic from "@anthropic-ai/sdk";
+// Needs GEMINI_API_KEY (Google AI Studio) in the Vercel project's environment.
+// Visitor messages are never logged or stored by MVTJ (on Gemini's free tier, Google may use them to improve its products).
+import { GoogleGenAI, ApiError, ThinkingLevel } from "@google/genai";
 import { SYSTEM_PROMPT } from "../lib/knowledge.js";
 
-const client = new Anthropic();
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";   // free-tier model
 
 const ALLOWED_ORIGINS = new Set(
   (process.env.ALLOWED_ORIGINS || "https://www.mvtjdesigns.com,https://mvtjdesigns.com")
@@ -61,28 +63,27 @@ export default async function handler(req, res) {
   if (!messages) return res.status(400).json({ error: "invalid_messages" });
 
   try {
-    const response = await client.beta.messages.create({
-      model: "claude-opus-5-5",
-      max_tokens: 8000,
-      output_config: { effort: "low" },          // short sales chat; low effort keeps replies quick
-      betas: ["server-side-fallback-2026-07-01"],
-      fallbacks: "default",                      // a policy decline is retried on a fallback model in the same call
-      cache_control: { type: "ephemeral" },      // caches the frozen system prompt + conversation prefix
-      system: SYSTEM_PROMPT,
-      messages,
+    const response = await ai.models.generateContent({
+      model: MODEL,
+      // Gemini names the assistant role "model".
+      contents: messages.map(m => ({ role: m.role === "assistant" ? "model" : "user", parts: [{ text: m.content }] })),
+      config: {
+        systemInstruction: SYSTEM_PROMPT,
+        maxOutputTokens: 8000,
+        thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },   // short sales chat; keeps replies quick
+      },
     });
-    const reply = response.stop_reason === "refusal"
-      ? FALLBACK_REPLY
-      : response.content.filter(b => b.type === "text").map(b => b.text).join("\n").trim() || FALLBACK_REPLY;
+    // Blocked or empty replies (safety filters, no candidates) get the polite handoff instead.
+    const reply = (response.text || "").trim() || FALLBACK_REPLY;
     return res.status(200).json({ reply });
   } catch (error) {
     // Status only - never the visitor's text.
-    if (error instanceof Anthropic.RateLimitError) {
-      console.error("anthropic rate limited");
+    if (error instanceof ApiError && error.status === 429) {
+      console.error("gemini quota or rate limit reached");
       return res.status(503).json({ error: "busy" });
     }
-    if (error instanceof Anthropic.APIError) {
-      console.error(`anthropic api error ${error.status}`);
+    if (error instanceof ApiError) {
+      console.error(`gemini api error ${error.status}`);
       return res.status(502).json({ error: "upstream" });
     }
     console.error("assistant error", error?.name);

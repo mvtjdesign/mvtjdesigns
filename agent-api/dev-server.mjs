@@ -1,5 +1,5 @@
 // Local preview: serves the site and the assistant together on http://localhost:8787
-//   node agent-api/dev-server.mjs            (needs ANTHROPIC_API_KEY for real replies)
+//   node agent-api/dev-server.mjs            (needs GEMINI_API_KEY for real replies)
 //   MOCK=1 node agent-api/dev-server.mjs     (canned replies, no API calls)
 // Pages are rewritten on the fly to call this server's /api/chat instead of Vercel.
 import http from "node:http";

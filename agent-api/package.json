@@ -3,8 +3,10 @@
   "private": true,
   "description": "Chat backend for the mvtjdesigns.com website assistant (Vercel serverless function).",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
-    "@anthropic-ai/sdk": "^1.3.0"
+    "@google/genai": "^2.31.0"
   }
 }
