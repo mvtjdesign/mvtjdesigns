@@ -4,7 +4,8 @@
 // Nothing is ever sent back to the lead: replies stay with Max and Pop.
 import crypto from "node:crypto";
 import { GoogleGenAI } from "@google/genai";
-import { saveEmailEvent } from "./_db.js";
+import { saveEmailEvent, markEmailSent } from "./_db.js";
+import { telegram } from "./_lead.js";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 const MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
@@ -65,36 +66,31 @@ export default async function handler(req, res) {
     nextStep: clip(parsed.next_step, 400),
   };
 
+  let stored = false;
   try {
-    if (!(await saveEmailEvent(event))) return res.status(200).json({ ok: true, logged: false });   // already logged
+    // Already told the team about this message: nothing to do.
+    if (!(await saveEmailEvent(event))) return res.status(200).json({ ok: true, logged: false });
+    stored = true;
   } catch (error) {
     console.error("inbound storage error", error?.code || error?.name);
   }
 
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chat = process.env.TELEGRAM_LEADS_CHAT_ID;
-  if (token && chat) {
-    const text = [
-      `Email reply · ${event.organisation} · ${event.sentiment}`,
-      "",
-      `From: ${domain}`,
-      `Subject: ${event.subject}`,
-      "",
-      event.summary,
-      "",
-      `Suggested next step: ${event.nextStep}`,
-      "",
-      "Nothing has been sent. Reply from Gmail once you or Pop approve.",
-    ].join("\n");
-    try {
-      const r = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: chat, text, disable_web_page_preview: true }),
-      });
-      if (!r.ok) console.error(`telegram error ${r.status}`);
-    } catch (error) {
-      console.error("telegram delivery error", error?.name);
-    }
+  const delivered = await telegram([
+    `Email reply · ${event.organisation} · ${event.sentiment}`,
+    "",
+    `From: ${domain}`,
+    `Subject: ${event.subject}`,
+    "",
+    event.summary,
+    "",
+    `Suggested next step: ${event.nextStep}`,
+    "",
+    "Nothing has been sent. Reply from Gmail once you or Pop approve.",
+  ].join("\n"));
+  // Not delivered: answer with an error so the script keeps the message and retries on its next run.
+  if (!delivered) return res.status(502).json({ error: "telegram_failed" });
+  if (stored) {
+    try { await markEmailSent(event.id); } catch (error) { console.error("inbound storage error", error?.code || error?.name); }
   }
   return res.status(200).json({ ok: true, logged: true });
 }

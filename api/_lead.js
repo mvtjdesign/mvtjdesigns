@@ -44,6 +44,27 @@ export const DISPATCH = {
   el: "Ναι, στείλτε μου το MVTJ Dispatch: τα τελευταία στην AI, στο σινεμά και στο marketing που πραγματικά αποδίδει. Περιστασιακά email, διαγραφή οποιαδήποτε στιγμή.",
 };
 
+// Posts to the sales team's Telegram. Returns true when Telegram accepted it; otherwise logs
+// Telegram's own reason (e.g. "chat not found"), which never contains the token or the message.
+export async function telegram(text) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chat = process.env.TELEGRAM_LEADS_CHAT_ID;
+  if (!token || !chat) { console.error("telegram not configured"); return false; }
+  try {
+    const r = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: chat.trim(), text, disable_web_page_preview: true }),
+    });
+    if (r.ok) return true;
+    const reason = await r.json().then(j => String(j.description || "").slice(0, 120)).catch(() => "");
+    console.error(`telegram error ${r.status}: ${reason}`);
+  } catch (error) {
+    console.error("telegram delivery error", error?.name);
+  }
+  return false;
+}
+
 const clip = (v, n) => String(v ?? "").replace(/\s+/g, " ").trim().slice(0, n);
 
 export function score(ratings) {

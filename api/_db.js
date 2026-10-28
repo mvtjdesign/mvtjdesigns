@@ -37,6 +37,8 @@ function schema() {
       gmail_message_id text unique not null,
       from_domain text, organisation text, subject text,
       summary text, sentiment text, next_step text)`;
+    // Whether the team has been told; an unsent reply is retried on the script's next run.
+    await tx`alter table mvtj_email_events add column if not exists telegram_sent boolean not null default false`;
     // Supabase exposes public tables through its API; keep these server-only.
     for (const table of ["mvtj_chats", "mvtj_leads", "mvtj_email_events"]) {
       await tx.unsafe(`alter table ${table} enable row level security`);
@@ -84,13 +86,20 @@ export async function saveLead(lead, contact, chatId, marketing) {
   return row?.id ?? null;
 }
 
-// Returns false when this Gmail message was already logged.
+// Logs a reply. Returns false when the team was already told about this Gmail message.
 export async function saveEmailEvent(event) {
   if (!sql) return true;
   await schema();
   const rows = await sql`insert into mvtj_email_events
     (gmail_message_id, from_domain, organisation, subject, summary, sentiment, next_step)
     values (${event.id}, ${event.domain}, ${event.organisation}, ${event.subject}, ${event.summary}, ${event.sentiment}, ${event.nextStep})
-    on conflict (gmail_message_id) do nothing returning id`;
+    on conflict (gmail_message_id) do update set summary = excluded.summary, sentiment = excluded.sentiment, next_step = excluded.next_step
+      where mvtj_email_events.telegram_sent = false
+    returning id`;
   return rows.length > 0;
+}
+
+export async function markEmailSent(gmailId) {
+  if (!sql) return;
+  await sql`update mvtj_email_events set telegram_sent = true where gmail_message_id = ${gmailId}`;
 }

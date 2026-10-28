@@ -2,8 +2,8 @@
 // Body: { lead: {...signed fields, sig}, contact: { name?, reach? }, consent: true, chatId?, dispatch? }  ->  { ok: true }
 // Only leads signed by /api/chat are accepted, and only with the visitor's explicit consent.
 // The lead is saved (with the optional MVTJ Dispatch opt-in) and the conversation is attached for the team.
-// Needs TELEGRAM_BOT_TOKEN and TELEGRAM_LEADS_CHAT_ID in the Vercel project's environment.
-import { verify, DISPATCH } from "./_lead.js";
+// Delivered with TELEGRAM_BOT_TOKEN and TELEGRAM_LEADS_CHAT_ID (see telegram() in _lead.js).
+import { verify, DISPATCH, telegram } from "./_lead.js";
 import { saveLead, chatTranscript } from "./_db.js";
 
 const ALLOWED_ORIGINS = new Set([
@@ -93,27 +93,8 @@ export default async function handler(req, res) {
     console.error("lead storage error", error?.code || error?.name);
   }
 
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const telegramChat = process.env.TELEGRAM_LEADS_CHAT_ID;
-  if (!token || !telegramChat) {
-    console.error("lead delivery not configured");
-    if (leadId) return res.status(200).json({ ok: true });   // saved; the team sees it in the database
-    return res.status(503).json({ error: "not_configured" });
-  }
-  try {
-    const r = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: telegramChat, text: message(lead, { name, reach }, { optIn, leadId, transcript }), disable_web_page_preview: true }),
-    });
-    if (!r.ok) {
-      // Status only - never the lead or the token.
-      console.error(`telegram error ${r.status}`);
-      return res.status(502).json({ error: "upstream" });
-    }
-    return res.status(200).json({ ok: true });
-  } catch (error) {
-    console.error("lead delivery error", error?.name);
-    return res.status(502).json({ error: "upstream" });
-  }
+  const delivered = await telegram(message(lead, { name, reach }, { optIn, leadId, transcript }));
+  // A lead saved in the database is never lost, even if Telegram is down.
+  if (delivered || leadId) return res.status(200).json({ ok: true });
+  return res.status(502).json({ error: "upstream" });
 }
