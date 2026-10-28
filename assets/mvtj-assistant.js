@@ -42,8 +42,15 @@
       dispatch: "Ναι, στείλτε μου το MVTJ Dispatch: τα τελευταία στην AI, στο σινεμά και στο marketing που πραγματικά αποδίδει. Περιστασιακά email, διαγραφή οποιαδήποτε στιγμή.", needEmail: "Προσθέστε ένα email για να λαμβάνετε το MVTJ Dispatch, ή αφαιρέστε την επιλογή.",
       leadTitle: "Αποστολή στην ομάδα της MVTJ", name: "Το όνομά σας (προαιρετικό)", reach: "Τηλέφωνο ή email για να σας απαντήσουμε (προαιρετικό)", consent: "Συμφωνώ να λάβει η MVTJ αυτή τη σύνοψη και αυτά τα στοιχεία για να μου απαντήσει.", privacy: "Πολιτική απορρήτου", leadSend: "Αποστολή στην ομάδα", sent: "Στάλθηκε. Η ομάδα του Max θα επικοινωνήσει μαζί σας. Μπορείτε επίσης να κλείσετε μια κλήση τώρα.", leadFail: "Δεν στάλθηκε. Κλείστε μια κλήση ή στείλτε μας μήνυμα στο WhatsApp.", badReach: "Γράψτε τηλέφωνο ή email, ή αφήστε το κενό." },
   };
+  // Speaker label for the visitor's lines, and the two doors offered as a first tap.
+  const SCRIPT = {
+    en: { you: "You", starts: ["We need more people to notice us.", "People notice us, but not enough of them book."] },
+    es: { you: "Tú", starts: ["Necesitamos que más gente nos vea.", "Nos ven, pero pocos reservan."] },
+    ru: { you: "Вы", starts: ["Нам нужно, чтобы нас замечало больше людей.", "Нас замечают, но бронируют слишком мало."] },
+    el: { you: "Εσείς", starts: ["Χρειαζόμαστε περισσότερους να μας προσέξουν.", "Μας προσέχουν, αλλά λίγοι κάνουν κράτηση."] },
+  };
   const lang = (window.MVTJI18N && window.MVTJI18N.lang) || document.documentElement.lang.slice(0, 2) || "en";
-  const t = STRINGS[lang] || STRINGS.en;
+  const t = { ...(STRINGS[lang] || STRINGS.en), ...(SCRIPT[lang] || SCRIPT.en) };
   const storeKey = "mvtj-assistant-v1";
 
   let history = [];   // [{ role, content }] - what the backend sees (greeting excluded)
@@ -86,10 +93,21 @@
   panel.setAttribute("aria-label", t.title);
   const head = el("div", "mvtj-assist__head");
   const titles = el("div");
-  titles.append(el("p", "mvtj-assist__title", t.title), el("p", "mvtj-assist__sub", t.sub));
+  titles.append(el("p", "mvtj-assist__title", "MVTJ"), el("p", "mvtj-assist__sub", t.sub));
+  // Slate: a record light and a running timecode, counting from when this page opened.
+  const slate = el("div", "mvtj-assist__slate");
+  const timecode = el("span", "", "00:00:00");
+  slate.setAttribute("aria-hidden", "true");
+  slate.append(el("span", "mvtj-assist__dot"), timecode);
+  const rolling = Date.now();
+  setInterval(() => {
+    if (panel.hidden) return;
+    const s = Math.floor((Date.now() - rolling) / 1000);
+    timecode.textContent = [s / 3600, (s / 60) % 60, s % 60].map(n => String(Math.floor(n)).padStart(2, "0")).join(":");
+  }, 1000);
   const close = el("button", "mvtj-assist__close", "×");
   close.type = "button"; close.setAttribute("aria-label", t.close);
-  head.append(titles, close);
+  head.append(titles, slate, close);
 
   const log = el("div", "mvtj-assist__log");
   log.setAttribute("aria-live", "polite");
@@ -107,9 +125,12 @@
   root.append(launch, panel);
   document.body.append(root);
 
+  // Each line is set like a screenplay: the speaker, then what they said.
   function bubble(role, text, extra = "") {
     const b = el("div", `mvtj-assist__msg mvtj-assist__msg--${role === "user" ? "me" : "bot"} ${extra}`.trim());
-    fill(b, text);
+    const body = el("div", "mvtj-assist__text");
+    fill(body, text);
+    b.append(el("span", "mvtj-assist__who", role === "user" ? t.you : "MVTJ"), body);
     log.append(b);
     log.scrollTop = log.scrollHeight;
     return b;
@@ -164,6 +185,19 @@
 
   bubble("assistant", t.hello);
   for (const m of history) bubble(m.role, m.content);
+  // A new conversation starts with the two doors; tapping one sends it as the visitor's first line.
+  let starts = null;
+  if (!history.length) {
+    starts = el("div", "mvtj-assist__starts");
+    t.starts.forEach((line, i) => {
+      const b = el("button", "mvtj-assist__start");
+      b.type = "button";
+      b.append(el("span", "", "AB"[i]), line);
+      b.addEventListener("click", () => { input.value = line; form.requestSubmit(); });
+      starts.append(b);
+    });
+    log.append(starts);
+  }
 
   let floatingOpen = false;
   function toggle(open) {
@@ -207,6 +241,7 @@
     const text = input.value.trim();
     if (!text || busy) return;
     busy = true; send.disabled = true; input.value = "";
+    if (starts) { starts.remove(); starts = null; }
     history.push({ role: "user", content: text });
     bubble("user", text);
     const typing = bubble("assistant", t.typing, "mvtj-assist__msg--typing");
