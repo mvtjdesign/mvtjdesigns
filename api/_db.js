@@ -5,7 +5,8 @@ import postgres from "postgres";
 
 const URL = process.env.POSTGRES_URL;
 const CHAT_RETENTION_DAYS = 90;
-const sql = URL ? postgres(URL, { prepare: false, max: 1, idle_timeout: 20, connect_timeout: 10 }) : null;
+// onnotice: "table already exists" notices from the schema check aren't worth a log line on every cold start.
+const sql = URL ? postgres(URL, { prepare: false, max: 1, idle_timeout: 20, connect_timeout: 10, onnotice: () => {} }) : null;
 
 let ready = null;
 // Creates the tables on first use; IF NOT EXISTS keeps it safe on every cold start.
