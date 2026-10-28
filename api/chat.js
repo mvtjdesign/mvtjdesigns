@@ -3,10 +3,12 @@
 // The assistant also qualifies the visitor; once a lead is ready it comes back scored and signed,
 // so the widget can offer to send it to the sales team through /api/lead.
 // Needs GEMINI_API_KEY (Google AI Studio) in the Vercel project's environment.
-// Visitor messages are never logged or stored by MVTJ (on Gemini's free tier, Google may use them to improve its products).
+// Conversations are stored for 90 days with phone numbers and emails removed (api/_db.js); they are never written to logs.
+// On Gemini's free tier, Google may use messages to improve its products.
 import { GoogleGenAI, ApiError, ThinkingLevel } from "@google/genai";
 import { SYSTEM_PROMPT } from "./_knowledge.js";
 import { RESPONSE_SCHEMA, cleanLead, sign } from "./_lead.js";
+import { saveChat } from "./_db.js";
 
 const LANGS = ["en", "es", "ru", "el"];
 
@@ -88,9 +90,13 @@ export default async function handler(req, res) {
     try { parsed = JSON.parse(text); } catch { /* not JSON: show the text as it came */ }
     // Blocked or empty replies (safety filters, no candidates) get the polite handoff instead.
     const reply = String(parsed ? parsed.reply || "" : text).trim() || FALLBACK_REPLY;
+    const lang = LANGS.includes(req.body?.lang) ? req.body.lang : "en";
+    // Keep a redacted copy of the conversation (see _db.js); a storage failure never blocks the reply.
+    try { await saveChat(req.body?.chatId, lang, [...messages, { role: "assistant", content: reply }]); }
+    catch (error) { console.error("chat storage error", error?.code || error?.name); }
     const lead = cleanLead(parsed?.lead);
     if (lead?.ready) {
-      lead.lang = LANGS.includes(req.body?.lang) ? req.body.lang : "en";
+      lead.lang = lang;
       const sig = sign(lead);
       if (sig) return res.status(200).json({ reply, lead: { ...lead, sig } });
     }

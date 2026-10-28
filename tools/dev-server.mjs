@@ -54,10 +54,10 @@ http.createServer(async (req, res) => {
   }
   if (url.pathname === "/api/lead") {
     await readBody(req);
-    const { lead, contact = {}, consent } = req.body || {};
+    const { lead, contact = {}, consent, dispatch } = req.body || {};
     if (consent !== true) return vercelRes(res).status(400).json({ error: "consent_required" });
     if (!lead || !verify(lead, lead.sig)) return vercelRes(res).status(400).json({ error: "invalid_lead" });
-    console.log("\n--- lead that would go to Telegram ---\n" + message(lead, contact) + "\n---");
+    console.log("\n--- lead that would go to Telegram ---\n" + message(lead, contact, { optIn: dispatch === true }) + "\n---");
     return vercelRes(res).json({ ok: true });
   }
   let file = path.join(ROOT, decodeURIComponent(url.pathname));

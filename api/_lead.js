@@ -35,6 +35,15 @@ export const RESPONSE_SCHEMA = {
   required: ["reply", "lead"],
 };
 
+// The optional marketing opt-in, exactly as the widget shows it (keep in step with assets/mvtj-assistant.js).
+// The wording is stored with each opt-in as the consent record.
+export const DISPATCH = {
+  en: "Yes, send me the MVTJ Dispatch: the latest in AI, film and marketing that actually works. Occasional emails, unsubscribe anytime.",
+  es: "Sí, envíame el MVTJ Dispatch: lo último en IA, cine y marketing que de verdad funciona. Correos ocasionales; puedes darte de baja cuando quieras.",
+  ru: "Да, присылайте мне MVTJ Dispatch: новинки ИИ, кино и маркетинга, который действительно работает. Нечастые письма, отписаться можно в любой момент.",
+  el: "Ναι, στείλτε μου το MVTJ Dispatch: τα τελευταία στην AI, στο σινεμά και στο marketing που πραγματικά αποδίδει. Περιστασιακά email, διαγραφή οποιαδήποτε στιγμή.",
+};
+
 const clip = (v, n) => String(v ?? "").replace(/\s+/g, " ").trim().slice(0, n);
 
 export function score(ratings) {
