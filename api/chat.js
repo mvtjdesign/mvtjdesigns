@@ -1,9 +1,14 @@
 // POST /api/chat - the mvtjdesigns.com website assistant.
-// Body: { messages: [{ role: "user" | "assistant", content: string }, ...] }  ->  { reply: string }
+// Body: { messages: [{ role: "user" | "assistant", content: string }, ...], lang }  ->  { reply: string, lead?: object }
+// The assistant also qualifies the visitor; once a lead is ready it comes back scored and signed,
+// so the widget can offer to send it to the sales team through /api/lead.
 // Needs GEMINI_API_KEY (Google AI Studio) in the Vercel project's environment.
 // Visitor messages are never logged or stored by MVTJ (on Gemini's free tier, Google may use them to improve its products).
 import { GoogleGenAI, ApiError, ThinkingLevel } from "@google/genai";
 import { SYSTEM_PROMPT } from "./_knowledge.js";
+import { RESPONSE_SCHEMA, cleanLead, sign } from "./_lead.js";
+
+const LANGS = ["en", "es", "ru", "el"];
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 const MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";   // free-tier model
@@ -74,10 +79,21 @@ export default async function handler(req, res) {
         systemInstruction: SYSTEM_PROMPT,
         maxOutputTokens: 8000,
         thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },   // short sales chat; keeps replies quick
+        responseMimeType: "application/json",
+        responseJsonSchema: RESPONSE_SCHEMA,
       },
     });
+    const text = (response.text || "").trim();
+    let parsed = null;
+    try { parsed = JSON.parse(text); } catch { /* not JSON: show the text as it came */ }
     // Blocked or empty replies (safety filters, no candidates) get the polite handoff instead.
-    const reply = (response.text || "").trim() || FALLBACK_REPLY;
+    const reply = String(parsed ? parsed.reply || "" : text).trim() || FALLBACK_REPLY;
+    const lead = cleanLead(parsed?.lead);
+    if (lead?.ready) {
+      lead.lang = LANGS.includes(req.body?.lang) ? req.body.lang : "en";
+      const sig = sign(lead);
+      if (sig) return res.status(200).json({ reply, lead: { ...lead, sig } });
+    }
     return res.status(200).json({ reply });
   } catch (error) {
     // Status only - never the visitor's text.

@@ -9,26 +9,34 @@
   const CALENDLY = "https://calendly.com/max-tijerino/30min";
   const WHATSAPP = "https://wa.me/35794338222";
   const STRINGS = {
-    en: { launch: "Ask MVTJ", title: "MVTJ assistant", sub: "Automated assistant · replies in seconds", again: "Oh, hello again. Want to pick up where we left off?",
+    en: { launch: "Ask MVTJ", title: "MVTJ assistant", sub: "Automated assistant · replies in seconds",
+ again: "Oh, hello again. Want to pick up where we left off?",
       hello: "Hi, I'm MVTJ's automated assistant. We handle your web, social and ads, and build the systems that turn them into customers. What are you working on?",
       placeholder: "Type your message…", send: "Send", close: "Close chat", call: "Book a free call", wa: "WhatsApp",
       typing: "Typing…", error: "Sorry, I couldn't reply just now. You can book a free call or message us on WhatsApp.",
-      note: "Replies come from Google Gemini, which may use messages to improve its products. MVTJ doesn't store them. Please don't share personal details." },
-    es: { launch: "Pregunta a MVTJ", title: "Asistente MVTJ", sub: "Asistente automático · responde en segundos", again: "Ah, hola de nuevo. ¿Seguimos donde lo dejamos?",
+      note: "Replies come from Google Gemini, which may use messages to improve its products. MVTJ doesn't store the chat; only a summary you choose to send reaches our team.",
+      leadTitle: "Send this to MVTJ's team", name: "Your name (optional)", reach: "Phone or email so we can reply (optional)", consent: "I agree to MVTJ receiving this summary and these details to reply to me.", privacy: "Privacy policy", leadSend: "Send to the team", sent: "Sent. Max's team will be in touch. You can also book a call now.", leadFail: "That didn't send. Please book a call or message us on WhatsApp.", badReach: "Please enter a phone number or email address, or leave it empty." },
+    es: { launch: "Pregunta a MVTJ", title: "Asistente MVTJ", sub: "Asistente automático · responde en segundos",
+ again: "Ah, hola de nuevo. ¿Seguimos donde lo dejamos?",
       hello: "Hola, soy el asistente automático de MVTJ. Nos encargamos de tu web, redes y anuncios, y creamos los sistemas que los convierten en clientes. ¿En qué estás trabajando?",
       placeholder: "Escribe tu mensaje…", send: "Enviar", close: "Cerrar chat", call: "Reservar llamada gratis", wa: "WhatsApp",
       typing: "Escribiendo…", error: "Lo siento, no pude responder ahora. Puedes reservar una llamada gratuita o escribirnos por WhatsApp.",
-      note: "Las respuestas las genera Google Gemini, que puede usar los mensajes para mejorar sus productos. MVTJ no los guarda. No compartas datos personales." },
-    ru: { launch: "Спросить MVTJ", title: "Ассистент MVTJ", sub: "Автоматический ассистент · отвечает за секунды", again: "О, снова здравствуйте! Продолжим с того места, где остановились?",
+      note: "Las respuestas las genera Google Gemini, que puede usar los mensajes para mejorar sus productos. MVTJ no guarda el chat; solo llega a nuestro equipo el resumen que decidas enviar.",
+      leadTitle: "Enviar esto al equipo de MVTJ", name: "Tu nombre (opcional)", reach: "Teléfono o email para responderte (opcional)", consent: "Acepto que MVTJ reciba este resumen y estos datos para responderme.", privacy: "Política de privacidad", leadSend: "Enviar al equipo", sent: "Enviado. El equipo de Max se pondrá en contacto. También puedes reservar una llamada ahora.", leadFail: "No se pudo enviar. Reserva una llamada o escríbenos por WhatsApp.", badReach: "Escribe un teléfono o un email, o déjalo vacío." },
+    ru: { launch: "Спросить MVTJ", title: "Ассистент MVTJ", sub: "Автоматический ассистент · отвечает за секунды",
+ again: "О, снова здравствуйте! Продолжим с того места, где остановились?",
       hello: "Здравствуйте, я автоматический ассистент MVTJ. Мы ведём ваш сайт, соцсети и рекламу и строим системы, которые превращают их в клиентов. Над чем вы работаете?",
       placeholder: "Введите сообщение…", send: "Отправить", close: "Закрыть чат", call: "Бесплатный звонок", wa: "WhatsApp",
       typing: "Печатает…", error: "Извините, не получилось ответить. Запишитесь на бесплатный звонок или напишите нам в WhatsApp.",
-      note: "Ответы генерирует Google Gemini, который может использовать сообщения для улучшения своих продуктов. MVTJ их не хранит. Не указывайте личные данные." },
-    el: { launch: "Ρωτήστε το MVTJ", title: "Βοηθός MVTJ", sub: "Αυτόματος βοηθός · απαντά σε δευτερόλεπτα", again: "Α, γεια σας ξανά! Συνεχίζουμε από εκεί που μείναμε;",
+      note: "Ответы генерирует Google Gemini, который может использовать сообщения для улучшения своих продуктов. MVTJ не хранит чат; нашей команде приходит только сводка, которую вы решите отправить.",
+      leadTitle: "Отправить это команде MVTJ", name: "Ваше имя (необязательно)", reach: "Телефон или email для ответа (необязательно)", consent: "Я согласен(на), чтобы MVTJ получила эту сводку и данные для ответа мне.", privacy: "Политика конфиденциальности", leadSend: "Отправить команде", sent: "Отправлено. Команда Макса свяжется с вами. Также можно записаться на звонок.", leadFail: "Не удалось отправить. Запишитесь на звонок или напишите нам в WhatsApp.", badReach: "Укажите телефон или email либо оставьте поле пустым." },
+    el: { launch: "Ρωτήστε το MVTJ", title: "Βοηθός MVTJ", sub: "Αυτόματος βοηθός · απαντά σε δευτερόλεπτα",
+ again: "Α, γεια σας ξανά! Συνεχίζουμε από εκεί που μείναμε;",
       hello: "Γεια σας, είμαι ο αυτόματος βοηθός της MVTJ. Αναλαμβάνουμε το website, τα social και τις διαφημίσεις σας και φτιάχνουμε τα συστήματα που τα μετατρέπουν σε πελάτες. Σε τι δουλεύετε;",
       placeholder: "Γράψτε το μήνυμά σας…", send: "Αποστολή", close: "Κλείσιμο", call: "Δωρεάν κλήση", wa: "WhatsApp",
       typing: "Γράφει…", error: "Λυπούμαστε, δεν μπόρεσα να απαντήσω. Κλείστε μια δωρεάν κλήση ή στείλτε μας μήνυμα στο WhatsApp.",
-      note: "Οι απαντήσεις προέρχονται από το Google Gemini, που μπορεί να χρησιμοποιεί τα μηνύματα για τη βελτίωση των προϊόντων του. Η MVTJ δεν τα αποθηκεύει. Μην μοιράζεστε προσωπικά στοιχεία." },
+      note: "Οι απαντήσεις προέρχονται από το Google Gemini, που μπορεί να χρησιμοποιεί τα μηνύματα για τη βελτίωση των προϊόντων του. Η MVTJ δεν αποθηκεύει τη συνομιλία· στην ομάδα μας φτάνει μόνο η σύνοψη που επιλέγετε να στείλετε.",
+      leadTitle: "Αποστολή στην ομάδα της MVTJ", name: "Το όνομά σας (προαιρετικό)", reach: "Τηλέφωνο ή email για να σας απαντήσουμε (προαιρετικό)", consent: "Συμφωνώ να λάβει η MVTJ αυτή τη σύνοψη και αυτά τα στοιχεία για να μου απαντήσει.", privacy: "Πολιτική απορρήτου", leadSend: "Αποστολή στην ομάδα", sent: "Στάλθηκε. Η ομάδα του Max θα επικοινωνήσει μαζί σας. Μπορείτε επίσης να κλείσετε μια κλήση τώρα.", leadFail: "Δεν στάλθηκε. Κλείστε μια κλήση ή στείλτε μας μήνυμα στο WhatsApp.", badReach: "Γράψτε τηλέφωνο ή email, ή αφήστε το κενό." },
   };
   const lang = (window.MVTJI18N && window.MVTJI18N.lang) || document.documentElement.lang.slice(0, 2) || "en";
   const t = STRINGS[lang] || STRINGS.en;
@@ -96,6 +104,46 @@
     return b;
   }
 
+  // Once the assistant has qualified the visitor, offer to send the signed lead to the team.
+  // The visitor sees exactly what is sent, may add how to reach them, and must tick consent.
+  const leadEndpoint = endpoint.replace(/chat$/, "lead");
+  const privacyHref = lang === "en" ? "/privacy/" : `/${lang}/privacy/`;
+  let leadCard = null;
+  function offerLead(lead) {
+    if (leadCard) leadCard.remove();
+    const card = leadCard = el("form", "mvtj-assist__lead");
+    const lines = [lead.business, lead.need, lead.timing].filter(Boolean).join(" · ");
+    const summary = el("p", "mvtj-assist__lead-summary", [lines, lead.summary].filter(Boolean).join("\n\n"));
+    const name = el("input"); name.type = "text"; name.maxLength = 60; name.placeholder = t.name; name.setAttribute("aria-label", t.name); name.autocomplete = "name";
+    const reach = el("input"); reach.type = "text"; reach.maxLength = 80; reach.placeholder = t.reach; reach.setAttribute("aria-label", t.reach);
+    const agree = el("label");
+    const box = el("input"); box.type = "checkbox"; box.required = true;
+    const policy = el("a", "", t.privacy); policy.href = privacyHref; policy.target = "_blank"; policy.rel = "noopener";
+    agree.append(box, el("span", "", t.consent + " "));
+    agree.lastChild.append(policy);
+    const go = el("button", "", t.leadSend); go.type = "submit";
+    const status = el("p", "mvtj-assist__lead-status");
+    card.append(el("p", "mvtj-assist__lead-title", t.leadTitle), summary, name, reach, agree, go, status);
+    card.addEventListener("submit", async e => {
+      e.preventDefault();
+      const contact = { name: name.value.trim(), reach: reach.value.trim() };
+      if (contact.reach && !/^\+?[\d\s().-]{7,20}$/.test(contact.reach) && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(contact.reach)) {
+        status.textContent = t.badReach; reach.focus(); return;
+      }
+      go.disabled = true; status.textContent = "";
+      try {
+        const r = await fetch(leadEndpoint, { method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ lead, contact, consent: box.checked }) });
+        if (!r.ok) throw new Error("lead failed");
+        card.replaceChildren(el("p", "mvtj-assist__lead-status", t.sent));
+      } catch {
+        go.disabled = false; status.textContent = t.leadFail;
+      }
+    });
+    log.append(card);
+    log.scrollTop = log.scrollHeight;
+  }
+
   bubble("assistant", t.hello);
   for (const m of history) bubble(m.role, m.content);
 
@@ -148,13 +196,14 @@
       const r = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: history.slice(-20) }),
+        body: JSON.stringify({ messages: history.slice(-20), lang }),
       });
       const data = r.ok ? await r.json() : null;
       typing.remove();
       if (!data || typeof data.reply !== "string") throw new Error("bad reply");
       history.push({ role: "assistant", content: data.reply });
       bubble("assistant", data.reply);
+      if (data.lead) offerLead(data.lead);
       save();
     } catch {
       typing.remove();
