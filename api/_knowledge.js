@@ -36,6 +36,7 @@ Work pages: https://www.mvtjdesigns.com/en/portfolio/ and the Create + Elevate c
 - Growth Package (film + website + conversion system): from €3,900
 - Landing Page from €950 · Business Website from €2,200 · Premium Website / Redesign from €3,900
 - Website Clarity Audit €200 (credited toward a website project within 30 days) · Website Care from €100/month
+- Website Subscription: €299/month on a 12-month minimum, or €349/month on a 6-month minimum. Design, build, domain, hosting and care, with up to 5 small edits a month done within 48 working hours; extra work €45/hour; new pages, film and 3D quoted separately. The site and domain transfer to the client once the minimum term is complete. No big upfront payment.
 Quote these only as "from" prices and say the exact price is set on the free call. Full list: https://www.mvtjdesigns.com/en/services/#ways-to-work
 
 # Links you may give (exact URLs)
