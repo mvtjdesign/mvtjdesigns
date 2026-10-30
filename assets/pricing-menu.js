@@ -1,6 +1,6 @@
-// Ways to work: turns the price cards into a "Monthly / Per project" switch with expandable rows.
+// Ways to work: turns the price cards into a "Monthly / Per project" switch of visual cards.
 // Progressive enhancement: the cards stay in the HTML (all four languages), and without this script
-// the page shows them as before. Rows are built from each card's own kicker, title, intro and price.
+// the page shows them as before.
 (() => {
   const root = document.getElementById("ways-to-work");
   const intro = root && root.querySelector(".ways-to-work-intro");
@@ -17,36 +17,40 @@
   const card = id => document.getElementById(id)?.closest("article");
   const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; };
 
-  let uid = 0;
-  function toRow(article, n) {
-    const head = article.querySelector("h3, h4");
-    const kicker = article.querySelector(".ways-to-work-start");
-    const price = article.querySelector(".ways-to-work-price");
-    const lead = [...article.children].find(c => c.tagName === "P" && !c.className);
-    const body = el("div", "pm-body");
-    body.id = `pm-body-${++uid}`;
-    const button = el("button", "pm-head");
-    button.type = "button";
-    button.setAttribute("aria-expanded", "false");
-    button.setAttribute("aria-controls", body.id);
-    const main = el("span", "pm-main");
-    main.append(el("span", "pm-title", head.textContent.trim()));
-    if (kicker) main.append(el("span", "pm-badge", kicker.textContent.trim()));
-    if (lead) main.append(el("span", "pm-desc", lead.textContent.trim()));
-    button.append(el("span", "pm-n", String(n).padStart(2, "0")), main, el("span", "pm-price", price ? price.textContent.trim() : ""),
-                  Object.assign(el("span", "pm-chev"), { ariaHidden: "true" }));
-    [kicker, price, lead].forEach(x => x && x.remove());
-    head.textContent = "";
-    head.classList.add("pm-h");
-    head.append(button);
-    const inner = el("div", "pm-inner");
-    while (head.nextSibling) inner.append(head.nextSibling);
-    body.append(inner);
-    article.append(body);
-    article.classList.add("pm-row");
+  // One-off projects: a visual card with an image of real work (or a gold icon), the price up top and the
+  // included items folded into "What's included". Images are keyed by heading id, the same in every language.
+  const OFFER_MEDIA = {
+    "offer-new-1-title": "/assets/work/mvtj-showreel-poster.jpg",
+    "offer-new-0-title": "/assets/services/svc-mum-oil-480.jpg",
+    "social-pack-title": "/assets/services/svc-nanourik-feed-480.jpg",
+    "landing-page-sprint-title": "/assets/services/svc-social-site-640.webp",
+    "business-website-title": "/assets/services/svc-web-ce-640.webp",
+    "offer-new-2-title": "/assets/work/mvtj-assistant-live.png",
+    "custom-experience-title": "/assets/services/svc-web-pendeli-640.webp",
+    "addon-prospects-title": { icon: "prospects" },
+    "website-audit-title": { icon: "seo" },
+  };
+  function toOffer(article) {
+    article.classList.add("pm-offer");
     article.style.removeProperty("grid-column");
-    if (article.hasAttribute("data-featured")) article.classList.add("pm-featured");
-    button.addEventListener("click", () => toggle(article));
+    const media = OFFER_MEDIA[article.getAttribute("aria-labelledby")];
+    const fig = el("figure", "pm-offer-media");
+    if (typeof media === "string") {
+      const img = el("img");
+      Object.assign(img, { src: media, alt: "", loading: "lazy", decoding: "async" });
+      fig.append(img);
+    } else {
+      fig.classList.add("is-icon");
+      fig.dataset.icon = media ? media.icon : "web";
+    }
+    article.prepend(fig);
+    const scope = article.querySelector(".ways-to-work-scope");
+    if (scope) {
+      const more = el("details", "pm-offer-more");
+      more.append(el("summary", "", scope.textContent.trim()));
+      while (scope.nextSibling && !(scope.nextSibling.classList && scope.nextSibling.classList.contains("btn"))) more.append(scope.nextSibling);
+      scope.replaceWith(more);
+    }
     return article;
   }
 
@@ -88,7 +92,7 @@
   bar.append(el("p", "pm-ask", t.ask), seg);
 
   // Each list takes its group's cards in page order, then the group's terms note. Monthly plans stay as
-  // full side-by-side cards, so price and contents read at a glance; one-off projects become rows.
+  // full side-by-side cards, so price and contents read at a glance; one-off projects become visual cards.
   for (const key of Object.keys(lists)) {
     const group = root.querySelector(`[data-pay="${key}"]`);
     if (!group) continue;
@@ -110,7 +114,9 @@
       });
       lists[key].append(plans);
     } else {
-      articles.forEach((a, i) => lists[key].append(toRow(a, i + 1)));
+      const offers = el("div", "pm-offers");
+      articles.forEach(a => offers.append(toOffer(a)));
+      lists[key].append(offers);
     }
     group.querySelectorAll(".ways-to-work-note").forEach(note => lists[key].append(note));
   }
@@ -128,7 +134,7 @@
       lists[key].hidden = !on;
     }
     if (animate) {
-      lists[mode].querySelectorAll(".pm-row, .pm-group, .pm-plan").forEach((r, i) => {
+      lists[mode].querySelectorAll(".pm-row, .pm-group, .pm-plan, .pm-offer").forEach((r, i) => {
         r.style.setProperty("--i", i);
         r.classList.remove("pm-in");
         void r.offsetWidth;
