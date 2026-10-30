@@ -122,7 +122,7 @@
     const row = rowId && card(rowId);
     if (row) toggle(row, true);
   }
-  const FROM_SERVICE = { "service-ads": ["project", "offer-new-1-title"], "service-web": ["monthly", "plan-site-title"],
+  const FROM_SERVICE = { "service-ads": ["monthly", "plan-studio-title"], "service-web": ["monthly", "plan-site-title"],
                          "service-social": ["monthly", "plan-grow-title"], "service-systems": ["monthly", "plan-convert-title"] };
   document.querySelectorAll('#services a[href="#ways-to-work"]').forEach(a => {
     const target = FROM_SERVICE[a.closest(".svc-chapter")?.id];
