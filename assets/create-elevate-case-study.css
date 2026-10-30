@@ -175,3 +175,8 @@ dd { color: #e3e4e5; font-size: .86rem; }
   .hero-grid, .section-grid, .project-details { grid-template-columns: 1fr; }
   .case-section { break-inside: avoid; }
 }
+
+/* Villa assembly film (MVTJ for Create + Elevate) */
+.ce-film{margin:clamp(28px,5vw,56px) 0 0}
+.ce-film video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid rgba(193,161,116,.35);background:#0a1017}
+.ce-film figcaption{margin-top:12px;font-size:.9rem;color:#9fa9b3}
