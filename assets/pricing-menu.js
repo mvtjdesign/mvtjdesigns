@@ -128,7 +128,8 @@
     const target = FROM_SERVICE[a.closest(".svc-chapter")?.id];
     if (target) a.addEventListener("click", () => reveal(...target));
   });
-  const HASH = { "#subscription": ["monthly", "plan-all-title"], "#care": ["monthly", "plan-all-title"] };
+  const HASH = { "#subscription": ["monthly", "plan-all-title"], "#care": ["monthly", "plan-all-title"],
+                 "#starter": ["monthly", "plan-starter-title"] };
   const fromHash = () => {
     if (!HASH[location.hash]) return;
     reveal(...HASH[location.hash]);
