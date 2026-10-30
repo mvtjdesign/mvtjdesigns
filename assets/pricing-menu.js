@@ -122,19 +122,22 @@
     const row = rowId && card(rowId);
     if (row) toggle(row, true);
   }
-  const FROM_SERVICE = { "service-ads": ["project", "offer-new-1-title"], "service-web": ["monthly", "plan-site-title"],
-                         "service-social": ["monthly", "plan-grow-title"], "service-systems": ["monthly", "plan-convert-title"] };
+  const FROM_SERVICE = { "service-ads": ["project", "offer-new-1-title"], "service-web": ["monthly", "plan-all-title"],
+                         "service-social": ["project", "social-pack-title"], "service-systems": ["monthly", "plan-all-title"] };
   document.querySelectorAll('#services a[href="#ways-to-work"]').forEach(a => {
     const target = FROM_SERVICE[a.closest(".svc-chapter")?.id];
     if (target) a.addEventListener("click", () => reveal(...target));
   });
-  const HASH = { "#subscription": ["monthly", "plan-site-title"], "#care": ["monthly", "plan-site-title"] };
+  const HASH = { "#subscription": ["monthly", "plan-all-title"], "#care": ["monthly", "plan-all-title"] };
   const fromHash = () => {
     if (!HASH[location.hash]) return;
     reveal(...HASH[location.hash]);
     card(HASH[location.hash][1]).scrollIntoView({ block: "start" });
   };
   setMode("monthly", false);
+  // A single plan opens by default, so its contents are visible straight away.
+  const plans = lists.monthly.querySelectorAll(".pm-row");
+  if (plans.length === 1) toggle(plans[0], true);
   fromHash();
   window.addEventListener("hashchange", fromHash);
 })();
