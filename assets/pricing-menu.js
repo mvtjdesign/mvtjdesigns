@@ -51,6 +51,7 @@
   }
 
   function toggle(article, open = !article.classList.contains("is-open")) {
+    if (!article.querySelector(".pm-head")) return; // monthly plan cards are always open
     article.classList.toggle("is-open", open);
     article.querySelector(".pm-head").setAttribute("aria-expanded", String(open));
   }
@@ -86,11 +87,31 @@
   });
   bar.append(el("p", "pm-ask", t.ask), seg);
 
-  // Each list takes its group's cards in page order, then the group's terms note.
+  // Each list takes its group's cards in page order, then the group's terms note. Monthly plans stay as
+  // full side-by-side cards, so price and contents read at a glance; one-off projects become rows.
   for (const key of Object.keys(lists)) {
     const group = root.querySelector(`[data-pay="${key}"]`);
     if (!group) continue;
-    [...group.querySelectorAll("article")].forEach((a, i) => lists[key].append(toRow(a, i + 1)));
+    const articles = [...group.querySelectorAll("article")];
+    if (key === "monthly") {
+      const plans = el("div", "pm-plans");
+      articles.forEach(a => {
+        a.classList.add("pm-plan");
+        a.style.removeProperty("grid-column");
+        // "€500/month": keep the amount big and set the "/month" part smaller, in every language.
+        const price = a.querySelector(".ways-to-work-price");
+        const cut = price ? price.textContent.indexOf("/") : -1;
+        if (cut > 0) {
+          const text = price.textContent;
+          price.textContent = text.slice(0, cut);
+          price.append(el("small", "", text.slice(cut)));
+        }
+        plans.append(a);
+      });
+      lists[key].append(plans);
+    } else {
+      articles.forEach((a, i) => lists[key].append(toRow(a, i + 1)));
+    }
     group.querySelectorAll(".ways-to-work-note").forEach(note => lists[key].append(note));
   }
   pm.append(bar, lists.monthly, lists.project);
@@ -107,7 +128,7 @@
       lists[key].hidden = !on;
     }
     if (animate) {
-      lists[mode].querySelectorAll(".pm-row, .pm-group").forEach((r, i) => {
+      lists[mode].querySelectorAll(".pm-row, .pm-group, .pm-plan").forEach((r, i) => {
         r.style.setProperty("--i", i);
         r.classList.remove("pm-in");
         void r.offsetWidth;
@@ -136,9 +157,6 @@
     card(HASH[location.hash][1]).scrollIntoView({ block: "start" });
   };
   setMode("monthly", false);
-  // The featured plan opens by default, so its contents are visible straight away.
-  const featured = lists.monthly.querySelector(".pm-featured") || lists.monthly.querySelector(".pm-row");
-  if (featured) toggle(featured, true);
   fromHash();
   window.addEventListener("hashchange", fromHash);
 })();
