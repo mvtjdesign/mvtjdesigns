@@ -13,11 +13,7 @@
     el: { m: "Μηνιαία", p: "Ανά έργο", ask: "Πώς προτιμάτε να πληρώσετε;" },
   };
   const t = LABELS[(document.documentElement.lang || "en").slice(0, 2)] || LABELS.en;
-  // Cards are identified by their heading ids, which are the same in every language.
-  const MONTHLY = ["website-subscription-title", "offer-new-2-title", "offer-new-3-title", "website-care-title"];
-  const GROUPS = [["offers-ads-title", ["offer-new-0-title", "offer-new-1-title", "offer-new-4-title"]],
-                  ["offers-web-title", ["website-audit-title", "landing-page-sprint-title", "business-website-title", "premium-website-title"]],
-                  ["other-services-title", ["custom-experience-title"]]];
+  // Cards are grouped by data-pay and linked to by heading id; both are the same in every language.
   const card = id => document.getElementById(id)?.closest("article");
   const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; };
 
@@ -49,7 +45,7 @@
     article.append(body);
     article.classList.add("pm-row");
     article.style.removeProperty("grid-column");
-    if (article.id === "subscription") article.classList.add("pm-featured");
+    if (article.hasAttribute("data-featured")) article.classList.add("pm-featured");
     button.addEventListener("click", () => toggle(article));
     return article;
   }
@@ -90,13 +86,12 @@
   });
   bar.append(el("p", "pm-ask", t.ask), seg);
 
-  MONTHLY.map(card).filter(Boolean).forEach((a, i) => lists.monthly.append(toRow(a, i + 1)));
-  let n = 0;
-  for (const [groupId, ids] of GROUPS) {
-    const rows = ids.map(card).filter(Boolean);
-    if (!rows.length) continue;
-    lists.project.append(el("p", "pm-group", document.getElementById(groupId)?.textContent.trim()));
-    rows.forEach(a => lists.project.append(toRow(a, ++n)));
+  // Each list takes its group's cards in page order, then the group's terms note.
+  for (const key of Object.keys(lists)) {
+    const group = root.querySelector(`[data-pay="${key}"]`);
+    if (!group) continue;
+    [...group.querySelectorAll("article")].forEach((a, i) => lists[key].append(toRow(a, i + 1)));
+    group.querySelectorAll(".ways-to-work-note").forEach(note => lists[key].append(note));
   }
   pm.append(bar, lists.monthly, lists.project);
   intro.after(pm);
@@ -127,13 +122,13 @@
     const row = rowId && card(rowId);
     if (row) toggle(row, true);
   }
-  const FROM_SERVICE = { "service-ads": ["project", null], "service-web": ["monthly", "website-subscription-title"],
-                         "service-social": ["monthly", "offer-new-3-title"], "service-systems": ["monthly", "offer-new-2-title"] };
+  const FROM_SERVICE = { "service-ads": ["project", "offer-new-1-title"], "service-web": ["monthly", "plan-site-title"],
+                         "service-social": ["monthly", "plan-grow-title"], "service-systems": ["monthly", "plan-convert-title"] };
   document.querySelectorAll('#services a[href="#ways-to-work"]').forEach(a => {
     const target = FROM_SERVICE[a.closest(".svc-chapter")?.id];
     if (target) a.addEventListener("click", () => reveal(...target));
   });
-  const HASH = { "#subscription": ["monthly", "website-subscription-title"], "#care": ["monthly", "website-care-title"] };
+  const HASH = { "#subscription": ["monthly", "plan-site-title"], "#care": ["monthly", "plan-site-title"] };
   const fromHash = () => {
     if (!HASH[location.hash]) return;
     reveal(...HASH[location.hash]);

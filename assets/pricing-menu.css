@@ -62,6 +62,8 @@
 .ways-to-work .pm-inner .ways-to-work-scope { margin-top: 4px; }
 .ways-to-work .pm-inner .btn { margin-top: 4px; }
 
+.ways-to-work .pm .ways-to-work-note { margin: 18px 0 0; color: #9aa1aa; font-size: .85rem; line-height: 1.6; max-width: 820px; }
+
 /* Switching lists: rows rise in one after another. */
 .pm-in { animation: pm-rise .45s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--i, 0) * 45ms); }
 @keyframes pm-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
