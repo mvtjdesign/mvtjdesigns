@@ -171,3 +171,17 @@
 .ways-to-work .pm-offers .pm-offer .btn { align-self: flex-start; margin-top: auto; }
 @media (max-width: 1000px) { .pm-offers { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .pm-offers { grid-template-columns: 1fr; } }
+
+/* Flat to Booked: the plan ad, 9:16, beside a short caption */
+.plans-film{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;margin:0 0 clamp(28px,4vw,44px);text-align:left}
+.plans-film video{display:block;width:100%;height:auto;aspect-ratio:9/16;border-radius:18px;border:1px solid rgba(193,161,116,.35);background:#0a1017;object-fit:cover;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.plans-film figcaption{display:grid;gap:10px;max-width:440px}
+.plans-film-kicker{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:#c1a174}
+.plans-film strong{font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.15;color:#e1c69d}
+.plans-film figcaption span:last-child{color:#9fa9b3;line-height:1.55}
+.ways-to-work-intro .plans-film{margin:clamp(28px,4vw,40px) auto 0;max-width:820px}
+@media (max-width:640px){
+  .plans-film{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .plans-film video{max-width:320px}
+  .plans-film figcaption{justify-items:center}
+}
