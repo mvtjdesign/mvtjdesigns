@@ -51,7 +51,7 @@
 
   // The guided brief. Scene 03's options depend on the starting point chosen in Scene 01.
   const INTAKE = {
-    en: { launch: "Start a project", product: "Project intake", descriptor: "Cinematic Ads · Websites · Growth Systems", ai: "AI assistant · not a person",
+    en: { launch: "Start a project", product: "Project intake", descriptor: "Websites · Content · Growth Systems", ai: "AI assistant · not a person",
       lead: "Every project starts with a brief.", leadSub: "Tell us what you're building, and we'll help shape the next step.", scene: "Scene",
       titles: ["Your starting point", "Your business", "The project", "Timeline", "Next step"],
       questions: ["What do you need most right now?", "What kind of business do you run?", "What are you considering?", "When would you like to begin?", "Here's your brief."],
@@ -65,7 +65,7 @@
       placeholder: "Ask anything, or describe your project…", placeholderShort: "Ask anything…",
       waText: "Hi MVTJ, here's my brief:", enquiryMsg: "Here's my project brief: {brief}. I'd like to send an enquiry to the team.", soFar: "My brief so far: {brief}.",
       humanReply: "Happy to connect you with a person. Book a free call or message us on WhatsApp, and Max or the team will reply." },
-    es: { launch: "Empezar un proyecto", product: "Inicio de proyecto", descriptor: "Anuncios cinematográficos · Webs · Sistemas de crecimiento", ai: "Asistente de IA · no es una persona",
+    es: { launch: "Empezar un proyecto", product: "Inicio de proyecto", descriptor: "Webs · Contenido · Sistemas de crecimiento", ai: "Asistente de IA · no es una persona",
       lead: "Todo proyecto empieza con un brief.", leadSub: "Cuéntanos qué estás construyendo y te ayudamos a definir el siguiente paso.", scene: "Escena",
       titles: ["Tu punto de partida", "Tu negocio", "El proyecto", "Plazos", "Siguiente paso"],
       questions: ["¿Qué necesitas más ahora mismo?", "¿Qué tipo de negocio tienes?", "¿Qué estás considerando?", "¿Cuándo te gustaría empezar?", "Este es tu brief."],
@@ -79,7 +79,7 @@
       placeholder: "Pregunta lo que quieras o describe tu proyecto…", placeholderShort: "Pregunta lo que quieras…",
       waText: "Hola MVTJ, este es mi brief:", enquiryMsg: "Este es el brief de mi proyecto: {brief}. Me gustaría enviar una consulta al equipo.", soFar: "Mi brief hasta ahora: {brief}.",
       humanReply: "Con gusto te ponemos en contacto con una persona. Reserva una llamada gratuita o escríbenos por WhatsApp y Max o el equipo te responderán." },
-    ru: { launch: "Начать проект", product: "Бриф проекта", descriptor: "Кинематографичная реклама · Сайты · Системы роста", ai: "ИИ-ассистент · не человек",
+    ru: { launch: "Начать проект", product: "Бриф проекта", descriptor: "Сайты · Контент · Системы роста", ai: "ИИ-ассистент · не человек",
       lead: "Каждый проект начинается с брифа.", leadSub: "Расскажите, что вы создаёте, и мы поможем определить следующий шаг.", scene: "Сцена",
       titles: ["Отправная точка", "Ваш бизнес", "Проект", "Сроки", "Следующий шаг"],
       questions: ["Что вам сейчас нужнее всего?", "Какой у вас бизнес?", "Что вы рассматриваете?", "Когда вы хотели бы начать?", "Ваш бриф."],
@@ -93,7 +93,7 @@
       placeholder: "Спросите что угодно или опишите проект…", placeholderShort: "Спросите что угодно…",
       waText: "Здравствуйте, MVTJ! Мой бриф:", enquiryMsg: "Бриф моего проекта: {brief}. Хочу отправить заявку команде.", soFar: "Мой бриф на данный момент: {brief}.",
       humanReply: "С радостью свяжем вас с человеком. Запишитесь на бесплатный звонок или напишите в WhatsApp, и Макс или команда вам ответят." },
-    el: { launch: "Ξεκινήστε ένα έργο", product: "Ενημέρωση έργου", descriptor: "Κινηματογραφικές διαφημίσεις · Ιστοσελίδες · Συστήματα ανάπτυξης", ai: "Βοηθός AI · όχι άνθρωπος",
+    el: { launch: "Ξεκινήστε ένα έργο", product: "Ενημέρωση έργου", descriptor: "Ιστοσελίδες · Περιεχόμενο · Συστήματα ανάπτυξης", ai: "Βοηθός AI · όχι άνθρωπος",
       lead: "Κάθε έργο ξεκινά με ένα brief.", leadSub: "Πείτε μας τι χτίζετε και θα σας βοηθήσουμε να διαμορφώσετε το επόμενο βήμα.", scene: "Σκηνή",
       titles: ["Το σημείο εκκίνησής σας", "Η επιχείρησή σας", "Το έργο", "Χρονοδιάγραμμα", "Επόμενο βήμα"],
       questions: ["Τι χρειάζεστε περισσότερο αυτή τη στιγμή;", "Τι είδους επιχείρηση έχετε;", "Τι σκέφτεστε;", "Πότε θα θέλατε να ξεκινήσετε;", "Αυτό είναι το brief σας."],

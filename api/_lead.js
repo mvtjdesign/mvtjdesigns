@@ -5,7 +5,7 @@ import crypto from "node:crypto";
 
 export const FACTORS = { industry_fit: 30, need: 25, credibility: 15, accessibility: 15, timing: 15 };
 export const DOORS = ["noticed", "booked", "both", "unclear"];
-export const SERVICES = ["MVTJ Plan", "Cinematic Product Film", "Product Stills", "Social Content Pack", "Landing Page",
+export const SERVICES = ["Starter Plan", "MVTJ Plan", "Cinematic Product Film", "Product Stills", "Social Content Pack", "Landing Page",
   "Business Website", "Conversion System", "Prospect List", "Custom Website / Digital Experience", "Website Clarity Audit", "Not sure yet"];
 
 // The JSON shape Gemini must answer in.

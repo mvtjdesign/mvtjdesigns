@@ -135,9 +135,9 @@
     card(HASH[location.hash][1]).scrollIntoView({ block: "start" });
   };
   setMode("monthly", false);
-  // A single plan opens by default, so its contents are visible straight away.
-  const plans = lists.monthly.querySelectorAll(".pm-row");
-  if (plans.length === 1) toggle(plans[0], true);
+  // The featured plan opens by default, so its contents are visible straight away.
+  const featured = lists.monthly.querySelector(".pm-featured") || lists.monthly.querySelector(".pm-row");
+  if (featured) toggle(featured, true);
   fromHash();
   window.addEventListener("hashchange", fromHash);
 })();
